@@ -4,6 +4,10 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
+import HomeHero from "../src/sections/HomeHero";
+import Sugarcoating from "../src/sections/Sugarcoating";
+import TrupathCircle from "../src/sections/TrupathCircle";
+import Nature from "../src/sections/Nature";
 
 // SECTIONS //
 
@@ -23,14 +27,17 @@ export default function HomePage() {
 	return (
 		<div>
 			{/* Metatags */}
-			<MetaTags Title={"Home"} Desc={"Home Desc"} OgImg={""} Url={"/"} />
+			<MetaTags Title={"Trupath"} Desc={"Home Desc"} OgImg={""} Url={"/"} />
 
 			{/* Header */}
 			<Header />
 
 			{/* Page Content starts here */}
-			<main className={`${styles.HomePage} bg_primary`}>
-				<h2>This is ting base next.js template</h2>
+			<main className={`${styles.HomePage}`}>
+				<HomeHero/>
+				<Sugarcoating />
+				<TrupathCircle />
+				<Nature/>
 			</main>
 			{/* Page Content ends here */}
 

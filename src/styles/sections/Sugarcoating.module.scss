@@ -1,0 +1,39 @@
+@import "../helpers/helpers.scss";
+
+.sugarcoating{
+    z-index: 1;
+    padding-top: 60px;
+    position: relative;
+    .sugarcoating_bg{
+        img{
+            width: 100%;
+        }
+    }
+    .sugarcoating_info{
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        .title_sec{
+            .title{
+                display: flex;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                span{
+                    padding: 0 5px;
+                }
+            }
+        }
+        .para{
+            width: 45%;
+            margin: auto;
+            padding-top: 15px;
+            p{
+                text-align: center;
+                color: var(--color_tertiary);
+            }
+        }
+    }
+}

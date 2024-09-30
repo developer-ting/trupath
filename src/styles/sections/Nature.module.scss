@@ -1,0 +1,86 @@
+@import "../helpers/helpers.scss";
+.Nature{
+    padding: 100px 0;
+    position: relative;
+    background-image: url(../../../public/img/home/nature_bg.jpg);
+    .nature_section{
+        .info{
+            width: 40%;
+            h2{
+                padding-bottom: 20px;
+                color: var(--color_tertiary);
+            }
+        }
+        .product{
+            width: 60%;
+            .left_section{
+                display: flex;
+                width: 170px;
+                height: 510px;
+                position: relative;
+                top: -25px;
+                flex-wrap: wrap;
+                position: absolute;
+                align-items: center;
+                img{
+                    margin: auto;
+                }
+                p{
+                    padding-top: 10px;
+                    text-align: center;
+                    color: var(--color_tertiary);
+                }
+                .top_item{
+                    width: 73%;
+                    margin-left: auto;
+                }
+                .center_item{
+                    width: 72%;
+                    margin: 0;
+                }
+                .bottom_item{
+                    width: 72%;
+                    margin-left: auto;
+                }
+            }
+            .right_section{
+                display: flex;
+                width: 170px;
+                height: 510px;
+                position: relative;
+                top: -25px;
+                right: 0;
+                flex-wrap: wrap;
+                position: absolute;
+                align-items: center;
+                img{
+                    margin: auto;
+                }
+                p{
+                    padding-top: 10px;
+                    text-align: center;
+                    color: var(--color_tertiary);
+                }
+                .top_item{
+                    width: 73%;
+                    margin: 0;
+                }
+                .center_item{
+                    width: 72%;
+                    margin-left: auto;
+                }
+                .bottom_item{
+                    width: 72%;
+                    margin: 0;
+                }
+            }
+            .product_img{
+                width: 53%;
+                margin: auto;
+                img{
+                    margin-left: 25px;
+                }
+            }
+        }
+    }
+}

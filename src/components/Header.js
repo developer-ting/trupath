@@ -15,6 +15,7 @@ import Link from "next/link";
 import styles from "@/styles/components/Header.module.scss";
 
 // IMAGES //
+import Logo from "@/../public/img/home/logo.svg";
 import Arrow from "@/../public/img/icons/arrow.svg";
 
 // DATA //
@@ -22,18 +23,10 @@ import Arrow from "@/../public/img/icons/arrow.svg";
 /** Header Component */
 export default function Header() {
 	const [openSidebar, setOpenSidebar] = useState(false);
-	const [openDropdown, setOpenDropdown] = useState(null);
 
 	/** Open sidebar on click of hamburger */
 	const toggleSidebar = () => {
 		setOpenSidebar(!openSidebar);
-	};
-
-	/** Function to toggle dropdown */
-	const toggleDropdown = (dropdownKey) => {
-		setOpenDropdown((prevOpenDropdown) =>
-			prevOpenDropdown === dropdownKey ? null : dropdownKey
-		);
 	};
 
 	return (
@@ -47,72 +40,45 @@ export default function Header() {
 					{/* Logo wrap */}
 					<Link href="/">
 						<div className={styles.image_wrap}>
-							{/* <Image src={Logo} alt="Logo" /> */}
-							LOGO
+							<Image src={Logo} alt="Logo" />
 						</div>
 					</Link>
 
 					{/* Links Wrap */}
-					<div className={`${styles.links_wrap}`}>
-						{/* Add "has_dropdown" class if your link has dropdown */}
-						<div
-							className={`${styles.links} ${styles.has_dropdown} ${
-								openDropdown === "aboutUs" ? styles.dropdown_opened : ""
-							} dropdown`}
-							onClick={() => toggleDropdown("aboutUs")}
-						>
-							<div className={styles.link_title}>
-								<p>About Us</p>
-								<span className={styles.arrow_img}>
-									<Image src={Arrow} alt="Arrow" />
-								</span>
-							</div>
-							{/* Dropdown is opened when link is clicked */}
-							<div className={`${styles.dropdown_wrap}`}>
-								<Link href="">
-									<p className={styles.dropdown_links}>About 1</p>
-								</Link>
-								<Link href="">
-									<p className={styles.dropdown_links}>About 2</p>
-								</Link>
-								<Link href="">
-									<p className={styles.dropdown_links}>About 3</p>
-								</Link>
-							</div>
-						</div>
-						<div
-							className={`${styles.links} ${styles.has_dropdown} ${
-								openDropdown === "blogs" ? styles.dropdown_opened : ""
-							} dropdown`}
-							onClick={() => toggleDropdown("blogs")}
-						>
-							<div className={styles.link_title}>
-								<p>Blogs</p>
-								<span className={styles.arrow_img}>
-									<Image src={Arrow} alt="Arrow" />
-								</span>
-							</div>
-							{/* Dropdown is opened when link is clicked */}
-							<div className={`${styles.dropdown_wrap}`}>
-								<Link href="">
-									<p className={styles.dropdown_links}>Blog 1</p>
-								</Link>
-								<Link href="">
-									<p className={styles.dropdown_links}>Blog 2</p>
-								</Link>
-								<Link href="">
-									<p className={styles.dropdown_links}>Blog 3</p>
-								</Link>
-							</div>
-						</div>
+					<div className={`${styles.links_wrap}`}>				
 						<div className={styles.links}>
 							<Link href="">
-								<div className={styles.link_title}>Career</div>
+								<div className={`${styles.link_title} text_16`}>About Us</div>
 							</Link>
 						</div>
 						<div className={styles.links}>
 							<Link href="">
-								<div className={styles.link_title}>Contact</div>
+								<div className={`${styles.link_title} text_16`}>Value</div>
+							</Link>
+						</div>
+						<div className={styles.links}>
+							<Link href="">
+								<div className={`${styles.link_title} text_16`}>Our Story</div>
+							</Link>
+						</div>
+						<div className={styles.links}>
+							<Link href="">
+								<div className={`${styles.link_title} text_16`}>Health Benefits</div>
+							</Link>
+						</div>
+						<div className={styles.links}>
+							<Link href="">
+								<div className={`${styles.link_title} text_16`}>Products</div>
+							</Link>
+						</div>
+						<div className={styles.links}>
+							<Link href="">
+								<div className={`${styles.link_title} text_16`}>Manufacturing</div>
+							</Link>
+						</div>
+						<div className={styles.links}>
+							<Link href="">
+								<div className={`${styles.link_title} text_16`}>Recipes</div>
 							</Link>
 						</div>
 					</div>

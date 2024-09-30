@@ -7,8 +7,9 @@
 
 body {
 	margin: 0;
-	@extend .text_reg;
-	font-family: var(--font_secondary);
+	@extend .text_20;
+	color: var(--color_primary);
+	font-family: var(--font_primary);
 }
 
 * {
@@ -127,4 +128,73 @@ section {
 	img {
 		object-fit: cover !important;
 	}
+}
+
+.hidden {
+	display: none !important;
+}
+
+.visible_lg {
+	display: block;
+
+	@media (max-width: 1199px) {
+		display: none !important;
+	}
+}
+
+.hidden_lg {
+	display: none;
+
+	@media (max-width: 1199px) {
+		display: block !important;
+	}
+}
+
+.hidden_md {
+	display: block;
+	@media (min-width: 768px) and (max-width: 991px) {
+		display: none !important;
+	}
+}
+.visible_md {
+	display: none;
+	@media (min-width: 768px) and (max-width: 991px) {
+		display: flex !important;
+	}
+}
+
+.hidden_xs {
+	display: block;
+
+	@media (max-width: 767px) {
+		display: none !important;
+	}
+}
+.hidden_sm {
+	display: block;
+
+	@media only screen and (min-width: 767px) and (max-width: 1024px) {
+		display: none !important;
+	}
+}
+.visible_xs {
+	display: block;
+
+	@media (min-width: 767px) {
+		display: none !important;
+	}
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+	height: 2px;
+	background: var(--color_white);
+}
+::-webkit-scrollbar-track {
+	border-radius: 50px;
+	background: var(--color_white);
+}
+::-webkit-scrollbar-thumb {
+	background: #6ece28;
+	border-radius: 50px;
 }

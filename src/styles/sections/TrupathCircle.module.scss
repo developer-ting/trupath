@@ -1,0 +1,59 @@
+@import "../helpers/helpers.scss";
+
+.TrupathCircle{
+    height: 120vh;
+    width: 100vw;
+    // display: flex; 
+    overflow: hidden;
+    padding-top: 100px;
+    position: relative;
+    // align-items: flex-end; 
+    // justify-content: center;
+    background-color: var(--color_tertiary);
+    .circle_div{
+        bottom: 0; 
+        width: 100vw;
+        height: 100vh; 
+        overflow: hidden;
+        position: absolute;
+        border-top-left-radius: 100vh;
+        border-top-right-radius: 100vh;
+        background-color: #d94426e3;
+        aspect-ratio: 1 / 1;
+        .text_para{
+            width: 43%;
+            margin: auto;
+            text-align: center;
+            padding-top: 85px;
+        }
+        .product_circle{
+            left: 50%;
+            bottom: 50px;
+            position: absolute;
+            transform: translateX(-50%);
+            .left_star{
+                top: 50%;
+                left: -10%;
+                position: absolute;
+                transform: translate(-50%, -50%);
+            }
+            .right_star{
+                top: 25%;
+                right: -10%;
+                position: absolute;
+                transform: translate(-50%, -50%);
+            }
+        }
+        .hand{
+            right: 0;
+            bottom: 20px;
+            position: absolute;
+        }
+    }
+    .title_div{
+        // margin-top: -30px;
+        img{
+            width: 100%;
+        }
+    }
+}

@@ -1,1 +1,70 @@
 @import "../helpers/helpers.scss";
+
+.hero_wrap{
+    width: 100%;
+    height: 110vh;
+    position: relative;
+    // overflow: hidden;
+    background-color: var(--color_tertiary);
+    .banner_section{
+        .birds_left{
+            top: 175px;
+            left: 10%;        
+            position: absolute;
+        }
+        .birds_right{
+            top: 285px;
+            right: 26%;
+            position: absolute;
+        }
+        .cloud_left{
+            top: 260px;
+            left: 8%;
+            position: absolute;
+        }
+        .cloud_right{
+            top: 340px;
+            right: 4%;
+            position: absolute;
+        }
+        .info{
+            padding-top: 7%;
+            text-align: center;
+            p{
+                color: var(--color_primary);
+            }
+        }
+        .mountain{
+            top: 43%;
+            width: 100%;
+            position: absolute;
+            img{
+                width: 100%;
+            }
+        }
+        .product_img{
+            left: 50%;
+            z-index: 1;
+            bottom: -100px;
+            position: absolute;
+            transform: translateX(-50%);
+        }
+        .sugarcane{
+            width: 100%;
+            bottom: -100px;
+            position: absolute;
+            img{
+                width: 100%;
+            }
+        }
+        .leaves{
+            z-index: 1;
+            width: 100%;
+            bottom: -100px;
+            position: absolute;
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
