@@ -1,0 +1,41 @@
+@import "../helpers/helpers.scss";
+
+.SweetTaste {
+	padding: 50px 0;
+	.FlexMain {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		@media screen and (max-width: 991px) {
+			flex-direction: column;
+			gap: 30px;
+		}
+		.TextBx {
+			width: 38%;
+			@media screen and (max-width: 1199px) {
+				width: 45%;
+			}
+			@media screen and (max-width: 991px) {
+				width: 100%;
+			}
+			h2 {
+				color: var(--color_primary);
+			}
+			h5 {
+				padding: 10px 0 20px;
+			}
+			p {
+				color: var(--color_primary);
+			}
+		}
+		.ImgBx {
+			width: 60%;
+			@media screen and (max-width: 1199px) {
+				width: 55%;
+			}
+			@media screen and (max-width: 991px) {
+				width: 100%;
+			}
+		}
+	}
+}
