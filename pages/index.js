@@ -8,6 +8,8 @@ import HomeHero from "../src/sections/HomeHero";
 import Sugarcoating from "../src/sections/Sugarcoating";
 import TrupathCircle from "../src/sections/TrupathCircle";
 import Nature from "../src/sections/Nature";
+import SweetTaste from "../src/sections/SweetTaste";
+import FieldsSec from "../src/sections/FieldsSec";
 
 // SECTIONS //
 
@@ -34,10 +36,12 @@ export default function HomePage() {
 
 			{/* Page Content starts here */}
 			<main className={`${styles.HomePage}`}>
-				<HomeHero/>
+				<HomeHero />
 				<Sugarcoating />
 				<TrupathCircle />
-				<Nature/>
+				<Nature />
+				<SweetTaste />
+				<FieldsSec />
 			</main>
 			{/* Page Content ends here */}
 
