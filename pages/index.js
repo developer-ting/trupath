@@ -30,19 +30,19 @@ export default function HomePage() {
 			<MetaTags Title={"Trupath"} Desc={"Home Desc"} OgImg={""} Url={"/"} />
 
 			{/* Header */}
-			<Header />
+			{/* <Header /> */}
 
 			{/* Page Content starts here */}
 			<main className={`${styles.HomePage}`}>
 				<HomeHero/>
-				<Sugarcoating />
-				<TrupathCircle />
-				<Nature/>
+				{/* <Sugarcoating /> */}
+				{/* <TrupathCircle /> */}
+				{/* <Nature/> */}
 			</main>
 			{/* Page Content ends here */}
 
 			{/* Footer */}
-			<Footer />
+			{/* <Footer /> */}
 		</div>
 	);
 }
