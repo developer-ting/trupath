@@ -79,7 +79,7 @@ const StyleGuide = () => {
 			<section>
 				{colors.map((color, ind) => {
 					return (
-						<p key={ind} className={`text_reg font_secondary color_${color}`}>
+						<p key={ind} className={`text_reg font_primary color_${color}`}>
 							color {color}
 						</p>
 					);
@@ -94,7 +94,7 @@ const StyleGuide = () => {
 						return (
 							<div
 								key={ind}
-								className={`${styles.cp_item} text_sm font_secondary bg_${color}`}
+								className={`${styles.cp_item} text_sm font_primary bg_${color}`}
 							>
 								Bg color {color}
 							</div>
