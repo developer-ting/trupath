@@ -1,59 +1,101 @@
 @import "../helpers/helpers.scss";
 
-.TrupathCircle{
-    height: 120vh;
-    width: 100vw;
-    // display: flex; 
-    overflow: hidden;
-    padding-top: 100px;
-    position: relative;
-    // align-items: flex-end; 
-    // justify-content: center;
+.TrupathCircleWrapper{
+    padding-top: 150px;
     background-color: var(--color_tertiary);
-    .circle_div{
-        bottom: 0; 
+    .TrupathCircle{
+        height: 100vh;
         width: 100vw;
-        height: 100vh; 
-        overflow: hidden;
-        position: absolute;
-        border-top-left-radius: 100vh;
-        border-top-right-radius: 100vh;
-        background-color: #d94426e3;
-        aspect-ratio: 1 / 1;
-        .text_para{
-            width: 43%;
-            margin: auto;
-            text-align: center;
-            padding-top: 85px;
-        }
-        .product_circle{
-            left: 50%;
-            bottom: 50px;
+        padding-top: 100px;
+        position: relative;
+        .circle_div{
+            bottom: 0; 
+            z-index: 1;
+            width: 100vw;
+            height: 100vh; 
+            overflow: hidden;
             position: absolute;
-            transform: translateX(-50%);
-            .left_star{
-                top: 50%;
-                left: -10%;
-                position: absolute;
-                transform: translate(-50%, -50%);
+            border-top-left-radius: 100vh;
+            border-top-right-radius: 100vh;
+            background-color: #d94426e3;
+            aspect-ratio: 1 / 1;
+            .text_para{
+                width: 43%;
+                margin: auto;
+                text-align: center;
+                padding-top: 120px;
+                @media (min-width: 1441px) and (max-width: 5000px) {
+                    padding-top: 130px;
+                }
+                @media screen and (min-width: 1280px) and (max-width: 1440px) and (min-height: 585px) and (max-height: 680px) {
+					padding-top: 75px;
+				}
+                @media screen and (min-width: 1680px) and (max-width: 1680px) and (min-height: 800px) and (max-height: 1080px) {
+					padding-top: 160px;
+				}
+                @media screen and (min-width: 1920px) and (max-width: 1920px) and (min-height: 800px) and (max-height: 1260px) {
+					padding-top: 160px;
+				}
+                p{
+                    @media screen and (min-width: 1280px) and (max-width: 1440px) and (min-height: 585px) and (max-height: 680px) {
+                        font-size: 18px;
+                    }  
+                }
             }
-            .right_star{
-                top: 25%;
-                right: -10%;
+            .product_circle{
+                left: 50%;
+                bottom: 40px;
                 position: absolute;
-                transform: translate(-50%, -50%);
+                transform: translateX(-50%);
+                @media (min-width: 1441px) and (max-width: 5000px) {
+                    bottom: 100px;
+                }
+                .product_circle_img{
+                    width: 325px;
+                    @media (min-width: 1441px) and (max-width: 5000px) {
+                        width: 500px;
+                    }
+                    @media screen and (min-width: 1440px) and (max-width: 1440px) and (min-height: 810px) and (max-height: 1260px) {
+                        width: 420px;
+                    }
+                }
+                .left_star{
+                    top: 50%;
+                    left: -10%;
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                }
+                .right_star{
+                    top: 25%;
+                    right: -10%;
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            .hand{
+                right: 0;
+                bottom: 20px;
+                position: absolute;
+                @media (min-width: 1441px) and (max-width: 5000px) {
+                    bottom: 100px;
+                }
+                @media screen and (min-width: 1920px) and (max-width: 1920px) and (min-height: 800px) and (max-height: 1260px) {
+                    bottom: 50px;
+                }
+                img{
+                    @media screen and (min-width: 1920px) and (max-width: 1920px) and (min-height: 800px) and (max-height: 1260px) {
+                       width: 1000px;
+                    }
+                }
             }
         }
-        .hand{
-            right: 0;
-            bottom: 20px;
-            position: absolute;
-        }
-    }
-    .title_div{
-        // margin-top: -30px;
-        img{
+        .title_div{
+            top: -70px;
             width: 100%;
+            position: absolute;
+            img{
+                width: 100%;
+            }
         }
     }
 }

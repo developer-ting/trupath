@@ -24,26 +24,28 @@ import hand from "../../public/img/home/hand.png";
 
 /** HomeHero Section */
 export default function TrupathCircle() {
-	return <div className={`${styles.TrupathCircle}`}>
-		<div className={`${styles.circle_div}`}>
-			<div className={`${styles.text_para}`}>
-				<p className="text_20">To be healthy you don’t need to eat bland. Simply stir, sprinkle or knead the nourishing Gud in your drinks and food to enjoy a better, wellness-focused life without sacrificing flavour!</p>
+	return <section className={`${styles.TrupathCircleWrapper}`}>
+		<div className={`${styles.TrupathCircle}`}>
+			<div className={`${styles.circle_div}`}>
+				<div className={`${styles.text_para}`}>
+					<p className="text_20">To be healthy you don’t need to eat bland. Simply stir, sprinkle or knead the nourishing Gud in your drinks and food to enjoy a better, wellness-focused life without sacrificing flavour!</p>
+				</div>
+				<div className={`${styles.product_circle}`}>
+					<img src={productCircle.src} className={`${styles.product_circle_img} img-responsive`} alt="product_circle" />
+					<div className={`${styles.left_star}`}>
+						<img src={leftStar.src} className="img-responsive" alt="left_star" />
+					</div>
+					<div className={`${styles.right_star}`}>
+						<img src={rightStar.src} className="img-responsive" alt="right_star" />
+					</div>  
+				</div>
+				<div className={`${styles.hand}`}>
+					<img src={hand.src} className="img-responsive" alt="hand" /> 
+				</div>
 			</div>
-			<div className={`${styles.product_circle}`}>
-				<img src={productCircle.src} className="img-responsive" alt="product_circle" />
-				<div className={`${styles.left_star}`}>
-				    <img src={leftStar.src} className="img-responsive" alt="left_star" />
-			    </div>
-				<div className={`${styles.right_star}`}>
-				    <img src={rightStar.src} className="img-responsive" alt="right_star" />
-			    </div>  
-			</div>
-			<div className={`${styles.hand}`}>
-				<img src={hand.src} className="img-responsive" alt="hand" /> 
+			<div className={`${styles.title_div}`}>
+				<img src={marqueeC.src} className="img-responsive" alt="marqueeC" />
 			</div>
 		</div>
-		<div className={`${styles.title_div}`}>
-			<img src={marqueeC.src} className="img-responsive" alt="marqueeC" />
-		</div>
-	</div>;
+	</section>;
 }

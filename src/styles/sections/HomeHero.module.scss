@@ -16,6 +16,9 @@
             top: 285px;
             right: 26%;
             position: absolute;
+            @media (min-width: 1441px) and (max-width: 1920px) {
+                top: 160px;
+            }
         }
         .cloud_left{
             top: 260px;
@@ -26,10 +29,16 @@
             top: 340px;
             right: 4%;
             position: absolute;
+            @media (min-width: 1441px) and (max-width: 1920px) {
+                top: 380px;
+            }
         }
         .info{
             padding-top: 7%;
             text-align: center;
+            @media (min-width: 1441px) and (max-width: 1920px) {
+                padding-top: 12%;
+            }
             p{
                 color: var(--color_primary);
             }
@@ -45,9 +54,17 @@
         .product_img{
             left: 50%;
             z-index: 1;
-            bottom: -100px;
+            bottom: -140px;
             position: absolute;
             transform: translateX(-50%);
+            @media (min-width: 1441px) and (max-width: 1920px) {
+                bottom: -100px;
+            }
+            img{
+                @media (min-width: 1441px) and (max-width: 1920px) {
+                    width: 550px;
+                }
+            }
         }
         .sugarcane{
             width: 100%;
