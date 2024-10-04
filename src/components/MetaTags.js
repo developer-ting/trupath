@@ -13,7 +13,7 @@ import Head from "next/head";
 
 // IMAGES //
 import OgImage from "public/img/og-image.jpg";
-import Favicon from "public/img/favicon.jpg";
+import Favicon from "public/img/favicon.png";
 
 // DATA //
 
