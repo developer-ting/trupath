@@ -1,0 +1,14 @@
+@import "../helpers/helpers.scss";
+			
+.GreatValueSec{
+    padding-top: 50px;
+    h2{
+        text-align: center;
+        color: var(--color_primary);
+        padding-bottom: 20px;
+    }
+    h5{
+        text-align: center;
+        padding-bottom: 30px;
+    }
+}

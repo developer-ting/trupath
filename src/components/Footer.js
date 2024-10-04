@@ -28,9 +28,16 @@ export default function Footer() {
 			<div className="container">
 				<div className={`${styles.footer_upper}`}>
 					<div className={`${styles.LogoBx}`}>
-						<img src={Logo.src} alt="Social Icons" />
+						<a href="" rel="noreferrer">
+							<img src={Logo.src} alt="Social Icons" />
+						</a>
 					</div>
-					<div className={`${styles.LogoBx}`}></div>
+					<div className={`${styles.MainFlex}`}>
+						<div className={`${styles.ContactDetails}`}>
+							<h2>Connect with us anytime</h2>
+						</div>
+						<div className={`${styles.ContactForm}`}></div>
+					</div>
 				</div>
 				<div className={`${styles.footer_lower}`}>
 					<div className={`${styles.CopyrightBx}`}>
@@ -38,21 +45,31 @@ export default function Footer() {
 					</div>
 					<div className={`${styles.SocialBx}`}>
 						<div className={`${styles.IconBx}`}>
-							<img src={linkedIn.src} alt="Social Icons" />
+							<a href="" rel="noreferrer">
+								<img src={linkedIn.src} alt="Social Icons" />
+							</a>
 						</div>
 						<div className={`${styles.IconBx}`}>
-							<img src={Twitter.src} alt="Social Icons" />
+							<a href="" rel="noreferrer">
+								<img src={Twitter.src} alt="Social Icons" />
+							</a>
 						</div>
 						<div className={`${styles.IconBx}`}>
-							<img src={FB.src} alt="Social Icons" />
+							<a href="" rel="noreferrer">
+								<img src={FB.src} alt="Social Icons" />
+							</a>
 						</div>
 						<div className={`${styles.IconBx}`}>
-							<img src={Insta.src} alt="Social Icons" />
+							<a href="" rel="noreferrer">
+								<img src={Insta.src} alt="Social Icons" />
+							</a>
 						</div>
 					</div>
 					<div className={`${styles.MadeByTing}`}>
 						<div className={`${styles.IconBx}`}>
-							<img src={MadeByTing.src} alt="Social Icons" />
+							<a href="https://www.ting.in/" rel="noreferrer">
+								<img src={MadeByTing.src} alt="Social Icons" />
+							</a>
 						</div>
 					</div>
 				</div>
