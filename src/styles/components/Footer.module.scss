@@ -9,12 +9,104 @@
 		.LogoBx {
 			padding-bottom: 50px;
 		}
+		.MainFlex{
+			display: flex;
+			justify-content: space-between;
+			@media screen and (max-width:767px) {
+				flex-direction: column;
+				gap: 30px;
+			}
+			.ContactDetails{
+				width: 40%;
+				color: var(--color_tertiary);
+				@media screen and (max-width:1199px) {
+					width: 45%;
+				}
+				@media screen and (max-width:767px) {
+					width: 100%;
+				}
+				.DetailsBx{
+					padding-top: 30px;
+					display: flex;
+					align-items: flex-start;
+					gap: 15px;
+					img{
+						min-width: 15px;
+						padding-top: 5px;
+					}
+					.content{
+						p{
+							color: var(--color_tertiary);
+						}
+					}
+				}
+			}
+			.ContactForm{
+				width: calc(60% - 100px);
+				@media screen and (max-width:1199px) {
+					width: 50%;
+				}
+				@media screen and (max-width:767px) {
+					width: 100%;
+				}
+				.twoInputs{
+					display: flex;
+					justify-content: space-between;
+					padding-bottom: 20px;
+					@media screen and (max-width:1199px) {
+						flex-direction: column;
+						gap: 20px;
+					}
+				}
+				.formGroup{
+					width: 48%;
+					@media screen and (max-width:1199px) {
+						width: 100%;
+					}
+					input{
+						width: 100%;
+						padding: 18px;
+						border-radius: 10px;
+						border: 0;
+						font-family: var(--font_primary);
+						color: var(--color_primary);
+						background-color: var(--color_tertiary);
+						&::placeholder{
+							font-family: var(--font_tertiary);
+						}
+					}
+				}
+				.formGroup1{
+					width: 100%;
+					min-height: 100px;
+					padding-bottom: 20px;
+					textarea{
+						width: 100%;
+						min-height: 100px;
+						padding: 18px;
+						border-radius: 10px;
+						border: 0;
+						font-family: var(--font_primary);
+						color: var(--color_primary);
+						background-color: var(--color_tertiary);
+						&::placeholder{
+							font-family: var(--font_tertiary);
+						}
+					}
+				}
+			}
+		}
 	}
 	.footer_lower {
 		display: flex;
 		justify-content: space-between;
 		padding: 40px 0;
 		border-top: 1px solid rgba($color: #f0b180, $alpha: 0.1);
+		@media screen and (max-width:767px) {
+			flex-direction: column;
+			align-items: center;
+			gap: 30px;
+		}
 		.CopyrightBx {
 		}
 		.SocialBx {

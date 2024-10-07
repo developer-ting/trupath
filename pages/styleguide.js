@@ -27,7 +27,7 @@ import accordianData from "@/data/accordianData.json";
 
 /** Styleguide Page */
 const StyleGuide = () => {
-	const colors = ["primary", "secondary"];
+	const colors = ["primary", "secondary", "tertiary", "fourth", "fifty"];
 
 	return (
 		<div className={styles.styleguide}>

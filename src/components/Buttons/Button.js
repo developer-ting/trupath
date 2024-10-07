@@ -19,8 +19,7 @@ import styles from "@/styles/components/Buttons/Button.module.scss";
 export default function Button({ children, shape, color, variant }) {
 	return (
 		<button
-			className={`text_sm font_secondary
-			 text_600
+			className={`text_16 font_primary
 				${styles.btn_common_styles}
 				${styles[`btn_${color}`]}
 				${styles[`btn_${variant}`]}
