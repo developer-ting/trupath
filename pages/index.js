@@ -1,4 +1,5 @@
 // MODULES //
+import { useState } from "react";
 
 // COMPONENTS //
 import Footer from "@/components/Footer";
@@ -14,6 +15,8 @@ import FieldsSec from "../src/sections/FieldsSec";
 // SECTIONS //
 
 // PLUGINS //
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 // UTILS //
 
@@ -26,6 +29,7 @@ import styles from "@/styles/pages/Home.module.scss";
 
 /** Home Page */
 export default function HomePage() {
+	gsap.registerPlugin(ScrollTrigger);
 	return (
 		<div>
 			{/* Metatags */}
@@ -37,9 +41,9 @@ export default function HomePage() {
 			{/* Page Content starts here */}
 			<main className={`${styles.HomePage}`}>
 				<HomeHero />
-				<Sugarcoating />
-				<TrupathCircle />
-				<Nature />
+				<Sugarcoating gsap={gsap} ScrollTrigger={ScrollTrigger} />
+				{/* <TrupathCircle /> */}
+				{/* <Nature gsap={gsap} ScrollTrigger={ScrollTrigger} /> */}
 				<SweetTaste />
 				<FieldsSec />
 			</main>

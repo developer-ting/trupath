@@ -1,6 +1,7 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 
 // MODULES //
+import { useEffect } from "react";
 
 // COMPONENTS //
 
@@ -19,7 +20,7 @@ import vectorImg from "../../public/img/home/vector_img.png";
 // DATA //
 
 /** HomeHero Section */
-export default function Nature() {
+export default function Nature({gsap, ScrollTrigger}) {
 	return <div className={`${styles.Nature}`}>
 		<div className="container">
 			<div className={`${styles.nature_section} f_r_aj_between`}>
