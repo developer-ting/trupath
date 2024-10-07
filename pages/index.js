@@ -11,6 +11,7 @@ import TrupathCircle from "../src/sections/TrupathCircle";
 import Nature from "../src/sections/Nature";
 import SweetTaste from "../src/sections/SweetTaste";
 import FieldsSec from "../src/sections/FieldsSec";
+import GreatValueSec from "../src/sections/GreatValueSec";
 
 // SECTIONS //
 
@@ -46,6 +47,7 @@ export default function HomePage() {
 				{/* <Nature gsap={gsap} ScrollTrigger={ScrollTrigger} /> */}
 				<SweetTaste />
 				<FieldsSec />
+				<GreatValueSec />
 			</main>
 			{/* Page Content ends here */}
 
