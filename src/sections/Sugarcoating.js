@@ -55,7 +55,7 @@ export default function Sugarcoating({gsap, ScrollTrigger}) {
 				},
 				{
 				  scaleX: 0.2,      // Ending horizontal scale (50% of original width)
-				  scaleY: 0.6,      // Ending vertical scale (30% of original height)
+				  scaleY: 0.55,      // Ending vertical scale (30% of original height)
 				  y: "40%",         // Ending translateY
 				},
 				"second"
