@@ -12,6 +12,7 @@ import Nature from "../src/sections/Nature";
 import SweetTaste from "../src/sections/SweetTaste";
 import FieldsSec from "../src/sections/FieldsSec";
 import GreatValueSec from "../src/sections/GreatValueSec";
+import ProductSec from "../src/sections/ProductSec";
 
 // SECTIONS //
 
@@ -45,9 +46,12 @@ export default function HomePage() {
 				<Sugarcoating gsap={gsap} ScrollTrigger={ScrollTrigger} />
 				{/* <TrupathCircle /> */}
 				{/* <Nature gsap={gsap} ScrollTrigger={ScrollTrigger} /> */}
-				<SweetTaste />
-				<FieldsSec />
-				<GreatValueSec />
+				<div className={`${styles.background}`}>
+					<SweetTaste />
+					<ProductSec />
+					<FieldsSec />
+					<GreatValueSec />
+				</div>
 			</main>
 			{/* Page Content ends here */}
 

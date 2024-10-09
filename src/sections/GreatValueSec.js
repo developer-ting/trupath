@@ -7,7 +7,7 @@ import React, { useState, useEffect } from "react";
 
 // PLUGINS //
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 // UTILS //
 
@@ -16,11 +16,13 @@ import styles from "@/styles/sections/GreatValueSec.module.scss";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/autoplay";
 
 // IMAGES //
 import SliderImg1 from "../../public/img/home/image1.jpg";
 import SliderImg2 from "../../public/img/home/image2.jpg";
 import SliderImg3 from "../../public/img/home/image3.jpg";
+import Wave from "../../public/img/home/wave.png";
 
 // DATA //
 
@@ -36,12 +38,13 @@ export default function GreatValueSec() {
 				<h5 className="text_40">जिंदगी बनाओ गुड़ से मीठी</h5>
 			</div>
 			<Swiper
-				modules={[Navigation]}
+				modules={[Navigation, Autoplay]}
 				slidesPerView={1.8}
 				spaceBetween={20}
 				grabCursor={true}
 				centeredSlides={true}
-				speed={500}
+				speed={1000}
+				autoplay={{ delay: 2000, disableOnInteraction: false }}
 				loop={true}
 			>
 				<SwiperSlide>
@@ -63,6 +66,7 @@ export default function GreatValueSec() {
 					<img src={SliderImg3.src} className="width_100" alt="Slider Images" />
 				</SwiperSlide>
 			</Swiper>
+			<img src={Wave.src} className={`${styles.Waves} width_100`} alt="Wave" />
 		</section>
 	);
 }

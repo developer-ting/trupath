@@ -2,11 +2,12 @@
 
 .main_footer {
 	// height: 100px;
-	background-color: var(--color_primary);
+	background-color: #572314;
 	color: var(--color_tertiary);
 	.footer_upper {
 		padding: 40px 0;
 		.LogoBx {
+			width: fit-content;
 			padding-bottom: 50px;
 		}
 		.MainFlex{
