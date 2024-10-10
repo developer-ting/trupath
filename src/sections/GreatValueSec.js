@@ -38,7 +38,7 @@ export default function GreatValueSec() {
 				<h5 className="text_40">जिंदगी बनाओ गुड़ से मीठी</h5>
 			</div>
 			<Swiper
-				modules={[Navigation, Autoplay]}
+				modules={[Navigation, Autoplay, Pagination]}
 				slidesPerView={1.8}
 				spaceBetween={20}
 				grabCursor={true}
@@ -46,6 +46,12 @@ export default function GreatValueSec() {
 				speed={1000}
 				autoplay={{ delay: 2000, disableOnInteraction: false }}
 				loop={true}
+				breakpoints={{
+					768: {
+						slidesPerView: 1.2,
+						spaceBetween: 10,
+					},
+				}}
 			>
 				<SwiperSlide>
 					<img src={SliderImg1.src} className="width_100" alt="Slider Images" />
