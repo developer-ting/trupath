@@ -5,7 +5,7 @@
 	.FlexMain {
 		display: flex;
 		justify-content: space-between;
-		align-items: flex-end;
+		align-items: flex-start;
 		@media screen and (max-width: 991px) {
 			flex-direction: column;
 			gap: 30px;

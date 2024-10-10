@@ -79,7 +79,8 @@ export default function Footer() {
 								<div className={`${styles.content}`}>
 									<p className="text_20">
 										<a href="tel:+91 83695 54202">+91 83695 54202</a>{" "}
-										<span className="visible_lg">|</span> <br className="hidden_lg" />
+										<span className={`${styles.hidden_md}`}>|</span>{" "}
+										<br className={`${styles.visible_md}`} />
 										<a href="tel:+91 83695 54202">+91 83695 54202</a>
 									</p>
 								</div>

@@ -1,6 +1,7 @@
 @import "../helpers/helpers.scss";
 			
 .GreatValueSec{
+    position: relative;
     padding-top: 50px;
     h2{
         text-align: center;
@@ -10,5 +11,10 @@
     h5{
         text-align: center;
         padding-bottom: 30px;
+    }
+    .Waves{
+        position: absolute;
+        z-index: 1;
+        bottom: -5px;
     }
 }

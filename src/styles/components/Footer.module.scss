@@ -2,11 +2,12 @@
 
 .main_footer {
 	// height: 100px;
-	background-color: var(--color_primary);
-	color: var(--color_tertiary);
+	background-color: #572314;
+	color: var(--color_tertiary) !important;
 	.footer_upper {
 		padding: 40px 0;
 		.LogoBx {
+			width: fit-content;
 			padding-bottom: 50px;
 		}
 		.MainFlex{
@@ -31,12 +32,24 @@
 					align-items: flex-start;
 					gap: 15px;
 					img{
-						min-width: 15px;
+						width: 20px;
 						padding-top: 5px;
 					}
 					.content{
 						p{
-							color: var(--color_tertiary);
+							color: var(--color_tertiary) !important;
+						}
+						.hidden_md{
+							display: inline-block;
+							@media screen and (max-width:991px) {
+								display: none !important;
+							}
+						}
+						.visible_md{
+							display: none !important;
+							@media screen and (max-width:991px) {
+								display: block !important;
+							}
 						}
 					}
 				}
@@ -69,10 +82,10 @@
 						border-radius: 10px;
 						border: 0;
 						font-family: var(--font_primary);
-						color: var(--color_primary);
-						background-color: var(--color_tertiary);
+						color: var(--color_primary) !important;
+						background-color: var(--color_tertiary) !important;
 						&::placeholder{
-							font-family: var(--font_tertiary);
+							color: var(--color_primary) !important;
 						}
 					}
 				}
@@ -87,10 +100,10 @@
 						border-radius: 10px;
 						border: 0;
 						font-family: var(--font_primary);
-						color: var(--color_primary);
-						background-color: var(--color_tertiary);
+						color: var(--color_primary) !important;
+						background-color: var(--color_tertiary) !important;
 						&::placeholder{
-							font-family: var(--font_tertiary);
+							color: var(--color_primary) !important;
 						}
 					}
 				}
@@ -112,6 +125,18 @@
 		.SocialBx {
 			display: flex;
 			gap: 10px;
+			.IconBx{
+				// margin: auto;
+				a{
+					display: flex;
+					width: 25px;
+					height: 25px;
+					border-radius: 50%;
+					justify-content: center;
+					align-items: center;
+					background-color: white;
+				}
+			}
 		}
 		.MadeByTing {
 		}
