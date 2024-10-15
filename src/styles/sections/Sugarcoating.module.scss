@@ -7,7 +7,6 @@
         // transform: none !important;
         .sugarcoating{
             z-index: 1;
-            padding-top: 60px;
             position: relative;
             // overflow: hidden;
             // transform: none !important;
@@ -16,6 +15,7 @@
                 position: relative;
                 img{
                     width: 100%;
+                    clip-path: polygon(5% 0, 95% 0, 99% 3%, 95% 100%, 25% 100%, 5% 100%, 0 3%);
                 }
             }
             .sugarcoating_info{
@@ -101,9 +101,9 @@
                             bottom: 100px;
                         }
                         .product_circle_img{
-                            width: 325px;
+                            width: 360px;
                             left: 50%;
-                            top: -100%;
+                            // top: -90%;
                             position: absolute;
                             transform: translateX(-50%);
                             @media (min-width: 1441px) and (max-width: 5000px) {
