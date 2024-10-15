@@ -9,6 +9,6 @@ $colors: "primary" "primary_contrast", "secondary" "secondary_contrast", "white"
 
 	// Classes for Text colors
 	.color_#{$color} {
-		color: var(--color_#{$color});
+		color: var(--color_#{$color}) !important;
 	}
 }
