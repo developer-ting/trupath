@@ -158,7 +158,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				`.${styles.product_circle_img}`,
 				{
 					rotate: "16deg",
-					duration: 10, // Starting top position
+					duration: 10,
 				},
 				{
 					rotate: "0deg",
