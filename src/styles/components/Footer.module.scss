@@ -10,100 +10,46 @@
 			width: fit-content;
 			padding-bottom: 50px;
 		}
-		.MainFlex{
+		.MainFlex {
 			display: flex;
 			justify-content: space-between;
-			@media screen and (max-width:767px) {
+			@media screen and (max-width: 767px) {
 				flex-direction: column;
 				gap: 30px;
 			}
-			.ContactDetails{
+			.ContactDetails {
 				width: 40%;
 				color: var(--color_tertiary);
-				@media screen and (max-width:1199px) {
+				@media screen and (max-width: 1199px) {
 					width: 45%;
 				}
-				@media screen and (max-width:767px) {
+				@media screen and (max-width: 767px) {
 					width: 100%;
 				}
-				.DetailsBx{
+				.DetailsBx {
 					padding-top: 30px;
 					display: flex;
 					align-items: flex-start;
 					gap: 15px;
-					img{
+					img {
 						width: 20px;
 						padding-top: 5px;
 					}
-					.content{
-						p{
+					.content {
+						p {
 							color: var(--color_tertiary) !important;
 						}
-						.hidden_md{
+						.hidden_md {
 							display: inline-block;
-							@media screen and (max-width:991px) {
+							@media screen and (max-width: 991px) {
 								display: none !important;
 							}
 						}
-						.visible_md{
+						.visible_md {
 							display: none !important;
-							@media screen and (max-width:991px) {
+							@media screen and (max-width: 991px) {
 								display: block !important;
 							}
-						}
-					}
-				}
-			}
-			.ContactForm{
-				width: calc(60% - 100px);
-				@media screen and (max-width:1199px) {
-					width: 50%;
-				}
-				@media screen and (max-width:767px) {
-					width: 100%;
-				}
-				.twoInputs{
-					display: flex;
-					justify-content: space-between;
-					padding-bottom: 20px;
-					@media screen and (max-width:1199px) {
-						flex-direction: column;
-						gap: 20px;
-					}
-				}
-				.formGroup{
-					width: 48%;
-					@media screen and (max-width:1199px) {
-						width: 100%;
-					}
-					input{
-						width: 100%;
-						padding: 18px;
-						border-radius: 10px;
-						border: 0;
-						font-family: var(--font_primary);
-						color: var(--color_primary) !important;
-						background-color: var(--color_tertiary) !important;
-						&::placeholder{
-							color: var(--color_primary) !important;
-						}
-					}
-				}
-				.formGroup1{
-					width: 100%;
-					min-height: 100px;
-					padding-bottom: 20px;
-					textarea{
-						width: 100%;
-						min-height: 100px;
-						padding: 18px;
-						border-radius: 10px;
-						border: 0;
-						font-family: var(--font_primary);
-						color: var(--color_primary) !important;
-						background-color: var(--color_tertiary) !important;
-						&::placeholder{
-							color: var(--color_primary) !important;
 						}
 					}
 				}
@@ -115,7 +61,7 @@
 		justify-content: space-between;
 		padding: 40px 0;
 		border-top: 1px solid rgba($color: #f0b180, $alpha: 0.1);
-		@media screen and (max-width:767px) {
+		@media screen and (max-width: 767px) {
 			flex-direction: column;
 			align-items: center;
 			gap: 30px;
@@ -125,9 +71,9 @@
 		.SocialBx {
 			display: flex;
 			gap: 10px;
-			.IconBx{
+			.IconBx {
 				// margin: auto;
-				a{
+				a {
 					display: flex;
 					width: 25px;
 					height: 25px;

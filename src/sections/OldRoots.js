@@ -41,6 +41,14 @@ export default function OldRoots() {
 		},
 		responsive: [
 			{
+				breakpoint: 991,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+					//variableWidth: false,
+				},
+			},
+			{
 				breakpoint: 767,
 				settings: {
 					slidesToShow: 1,
