@@ -106,7 +106,7 @@
 		@extend %full_overlay;
 		top: unset;
 		bottom: 0px;
-		height: 1px;
+		height: 1.5px;
 		transform-origin: left;
 	}
 
@@ -131,6 +131,13 @@
 
 		&:after {
 			background-color: var(--color_secondary);
+		}
+	}
+	&.btn_tertiary {
+		color: var(--color_tertiary);
+
+		&:after {
+			background-color: var(--color_tertiary);
 		}
 	}
 }

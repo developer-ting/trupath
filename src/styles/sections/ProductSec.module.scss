@@ -1,181 +1,181 @@
 @import "../helpers/helpers.scss";
-			
-.ProductSec{
-    position: relative;
-    padding-bottom: 80px;
-    @media screen and (max-width:767px) {
-        padding-bottom: 30px;
-    }
-    .Hand{
-        position: relative;
-        // top: 0;
-        // left: 0;
-            @media screen and (max-width:991px) {
-                width: 40%;
-            }
-    }
-    .Sugarcane1{
-        position: absolute;
-        left: 0;
-    }
-    .Sugarcane2{
-        position: absolute;
-        right: 0;
-    }
-    .MainSec{
-        margin-top: -50px;
-        position: relative;
-        z-index: 2;
-        h2{
-            text-align: center;
-            color: var(--color_primary);
-            padding-bottom: 10px;
-        }
-        .Download{
-            display: flex;
-            align-items: center;
-            color: var(--color_secondary);
-            gap: 5px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid var(--color_secondary);
-            width: fit-content;
-            margin: auto;
-        }
-        .GridBox{
-            position: relative;
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 30px;
-            padding: 30px 0 70px;
-            @media screen and (max-width:1199px) {
-                gap: 60px;
-            }
-            @media screen and (max-width:991px) {
-                grid-template-columns: repeat(2,1fr);
-                row-gap: 60px;
-            }
-            @media screen and (max-width:767px) {
-                grid-template-columns: repeat(1,1fr);
-                row-gap: 60px;
-            }
-            .GridItem {
-                position: relative;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                .Shadow{
-                    position: absolute;
-                    bottom: -50px;
-                }
-                .ProductItem {
-                    box-shadow: none;
-                    text-shadow: none;
-                    background-color: transparent;
-                    outline: none !important;
-                    text-decoration: none;
-                    padding: 0;
-                    border: none;
-                    margin: 0;
-                    display: inline-block;
-                    line-height: 0;
-                    position: relative;
-                    transition: all 0.5s;
-                    .span_outer {
-                        z-index: 2;
-                        height: 292px;
-                        width: 292px;
-                        display: inline-block;
-                        background-color: #f47441;
-                        border-radius: 100%;
-                        @extend %rel_xy_center;
-                        @media screen and (max-width:1199px) {
-                           width: 240px;
-                           height: 240px;
-                        }
-                        @media screen and (max-width:991px) {
-                           width: 290px;
-                           height: 290px;
-                        }
-                
-                        .span_inner {
-                            display: inline-block;
-                            width: 100%;
-                            height: 100%;
-                            @extend %rel_xy_center;
-                            // overflow: hidden;
-                        }
-                        .btn_arrow {
-                            position: absolute;
-                                left: 50%;
-                                top: 50%;
-                                transform: translate(-50%, -50%);
-                                transition: all 0.5s;
-                            
-                        }
-                    }
-                    .knoMoreImg {
-                        transform: rotate(0deg);
-                        opacity: 0;
-                        transition: all 0.5s;
-                    }
-                    .Btn{
-                        position: absolute;
-                        z-index: 3;
-                        top: 70%;
-                        left: 50%;
-                        opacity: 0;
-                        transform: translate(-50% , -0%);
-                    }
-                    &:hover {
-                        .span_outer {
-                            .btn_arrow {
-                                &.btn_arrow1 {
-                                    // transform: translate(180%, -180%);
-                                }
-                            }
-                        }
-                        .knoMoreImg {
-                            opacity: 1;
-                            animation: rotate1 10s linear infinite;
-                            // transform: rotate(-50deg);
-                        }
-                        .Btn{ 
-                            opacity: 1;
-                            transform: translate(-50% , -50%);
-                        }
-                    }
-                    @keyframes rotate1 {
-                        0% {
-                            transform: rotate(0deg);
-                          }
-                          100% {
-                            transform: rotate(360deg);
-                          }
-                    }
-                }
-            }
-        }
-        .ShopMain{
-            text-align: center;
-            .ShopBox{
-                width: fit-content;
-                margin: auto;
-                display: flex;
-                gap: 10px;
-                padding-top: 10px;
-                @media screen and (max-width:767px) {
-                    flex-direction: column;
-                    gap: 15px;
-                }
-                .ShopItem{
-                    width: 160px;
-                    display: flex;
-                    justify-content: center;
-                    padding: 15px 30px;
-                    border-radius: 50px;
-                    background-color: var(--color_white);
-                }
-            }
-        }
-    }
+
+.ProductSec {
+	position: relative;
+	padding-bottom: 80px;
+	@media screen and (max-width: 767px) {
+		padding-bottom: 30px;
+	}
+	.Hand {
+		position: relative;
+		// top: 0;
+		// left: 0;
+		@media screen and (max-width: 991px) {
+			width: 40%;
+		}
+	}
+	.Sugarcane1 {
+		position: absolute;
+		left: 0;
+	}
+	.Sugarcane2 {
+		position: absolute;
+		right: 0;
+	}
+	.MainSec {
+		margin-top: -50px;
+		position: relative;
+		z-index: 2;
+		h2 {
+			text-align: center;
+			color: var(--color_primary);
+			padding-bottom: 10px;
+		}
+		.Download {
+			display: flex;
+			align-items: center;
+			color: var(--color_secondary);
+			gap: 5px;
+			padding-bottom: 5px;
+			border-bottom: 1px solid var(--color_secondary);
+			width: fit-content;
+			margin: auto;
+		}
+		.GridBox {
+			position: relative;
+			display: grid;
+			grid-template-columns: repeat(1, 1fr);
+			gap: 30px;
+			padding: 30px 0 70px;
+			@media screen and (max-width: 1199px) {
+				gap: 60px;
+			}
+			@media screen and (max-width: 991px) {
+				grid-template-columns: repeat(1, 1fr);
+				row-gap: 60px;
+			}
+			@media screen and (max-width: 767px) {
+				grid-template-columns: repeat(1, 1fr);
+				row-gap: 60px;
+			}
+			.GridItem {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				.Shadow {
+					position: absolute;
+					bottom: -50px;
+				}
+				.ProductItem {
+					box-shadow: none;
+					text-shadow: none;
+					background-color: transparent;
+					outline: none !important;
+					text-decoration: none;
+					padding: 0;
+					border: none;
+					margin: 0;
+					display: inline-block;
+					line-height: 0;
+					position: relative;
+					transition: all 0.5s;
+					.span_outer {
+						z-index: 2;
+						height: 292px;
+						width: 292px;
+						display: inline-block;
+						background-color: #f47441;
+						border-radius: 100%;
+						@extend %rel_xy_center;
+						@media screen and (max-width: 1199px) {
+							width: 290px;
+							height: 290px;
+						}
+						@media screen and (max-width: 991px) {
+							width: 290px;
+							height: 290px;
+						}
+
+						.span_inner {
+							display: inline-block;
+							width: 100%;
+							height: 100%;
+							@extend %rel_xy_center;
+							// overflow: hidden;
+						}
+						.btn_arrow {
+							position: absolute;
+							left: 50%;
+							top: 50%;
+							transform: translate(-50%, -50%);
+							transition: all 0.5s;
+						}
+					}
+					.knoMoreImg {
+						transform: rotate(0deg);
+						opacity: 1;
+						animation: rotate1 10s linear infinite;
+						// transition: all 0.5s;
+					}
+					.Btn {
+						position: absolute;
+						z-index: 3;
+						top: 70%;
+						left: 50%;
+						opacity: 0;
+						transform: translate(-50%, -0%);
+					}
+					&:hover {
+						.span_outer {
+							.btn_arrow {
+								&.btn_arrow1 {
+									// transform: translate(180%, -180%);
+								}
+							}
+						}
+						.knoMoreImg {
+							// opacity: 1;
+							// animation: rotate1 10s linear infinite;
+							// transform: rotate(-50deg);
+						}
+						.Btn {
+							opacity: 1;
+							transform: translate(-50%, -50%);
+						}
+					}
+					@keyframes rotate1 {
+						0% {
+							transform: rotate(0deg);
+						}
+						100% {
+							transform: rotate(360deg);
+						}
+					}
+				}
+			}
+		}
+		.ShopMain {
+			text-align: center;
+			.ShopBox {
+				width: fit-content;
+				margin: auto;
+				display: flex;
+				gap: 10px;
+				padding-top: 10px;
+				@media screen and (max-width: 767px) {
+					// flex-direction: column;
+					// gap: 15px;
+				}
+				.ShopItem {
+					width: 160px;
+					display: flex;
+					justify-content: center;
+					padding: 15px 30px;
+					border-radius: 50px;
+					background-color: var(--color_white);
+				}
+			}
+		}
+	}
 }

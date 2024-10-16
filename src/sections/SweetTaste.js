@@ -64,6 +64,41 @@ export default function SweetTaste() {
 								<br /> digestion
 							</p>
 						</div>
+						<div className={`${styles.TextBoxes} d_f`}>
+							<img src={Tick.src} alt="Tick Image" />
+							<p className="text_14">
+								Supports
+								<br /> respiratory health
+							</p>
+						</div>
+						<div className={`${styles.TextBoxes} d_f`}>
+							<img src={Tick.src} alt="Tick Image" />
+							<p className="text_14">
+								Promotes
+								<br /> menstrual comfort
+							</p>
+						</div>
+						<div className={`${styles.TextBoxes} d_f`}>
+							<img src={Tick.src} alt="Tick Image" />
+							<p className="text_14">
+								Boosts
+								<br /> energy
+							</p>
+						</div>
+						<div className={`${styles.TextBoxes} d_f`}>
+							<img src={Tick.src} alt="Tick Image" />
+							<p className="text_14">
+								High in
+								<br /> antioxidants
+							</p>
+						</div>
+						<div className={`${styles.TextBoxes} d_f`}>
+							<img src={Tick.src} alt="Tick Image" />
+							<p className="text_14">
+								Rich in
+								<br /> minerals
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>

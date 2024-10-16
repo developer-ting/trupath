@@ -47,7 +47,7 @@ export default function ProductSec() {
 				</a>
 				<div className="container">
 					<div className={`${styles.GridBox}`}>
-						<div className={`${styles.GridItem}`}>
+						{/* <div className={`${styles.GridItem}`}>
 							<div className={`${styles.script_btn}`}>
 								<a className={styles.ProductItem} href="" target="" rel="noreferrer">
 									<span className={styles.span_outer}>
@@ -74,7 +74,7 @@ export default function ProductSec() {
 									className={`${styles.hovered_image}`}
 								/>
 							</div>
-						</div>
+						</div> */}
 						<div className={`${styles.GridItem}`}>
 							<div className={`${styles.script_btn}`}>
 								<a className={styles.ProductItem} href="" target="" rel="noreferrer">
@@ -88,11 +88,11 @@ export default function ProductSec() {
 										className={styles.knoMoreImg}
 										alt="right arrow"
 									/>
-									<div className={`${styles.Btn}`}>
+									{/* <div className={`${styles.Btn}`}>
 										<Button color="primary" variant="filled">
 											Buy Now
 										</Button>
-									</div>
+									</div> */}
 								</a>
 							</div>
 							<div className={`${styles.Shadow}`}>
@@ -103,7 +103,7 @@ export default function ProductSec() {
 								/>
 							</div>
 						</div>
-						<div className={`${styles.GridItem}`}>
+						{/* <div className={`${styles.GridItem}`}>
 							<div className={`${styles.script_btn}`}>
 								<a className={styles.ProductItem} href="" target="" rel="noreferrer">
 									<span className={styles.span_outer}>
@@ -130,7 +130,7 @@ export default function ProductSec() {
 									className={`${styles.hovered_image}`}
 								/>
 							</div>
-						</div>
+						</div> */}
 					</div>
 					<div className={`${styles.ShopMain}`}>
 						<p className="text_16">Order now at</p>
@@ -145,11 +145,11 @@ export default function ProductSec() {
 									<img src={Amazon.src} alt="Amazon Logo" />
 								</a>
 							</div>
-							<div className={`${styles.ShopItem}`}>
+							{/* <div className={`${styles.ShopItem}`}>
 								<a href="">
 									<img src={BB.src} alt="BB Logo" />
 								</a>
-							</div>
+							</div> */}
 						</div>
 					</div>
 				</div>
