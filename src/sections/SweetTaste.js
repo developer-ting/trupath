@@ -12,7 +12,8 @@
 import styles from "@/styles/sections/SweetTaste.module.scss";
 
 // IMAGES //
-import BowlImg from "../../public/img/home/BowlImg.png";
+import BowlImg from "../../public/img/home/JaggeryBowl.png";
+import Tick from "../../public/img/home/Tick.png";
 
 // DATA //
 
@@ -34,7 +35,70 @@ export default function SweetTaste() {
 						</p>
 					</div>
 					<div className={`${styles.ImgBx}`}>
-						<img src={BowlImg.src} alt="Social Icons" className="width_100" />
+						<img src={BowlImg.src} alt="Bowl Image" className={`${styles.BowlImg}`} />
+						<div className={`${styles.TextBoxes} d_f`}>
+							<img src={Tick.src} alt="Tick Image" />
+							<p className="text_14">
+								Improves
+								<br /> immunity
+							</p>
+						</div>
+						<div className={`${styles.TextBoxes} d_f`}>
+							<img src={Tick.src} alt="Tick Image" />
+							<p className="text_14">
+								Enhances
+								<br /> metabolism
+							</p>
+						</div>
+						<div className={`${styles.TextBoxes} d_f`}>
+							<img src={Tick.src} alt="Tick Image" />
+							<p className="text_14">
+								Detoxifies
+								<br /> blood
+							</p>
+						</div>
+						<div className={`${styles.TextBoxes} d_f`}>
+							<img src={Tick.src} alt="Tick Image" />
+							<p className="text_14">
+								Aids
+								<br /> digestion
+							</p>
+						</div>
+						<div className={`${styles.TextBoxes} d_f`}>
+							<img src={Tick.src} alt="Tick Image" />
+							<p className="text_14">
+								Supports
+								<br /> respiratory health
+							</p>
+						</div>
+						<div className={`${styles.TextBoxes} d_f`}>
+							<img src={Tick.src} alt="Tick Image" />
+							<p className="text_14">
+								Promotes
+								<br /> menstrual comfort
+							</p>
+						</div>
+						<div className={`${styles.TextBoxes} d_f`}>
+							<img src={Tick.src} alt="Tick Image" />
+							<p className="text_14">
+								Boosts
+								<br /> energy
+							</p>
+						</div>
+						<div className={`${styles.TextBoxes} d_f`}>
+							<img src={Tick.src} alt="Tick Image" />
+							<p className="text_14">
+								High in
+								<br /> antioxidants
+							</p>
+						</div>
+						<div className={`${styles.TextBoxes} d_f`}>
+							<img src={Tick.src} alt="Tick Image" />
+							<p className="text_14">
+								Rich in
+								<br /> minerals
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>

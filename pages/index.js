@@ -13,6 +13,8 @@ import SweetTaste from "../src/sections/SweetTaste";
 import FieldsSec from "../src/sections/FieldsSec";
 import GreatValueSec from "../src/sections/GreatValueSec";
 import ProductSec from "../src/sections/ProductSec";
+import SugarcaneField from "../src/sections/SugarcaneField";
+import OldRoots from "../src/sections/OldRoots";
 
 // SECTIONS //
 
@@ -42,14 +44,16 @@ export default function HomePage() {
 
 			{/* Page Content starts here */}
 			<main className={`${styles.HomePage}`}>
-				<HomeHero />
+				{/* <HomeHero />
 				<Sugarcoating gsap={gsap} ScrollTrigger={ScrollTrigger} />
-				{/* <TrupathCircle /> */}
-				{/* <Nature gsap={gsap} ScrollTrigger={ScrollTrigger} /> */}
+				<TrupathCircle />
+				<Nature gsap={gsap} ScrollTrigger={ScrollTrigger} /> */}
 				<div className={`${styles.background}`}>
-					<SweetTaste />
+					{/* <SugarcaneField /> */}
+					{/* <SweetTaste /> */}
 					<ProductSec />
 					<FieldsSec />
+					<OldRoots />
 					<GreatValueSec />
 				</div>
 			</main>

@@ -40,3 +40,84 @@
 	padding: 10px 20px;
 	cursor: pointer;
 }
+
+.ContactForm {
+	width: calc(60% - 100px);
+	@media screen and (max-width: 1199px) {
+		width: 50%;
+	}
+	@media screen and (max-width: 767px) {
+		width: 100%;
+	}
+	.twoInputs {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 20px;
+		@media screen and (max-width: 1199px) {
+			flex-direction: column;
+			gap: 20px;
+		}
+	}
+	.formGroup {
+		width: 48%;
+		position: relative;
+		@media screen and (max-width: 1199px) {
+			width: 100%;
+		}
+		input {
+			width: 100%;
+			padding: 18px;
+			border-radius: 10px;
+			border: 0;
+			font-family: var(--font_primary);
+			color: var(--color_primary) !important;
+			background-color: var(--color_tertiary) !important;
+			&::placeholder {
+				// color: var(--color_primary) !important;
+			}
+		}
+	}
+	.formGroup1 {
+		width: 100%;
+		min-height: 100px;
+		padding-bottom: 20px;
+		position: relative;
+		textarea {
+			width: 100%;
+			min-height: 100px;
+			padding: 18px;
+			border-radius: 10px;
+			border: 0;
+			font-family: var(--font_primary);
+			color: var(--color_primary) !important;
+			background-color: var(--color_tertiary) !important;
+			&::placeholder {
+				// color: var(--color_primary) !important;
+			}
+		}
+	}
+	.inputLabels {
+		position: absolute;
+		top: 18px;
+		left: 18px;
+		font-size: 14px;
+		line-height: 1;
+		color: var(--color_primary);
+		pointer-events: none;
+		transition: all 0.2s ease;
+		span {
+			color: var(--color_secondary);
+		}
+		@media screen and (max-width: 767px) {
+			left: 14px;
+			top: 15px;
+		}
+	}
+
+	input:focus + .inputLabels,
+	textarea:focus + .inputLabels,
+	input:not(:placeholder-shown) + .inputLabels,
+	textarea:not(:placeholder-shown) + .inputLabels {
+		opacity: 0;
+	}
+}

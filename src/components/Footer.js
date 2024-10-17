@@ -6,6 +6,7 @@ import { useRef } from "react";
 import Button from "@/components/Buttons/Button";
 
 // SECTIONS //
+import ContactForm from "../sections/ContactForm";
 
 // PLUGINS //
 import { useForm } from "react-hook-form";
@@ -86,104 +87,7 @@ export default function Footer() {
 								</div>
 							</div>
 						</div>
-						<div className={`${styles.ContactForm}`}>
-							<form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
-								<div className={styles.twoInputs}>
-									<div className={styles.formGroup}>
-										{/* <label className={styles.label} htmlFor="name">
-										First Name*
-									</label> */}
-										<input
-											className={`${styles.input} text_14`}
-											type="text"
-											id="firstname"
-											name="firstname"
-											placeholder="First Name*"
-											{...register("firstname", { required: true })}
-										/>
-										{errors.firstname && errors.firstname.type == "required" && (
-											<label className="error">This field is required</label>
-										)}
-									</div>
-									<div className={styles.formGroup}>
-										{/* <label className={styles.label} htmlFor="name">
-										First Name*
-									</label> */}
-										<input
-											className={`${styles.input} text_14`}
-											type="text"
-											id="lastname"
-											name="lastname"
-											placeholder="Last Name*"
-											{...register("lastname", { required: true })}
-										/>
-										{errors.lastname && errors.lastname.type == "required" && (
-											<label className="error">This field is required</label>
-										)}
-									</div>
-								</div>
-								<div className={styles.twoInputs}>
-									<div className={styles.formGroup}>
-										{/* <label className={styles.label} htmlFor="email">
-										Email:
-									</label> */}
-										<input
-											className={`${styles.input} text_14`}
-											type="email"
-											id="email"
-											name="email"
-											placeholder="Email Address*"
-											{...register("email", {
-												required: true,
-												pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
-											})}
-										/>
-										{errors.email && errors.email.type == "required" && (
-											<label className="error">This field is required</label>
-										)}
-										{errors.email && errors.email.type == "pattern" && (
-											<label className="error">Enter valid email</label>
-										)}
-									</div>
-									<div className={styles.formGroup}>
-										{/* <label className={styles.label} htmlFor="name">
-										First Name*
-									</label> */}
-										<input
-											className={`${styles.input} text_14`}
-											type="tel"
-											id="phoneno"
-											name="phoneno"
-											placeholder="Phone Number*"
-											{...register("phoneno", { required: true })}
-										/>
-										{errors.phoneno && errors.phoneno.type == "required" && (
-											<label className="error">This field is required</label>
-										)}
-									</div>
-								</div>
-								<div className={styles.formGroup1}>
-									{/* <label className={styles.label} htmlFor="message">
-										Message:
-									</label> */}
-									<textarea
-										className={styles.textarea}
-										id="message"
-										name="message"
-										placeholder="Message*"
-										{...register("message", {
-											required: true,
-										})}
-									/>
-									{errors.message && errors.message.type == "required" && (
-										<label className="error">This field is required</label>
-									)}
-								</div>
-								<Button color="secondary" variant="filled">
-									Submit
-								</Button>
-							</form>
-						</div>
+						<ContactForm />
 					</div>
 				</div>
 				<div className={`${styles.footer_lower}`}>

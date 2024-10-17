@@ -179,6 +179,9 @@ const StyleGuide = () => {
 						<Button color="primary" variant="underline">
 							Read More
 						</Button>
+						<Button color="tertiary" variant="underline">
+							Read More
+						</Button>
 					</div>
 				</div>
 			</section>

@@ -39,8 +39,8 @@ export default function GreatValueSec() {
 			</div>
 			<Swiper
 				modules={[Navigation, Autoplay, Pagination]}
-				slidesPerView={1.8}
-				spaceBetween={20}
+				slidesPerView={1.2}
+				spaceBetween={10}
 				grabCursor={true}
 				centeredSlides={true}
 				speed={1000}
@@ -48,8 +48,8 @@ export default function GreatValueSec() {
 				loop={true}
 				breakpoints={{
 					768: {
-						slidesPerView: 1.2,
-						spaceBetween: 10,
+						slidesPerView: 1.8,
+						spaceBetween: 20,
 					},
 				}}
 			>
