@@ -44,13 +44,13 @@ export default function HomePage() {
 
 			{/* Page Content starts here */}
 			<main className={`${styles.HomePage}`}>
-				{/* <HomeHero />
+				<HomeHero />
 				<Sugarcoating gsap={gsap} ScrollTrigger={ScrollTrigger} />
-				<TrupathCircle />
+				{/* <TrupathCircle />
 				<Nature gsap={gsap} ScrollTrigger={ScrollTrigger} /> */}
 				<div className={`${styles.background}`}>
-					{/* <SugarcaneField /> */}
-					{/* <SweetTaste /> */}
+					<SugarcaneField />
+					<SweetTaste />
 					<ProductSec />
 					<FieldsSec />
 					<OldRoots />
