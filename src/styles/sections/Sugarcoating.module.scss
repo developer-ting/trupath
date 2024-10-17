@@ -7,15 +7,22 @@
         // transform: none !important;
         .sugarcoating{
             z-index: 1;
+            height: 100vh;
             position: relative;
             // overflow: hidden;
             // transform: none !important;
             // background-color: var(--color_tertiary);
             .sugarcoating_bg{
-                position: relative;
+                left: 50%;
+                width: 100%;
+                bottom: 0;
+                transform: translateX(-50%);
+                position: absolute;
                 img{
                     width: 100%;
                     clip-path: polygon(5% 0, 95% 0, 99% 3%, 95% 100%, 25% 100%, 5% 100%, 0 3%);
+                    // clip-path: polygon(40% 46%, 67% 46%, 70% 50%, 65% 100%, 40% 100%, 35% 49%);
+
                 }
             }
             .sugarcoating_info{
@@ -33,7 +40,7 @@
                         span{
                             padding: 0 5px;
                             .chini_img{
-                                width: 0px;
+                                // width: 0px;
                                 transition: all 0.2s;
                             }
                         }
@@ -55,7 +62,10 @@
             // height: 100vh;
             height: auto;
             position: absolute;
-            padding-top: 150px;
+            left: 0;
+            top: 120%;
+            // padding-top: 150px;
+            // margin-top: 150px;
             .TrupathCircle{
                 height: 100vh;
                 width: 100vw;
@@ -74,6 +84,7 @@
                     aspect-ratio: 1 / 1;
                     .text_para{
                         width: 43%;
+                        opacity: 0;
                         margin: auto;
                         text-align: center;
                         padding-top: 120px;
@@ -115,13 +126,17 @@
                         }
                         .left_star{
                             top: 50%;
-                            left: -10%;
+                            left: 50%;
+                            opacity: 0;
+                            z-index: -1;
                             position: absolute;
                             transform: translate(-50%, -50%);
                         }
                         .right_star{
-                            top: 25%;
-                            right: -10%;
+                            top: 40%;
+                            right: 50%;
+                            z-index: -1;
+                            opacity: 0;
                             position: absolute;
                             transform: translate(-50%, -50%);
                         }

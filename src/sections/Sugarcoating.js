@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 /* eslint-disable no-mixed-spaces-and-tabs */
 /* eslint-disable no-undef */
 // MODULES //
@@ -42,8 +43,9 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 		if (TrupathCircleWrapper) {
 			const height = TrupathCircleWrapper.offsetHeight;
 			setTrupathCircleWrapperHeight(height);
-			console.log(height);
+			console.log(height, " height1");
 		}
+		console.log(trupathCircleWrapperHeight, " height2");
 
 		const productImgRect = productImgRef.current?.getBoundingClientRect(); // Get the position of product_img
 		const productCircle = document.querySelector(`.${styles.product_circle_img}`);
@@ -53,9 +55,11 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				`.${styles.chini_img}`,
 				{
 					width: "0",
+					transform: "scale(0)",
 				},
 				{
 					width: "98px",
+					transform: "scale(1)",
 				},
 				"first"
 			)
@@ -80,6 +84,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				},
 				{
 					color: "#000",
+					delay: "0.2",
 				},
 				"second"
 			)
@@ -90,6 +95,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				},
 				{
 					color: "#000",
+					delay: "0.2",
 				},
 				"second"
 			)
@@ -134,37 +140,67 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				},
 				"fourth"
 			)
-			.fromTo(
-				`.${styles.TrupathCircle}`,
+			// .fromTo(
+			// 	`.${styles.TrupathCircle}`,
+			// 	{
+			// 		y: "0%", // Starting translateY
+			// 	},
+			// 	{
+			// 		y: "-120%", // Adjust the end translateY to reduce the gap
+			// 	},
+			// 	"fourth"
+			// )
+			.to(
+				`.${styles.TrupathCircleWrapper}`,
 				{
-					y: "0%", // Starting translateY
-				},
-				{
-					y: "-120%", // Adjust the end translateY to reduce the gap
-				},
-				"fourth"
-			)
-			.fromTo(
-				`.${styles.product_circle_img}`,
-				{
-					top: "-90vh", // Starting top position
-				},
-				{
-					top: "250px",
+					top: "0%", // Starting translateY
 				},
 				"fourth"
 			)
 			.fromTo(
 				`.${styles.product_circle_img}`,
 				{
-					rotate: "16deg",
-					duration: 10,
+					top: "-100%", // Starting top position
 				},
 				{
-					rotate: "0deg",
+					top: "25%",
 				},
 				"fourth"
+			)
+			.to(
+				`.${styles.text_para}`,
+				{
+					opacity: "1", // Starting translateY
+				},
+				"five"
+			)
+			.to(
+				`.${styles.left_star}`,
+				{
+					left: "35%",
+					opacity: "1",
+				},
+				"five"
+			)
+			.to(
+				`.${styles.right_star}`,
+				{
+					right: "30%",
+					opacity: "1",
+				},
+				"five"
 			);
+		// .fromTo(
+		// 	`.${styles.product_circle_img}`,
+		// 	{
+		// 		rotate: "16deg",
+		// 		duration: 10, // Starting top position
+		// 	},
+		// 	{
+		// 		rotate: "0deg",
+		// 	},
+		// 	"fourth"
+		// );
 
 		ScrollTrigger.create({
 			trigger: `.${styles.two_section_wrapper}`,
@@ -179,53 +215,89 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 
 		const productImgElement = productImgRef.current;
 
-		if (productImgElement) {
-			const productImgRect = productImgElement.getBoundingClientRect();
-			const productCircle = document.querySelector(
-				`.${styles.product_circle_img}`
-			);
+		// if (productImgElement) {
+		// 	const productImgRect = productImgElement.getBoundingClientRect();
+		// 	const productCircle = document.querySelector(
+		// 		`.${styles.product_circle_img}`
+		// 	);
 
-			if (productCircle) {
-				sugarcoatingAnimTimeline2.fromTo(
-					`.${styles.product_circle_img}`,
-					{
-						top: "250px", // Starting position
-						left: `${productCircle.offsetLeft}px`, // Start from the current position
-					},
-					{
-						top: `${productImgRect.top}px`, // Animate to the product_img position
-						left: `${productImgRect.left}px`, // Adjust horizontal position if necessary
-						duration: 1,
-						ease: "power1.inOut",
-					},
-					"fourth"
-				);
-			}
-		}
-		ScrollTrigger.create({
-			trigger: `.${styles.Nature}`,
-			animation: sugarcoatingAnimTimeline2,
-			start: "top bottom",
-			end: "+=" + winH * 1,
-			// pin: true,
-			scrub: true,
-			markers: true,
-			// pinSpacing: false,
-		});
+		// 	if (productCircle) {
+		// 		sugarcoatingAnimTimeline2.fromTo(
+		// 			`.${styles.product_circle_img}`,
+		// 			{
+		// 				top: "250px", // Starting position
+		// 				left: `${productCircle.offsetLeft}px`, // Start from the current position
+		// 			},
+		// 			{
+		// 				top: `${productImgRect.top}px`, // Animate to the product_img position
+		// 				left: `${productImgRect.left}px`, // Adjust horizontal position if necessary
+		// 				duration: 1,
+		// 				ease: "power1.inOut",
+		// 			},
+		// 			"fourth"
+		// 		);
+		// 	}
+		// }
+		// ScrollTrigger.create({
+		// 	trigger: `.${styles.Nature}`,
+		// 	animation: sugarcoatingAnimTimeline2,
+		// 	start: "top bottom",
+		// 	end: "+=" + winH * 1,
+		// 	// pin: true,
+		// 	scrub: true,
+		// 	markers: true,
+		// 	// pinSpacing: false,
+		// });
 	}, []);
+
+	const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
+	const [scrollPosition, setScrollPosition] = useState(0);
+	const imgRef = useRef(null); // Create a ref for the image element
+
+	// Function to handle image load
+	const handleImageLoad = () => {
+		if (imgRef.current) {
+			const { width, height } = imgRef.current.getBoundingClientRect();
+			setImageSize({ width, height });
+		}
+	};
+
+	// Function to handle scroll
+	const handleScroll = () => {
+		setScrollPosition(window.scrollY);
+
+		if (imgRef.current) {
+			const { width, height } = imgRef.current.getBoundingClientRect();
+			setImageSize({ width, height });
+		}
+	};
+
+	useEffect(() => {
+		// Add scroll event listener
+		window.addEventListener("scroll", handleScroll);
+
+		// Cleanup scroll event listener on component unmount
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
+
+	console.log(imageSize, "imageSize");
 
 	return (
 		<section className={`${styles.section_wrapper}`}>
-			<div
-				className={styles.two_section_wrapper}
-				style={{ paddingBottom: trupathCircleWrapperHeight }}
-			>
+			<div className={styles.two_section_wrapper}>
 				<div className={`${styles.sugarcoating}`}>
+					{/* <p>Image width: {imageSize.width}px</p>
+					<p>Image height: {imageSize.height}px</p>
+					<p>Scroll position: {scrollPosition}px</p> */}
 					<div className={`${styles.sugarcoating_bg}`}>
 						<img
 							src={sugarcoatingBg.src}
+							ref={imgRef}
 							className={`${styles.sugarcoating_bg_img} img-responsive`}
 							alt="sugarcoatingBg"
+							onLoad={handleImageLoad} // Calls function when image is loaded
 						/>
 					</div>
 					<div className={`${styles.sugarcoating_info}`}>
@@ -252,6 +324,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 						</div>
 					</div>
 				</div>
+
 				<div className={`${styles.TrupathCircleWrapper} TrupathCircleWrapper`}>
 					<div className={`${styles.TrupathCircle}`}>
 						<div className={`${styles.circle_div}`}>
@@ -267,6 +340,11 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 									src={productCircle.src}
 									className={`${styles.product_circle_img} img-responsive`}
 									alt="product_circle"
+									style={{
+										width: `${imageSize.width}px`, // Set width dynamically
+										height: `${imageSize.height}px`, // Set height dynamically
+										objectFit: "contain", // Optional: maintain aspect ratio
+									}}
 								/>
 								<div className={`${styles.left_star}`}>
 									<img src={leftStar.src} className="img-responsive" alt="left_star" />
