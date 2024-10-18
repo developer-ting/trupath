@@ -45,7 +45,7 @@ export default function Header() {
 					</Link>
 
 					{/* Links Wrap */}
-					<div className={`${styles.links_wrap}`}>				
+					<div className={`${styles.links_wrap}`}>
 						<div className={styles.links}>
 							<Link href="">
 								<div className={`${styles.link_title} text_16`}>About Us</div>
