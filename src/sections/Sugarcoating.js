@@ -32,23 +32,50 @@ import vectorImg from "../../public/img/home/vector_img.png";
 export default function Sugarcoating({ gsap, ScrollTrigger }) {
 	const [trupathCircleWrapperHeight, setTrupathCircleWrapperHeight] =
 		useState(0);
+	const [productHeight, setProductHeight] = useState(0);
+	const [windowHeight, setWindowHeight] = useState(0);
 	const productImgRef = useRef(null); // Create a ref for product_img
+	const productHeightSection = windowHeight;
+	console.log(productHeightSection, "productHeightSection");
 
 	useEffect(() => {
 		const winH = window.innerHeight;
 		const winW = window.innerWidth;
+		setWindowHeight(winH);
 		const sugarcoatingAnimTimeline = gsap.timeline({});
 		const sugarcoatingAnimTimeline2 = gsap.timeline({});
 		const TrupathCircleWrapper = document.querySelector(".TrupathCircleWrapper");
+		const windowHeight = window.innerHeight;
+		const additionalHeight = 100;
+		const natureHeight = windowHeight + additionalHeight + "px";
+
+		const root = document.documentElement;
+		const containerLeftSpace = getComputedStyle(root).getPropertyValue(
+			"--container_left_space"
+		);
+
+		console.log("Container Left Space:", containerLeftSpace);
+
 		if (TrupathCircleWrapper) {
 			const height = TrupathCircleWrapper.offsetHeight;
 			setTrupathCircleWrapperHeight(height);
-			console.log(height, " height1");
 		}
-		console.log(trupathCircleWrapperHeight, " height2");
 
-		const productImgRect = productImgRef.current?.getBoundingClientRect(); // Get the position of product_img
-		const productCircle = document.querySelector(`.${styles.product_circle_img}`);
+		const circle = document.querySelector(`.${styles.product_circle}`);
+		const natureProductImg = document.querySelector(`.${styles.product_img}`);
+
+		if (circle && natureProductImg) {
+			const circleProductImgBottom = circle.getBoundingClientRect().height;
+			const natureProductImgBottom =
+				natureProductImg.getBoundingClientRect().height;
+
+			const distanceBetweenBottoms =
+				circleProductImgBottom - natureProductImgBottom;
+			setProductHeight(distanceBetweenBottoms);
+			console.log("Distance", circleProductImgBottom);
+			console.log("Distance", natureProductImgBottom);
+			console.log("Distance", distanceBetweenBottoms);
+		}
 
 		sugarcoatingAnimTimeline
 			.fromTo(
@@ -170,7 +197,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 			.to(
 				`.${styles.text_para}`,
 				{
-					opacity: "1", // Starting translateY
+					opacity: "1",
 				},
 				"five"
 			)
@@ -189,18 +216,41 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					opacity: "1",
 				},
 				"five"
+			)
+			.to(
+				`.${styles.circle_div}`,
+				{
+					overflow: "inherit",
+				},
+				"five"
+			)
+			// .fromTo(
+			// 	`.${styles.product_circle_img}`,
+			// 	{
+			// 		top: "25%",
+			// 	},
+			// 	{
+			// 		top: `${natureHeight}`,
+			// 		// top: "100%",
+			// 	},
+			// 	"six"
+			// );
+			.fromTo(
+				`.${styles.product_circle_img}`,
+				{
+					xPercent: -50,
+					y: 0,
+					rotate: "0deg",
+				},
+				{
+					xPercent: -50,
+					y: 0,
+					rotate: "8deg",
+					ease: "none",
+					delay: 0.1,
+				},
+				"fourth"
 			);
-		// .fromTo(
-		// 	`.${styles.product_circle_img}`,
-		// 	{
-		// 		rotate: "16deg",
-		// 		duration: 10, // Starting top position
-		// 	},
-		// 	{
-		// 		rotate: "0deg",
-		// 	},
-		// 	"fourth"
-		// );
 
 		ScrollTrigger.create({
 			trigger: `.${styles.two_section_wrapper}`,
@@ -209,7 +259,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 			end: "+=" + winH * 2,
 			pin: true,
 			scrub: true,
-			markers: true,
+			// markers: true,
 			// pinSpacing: false,
 		});
 
@@ -238,16 +288,74 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 		// 		);
 		// 	}
 		// }
-		// ScrollTrigger.create({
-		// 	trigger: `.${styles.Nature}`,
-		// 	animation: sugarcoatingAnimTimeline2,
-		// 	start: "top bottom",
-		// 	end: "+=" + winH * 1,
-		// 	// pin: true,
-		// 	scrub: true,
-		// 	markers: true,
-		// 	// pinSpacing: false,
-		// });
+		// const productHeight = window.innerHeight * productHeight;
+		sugarcoatingAnimTimeline2
+			.fromTo(
+				`.${styles.Nature}`,
+				{
+					backgroundColor: "#d94426",
+				},
+				{
+					delay: 3,
+					duration: 5,
+					backgroundColor: "#552415",
+				},
+				"first"
+			)
+			.fromTo(
+				`.${styles.product_circle_img}`,
+				{
+					top: "25%",
+					// left: "50%",
+				},
+				{
+					top: `${natureHeight}`,
+					width: "300px",
+					height: "463px",
+					left: "calc(50% + 240px)",
+					duration: 5,
+				},
+				"first"
+			)
+			.fromTo(
+				`.${styles.left_section}`,
+				{
+					// left: "-70%",
+					left: "30%",
+					opacity: 0,
+				},
+				{
+					left: "0%",
+					opacity: 1,
+					duration: 5,
+				},
+				"second"
+			)
+			.fromTo(
+				`.${styles.right_section}`,
+				{
+					// left: "-70%",
+					right: "30%",
+					opacity: 0,
+				},
+				{
+					right: "-20px",
+					opacity: 1,
+					duration: 5,
+				},
+				"second"
+			);
+
+		ScrollTrigger.create({
+			trigger: `.${styles.Nature}`,
+			animation: sugarcoatingAnimTimeline2,
+			start: "top bottom",
+			end: "+=" + winH * 1,
+			// pin: true,
+			scrub: true,
+			markers: true,
+			// pinSpacing: false,
+		});
 	}, []);
 
 	const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
@@ -281,8 +389,6 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 			window.removeEventListener("scroll", handleScroll);
 		};
 	}, []);
-
-	console.log(imageSize, "imageSize");
 
 	return (
 		<section className={`${styles.section_wrapper}`}>
@@ -364,7 +470,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				</div>
 			</div>
 			<div className={`${styles.Nature}`}>
-				<div className="container">
+				<div className={`${styles.pad_section} container`}>
 					<div className={`${styles.nature_section} f_r_aj_between`}>
 						<div className={`${styles.info}`}>
 							<h2 className="text_50">From the lap of nature, not labs</h2>

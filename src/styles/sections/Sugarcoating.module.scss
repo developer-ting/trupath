@@ -78,16 +78,33 @@
                     height: 100vh; 
                     overflow: hidden;
                     position: absolute;
+                    background-size: cover;
+                    background-repeat: no-repeat;
                     border-top-left-radius: 100vh;
                     border-top-right-radius: 100vh;
                     background-color: #d94426;
-                    aspect-ratio: 1 / 1;
+                    &::before{
+                        content: "";
+                        width: 100vw;
+                        opacity: 0.4;
+                        background-image: url(/_next/static/media/nature_bg.2ef8a126.png);
+                        position: relative;
+                        display: block;
+                        height: 100vh;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                    }
                     .text_para{
                         width: 43%;
                         opacity: 0;
                         margin: auto;
+                        top: -20px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        z-index: 222222222;
                         text-align: center;
                         padding-top: 120px;
+                        position: absolute;
                         @media (min-width: 1441px) and (max-width: 5000px) {
                             padding-top: 130px;
                         }
@@ -116,7 +133,7 @@
                             left: 50%;
                             // top: -90%;
                             position: absolute;
-                            transform: translateX(-50%);
+                            // transform: translateX(-50%) rotate(16deg);
                             @media (min-width: 1441px) and (max-width: 5000px) {
                                 width: 500px;
                             }
@@ -168,13 +185,32 @@
                 }
             }
         }
+        
     }
     .Nature{
-        padding: 100px 0;
+        z-index: -1;
         position: relative;
         // margin-top: 400px;
-        background-image: url(../../../public/img/home/nature_bg.jpg);
+        // background-color: #d94426;
+        &::before{
+            content: "";
+            width: 100%;
+            opacity: 0.4;
+            background-image: url(/_next/static/media/nature_bg.2ef8a126.png);
+            position: absolute;
+            display: block;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        // &.active-bg{
+        //     background-color: #d94426;
+        // }
+        // &.active-bg{
+        //     background-image: url(../../../public/img/home/nature_bg.jpg);
+        // }
         .nature_section{
+            padding: 100px 0;
             .info{
                 width: 40%;
                 h2{
@@ -184,6 +220,7 @@
             }
             .product{
                 width: 60%;
+                position: relative;
                 .left_section{
                     display: flex;
                     width: 170px;
@@ -251,9 +288,11 @@
                     img{
                         width: 325px;
                         margin-left: 50px;
+                        visibility: hidden;
                     }
                 }
             }
         }
     }
+    
 }
