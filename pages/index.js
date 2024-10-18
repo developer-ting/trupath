@@ -37,10 +37,17 @@ export default function HomePage() {
 	return (
 		<div>
 			{/* Metatags */}
-			<MetaTags Title={"Trupath"} Desc={"Home Desc"} OgImg={""} Url={"/"} />
+			<MetaTags
+				Title={"Make the Gud Choice"}
+				Desc={
+					"Go against the crystal grain - from the bitter side of sugar to the better side of sweetness. And return to the Gud ol' ways - onto the trupath"
+				}
+				OgImg={""}
+				Url={"/"}
+			/>
 
 			{/* Header */}
-			<Header />
+			{/* <Header /> */}
 
 			{/* Page Content starts here */}
 			<main className={`${styles.HomePage}`}>
@@ -60,7 +67,7 @@ export default function HomePage() {
 			{/* Page Content ends here */}
 
 			{/* Footer */}
-			<Footer />
+			{/* <Footer /> */}
 		</div>
 	);
 }
