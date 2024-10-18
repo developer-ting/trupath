@@ -7,9 +7,17 @@
 	.TextBx {
 		.Title {
 			width: 40%;
+			overflow: hidden;
+			p {
+				transform: translateY(150%);
+			}
 		}
 		.Desc {
 			width: 50%;
+			overflow: hidden;
+			p {
+				transform: translateY(150%);
+			}
 		}
 	}
 }

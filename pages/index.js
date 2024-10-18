@@ -51,13 +51,13 @@ export default function HomePage() {
 
 			{/* Page Content starts here */}
 			<main className={`${styles.HomePage}`}>
-				{/* <HomeHero />
+				<HomeHero />
 				<Sugarcoating gsap={gsap} ScrollTrigger={ScrollTrigger} />
 				<TrupathCircle />
-				<Nature gsap={gsap} ScrollTrigger={ScrollTrigger} /> */}
+				<Nature gsap={gsap} ScrollTrigger={ScrollTrigger} />
 				<div className={`${styles.background}`}>
-					{/* <SugarcaneField /> */}
-					{/* <SweetTaste /> */}
+					<SugarcaneField gsap={gsap} ScrollTrigger={ScrollTrigger} />
+					<SweetTaste gsap={gsap} ScrollTrigger={ScrollTrigger} />
 					<ProductSec />
 					<FieldsSec />
 					<OldRoots />
@@ -67,7 +67,7 @@ export default function HomePage() {
 			{/* Page Content ends here */}
 
 			{/* Footer */}
-			{/* <Footer /> */}
+			<Footer />
 		</div>
 	);
 }

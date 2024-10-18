@@ -1,4 +1,5 @@
 // MODULES //
+import { useEffect } from "react";
 
 // COMPONENTS //
 
@@ -18,7 +19,31 @@ import Tick from "../../public/img/home/Tick.png";
 // DATA //
 
 /** SweetTaste Section */
-export default function SweetTaste() {
+export default function SweetTaste({ gsap, ScrollTrigger }) {
+	useEffect(() => {
+		const BowlAnimTimeline = gsap.timeline({});
+
+		BowlAnimTimeline.to(
+			`.${styles.TextBoxes}`,
+			{
+				y: "0",
+				x: "0",
+				opacity: "1",
+			},
+			"first"
+		);
+
+		ScrollTrigger.create({
+			trigger: `.${styles.SweetTaste}`,
+			animation: BowlAnimTimeline,
+			start: "top center",
+			end: "bottom center",
+			pin: false,
+			scrub: true,
+			markers: false,
+			// pinSpacing: false,
+		});
+	}, []);
 	return (
 		<section className={`${styles.SweetTaste}`}>
 			<div className="container">
