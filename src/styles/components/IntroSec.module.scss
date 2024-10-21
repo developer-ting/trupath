@@ -1,0 +1,70 @@
+@import "../helpers/helpers.scss";
+
+.IntroMain {
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background-color: var(--color_tertiary);
+	z-index: 2;
+	.Logo {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 170px;
+		transform: translate(-50%, -50%);
+	}
+	.MainDiv {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		.Cloud1 {
+			position: absolute;
+			left: 30px;
+			top: 20%;
+		}
+		.Cloud2 {
+			position: absolute;
+			right: 30px;
+			top: 10%;
+		}
+		.Title {
+			opacity: 0;
+			position: absolute;
+			width: max-content;
+			top: 60%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		.Grass1 {
+			opacity: 0;
+			position: absolute;
+			left: 2%;
+			bottom: 6%;
+		}
+		.Grass2 {
+			opacity: 0;
+			position: absolute;
+			left: 15%;
+			bottom: 12%;
+		}
+		.Grass3 {
+			opacity: 0;
+			position: absolute;
+			right: 15%;
+			bottom: 15%;
+		}
+		.Grass4 {
+			opacity: 0;
+			position: absolute;
+			right: -5px;
+			bottom: 3%;
+		}
+		.ScrollBtn {
+			position: absolute;
+			bottom: 3%;
+			left: 50%;
+			transform: translateX(-50%);
+			opacity: 0;
+		}
+	}
+}

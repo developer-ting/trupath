@@ -4,6 +4,7 @@ import { useState } from "react";
 // COMPONENTS //
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import IntroSec from "../src/components/IntroSec";
 import MetaTags from "@/components/MetaTags";
 import HomeHero from "../src/sections/HomeHero";
 import Sugarcoating from "../src/sections/Sugarcoating";
@@ -38,7 +39,7 @@ export default function HomePage() {
 		<div>
 			{/* Metatags */}
 			<MetaTags Title={"Trupath"} Desc={"Home Desc"} OgImg={""} Url={"/"} />
-
+			<IntroSec gsap={gsap} />
 			{/* Header */}
 			<Header />
 
