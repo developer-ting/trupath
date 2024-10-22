@@ -2,6 +2,20 @@
 
 .SugarcaneField {
 	padding: 50px 0;
+	position: relative;
+	// &::before{
+	// 	content: "";
+	// 	width: 100%;
+	// 	opacity: 0.4;
+	// 	background-image: url(../../../public/img/home/nature_bg_wave.png);
+	// 	position: absolute;
+	// 	display: block;
+	// 	height: 50px;
+	// 	top: 0;
+	// 	left: 0;
+	// 	background-size: cover;
+	// 	background-repeat: no-repeat;
+	// }
 	.CloudsBox {
 	}
 	.TextBx {

@@ -32,7 +32,7 @@ import knoMore from "../../public/img/home/Product2_Marquee.png";
 /** ProductSec Section */
 export default function ProductSec() {
 	return (
-		<section className={styles.ProductSec}>
+		<section className={styles.ProductSec} id="Health Benefits">
 			<img className={`${styles.Hand}`} src={Hand.src} alt="" />
 			<img className={`${styles.Sugarcane1}`} src={Sugarcane1.src} alt="" />
 			<img className={`${styles.Sugarcane2}`} src={Sugarcane2.src} alt="" />

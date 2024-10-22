@@ -78,7 +78,7 @@ export default function OldRoots() {
 		setProgressWidth((currInd / 6) * 100);
 	};
 	return (
-		<section className={styles.OldRoots}>
+		<section className={styles.OldRoots} id="Manufacturing">
 			<div className="container">
 				<div className={`${styles.Head} f_r_aj_between`}>
 					<h2 className="text_50 color_primary">Old roots for new relishes</h2>

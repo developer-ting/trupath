@@ -36,8 +36,11 @@
         .info{
             padding-top: 7%;
             text-align: center;
-            @media (min-width: 1441px) and (max-width: 1920px) {
-                padding-top: 12%;
+            // @media (min-width: 1201px) and (max-width: 1440px) {
+            //     padding-top: 10%;
+            // }
+            @media screen and (min-width: 1280px) and (max-width: 1440px) and (min-height: 585px) and (max-height: 730px) {
+                padding-top: 5%;
             }
             p{
                 color: var(--color_primary);
@@ -54,21 +57,26 @@
         .product_img{
             left: 50%;
             z-index: 1;
-            bottom: -0;
+            bottom: 0;
             position: absolute;
             transform: translateX(-50%);
-            @media (min-width: 1441px) and (max-width: 1920px) {
-                bottom: 0;
-            }
+            
             img{
-               width: 70%;
+            //    width: 70%;
                margin: auto;
+               @media (min-width: 1201px) and (max-width: 1440px) {
+                width: 70%;
+             }
+              
             }
         }
         .sugarcane{
             bottom: 0;
             width: 100%;
             position: absolute;
+            height: 50vh;
+            width: 100%;
+            object-fit: cover;
             img{
                 width: 100%;
             }

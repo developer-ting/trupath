@@ -21,7 +21,7 @@ import Supply from "../../public/img/home/supply.svg";
 /** FieldsSec Section */
 export default function FieldsSec() {
 	return (
-		<section className={styles.FieldsSec}>
+		<section className={styles.FieldsSec} id="Products">
 			<div className="container">
 				<div className={`${styles.FlexMain}`}>
 					<div className={`${styles.TextBx}`}>

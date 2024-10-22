@@ -45,7 +45,7 @@ export default function SweetTaste({ gsap, ScrollTrigger }) {
 		});
 	}, []);
 	return (
-		<section className={`${styles.SweetTaste}`}>
+		<section className={`${styles.SweetTaste}`} id="Our Story">
 			<div className="container">
 				<div className={`${styles.FlexMain}`}>
 					<div className={`${styles.TextBx}`}>

@@ -64,8 +64,7 @@
             position: absolute;
             left: 0;
             top: 120%;
-            // padding-top: 150px;
-            // margin-top: 150px;
+          
             .TrupathCircle{
                 height: 100vh;
                 width: 100vw;
@@ -87,7 +86,7 @@
                         content: "";
                         width: 100vw;
                         opacity: 0.4;
-                        background-image: url(/_next/static/media/nature_bg.2ef8a126.png);
+                        background-image: url(../../../public/img/home/nature_bg.png);
                         position: relative;
                         display: block;
                         height: 100vh;
@@ -98,7 +97,7 @@
                         width: 43%;
                         opacity: 0;
                         margin: auto;
-                        top: -20px;
+                        top: -40px;
                         left: 50%;
                         transform: translateX(-50%);
                         z-index: 222222222;
@@ -132,6 +131,7 @@
                             width: 360px;
                             left: 50%;
                             // top: -90%;
+                            z-index: 2;
                             position: absolute;
                             // transform: translateX(-50%) rotate(16deg);
                             @media (min-width: 1441px) and (max-width: 5000px) {
@@ -178,9 +178,23 @@
                 .title_div{
                     top: -70px;
                     width: 100%;
+                    left: 15px;
+                    height: 100vh;
+                    overflow: hidden;
                     position: absolute;
+                    transform: rotate(0deg);
+                    opacity: 1;
+                    // animation: rotate1 10s linear infinite;
                     img{
                         width: 100%;
+                    }
+                }
+                @keyframes rotate1 {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+                    100% {
+                        transform: rotate(360deg);
                     }
                 }
             }
@@ -192,17 +206,21 @@
         position: relative;
         // margin-top: 400px;
         // background-color: #d94426;
-        &::before{
+        // background-image: url();
+        &::after{
             content: "";
             width: 100%;
             opacity: 0.4;
-            background-image: url(/_next/static/media/nature_bg.2ef8a126.png);
+            top: 0;
+            left: 0;
+            background-image: url(../../../public/img/home/nature_bg.png);
             position: absolute;
             display: block;
             height: 100%;
             background-size: cover;
             background-repeat: no-repeat;
         }
+       
         // &.active-bg{
         //     background-color: #d94426;
         // }

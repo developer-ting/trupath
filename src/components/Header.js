@@ -1,9 +1,11 @@
+/* eslint-disable require-jsdoc */
 // MODULES //
 import { useState } from "react";
 
 // COMPONENTS //
 import Image from "next/image";
 import Link from "next/link";
+import Button from "../components/Buttons/Button";
 
 // SECTIONS //
 
@@ -23,10 +25,43 @@ import Arrow from "@/../public/img/icons/arrow.svg";
 /** Header Component */
 export default function Header() {
 	const [openSidebar, setOpenSidebar] = useState(false);
+	const [sidebarActive, setSidebarActive] = useState(false);
 
 	/** Open sidebar on click of hamburger */
 	const toggleSidebar = () => {
 		setOpenSidebar(!openSidebar);
+		setSidebarActive(!sidebarActive);
+	};
+
+	/** scrollToSection */
+	const scrollToSection = (id) => {
+		const element = document.getElementById(id);
+		if (!element) return;
+
+		const targetPosition =
+			element.getBoundingClientRect().top + window.scrollY - 80;
+		const startPosition = window.scrollY;
+		const distance = targetPosition - startPosition;
+		const duration = 600; // Duration in ms
+		let startTime = null;
+
+		/** animation */
+		const animation = (currentTime) => {
+			if (startTime === null) startTime = currentTime;
+			const timeElapsed = currentTime - startTime;
+			const progress = Math.min(timeElapsed / duration, 1);
+
+			const ease = (t) => t * (2 - t);
+			const easeProgress = ease(progress);
+
+			window.scrollTo(0, startPosition + distance * easeProgress);
+
+			if (timeElapsed < duration) {
+				requestAnimationFrame(animation);
+			}
+		};
+
+		requestAnimationFrame(animation);
 	};
 
 	return (
@@ -47,38 +82,70 @@ export default function Header() {
 					{/* Links Wrap */}
 					<div className={`${styles.links_wrap}`}>
 						<div className={styles.links}>
-							<Link href="">
+							<div
+								onClick={() => {
+									toggleSidebar();
+									scrollToSection("About");
+								}}
+							>
 								<div className={`${styles.link_title} text_16`}>About Us</div>
-							</Link>
+							</div>
 						</div>
 						<div className={styles.links}>
-							<Link href="">
+							<div
+								onClick={() => {
+									toggleSidebar();
+									scrollToSection("Value");
+								}}
+							>
 								<div className={`${styles.link_title} text_16`}>Value</div>
-							</Link>
+							</div>
 						</div>
 						<div className={styles.links}>
-							<Link href="">
+							<div
+								onClick={() => {
+									toggleSidebar();
+									scrollToSection("Our Story");
+								}}
+							>
 								<div className={`${styles.link_title} text_16`}>Our Story</div>
-							</Link>
+							</div>
 						</div>
 						<div className={styles.links}>
-							<Link href="">
+							<div
+								onClick={() => {
+									toggleSidebar();
+									scrollToSection("Health Benefits");
+								}}
+							>
 								<div className={`${styles.link_title} text_16`}>Health Benefits</div>
-							</Link>
+							</div>
 						</div>
 						<div className={styles.links}>
-							<Link href="">
+							<div
+								onClick={() => {
+									toggleSidebar();
+									scrollToSection("Products");
+								}}
+							>
 								<div className={`${styles.link_title} text_16`}>Products</div>
-							</Link>
+							</div>
 						</div>
 						<div className={styles.links}>
-							<Link href="">
+							<div
+								onClick={() => {
+									toggleSidebar();
+									scrollToSection("Manufacturing");
+								}}
+							>
 								<div className={`${styles.link_title} text_16`}>Manufacturing</div>
-							</Link>
+							</div>
 						</div>
 						<div className={styles.links}>
 							<Link href="">
-								<div className={`${styles.link_title} text_16`}>Recipes</div>
+								<Button color="secondary" variant="filled">
+									Contact
+								</Button>
 							</Link>
 						</div>
 					</div>

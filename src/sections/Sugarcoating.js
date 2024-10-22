@@ -24,7 +24,12 @@ import leftStar from "../../public/img/home/left_star.png";
 import rightStar from "../../public/img/home/right_star.png";
 import hand from "../../public/img/home/hand.png";
 import productRecepi from "../../public/img/home/product_recepi.png";
-import vectorImg from "../../public/img/home/vector_img.png";
+import vectorImg1 from "../../public/img/home/vector_img_1.png";
+import vectorImg2 from "../../public/img/home/vector_img_2.png";
+import vectorImg3 from "../../public/img/home/vector_img_3.png";
+import vectorImg4 from "../../public/img/home/vector_img_4.png";
+import vectorImg5 from "../../public/img/home/vector_img_5.png";
+import vectorImg6 from "../../public/img/home/vector_img_6.png";
 
 // DATA //
 
@@ -393,7 +398,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 	return (
 		<section className={`${styles.section_wrapper}`}>
 			<div className={styles.two_section_wrapper}>
-				<div className={`${styles.sugarcoating}`}>
+				<div className={`${styles.sugarcoating}`} id="About">
 					{/* <p>Image width: {imageSize.width}px</p>
 					<p>Image height: {imageSize.height}px</p>
 					<p>Scroll position: {scrollPosition}px</p> */}
@@ -483,15 +488,15 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 						<div className={`${styles.product}`}>
 							<div className={`${styles.left_section}`}>
 								<div className={`${styles.top_item}`}>
-									<img src={vectorImg.src} className="img-responsive" alt="vectorImg" />
+									<img src={vectorImg1.src} className="img-responsive" alt="vectorImg" />
 									<p className="text_16">Made with the finest sugarcane</p>
 								</div>
 								<div className={`${styles.center_item}`}>
-									<img src={vectorImg.src} className="img-responsive" alt="vectorImg" />
+									<img src={vectorImg2.src} className="img-responsive" alt="vectorImg" />
 									<p className="text_16">Unadulterated, premium quality</p>
 								</div>
 								<div className={`${styles.bottom_item}`}>
-									<img src={vectorImg.src} className="img-responsive" alt="vectorImg" />
+									<img src={vectorImg3.src} className="img-responsive" alt="vectorImg" />
 									<p className="text_16">Unapologetically desi</p>
 								</div>
 							</div>
@@ -504,15 +509,15 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 							</div>
 							<div className={`${styles.right_section}`}>
 								<div className={`${styles.top_item}`}>
-									<img src={vectorImg.src} className="img-responsive" alt="vectorImg" />
+									<img src={vectorImg4.src} className="img-responsive" alt="vectorImg" />
 									<p className="text_16">Preservatives free</p>
 								</div>
 								<div className={`${styles.center_item}`}>
-									<img src={vectorImg.src} className="img-responsive" alt="vectorImg" />
+									<img src={vectorImg5.src} className="img-responsive" alt="vectorImg" />
 									<p className="text_16">Harmful additives free</p>
 								</div>
 								<div className={`${styles.bottom_item}`}>
-									<img src={vectorImg.src} className="img-responsive" alt="vectorImg" />
+									<img src={vectorImg6.src} className="img-responsive" alt="vectorImg" />
 									<p className="text_16">Guilt free</p>
 								</div>
 							</div>
