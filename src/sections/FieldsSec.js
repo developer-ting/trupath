@@ -46,7 +46,7 @@ export default function FieldsSec() {
 								<img src={Quality.src} alt="Social Icons" className="width_100" />
 							</div>
 							<div className={`${styles.ItemTxt}`}>
-								<p className="text_20 f_w_m">Quality</p>
+								<p className="text_20 f_w_s_b">Quality</p>
 								<p className="text_20">
 									Ensuring our products meet the highest standards
 								</p>
@@ -57,7 +57,7 @@ export default function FieldsSec() {
 								<img src={Hygiene.src} alt="Social Icons" className="width_100" />
 							</div>
 							<div className={`${styles.ItemTxt}`}>
-								<p className="text_20 f_w_m">Hygiene</p>
+								<p className="text_20 f_w_s_b">Hygiene</p>
 								<p className="text_20">
 									Guaranteeing a clean and safe production environment
 								</p>
@@ -68,7 +68,7 @@ export default function FieldsSec() {
 								<img src={Supply.src} alt="Social Icons" className="width_100" />
 							</div>
 							<div className={`${styles.ItemTxt}`}>
-								<p className="text_20 f_w_m">Supply</p>
+								<p className="text_20 f_w_s_b">Supply</p>
 								<p className="text_20">
 									Managing our output to meet demand efficiently
 								</p>

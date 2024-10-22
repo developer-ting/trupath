@@ -37,7 +37,7 @@ export default function SugarcaneField({ gsap, ScrollTrigger }) {
 			trigger: `.${styles.SugarcaneField}`,
 			animation: BowlAnimTimeline,
 			start: "top center",
-			end: "400px center",
+			end: "500px center",
 			pin: false,
 			scrub: true,
 			markers: true,
@@ -72,7 +72,7 @@ export default function SugarcaneField({ gsap, ScrollTrigger }) {
 			</div>
 			<img
 				src={SugarcaneFieldImg.src}
-				className={`${styles.SugarcaneField} width_100`}
+				className={`${styles.SugarcaneFieldImg} width_100`}
 				alt="Sugarcane Image"
 			/>
 		</section>

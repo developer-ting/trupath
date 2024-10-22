@@ -75,7 +75,7 @@ export default function OldRoots() {
 	}, []);
 	/** progress Section */
 	const fillProgress = (currInd) => {
-		setProgressWidth((currInd / 6) * 100);
+		setProgressWidth((currInd / 3) * 100);
 	};
 	return (
 		<section className={styles.OldRoots} id="Manufacturing">

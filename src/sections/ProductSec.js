@@ -25,7 +25,7 @@ import Shadow from "../../public/img/home/Shadow.png";
 import Flipkart from "../../public/img/home/Flipkart.svg";
 import Amazon from "../../public/img/home/Amazon.svg";
 import BB from "../../public/img/home/bb_logo.svg";
-import knoMore from "../../public/img/home/Product2_Marquee.png";
+import knoMore from "../../public/img/home/Product_Marquee.png";
 
 // DATA //
 
@@ -133,7 +133,7 @@ export default function ProductSec() {
 						</div> */}
 					</div>
 					<div className={`${styles.ShopMain}`}>
-						<p className="text_16">Order now at</p>
+						<p className="text_18 color_primary">Order now at</p>
 						<div className={`${styles.ShopBox}`}>
 							<div className={`${styles.ShopItem}`}>
 								<a href="">
