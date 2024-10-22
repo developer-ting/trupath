@@ -75,6 +75,9 @@
 			&::placeholder {
 				// color: var(--color_primary) !important;
 			}
+			&:focus {
+				outline: 0;
+			}
 		}
 	}
 	.formGroup1 {
@@ -94,11 +97,14 @@
 			&::placeholder {
 				// color: var(--color_primary) !important;
 			}
+			&:focus {
+				outline: 0;
+			}
 		}
 	}
 	.inputLabels {
 		position: absolute;
-		top: 18px;
+		top: 19px;
 		left: 18px;
 		font-size: 14px;
 		line-height: 1;

@@ -3,6 +3,13 @@
 .SugarcaneField {
 	padding: 50px 0;
 	.CloudsBox {
+		padding: 100px 0 50px;
+		.Cloud2 {
+			transform: translateY(-100%) !important;
+		}
+		.Cloud3 {
+			padding-right: 50px;
+		}
 	}
 	.TextBx {
 		.Title {

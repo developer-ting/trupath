@@ -39,7 +39,7 @@ export default function HomePage() {
 		<div>
 			{/* Metatags */}
 			<MetaTags Title={"Trupath"} Desc={"Home Desc"} OgImg={""} Url={"/"} />
-			<IntroSec gsap={gsap} />
+			{/* <IntroSec gsap={gsap} /> */}
 			{/* Header */}
 			<Header />
 

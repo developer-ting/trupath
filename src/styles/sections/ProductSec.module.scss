@@ -11,6 +11,19 @@
 		position: relative;
 		// top: 0;
 		// left: 0;
+		width: 37%;
+		@media screen and (max-width: 1680px) {
+			width: 35%;
+		}
+		@media screen and (max-width: 1440px) {
+			width: 30%;
+		}
+		@media screen and (max-width: 1280px) {
+			width: 28%;
+		}
+		@media screen and (max-width: 1199px) {
+			width: auto;
+		}
 		@media screen and (max-width: 991px) {
 			width: 40%;
 		}
@@ -83,19 +96,19 @@
 					transition: all 0.5s;
 					.span_outer {
 						z-index: 2;
-						height: 292px;
-						width: 292px;
+						height: 350px;
+						width: 350px;
 						display: inline-block;
 						background-color: #f47441;
 						border-radius: 100%;
 						@extend %rel_xy_center;
 						@media screen and (max-width: 1199px) {
-							width: 290px;
-							height: 290px;
+							// width: 290px;
+							// height: 290px;
 						}
-						@media screen and (max-width: 991px) {
-							width: 290px;
-							height: 290px;
+						@media screen and (max-width: 767px) {
+							width: 310px;
+							height: 310px;
 						}
 
 						.span_inner {
@@ -104,6 +117,9 @@
 							height: 100%;
 							@extend %rel_xy_center;
 							// overflow: hidden;
+							@media screen and (max-width: 767px) {
+								width: 90%;
+							}
 						}
 						.btn_arrow {
 							position: absolute;

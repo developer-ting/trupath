@@ -27,7 +27,7 @@
 		color: var(--color_tertiary) !important;
 
 		&:hover {
-			background-color: var(--color_tertiary);
+			background-color: var(--color_fourth);
 			color: var(--color_primary) !important;
 		}
 	}
@@ -38,7 +38,7 @@
 		color: var(--color_tertiary) !important;
 
 		&:hover {
-			background-color: var(--color_tertiary);
+			background-color: var(--color_fourth);
 			color: var(--color_primary) !important;
 		}
 	}
@@ -118,26 +118,44 @@
 
 	// Underlined Primary Button
 	&.btn_primary {
-		color: var(--color_primary);
+		color: var(--color_primary) !important;
 
 		&:after {
-			background-color: var(--color_primary);
+			background-color: var(--color_primary) !important;
+		}
+		&:hover {
+			color: var(--color_secondary) !important;
+			&:after {
+				background-color: var(--color_secondary) !important;
+			}
 		}
 	}
 
 	// Underlined Secondary Button
 	&.btn_secondary {
-		color: var(--color_secondary);
+		color: var(--color_secondary) !important;
 
 		&:after {
-			background-color: var(--color_secondary);
+			background-color: var(--color_secondary) !important;
+		}
+		&:hover {
+			color: var(--color_primary) !important;
+			&:after {
+				background-color: var(--color_primary) !important;
+			}
 		}
 	}
 	&.btn_tertiary {
-		color: var(--color_tertiary);
+		color: var(--color_tertiary) !important;
 
 		&:after {
-			background-color: var(--color_tertiary);
+			background-color: var(--color_tertiary) !important;
+		}
+		&:hover {
+			color: var(--color_fourth) !important;
+			&:after {
+				background-color: var(--color_fourth) !important;
+			}
 		}
 	}
 }

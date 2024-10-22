@@ -63,63 +63,63 @@ export default function SweetTaste({ gsap, ScrollTrigger }) {
 						<img src={BowlImg.src} alt="Bowl Image" className={`${styles.BowlImg}`} />
 						<div className={`${styles.TextBoxes} d_f`}>
 							<img src={Tick.src} alt="Tick Image" />
-							<p className="text_14">
+							<p className="text_14 f_w_s_b">
 								Improves
 								<br /> immunity
 							</p>
 						</div>
 						<div className={`${styles.TextBoxes} d_f`}>
 							<img src={Tick.src} alt="Tick Image" />
-							<p className="text_14">
+							<p className="text_14 f_w_s_b">
 								Enhances
 								<br /> metabolism
 							</p>
 						</div>
 						<div className={`${styles.TextBoxes} d_f`}>
 							<img src={Tick.src} alt="Tick Image" />
-							<p className="text_14">
+							<p className="text_14 f_w_s_b">
 								Detoxifies
 								<br /> blood
 							</p>
 						</div>
 						<div className={`${styles.TextBoxes} d_f`}>
 							<img src={Tick.src} alt="Tick Image" />
-							<p className="text_14">
+							<p className="text_14 f_w_s_b">
 								Aids
 								<br /> digestion
 							</p>
 						</div>
 						<div className={`${styles.TextBoxes} d_f`}>
 							<img src={Tick.src} alt="Tick Image" />
-							<p className="text_14">
+							<p className="text_14 f_w_s_b">
 								Supports
 								<br /> respiratory health
 							</p>
 						</div>
 						<div className={`${styles.TextBoxes} d_f`}>
 							<img src={Tick.src} alt="Tick Image" />
-							<p className="text_14">
+							<p className="text_14 f_w_s_b">
 								Promotes
 								<br /> menstrual comfort
 							</p>
 						</div>
 						<div className={`${styles.TextBoxes} d_f`}>
 							<img src={Tick.src} alt="Tick Image" />
-							<p className="text_14">
+							<p className="text_14 f_w_s_b">
 								Boosts
 								<br /> energy
 							</p>
 						</div>
 						<div className={`${styles.TextBoxes} d_f`}>
 							<img src={Tick.src} alt="Tick Image" />
-							<p className="text_14">
+							<p className="text_14 f_w_s_b">
 								High in
 								<br /> antioxidants
 							</p>
 						</div>
 						<div className={`${styles.TextBoxes} d_f`}>
 							<img src={Tick.src} alt="Tick Image" />
-							<p className="text_14">
+							<p className="text_14 f_w_s_b">
 								Rich in
 								<br /> minerals
 							</p>
