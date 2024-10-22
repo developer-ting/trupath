@@ -67,4 +67,78 @@
 			opacity: 0;
 		}
 	}
+	.BowlPathMain {
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+		display: flex;
+		.LeftDiv {
+			// position: relative;
+			position: absolute;
+			bottom: 0;
+			width: 59.6%;
+			.path {
+				width: 100%;
+				clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+				.Path1 {
+				}
+			}
+			.BowlMain {
+				position: absolute;
+				// bottom: 65%;
+				// left: 20%;
+				// .BowlTitle {
+				// 	opacity: 0;
+				// 	text-align: center;
+				// 	padding-bottom: 15px;
+				// 	p {
+				// 		font-size: 25px;
+				// 		line-height: 1.2;
+				// 	}
+				// }
+			}
+		}
+		.RightDiv {
+			// position: relative;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 50%;
+			.path {
+				width: 100%;
+				clip-path: polygon(0 100%, 0 100%, 0 0, 0 0);
+				.Path2 {
+				}
+			}
+			.BowlMain {
+				position: absolute;
+				// bottom: 70%;
+				// right: 20%;
+				// .BowlTitle {
+				// 	opacity: 0;
+				// }
+			}
+		}
+		.BowlTitle {
+			// opacity: 0;
+			text-align: center;
+			padding-bottom: 15px;
+			p {
+				font-size: 25px;
+				line-height: 1.2;
+			}
+		}
+	}
+	.LastBox {
+		position: absolute;
+		top: 33%;
+		left: 50%;
+		transform: translateX(-50%);
+		text-align: center;
+		.LastTitle {
+			padding-bottom: 30px;
+		}
+		.Btn {
+		}
+	}
 }
