@@ -52,13 +52,18 @@ export default function HomeHero() {
 					<img src={mountain.src} className="img-responsive" alt="mountain" />
 				</div> */}
 				<div className={`${styles.product_img}`}>
-					<img src={productImg.src} className="img-responsive" alt="productImg" />
+					<img src={productImg.src} className="img-responsive" alt="product_img" />
 				</div>
 				<div className={`${styles.sugarcane}`}>
-					<img src={sugarcane.src} className="img-responsive" alt="Sugarcane" />
+					<img
+						src={sugarcane.src}
+						className="img-responsive"
+						alt="Sugarcane line1"
+					/>
+					{/* <img src={productImg.src} className="img-responsive" alt="product_img" /> */}
 				</div>
 				<div className={`${styles.leaves}`}>
-					<img src={bgLine.src} className="img-responsive" alt="Sugarcane" />
+					<img src={bgLine.src} className="img-responsive" alt="Sugarcane line" />
 				</div>
 			</div>
 		</div>
