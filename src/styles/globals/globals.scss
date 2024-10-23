@@ -204,3 +204,66 @@ section {
 .b_r_10 {
 	border-radius: 10px;
 }
+
+.toTop {
+	&[data-scroll] {
+		transition: all 1s ease-out;
+	}
+
+	&[data-scroll="in"] {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	&[data-scroll="out"] {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+}
+
+.card1 {
+	&[data-scroll] {
+		transition: all 0.5s ease-out;
+	}
+
+	&[data-scroll="in"] {
+		opacity: 1;
+		transform: rotate(-3deg) translateX(20px);
+	}
+
+	&[data-scroll="out"] {
+		opacity: 0;
+		transform: rotate(0deg) translateX(50px);
+	}
+}
+
+.card2 {
+	&[data-scroll] {
+		transition: all 0.5s ease-out;
+	}
+
+	&[data-scroll="in"] {
+		opacity: 1;
+		transform: rotate(8deg) translate(50px, 0);
+	}
+
+	&[data-scroll="out"] {
+		opacity: 0;
+		transform: rotate(0deg) translate(0, 50px);
+	}
+}
+.card3 {
+	&[data-scroll] {
+		transition: all 0.5s ease-out;
+	}
+
+	&[data-scroll="in"] {
+		opacity: 1;
+		transform: rotate(-2deg) translateY(0);
+	}
+
+	&[data-scroll="out"] {
+		opacity: 0;
+		transform: rotate(-6deg) translateY(50px);
+	}
+}

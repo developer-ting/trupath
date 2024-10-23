@@ -48,7 +48,7 @@ export default function SweetTaste({ gsap, ScrollTrigger }) {
 		<section className={`${styles.SweetTaste}`} id="Our Story">
 			<div className="container">
 				<div className={`${styles.FlexMain}`}>
-					<div className={`${styles.TextBx}`}>
+					<div className={`${styles.TextBx} toTop`} data-scroll>
 						<h2 className="text_50">
 							The sweet taste
 							<br className="hidden_xs" /> of no compromise
@@ -60,7 +60,12 @@ export default function SweetTaste({ gsap, ScrollTrigger }) {
 						</p>
 					</div>
 					<div className={`${styles.ImgBx}`}>
-						<img src={BowlImg.src} alt="Bowl Image" className={`${styles.BowlImg}`} />
+						<img
+							src={BowlImg.src}
+							alt="Bowl Image"
+							className={`${styles.BowlImg} toTop`}
+							data-scroll
+						/>
 						<div className={`${styles.TextBoxes} d_f`}>
 							<img src={Tick.src} alt="Tick Image" />
 							<p className="text_14 f_w_s_b">

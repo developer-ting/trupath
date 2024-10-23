@@ -477,7 +477,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 			<div className={`${styles.Nature}`}>
 				<div className={`${styles.pad_section} container`}>
 					<div className={`${styles.nature_section} f_r_aj_between`}>
-						<div className={`${styles.info}`}>
+						<div className={`${styles.info} toTop`} data-scroll>
 							<h2 className="text_50">From the lap of nature, not labs</h2>
 							<h3 className="text_40">सर्व गुड़ सम्पन्न</h3>
 							<p className="text_20">

@@ -49,10 +49,8 @@
 					padding: 15px;
 				}
 				&:nth-child(1) {
-					transform: rotate(-3deg) translateX(20px);
 				}
 				&:nth-child(2) {
-					transform: rotate(8deg) translateX(50px);
 					z-index: 2;
 					position: relative;
 					@media screen and (max-width: 767px) {
@@ -60,7 +58,7 @@
 					}
 				}
 				&:nth-child(3) {
-					transform: rotate(-2deg);
+					
 				}
 				.ItemImg {
 					width: 70px;

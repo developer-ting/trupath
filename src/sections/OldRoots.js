@@ -75,18 +75,20 @@ export default function OldRoots() {
 	}, []);
 	/** progress Section */
 	const fillProgress = (currInd) => {
-		setProgressWidth((currInd / 3) * 100);
+		console.log(currInd, " currInd");
+
+		setProgressWidth((currInd / 4) * 100);
 	};
 	return (
 		<section className={styles.OldRoots} id="Manufacturing">
 			<div className="container">
-				<div className={`${styles.Head} f_r_aj_between`}>
+				<div className={`${styles.Head} f_r_aj_between toTop`} data-scroll>
 					<h2 className="text_50 color_primary">Old roots for new relishes</h2>
 					<Button color="primary" variant="filled">
 						View All
 					</Button>
 				</div>
-				<div className={`${styles.SliderBox}`}>
+				<div className={`${styles.SliderBox} toTop`} data-scroll>
 					<Slider {...settings}>
 						<div className={`${styles.SliderItem} bg_primary b_r_10`}>
 							<img src={Slide1.src} className="width_100 b_r_10" alt="Slide Image" />

@@ -1,5 +1,5 @@
 // MODULES //
-import { useState } from "react";
+import { useEffect } from "react";
 
 // COMPONENTS //
 import Footer from "@/components/Footer";
@@ -22,6 +22,7 @@ import OldRoots from "../src/sections/OldRoots";
 // PLUGINS //
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import ScrollOut from "scroll-out";
 
 // UTILS //
 
@@ -35,6 +36,11 @@ import styles from "@/styles/pages/Home.module.scss";
 /** Home Page */
 export default function HomePage() {
 	gsap.registerPlugin(ScrollTrigger);
+	useEffect(() => {
+		ScrollOut({
+			once: true,
+		});
+	}, []);
 	return (
 		<div>
 			{/* Metatags */}
@@ -53,7 +59,7 @@ export default function HomePage() {
 					<SugarcaneField gsap={gsap} ScrollTrigger={ScrollTrigger} />
 					<SweetTaste gsap={gsap} ScrollTrigger={ScrollTrigger} />
 					<ProductSec />
-					<FieldsSec />
+					<FieldsSec gsap={gsap} ScrollTrigger={ScrollTrigger} />
 					<OldRoots />
 					<GreatValueSec />
 				</div>

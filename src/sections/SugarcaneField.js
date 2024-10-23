@@ -72,7 +72,8 @@ export default function SugarcaneField({ gsap, ScrollTrigger }) {
 			</div>
 			<img
 				src={SugarcaneFieldImg.src}
-				className={`${styles.SugarcaneFieldImg} width_100`}
+				className={`${styles.SugarcaneFieldImg} width_100 toTop`}
+				data-scroll
 				alt="Sugarcane Image"
 			/>
 		</section>
