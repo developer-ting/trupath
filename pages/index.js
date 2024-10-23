@@ -64,7 +64,7 @@ export default function HomePage() {
 					<GreatValueSec />
 				</div>
 			</main>
-			{/* Page Content ends here */}
+			{/* Page Content ends heree */}
 
 			{/* Footer */}
 			<Footer />
