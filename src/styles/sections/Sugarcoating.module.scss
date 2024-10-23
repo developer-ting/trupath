@@ -1,15 +1,25 @@
 @import "../helpers/helpers.scss";
 
 .section_wrapper{
-    overflow: hidden;
+    // overflow: hidden;
     .two_section_wrapper{
+        position: relative;
         background-color: var(--color_tertiary);
         // transform: none !important;
+        .leaves{
+            z-index: 2;
+            width: 100%;
+            top: -50px;
+            position: absolute;
+            img{
+                width: 100%;
+            }
+        }
         .sugarcoating{
             z-index: 1;
             height: 100vh;
             position: relative;
-            // overflow: hidden;
+            overflow: hidden;
             // transform: none !important;
             // background-color: var(--color_tertiary);
             .sugarcoating_bg{
@@ -39,6 +49,9 @@
                         justify-content: center;
                         span{
                             padding: 0 5px;
+                            height: 98px;
+                            display: flex;
+                            align-items: center;
                             .chini_img{
                                 // width: 0px;
                                 transition: all 0.2s;

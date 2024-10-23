@@ -30,6 +30,7 @@ import vectorImg3 from "../../public/img/home/vector_img_3.png";
 import vectorImg4 from "../../public/img/home/vector_img_4.png";
 import vectorImg5 from "../../public/img/home/vector_img_5.png";
 import vectorImg6 from "../../public/img/home/vector_img_6.png";
+import bgLine from "../../public/img/banner/bg_line.png";
 
 // DATA //
 
@@ -87,11 +88,11 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				`.${styles.chini_img}`,
 				{
 					width: "0",
-					transform: "scale(0)",
+					scale: 0,
 				},
 				{
 					width: "98px",
-					transform: "scale(1)",
+					scale: 1,
 				},
 				"first"
 			)
@@ -106,6 +107,13 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					scaleX: 0.2, // Ending horizontal scale (50% of original width)
 					scaleY: 0.55, // Ending vertical scale (30% of original height)
 					y: "40%", // Ending translateY
+				},
+				"second"
+			)
+			.to(
+				`.${styles.leaves}`,
+				{
+					y: "-100%", // Starting translateY
 				},
 				"second"
 			)
@@ -398,6 +406,9 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 	return (
 		<section className={`${styles.section_wrapper}`}>
 			<div className={styles.two_section_wrapper}>
+				<div className={`${styles.leaves}`}>
+					<img src={bgLine.src} className="img-responsive" alt="Sugarcane line" />
+				</div>
 				<div className={`${styles.sugarcoating}`} id="About">
 					{/* <p>Image width: {imageSize.width}px</p>
 					<p>Image height: {imageSize.height}px</p>
@@ -416,12 +427,8 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 							<h2 className={`${styles.title} text_50`}>No more</h2>
 							<h2 className={`${styles.title} text_50`}>
 								sugarcoating{" "}
-								<span>
-									<img
-										src={chiti.src}
-										className={`${styles.chini_img} img-responsive`}
-										alt="chiti"
-									/>
+								<span className={`${styles.chini_img}`}>
+									<img src={chiti.src} className="img-responsive" alt="chiti" />
 								</span>{" "}
 								the truth
 							</h2>

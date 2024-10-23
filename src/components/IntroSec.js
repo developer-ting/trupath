@@ -1,7 +1,6 @@
 /* eslint-disable require-jsdoc */
 // MODULES //
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { useEffect, useRef } from "react";
 
 // COMPONENTS //
 import Button from "./Buttons/Button";
@@ -32,12 +31,6 @@ import Bowl2 from "../../public/img/intro/Bowl2.png";
 
 /** IntroSec Component */
 export default function IntroSec({ gsap }) {
-	const [active, setActive] = useState(false);
-
-	// handleClick
-	const handleClick = () => {
-		setActive(!active);
-	};
 	useEffect(() => {
 		const introTimeline = gsap.timeline({});
 
@@ -240,10 +233,99 @@ export default function IntroSec({ gsap }) {
 				"10th"
 			);
 	});
+	const handleClick = () => {
+		console.log("Clicked");
 
+		const afterintroTimeline = gsap.timeline({});
+		// Animation for OrangeBg on button click
+		afterintroTimeline
+			.to(
+				`.${styles.OrangeBg}`,
+				1,
+				{
+					y: "-100%",
+					opacity: 1,
+				},
+				"1st"
+			)
+			.to(
+				`.${styles.IntroMain}`,
+				1,
+				{
+					y: "-100%",
+					opacity: 1,
+				},
+				"1st"
+			)
+			.fromTo(
+				".banner_animation",
+				1,
+				{
+					y: "90%",
+					opacity: 1,
+				},
+				{
+					y: "0%",
+					opacity: 1,
+					delay: 0.1,
+				},
+				"1st"
+			)
+			.fromTo(
+				".info",
+				1,
+				{
+					y: "150px",
+					opacity: 1,
+				},
+				{
+					y: "0",
+					opacity: 1,
+					delay: 0.1,
+				},
+				"1st"
+			)
+			.fromTo(
+				".sugarcane",
+				1,
+				{
+					y: "20%",
+					opacity: 1,
+				},
+				{
+					y: "0",
+					opacity: 1,
+					delay: 0.1,
+				},
+				"1st"
+			)
+			.fromTo(
+				".product_img",
+				1,
+				{
+					y: "20%",
+					opacity: 1,
+				},
+				{
+					y: "0",
+					opacity: 1,
+					delay: 0.1,
+				},
+				"1st"
+			)
+			.to(
+				".hidden_header",
+				1,
+				{
+					y: "0%",
+					opacity: 1,
+				},
+				"2st"
+			);
+	};
 	return (
 		<div className={`${styles.IntroWrap}`}>
-			<div className={`${styles.IntroMain} ${active ? styles.active_none : ""}`}>
+			<div className={`${styles.IntroMain}`}>
 				<div className={styles.Logo}>
 					<img className={`${styles.Logo}`} src={Logo.src} alt="Logo Image" />
 				</div>
@@ -318,10 +400,7 @@ export default function IntroSec({ gsap }) {
 					</div>
 				</div>
 			</div>
-			<div
-				className={`${styles.orangeBg} ${active ? styles.active : ""}`}
-				onClick={handleClick}
-			></div>
+			<div className={`${styles.OrangeBg}`}></div>
 		</div>
 	);
 }
