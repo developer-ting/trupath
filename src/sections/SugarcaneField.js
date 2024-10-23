@@ -16,6 +16,7 @@ import styles from "@/styles/sections/SugarcaneField.module.scss";
 import Cloud1 from "../../public/img/home/Cloud1.png";
 import Cloud2 from "../../public/img/home/Cloud2.png";
 import Cloud3 from "../../public/img/home/Cloud3.png";
+import Birds1 from "../../public/img/home/Birds1.png";
 import SugarcaneFieldImg from "../../public/img/home/SugarcaneFieldImg.png";
 
 // DATA //
@@ -46,9 +47,12 @@ export default function SugarcaneField({ gsap, ScrollTrigger }) {
 	}, []);
 	return (
 		<section className={styles.SugarcaneField} id="Value">
+			<div className={`${styles.CloudTop} f_r_aj_center`}>
+				<img src={Cloud2.src} className={`${styles.Cloud2}`} alt="Clouds Image" />
+				<img src={Birds1.src} alt="Birds Image" />
+			</div>
 			<div className={`${styles.CloudsBox} f_r_aj_between`}>
 				<img src={Cloud1.src} className={`${styles.Cloud1}`} alt="Clouds Image" />
-				<img src={Cloud2.src} className={`${styles.Cloud2}`} alt="Clouds Image" />
 				<img src={Cloud3.src} className={`${styles.Cloud3}`} alt="Clouds Image" />
 			</div>
 			<div className="container">
