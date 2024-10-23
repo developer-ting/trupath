@@ -270,3 +270,7 @@ section {
 .hidden_header {
 	transform: translateY(-100%);
 }
+.hidden_main {
+	display: none;
+	overflow: hidden;
+}

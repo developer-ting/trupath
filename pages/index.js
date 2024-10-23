@@ -45,12 +45,12 @@ export default function HomePage() {
 		<div>
 			{/* Metatags */}
 			<MetaTags Title={"Trupath"} Desc={"Home Desc"} OgImg={""} Url={"/"} />
-			{/* <IntroSec gsap={gsap} /> */}
+			<IntroSec gsap={gsap} />
 			{/* Header */}
 			<Header />
 
 			{/* Page Content starts here */}
-			<main className={`${styles.HomePage}`}>
+			<main className={`${styles.HomePage} hidden_main`}>
 				<HomeHero />
 				<Sugarcoating gsap={gsap} ScrollTrigger={ScrollTrigger} />
 				{/* <TrupathCircle />
