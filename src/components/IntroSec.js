@@ -36,7 +36,7 @@ export default function IntroSec({ gsap }) {
 		introTimeline
 			.to(
 				`.${styles.Logo}`,
-				2,
+				1.5,
 				{
 					opacity: "0",
 					// duration: "2",
@@ -46,7 +46,7 @@ export default function IntroSec({ gsap }) {
 
 			.to(
 				`.${styles.Title}`,
-				2,
+				1,
 				{
 					opacity: "1",
 					top: "50%",
@@ -56,31 +56,35 @@ export default function IntroSec({ gsap }) {
 			)
 			.fromTo(
 				`.${styles.Cloud1}`,
-				2,
+				1,
 				{
 					x: "-120%",
+					opacity: 1,
 				},
 				{
 					x: 0,
+					opacity: 1,
 					// duration: "2",
 				},
 				"2nd"
 			)
 			.fromTo(
 				`.${styles.Cloud2}`,
-				2,
+				1,
 				{
 					x: "120%",
+					opacity: 1,
 				},
 				{
 					x: 0,
+					opacity: 1,
 					// duration: "2",
 				},
 				"2nd"
 			)
 			.to(
 				`.${styles.Grass1}, .${styles.Grass2}, .${styles.Grass3}, .${styles.Grass4}`,
-				2,
+				1,
 				{
 					opacity: 1,
 					// duration: "2",
@@ -89,7 +93,7 @@ export default function IntroSec({ gsap }) {
 			)
 			.to(
 				`.${styles.ScrollBtn}`,
-				2,
+				1,
 				{
 					opacity: 1,
 					// duration: "2",
@@ -98,7 +102,7 @@ export default function IntroSec({ gsap }) {
 			)
 			.to(
 				`.${styles.Title}`,
-				2,
+				1,
 				{
 					top: "35%",
 					// duration: "2",
@@ -107,7 +111,7 @@ export default function IntroSec({ gsap }) {
 			)
 			.to(
 				`.${styles.LeftDiv} .${styles.path}`,
-				2,
+				1,
 				{
 					"clip-path": "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)",
 				},
@@ -115,7 +119,7 @@ export default function IntroSec({ gsap }) {
 			)
 			.fromTo(
 				`.${styles.LeftDiv} .${styles.BowlMain}`,
-				2,
+				1,
 				{
 					left: "-100%",
 					bottom: "65%",
@@ -137,7 +141,7 @@ export default function IntroSec({ gsap }) {
 			)
 			.fromTo(
 				`.${styles.LeftDiv} .${styles.BowlTitle}`,
-				2,
+				1,
 				{
 					y: "20px",
 					opacity: 0,
@@ -151,7 +155,7 @@ export default function IntroSec({ gsap }) {
 			)
 			.to(
 				`.${styles.RightDiv} .${styles.path}`,
-				2,
+				1,
 				{
 					"clip-path": "polygon(100% 100%, 0% 100%, 0% 0%, 100% 0%)",
 				},
@@ -159,7 +163,7 @@ export default function IntroSec({ gsap }) {
 			)
 			.to(
 				`.${styles.LeftDiv} .${styles.path}`,
-				2,
+				0.2,
 				{
 					"clip-path": "polygon(90% 0%, 0% 0%, 0% 100%, 90% 100%)",
 				},
@@ -167,7 +171,7 @@ export default function IntroSec({ gsap }) {
 			)
 			.fromTo(
 				`.${styles.RightDiv} .${styles.BowlMain}`,
-				2,
+				1,
 				{
 					right: "-100%",
 					bottom: "65%",
@@ -183,7 +187,7 @@ export default function IntroSec({ gsap }) {
 			)
 			.fromTo(
 				`.${styles.RightDiv} .${styles.BowlTitle}`,
-				2,
+				1,
 				{
 					y: "20px",
 					opacity: 0,
@@ -197,7 +201,7 @@ export default function IntroSec({ gsap }) {
 			)
 			.to(
 				`.${styles.Title}`,
-				2,
+				1,
 				{
 					top: "20%",
 					opacity: 0,
@@ -207,7 +211,7 @@ export default function IntroSec({ gsap }) {
 			)
 			.fromTo(
 				`.${styles.LastBox} .${styles.LastTitle}`,
-				1.5,
+				1,
 				{
 					y: "30%",
 					opacity: 0,
@@ -218,15 +222,15 @@ export default function IntroSec({ gsap }) {
 				},
 				"9th"
 			)
-			.fromTo(
-				`.${styles.LastBox} .${styles.Btn}`,
+			.to(
+				`.${styles.LastBox} .${styles.BtnWrap}`,
 				1,
+				// {
+				// 	y: "40%",
+				// 	opacity: 0,
+				// },
 				{
-					y: "40%",
-					opacity: 0,
-				},
-				{
-					y: "0%",
+					y: "0",
 					opacity: 1,
 				},
 				"10th"
@@ -312,9 +316,11 @@ export default function IntroSec({ gsap }) {
 				<div className={`${styles.LastTitle}`}>
 					<h2 className="text_50 color_secondary">What will you do?</h2>
 				</div>
-				<Button className={`${styles.Btn}`} color="primary" variant="filled">
-					Click to Enter
-				</Button>
+				<div className={`${styles.BtnWrap}`}>
+					<Button className={`${styles.Btn}`} color="primary" variant="filled">
+						Click to Enter
+					</Button>
+				</div>
 			</div>
 		</div>
 	);

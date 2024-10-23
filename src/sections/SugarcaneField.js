@@ -40,7 +40,7 @@ export default function SugarcaneField({ gsap, ScrollTrigger }) {
 			end: "500px center",
 			pin: false,
 			scrub: true,
-			markers: true,
+			markers: false,
 			// pinSpacing: false,
 		});
 	}, []);

@@ -41,10 +41,10 @@ export default function ProductSec() {
 					Pick a pack - one for the pantry,
 					<br /> one on-the-go
 				</h2>
-				<a href="" rel="noreferrer" className={`${styles.Download} text_16`}>
+				{/* <a href="" rel="noreferrer" className={`${styles.Download} text_16`}>
 					Download Catalogue
 					<img src={Download.src} alt="Download Icon" />
-				</a>
+				</a> */}
 				<div className="container">
 					<div className={`${styles.GridBox}`}>
 						{/* <div className={`${styles.GridItem}`}>

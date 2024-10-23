@@ -21,11 +21,13 @@
 			position: absolute;
 			left: 30px;
 			top: 20%;
+			opacity: 0;
 		}
 		.Cloud2 {
 			position: absolute;
 			right: 30px;
 			top: 10%;
+			opacity: 0;
 		}
 		.Title {
 			opacity: 0;
@@ -131,14 +133,19 @@
 	}
 	.LastBox {
 		position: absolute;
-		top: 33%;
+		top: 30%;
 		left: 50%;
 		transform: translateX(-50%);
 		text-align: center;
 		.LastTitle {
 			padding-bottom: 30px;
 		}
-		.Btn {
+		.BtnWrap {
+			// overflow: hidden;
+			transform: translateY(10px);
+			opacity: 0;
+			.Btn {
+			}
 		}
 	}
 }
