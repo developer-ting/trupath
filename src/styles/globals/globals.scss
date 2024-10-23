@@ -267,3 +267,6 @@ section {
 		transform: rotate(-6deg) translateY(50px);
 	}
 }
+.hidden_header {
+	transform: translateY(-100%);
+}

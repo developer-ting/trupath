@@ -120,8 +120,16 @@
 		}
 	}
 
-	input:focus + .inputLabels,
-	textarea:focus + .inputLabels,
+	// input:focus + .inputLabels,
+	// textarea:focus + .inputLabels,
+	// input:not(:placeholder-shown) + .inputLabels,
+	// textarea:not(:placeholder-shown) + .inputLabels {
+	// 	opacity: 0;
+	// }
+	// input:focus + .inputLabels,
+	// textarea:focus + .inputLabels,
+	input:not(:empty) + .inputLabels,
+	textarea:not(:empty) + .inputLabels,
 	input:not(:placeholder-shown) + .inputLabels,
 	textarea:not(:placeholder-shown) + .inputLabels {
 		opacity: 0;
