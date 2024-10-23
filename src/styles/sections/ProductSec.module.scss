@@ -30,7 +30,7 @@
 	}
 	.Sugarcane1 {
 		position: absolute;
-		left: 0;
+		// left: 0;
 	}
 	.Sugarcane2 {
 		position: absolute;
@@ -194,5 +194,43 @@
 				}
 			}
 		}
+	}
+}
+.Sugarcane1 {
+	&[data-scroll] {
+		transition: all 0.5s ease-in-out;
+	}
+
+	&[data-scroll="in"] {
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		opacity: 1;
+	}
+
+	&[data-scroll="out"] {
+		left: -100px;
+		top: 60%;
+		transform: translateY(-50%);
+		opacity: 0;
+	}
+}
+.Sugarcane2 {
+	&[data-scroll] {
+		transition: all 0.5s ease-in-out;
+	}
+
+	&[data-scroll="in"] {
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		opacity: 1;
+	}
+
+	&[data-scroll="out"] {
+		right: -100px;
+		top: 60%;
+		transform: translateY(-50%);
+		opacity: 0;
 	}
 }

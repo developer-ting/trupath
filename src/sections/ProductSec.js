@@ -1,5 +1,5 @@
 // MODULES //
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // COMPONENTS //
 import Button from "../components/Buttons/Button";
@@ -7,6 +7,7 @@ import Button from "../components/Buttons/Button";
 // SECTIONS //
 
 // PLUGINS //
+import ScrollOut from "scroll-out";
 
 // UTILS //
 
@@ -31,11 +32,26 @@ import knoMore from "../../public/img/home/Product_Marquee.png";
 
 /** ProductSec Section */
 export default function ProductSec() {
+	useEffect(() => {
+		ScrollOut({
+			once: true,
+		});
+	}, []);
 	return (
 		<section className={styles.ProductSec} id="Health Benefits">
 			<img className={`${styles.Hand}`} src={Hand.src} alt="" />
-			<img className={`${styles.Sugarcane1}`} src={Sugarcane1.src} alt="" />
-			<img className={`${styles.Sugarcane2}`} src={Sugarcane2.src} alt="" />
+			<img
+				className={`${styles.Sugarcane1}`}
+				src={Sugarcane1.src}
+				alt=""
+				data-scroll
+			/>
+			<img
+				className={`${styles.Sugarcane2}`}
+				src={Sugarcane2.src}
+				alt=""
+				data-scroll
+			/>
 			<div className={`${styles.MainSec}`}>
 				<h2 className="text_50">
 					Pick a pack - one for the pantry,
