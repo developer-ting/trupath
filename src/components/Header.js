@@ -68,7 +68,7 @@ export default function Header() {
 		<div
 			className={`${styles.main_header} ${
 				openSidebar ? styles.sidebar_opened : ""
-			} hidden_header`}
+			} `}
 		>
 			<div className="container">
 				<div className={`${styles.header_inside}`}>

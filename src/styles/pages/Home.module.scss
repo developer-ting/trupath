@@ -1,6 +1,7 @@
 @import "../helpers/helpers.scss";
 
 .HomePage {
+    transition: all 3s;
     .background{
         background-color: var(--color_tertiary);
     }
