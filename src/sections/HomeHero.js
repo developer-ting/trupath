@@ -1,10 +1,12 @@
 // MODULES //
+import React, { useEffect, useRef } from "react";
 
 // COMPONENTS //
 
 // SECTIONS //
 
 // PLUGINS //
+import Lottie from "lottie-web";
 
 // UTILS //
 
@@ -24,14 +26,35 @@ import birds2 from "../../public/img/banner/birds_2.png";
 
 /** HomeHero Section */
 export default function HomeHero() {
+	const Birds = useRef();
+	const Birds2 = useRef();
+	useEffect(() => {
+		// Lottie
+		Lottie.loadAnimation({
+			container: Birds.current,
+			renderer: "svg",
+			loop: true,
+			autoplay: true,
+			animationData: require("../../public/img/home/json/Birds.json"),
+		});
+		Lottie.loadAnimation({
+			container: Birds2.current,
+			renderer: "svg",
+			loop: true,
+			autoplay: true,
+			animationData: require("../../public/img/home/json/Birds2.json"),
+		});
+	}, []);
 	return (
 		<div className={`${styles.hero_wrap} banner_animation`}>
 			<div className={`${styles.banner_section}`}>
 				<div className={`${styles.birds_left}`}>
-					<img src={birds1.src} className="img-responsive" alt="birds1" />
+					<div ref={Birds}></div>
+					{/* <img src={birds1.src} className="img-responsive" alt="birds1" /> */}
 				</div>
 				<div className={`${styles.birds_right}`}>
-					<img src={birds2.src} className="img-responsive" alt="birds2" />
+					<div ref={Birds2}></div>
+					{/* <img src={birds2.src} className="img-responsive" alt="birds2" /> */}
 				</div>
 				<div className={`${styles.cloud_left}`}>
 					<img src={cloud1.src} className="img-responsive" alt="cloud1" />

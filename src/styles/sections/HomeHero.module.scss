@@ -10,15 +10,15 @@
 	.banner_section {
 		.birds_left {
 			top: 175px;
-			left: 10%;
+			left: 0%;
 			position: absolute;
 		}
 		.birds_right {
 			top: 285px;
-			right: 26%;
+			right: 0%;
 			position: absolute;
 			@media (min-width: 1441px) and (max-width: 1920px) {
-				top: 160px;
+				// top: 160px;
 			}
 		}
 		.cloud_left {
@@ -88,12 +88,12 @@
 			transform: translateX(-50%);
 
 			img {
-				    width: 22vw;
-                    margin: auto;
+				width: 22vw;
+				margin: auto;
 				@media (min-width: 1201px) and (max-width: 1680px) {
 					width: 20vw;
 				}
-                @media screen and (min-width: 1201px) and (max-width: 1440px) and (min-height: 585px) and (max-height: 730px) {
+				@media screen and (min-width: 1201px) and (max-width: 1440px) and (min-height: 585px) and (max-height: 730px) {
 					width: 18vw;
 				}
 				@media screen and (min-width: 1441px) and (max-width: 1536px) and (min-height: 585px) and (max-height: 730px) {

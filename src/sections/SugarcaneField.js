@@ -1,11 +1,12 @@
 // MODULES //
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 // COMPONENTS //
 
 // SECTIONS //
 
 // PLUGINS //
+import Lottie from "lottie-web";
 
 // UTILS //
 
@@ -23,7 +24,19 @@ import SugarcaneFieldImg from "../../public/img/home/SugarcaneFieldImg.png";
 
 /** SugarcaneField Section */
 export default function SugarcaneField({ gsap, ScrollTrigger }) {
+	const Birds = useRef();
 	useEffect(() => {
+		// Lottie
+		Lottie.loadAnimation({
+			container: Birds.current,
+			renderer: "svg",
+			loop: true,
+			autoplay: true,
+			animationData: require("../../public/img/home/json/Birds.json"),
+		});
+	}, []);
+	useEffect(() => {
+		const winH = window.innerHeight;
 		const BowlAnimTimeline = gsap.timeline({});
 
 		BowlAnimTimeline.to(
@@ -37,8 +50,8 @@ export default function SugarcaneField({ gsap, ScrollTrigger }) {
 		ScrollTrigger.create({
 			trigger: `.${styles.SugarcaneField}`,
 			animation: BowlAnimTimeline,
-			start: "top center",
-			end: "500px center",
+			start: "top 90%",
+			end: "+=" + winH * 0.8,
 			pin: false,
 			scrub: true,
 			markers: false,
@@ -49,7 +62,7 @@ export default function SugarcaneField({ gsap, ScrollTrigger }) {
 		<section className={styles.SugarcaneField} id="Value">
 			<div className={`${styles.CloudTop} f_r_aj_center`}>
 				<img src={Cloud2.src} className={`${styles.Cloud2}`} alt="Clouds Image" />
-				<img src={Birds1.src} alt="Birds Image" />
+				<div ref={Birds} className={`${styles.Birds}`}></div>
 			</div>
 			<div className={`${styles.CloudsBox} f_r_aj_between`}>
 				<img src={Cloud1.src} className={`${styles.Cloud1}`} alt="Clouds Image" />

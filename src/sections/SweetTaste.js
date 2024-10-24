@@ -21,6 +21,7 @@ import Tick from "../../public/img/home/Tick.png";
 /** SweetTaste Section */
 export default function SweetTaste({ gsap, ScrollTrigger }) {
 	useEffect(() => {
+		const winH = window.innerHeight;
 		const BowlAnimTimeline = gsap.timeline({});
 
 		BowlAnimTimeline.to(
@@ -36,8 +37,8 @@ export default function SweetTaste({ gsap, ScrollTrigger }) {
 		ScrollTrigger.create({
 			trigger: `.${styles.SweetTaste}`,
 			animation: BowlAnimTimeline,
-			start: "top center",
-			end: "bottom center",
+			start: "top 90%",
+			end: "+=" + winH * 0.8,
 			pin: false,
 			scrub: true,
 			markers: false,
