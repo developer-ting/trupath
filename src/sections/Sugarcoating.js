@@ -166,7 +166,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					transform: "translate(-50%, -100%)",
 				},
 				{
-					transform: "translate(-50%, -300%)",
+					transform: "translate(-50%, -100vh)",
 				},
 				"third"
 			)
@@ -204,14 +204,14 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 			.to(
 				`.${styles.TrupathCircleWrapper}`,
 				{
-					top: "0%", // Starting translateY
+					top: "10vh", // Starting translateY
 				},
 				"fourth"
 			)
 			.fromTo(
 				`.${styles.product_circle_img}`,
 				{
-					top: "-100%", // Starting top position
+					top: "-106vh",
 				},
 				{
 					top: "0",
@@ -338,7 +338,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					width: "1440px",
 					height: "810px",
 					left: "calc(50% + 240px)",
-					duration: 5,
+					duration: 15,
 				},
 				"first"
 			)
