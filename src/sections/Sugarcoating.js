@@ -477,11 +477,11 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 									src={productCircle.src}
 									className={`${styles.product_circle_img} img-responsive`}
 									// alt="product_circle"
-									style={{
-										width: `${imageSize.width}px`, // Set width dynamically
-										height: `${imageSize.height}px`, // Set height dynamically
-										objectFit: "contain", // Optional: maintain aspect ratio
-									}}
+									// style={{
+									// 	width: `${imageSize.width}px`, // Set width dynamically
+									// 	height: `${imageSize.height}px`, // Set height dynamically
+									// 	objectFit: "contain", // Optional: maintain aspect ratio
+									// }}
 								/>
 								<div className={`${styles.left_star}`}>
 									<img src={leftStar.src} className="img-responsive" alt="left_star" />
