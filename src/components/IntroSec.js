@@ -50,18 +50,18 @@ export default function IntroSec({ gsap }) {
 				1,
 				{
 					opacity: "1",
-					top: "50%",
+					top: "40%",
 					// duration: "2",
 				},
 				"2nd"
 			)
-			.fromTo(
+			.to(
 				`.${styles.Cloud1}`,
 				1,
-				{
-					x: "-120%",
-					opacity: 1,
-				},
+				// {
+				// 	x: "-120%",
+				// 	opacity: 1,
+				// },
 				{
 					x: 0,
 					opacity: 1,
@@ -69,13 +69,13 @@ export default function IntroSec({ gsap }) {
 				},
 				"2nd"
 			)
-			.fromTo(
+			.to(
 				`.${styles.Cloud2}`,
 				1,
-				{
-					x: "120%",
-					opacity: 1,
-				},
+				// {
+				// 	x: "120%",
+				// 	opacity: 1,
+				// },
 				{
 					x: 0,
 					opacity: 1,
@@ -105,7 +105,7 @@ export default function IntroSec({ gsap }) {
 				`.${styles.Title}`,
 				1,
 				{
-					top: "35%",
+					top: "25%",
 					// duration: "2",
 				},
 				"3rd"
@@ -118,19 +118,13 @@ export default function IntroSec({ gsap }) {
 				},
 				"3rd"
 			)
-			.fromTo(
+			.to(
 				`.${styles.LeftDiv} .${styles.BowlMain}`,
 				1,
-				{
-					left: "-100%",
-					bottom: "65%",
-					y: "-100px",
-				},
 				// {
-				// 	left: "5%",
-				// 	bottom: "75%",
-				// 	y: "30px",
-				// 	duration: 1,
+				// 	left: "-100%",
+				// 	bottom: "65%",
+				// 	y: "-100px",
 				// },
 				{
 					left: "20%",
@@ -140,13 +134,13 @@ export default function IntroSec({ gsap }) {
 				},
 				"4th"
 			)
-			.fromTo(
+			.to(
 				`.${styles.LeftDiv} .${styles.BowlTitle}`,
 				1,
-				{
-					y: "20px",
-					opacity: 0,
-				},
+				// {
+				// 	y: "20px",
+				// 	opacity: 0,
+				// },
 				{
 					y: "0px",
 					opacity: 1,
@@ -170,14 +164,14 @@ export default function IntroSec({ gsap }) {
 				},
 				"6th"
 			)
-			.fromTo(
+			.to(
 				`.${styles.RightDiv} .${styles.BowlMain}`,
 				1,
-				{
-					right: "-100%",
-					bottom: "65%",
-					y: "-100px",
-				},
+				// {
+				// 	right: "-100%",
+				// 	bottom: "65%",
+				// 	y: "-100px",
+				// },
 				{
 					right: "20%",
 					bottom: "70%",
@@ -186,13 +180,13 @@ export default function IntroSec({ gsap }) {
 				},
 				"7th"
 			)
-			.fromTo(
+			.to(
 				`.${styles.RightDiv} .${styles.BowlTitle}`,
 				1,
-				{
-					y: "20px",
-					opacity: 0,
-				},
+				// {
+				// 	y: "20px",
+				// 	opacity: 0,
+				// },
 				{
 					y: "0px",
 					opacity: 1,
@@ -204,19 +198,19 @@ export default function IntroSec({ gsap }) {
 				`.${styles.Title}`,
 				1,
 				{
-					top: "20%",
+					top: "15%",
 					opacity: 0,
 					// duration: "2",
 				},
 				"9th"
 			)
-			.fromTo(
+			.to(
 				`.${styles.LastBox} .${styles.LastTitle}`,
 				1,
-				{
-					y: "30%",
-					opacity: 0,
-				},
+				// {
+				// 	y: "30%",
+				// 	opacity: 0,
+				// },
 				{
 					y: "0%",
 					opacity: 1,
