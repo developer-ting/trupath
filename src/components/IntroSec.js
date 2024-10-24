@@ -240,7 +240,7 @@ export default function IntroSec({ gsap }) {
 					y: "-100%",
 					opacity: 1,
 				},
-				"1st"
+				"2st"
 			)
 			.to(
 				`.${styles.IntroMain}`,
@@ -249,7 +249,7 @@ export default function IntroSec({ gsap }) {
 					y: "-100%",
 					opacity: 1,
 				},
-				"1st"
+				"2st"
 			)
 			.fromTo(
 				".banner_animation",
@@ -263,7 +263,7 @@ export default function IntroSec({ gsap }) {
 					opacity: 1,
 					delay: 0.1,
 				},
-				"1st"
+				"2st"
 			)
 			.fromTo(
 				".info",
@@ -277,7 +277,7 @@ export default function IntroSec({ gsap }) {
 					opacity: 1,
 					delay: 0.1,
 				},
-				"1st"
+				"2st"
 			)
 			.fromTo(
 				".sugarcane",
@@ -291,7 +291,7 @@ export default function IntroSec({ gsap }) {
 					opacity: 1,
 					delay: 0.1,
 				},
-				"1st"
+				"2st"
 			)
 			.fromTo(
 				".product_img",
@@ -305,6 +305,17 @@ export default function IntroSec({ gsap }) {
 					opacity: 1,
 					delay: 0.1,
 				},
+				"2st"
+			)
+			.fromTo(
+				`.${styles.skip_btn}`,
+				1,
+				{
+					display: "block",
+				},
+				{
+					display: "none",
+				},
 				"1st"
 			)
 			.to(
@@ -314,9 +325,10 @@ export default function IntroSec({ gsap }) {
 					y: "0%",
 					opacity: 1,
 				},
-				"2st"
+				"3st"
 			);
 	};
+
 	return (
 		<div className={`${styles.IntroWrap}`}>
 			<div className={`${styles.IntroMain}`}>
@@ -392,6 +404,13 @@ export default function IntroSec({ gsap }) {
 							Click to Enter
 						</Button>
 					</div>
+				</div>
+			</div>
+			<div onClick={handleClick}>
+				<div className={`${styles.skip_btn}`}>
+					<Button className={`${styles.Btn}`} color="primary" variant="filled">
+						skip
+					</Button>
 				</div>
 			</div>
 			<div className={`${styles.OrangeBg}`}></div>

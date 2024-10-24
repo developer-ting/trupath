@@ -1,6 +1,6 @@
 /* eslint-disable require-jsdoc */
 // MODULES //
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // COMPONENTS //
 import Image from "next/image";
@@ -26,12 +26,32 @@ import Arrow from "@/../public/img/icons/arrow.svg";
 export default function Header() {
 	const [openSidebar, setOpenSidebar] = useState(false);
 	const [sidebarActive, setSidebarActive] = useState(false);
+	const [showHeader, setShowHeader] = useState(true);
+	const [lastScrollY, setLastScrollY] = useState(0);
 
 	/** Open sidebar on click of hamburger */
 	const toggleSidebar = () => {
 		setOpenSidebar(!openSidebar);
 		setSidebarActive(!sidebarActive);
 	};
+
+	/** Handle scroll direction */
+	const handleScroll = () => {
+		const currentScrollY = window.scrollY;
+		if (currentScrollY > lastScrollY) {
+			setShowHeader(false); // Hide header when scrolling down
+		} else {
+			setShowHeader(true); // Show header when scrolling up
+		}
+		setLastScrollY(currentScrollY);
+	};
+
+	useEffect(() => {
+		window.addEventListener("scroll", handleScroll);
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, [lastScrollY]);
 
 	/** scrollToSection */
 	const scrollToSection = (id) => {
@@ -45,7 +65,6 @@ export default function Header() {
 		const duration = 600; // Duration in ms
 		let startTime = null;
 
-		/** animation */
 		const animation = (currentTime) => {
 			if (startTime === null) startTime = currentTime;
 			const timeElapsed = currentTime - startTime;
@@ -66,12 +85,12 @@ export default function Header() {
 
 	return (
 		<div
-			className={`${styles.main_header} ${
-				openSidebar ? styles.sidebar_opened : ""
-			} hidden_header`}
+			className={`${styles.main_header} ${openSidebar ? "sidebar_opened" : ""} ${
+				showHeader ? "" : "hidden_header"
+			}`}
 		>
 			<div className="container">
-				<div className={`${styles.header_inside}`}>
+				<div className={styles.header_inside}>
 					{/* Logo wrap */}
 					<Link href="/">
 						<div className={styles.image_wrap}>
@@ -80,7 +99,7 @@ export default function Header() {
 					</Link>
 
 					{/* Links Wrap */}
-					<div className={`${styles.links_wrap}`}>
+					<div className={styles.links_wrap}>
 						<div className={styles.links}>
 							<div
 								onClick={() => {

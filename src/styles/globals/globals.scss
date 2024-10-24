@@ -268,9 +268,14 @@ section {
 	}
 }
 .hidden_header {
-	transform: translateY(-100%);
+	transform: translateY(0%) !important;
 }
+
 .hidden_main {
 	display: none;
 	overflow: hidden;
 }
+// .sidebar_opened{
+// 	transition: all 1s;
+// 	transform: translateY(0%);
+// }

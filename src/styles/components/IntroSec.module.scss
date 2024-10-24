@@ -8,6 +8,12 @@
 	position: absolute;
 	// background-color: var(--color_tertiary);
 	// z-index: 2;
+	.skip_btn{
+		z-index: 2;
+		position: absolute;
+		bottom: 20px;
+		right: 20px;
+	}
 }
 .IntroMain {
 	overflow: hidden;
