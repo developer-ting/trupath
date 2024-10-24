@@ -319,7 +319,7 @@ export default function IntroSec({ gsap }) {
 				"1st"
 			)
 			.to(
-				".hidden_header",
+				".hidden_header_only",
 				1,
 				{
 					y: "0%",
