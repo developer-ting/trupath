@@ -31,6 +31,7 @@ import vectorImg4 from "../../public/img/home/vector_img_4.png";
 import vectorImg5 from "../../public/img/home/vector_img_5.png";
 import vectorImg6 from "../../public/img/home/vector_img_6.png";
 import bgLine from "../../public/img/banner/bg_line.png";
+import transBg from "../../public/img/home/trans_bg.png";
 
 // DATA //
 
@@ -97,16 +98,26 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				"first"
 			)
 			.fromTo(
-				`.${styles.sugarcoating_bg}`,
+				`.${styles.transBg}`,
 				{
-					scaleX: 1.1, // Starting horizontal scale (1 means 100%)
-					scaleY: 1.1, // Starting vertical scale (1 means 100%)
+					scaleX: 10, // Starting horizontal scale (1 means 100%)
+					scaleY: 10, // Starting vertical scale (1 means 100%)
 					y: "0%", // Starting translateY
 				},
 				{
-					scaleX: 0.2, // Ending horizontal scale (50% of original width)
-					scaleY: 0.55, // Ending vertical scale (30% of original height)
-					y: "40%", // Ending translateY
+					scaleX: 1, // Ending horizontal scale (50% of original width)
+					scaleY: 1, // Ending vertical scale (30% of original height)
+					y: "30%", // Ending translateY
+				},
+				"second"
+			)
+			.fromTo(
+				`.${styles.sugarcoating_bg_img}`,
+				{
+					y: "0%", // Starting translateY
+				},
+				{
+					y: "30%", // Ending translateY
 				},
 				"second"
 			)
@@ -160,26 +171,26 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				"third"
 			)
 			.fromTo(
-				`.${styles.sugarcoating_bg}`,
+				`.${styles.transBg}`,
 				{
-					y: "40%", // Starting translateY
+					y: "30%", // Starting translateY
 				},
 				{
 					y: "10%", // Ending translateY
 				},
 				"third"
 			)
-			.fromTo(
-				`.${styles.sugarcoating_bg}`,
-				{
-					opacity: "1", // Starting translateY
-				},
-				{
-					opacity: "0",
-					delay: 0.5, // Ending translateY
-				},
-				"fourth"
-			)
+			// .fromTo(
+			// 	`.${styles.sugarcoating_bg}`,
+			// 	{
+			// 		opacity: "1", // Starting translateY
+			// 	},
+			// 	{
+			// 		opacity: "0",
+			// 		delay: 0.5, // Ending translateY
+			// 	},
+			// 	"fourth"
+			// )
 			// .fromTo(
 			// 	`.${styles.TrupathCircle}`,
 			// 	{
@@ -203,7 +214,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					top: "-100%", // Starting top position
 				},
 				{
-					top: "25%",
+					top: "0",
 				},
 				"fourth"
 			)
@@ -211,8 +222,9 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				`.${styles.text_para}`,
 				{
 					opacity: "1",
+					delay: 0.5,
 				},
-				"five"
+				"fourth"
 			)
 			.to(
 				`.${styles.left_star}`,
@@ -306,25 +318,25 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 			.fromTo(
 				`.${styles.Nature}`,
 				{
-					backgroundColor: "#d94426",
+					backgroundColor: "rgb(255 73 0 / 84%)",
 				},
 				{
 					delay: 3,
-					duration: 5,
-					backgroundColor: "#552415",
+					duration: 10,
+					backgroundColor: "#410F00",
 				},
 				"first"
 			)
 			.fromTo(
 				`.${styles.product_circle_img}`,
 				{
-					top: "25%",
+					top: "3vh",
 					// left: "50%",
 				},
 				{
-					top: `${natureHeight}`,
-					width: "300px",
-					height: "463px",
+					top: "90vh",
+					width: "1440px",
+					height: "810px",
 					left: "calc(50% + 240px)",
 					duration: 5,
 				},
@@ -362,8 +374,8 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 		ScrollTrigger.create({
 			trigger: `.${styles.Nature}`,
 			animation: sugarcoatingAnimTimeline2,
-			start: "top bottom",
-			end: "+=" + winH * 1,
+			start: "top 90%",
+			end: "+=" + winH * 0.8,
 			// pin: true,
 			scrub: true,
 			markers: true,
@@ -419,7 +431,14 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 							ref={imgRef}
 							className={`${styles.sugarcoating_bg_img} img-responsive`}
 							alt="sugarcoatingBg"
-							onLoad={handleImageLoad} // Calls function when image is loaded
+							// onLoad={handleImageLoad}
+						/>
+						<img
+							src={transBg.src}
+							ref={imgRef}
+							className={`${styles.transBg} img-responsive`}
+							alt="sugarcoatingBg"
+							// onLoad={handleImageLoad}
 						/>
 					</div>
 					<div className={`${styles.sugarcoating_info}`}>
@@ -457,7 +476,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 								<img
 									src={productCircle.src}
 									className={`${styles.product_circle_img} img-responsive`}
-									alt="product_circle"
+									// alt="product_circle"
 									style={{
 										width: `${imageSize.width}px`, // Set width dynamically
 										height: `${imageSize.height}px`, // Set height dynamically
