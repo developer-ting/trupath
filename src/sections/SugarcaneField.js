@@ -24,6 +24,7 @@ import SugarcaneFieldImg from "../../public/img/home/SugarcaneFieldImg.png";
 /** SugarcaneField Section */
 export default function SugarcaneField({ gsap, ScrollTrigger }) {
 	useEffect(() => {
+		const winH = window.innerHeight;
 		const BowlAnimTimeline = gsap.timeline({});
 
 		BowlAnimTimeline.to(
@@ -37,8 +38,8 @@ export default function SugarcaneField({ gsap, ScrollTrigger }) {
 		ScrollTrigger.create({
 			trigger: `.${styles.SugarcaneField}`,
 			animation: BowlAnimTimeline,
-			start: "top center",
-			end: "500px center",
+			start: "top 90%",
+			end: "+=" + winH * 0.8,
 			pin: false,
 			scrub: true,
 			markers: false,

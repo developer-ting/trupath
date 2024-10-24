@@ -378,7 +378,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 			end: "+=" + winH * 0.8,
 			// pin: true,
 			scrub: true,
-			markers: true,
+			markers: false,
 			// pinSpacing: false,
 		});
 	}, []);
