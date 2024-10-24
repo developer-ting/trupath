@@ -2,6 +2,10 @@
 	font-size: 100px;
 	line-height: 121px;
 	font-weight: 400;
+	@media screen and (max-width: 767px) {
+		font-size: 35px;
+		line-height: 40px;
+	}
 }
 
 .text_50 {
@@ -9,6 +13,10 @@
 	line-height: 65px;
 	font-weight: 400;
 	color: var(--color_tertiary);
+	@media screen and (max-width: 767px) {
+		font-size: 25px;
+		line-height: 32px;
+	}
 }
 
 .text_20 {
@@ -18,6 +26,10 @@
 	font-style: normal;
 	color: var(--color_tertiary);
 	font-family: var(----font_tertiary);
+	@media screen and (max-width: 767px) {
+		font-size: 14px;
+		line-height: 20px;
+	}
 }
 
 .text_18 {
@@ -45,6 +57,10 @@
 	font-weight: 400;
 	color: var(--color_secondary);
 	font-family: var(--font_secondary);
+	@media screen and (max-width: 767px) {
+		font-size: 22px;
+		line-height: 32px;
+	}
 }
 
 // line height

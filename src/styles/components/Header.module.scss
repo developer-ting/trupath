@@ -134,7 +134,7 @@
 				display: inline-block;
 				width: 100%;
 				height: 2px;
-				background-color: black;
+				background-color: var(--color_tertiary);
 				transition: ease all 300ms;
 			}
 			@include sm-down {

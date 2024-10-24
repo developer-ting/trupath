@@ -95,7 +95,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 			renderer: "svg",
 			loop: true,
 			autoplay: true,
-			animationData: require("../../public/img/home/json/Harmful-additives-free2.json"),
+			animationData: require("../../public/img/home/json/Harmful-additives-free3.json"),
 		});
 		Lottie.loadAnimation({
 			container: guilt.current,
