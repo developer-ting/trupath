@@ -23,10 +23,10 @@ import Arrow from "@/../public/img/icons/arrow.svg";
 // DATA //
 
 /** Header Component */
-export default function Header() {
+export default function Header({ showHeader, setShowHeader }) {
 	const [openSidebar, setOpenSidebar] = useState(false);
 	const [sidebarActive, setSidebarActive] = useState(false);
-	const [showHeader, setShowHeader] = useState(true);
+	// const [showHeader, setShowHeader] = useState(false);
 	const [lastScrollY, setLastScrollY] = useState(0);
 
 	/** Open sidebar on click of hamburger */
@@ -85,7 +85,7 @@ export default function Header() {
 
 	return (
 		<div
-			className={`${styles.main_header} ${
+			className={`header ${styles.main_header} ${
 				openSidebar ? styles.sidebar_opened : ""
 			} ${showHeader ? "" : "hidden_header"}`}
 		>
