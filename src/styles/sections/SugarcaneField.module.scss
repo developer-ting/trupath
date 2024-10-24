@@ -39,9 +39,17 @@
 		}
 	}
 	.TextBx {
+		@media screen and (max-width: 991px) {
+			flex-direction: column;
+			padding-bottom: 15px;
+			gap: 15px;
+		}
 		.Title {
 			width: 40%;
 			overflow: hidden;
+			@media screen and (max-width: 991px) {
+				width: 100%;
+			}
 			p {
 				transform: translateY(150%);
 			}
@@ -49,6 +57,9 @@
 		.Desc {
 			width: 50%;
 			overflow: hidden;
+			@media screen and (max-width: 991px) {
+				width: 100%;
+			}
 			p {
 				transform: translateY(150%);
 			}
