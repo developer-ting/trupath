@@ -18,6 +18,11 @@
 	// 	background-repeat: no-repeat;
 	// }
 	.CloudTop {
+		position: relative;
+		.Birds {
+			position: absolute;
+			top: 0;
+		}
 		.Cloud2 {
 			animation: moveside 10s linear infinite;
 			// transform: translateY(-100%) !important;

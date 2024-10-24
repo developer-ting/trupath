@@ -9,6 +9,7 @@ import { useEffect, useState, useRef } from "react";
 // SECTIONS //
 
 // PLUGINS //
+import Lottie from "lottie-web";
 
 // UTILS //
 
@@ -37,6 +38,73 @@ import transBg from "../../public/img/home/trans_bg.png";
 
 /** HomeHero Section */
 export default function Sugarcoating({ gsap, ScrollTrigger }) {
+	const finest = useRef();
+	const premium = useRef();
+	const desi = useRef();
+	const preservatives = useRef();
+	const additives = useRef();
+	const guilt = useRef();
+	const Wave = useRef();
+	const Wave2 = useRef();
+	useEffect(() => {
+		// Lottie
+		Lottie.loadAnimation({
+			container: Wave.current,
+			renderer: "svg",
+			loop: true,
+			autoplay: true,
+			animationData: require("../../public/img/home/json/Waves-3.json"),
+		});
+		Lottie.loadAnimation({
+			container: Wave2.current,
+			renderer: "svg",
+			loop: true,
+			autoplay: true,
+			animationData: require("../../public/img/home/json/Waves.json"),
+		});
+		Lottie.loadAnimation({
+			container: finest.current,
+			renderer: "svg",
+			loop: true,
+			autoplay: true,
+			animationData: require("../../public/img/home/json/Made-with-the-finest-sugarcane.json"),
+		});
+		Lottie.loadAnimation({
+			container: premium.current,
+			renderer: "svg",
+			loop: true,
+			autoplay: true,
+			animationData: require("../../public/img/home/json/Unadulterated-premium-quality.json"),
+		});
+		Lottie.loadAnimation({
+			container: desi.current,
+			renderer: "svg",
+			loop: true,
+			autoplay: true,
+			animationData: require("../../public/img/home/json/Unapologetically-desi.json"),
+		});
+		Lottie.loadAnimation({
+			container: preservatives.current,
+			renderer: "svg",
+			loop: true,
+			autoplay: true,
+			animationData: require("../../public/img/home/json/Preservatives-free.json"),
+		});
+		Lottie.loadAnimation({
+			container: additives.current,
+			renderer: "svg",
+			loop: true,
+			autoplay: true,
+			animationData: require("../../public/img/home/json/Harmful-additives-free2.json"),
+		});
+		Lottie.loadAnimation({
+			container: guilt.current,
+			renderer: "svg",
+			loop: true,
+			autoplay: true,
+			animationData: require("../../public/img/home/json/Guilt-free.json"),
+		});
+	}, []);
 	const [trupathCircleWrapperHeight, setTrupathCircleWrapperHeight] =
 		useState(0);
 	const [productHeight, setProductHeight] = useState(0);
@@ -419,7 +487,8 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 		<section className={`${styles.section_wrapper}`}>
 			<div className={styles.two_section_wrapper}>
 				<div className={`${styles.leaves}`}>
-					<img src={bgLine.src} className="img-responsive" alt="Sugarcane line" />
+					<div ref={Wave}></div>
+					{/* <img src={bgLine.src} className="img-responsive" alt="Sugarcane line" /> */}
 				</div>
 				<div className={`${styles.sugarcoating}`} id="About">
 					{/* <p>Image width: {imageSize.width}px</p>
@@ -514,15 +583,18 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 						<div className={`${styles.product}`}>
 							<div className={`${styles.left_section}`}>
 								<div className={`${styles.top_item}`}>
-									<img src={vectorImg1.src} className="img-responsive" alt="vectorImg" />
+									{/* <img src={vectorImg1.src} className="img-responsive" alt="vectorImg" /> */}
+									<div ref={finest}></div>
 									<p className="text_16">Made with the finest sugarcane</p>
 								</div>
 								<div className={`${styles.center_item}`}>
-									<img src={vectorImg2.src} className="img-responsive" alt="vectorImg" />
+									{/* <img src={vectorImg2.src} className="img-responsive" alt="vectorImg" /> */}
+									<div ref={premium}></div>
 									<p className="text_16">Unadulterated, premium quality</p>
 								</div>
 								<div className={`${styles.bottom_item}`}>
-									<img src={vectorImg3.src} className="img-responsive" alt="vectorImg" />
+									{/* <img src={vectorImg3.src} className="img-responsive" alt="vectorImg" /> */}
+									<div ref={desi}></div>
 									<p className="text_16">Unapologetically desi</p>
 								</div>
 							</div>
@@ -535,21 +607,27 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 							</div>
 							<div className={`${styles.right_section}`}>
 								<div className={`${styles.top_item}`}>
-									<img src={vectorImg4.src} className="img-responsive" alt="vectorImg" />
+									{/* <img src={vectorImg4.src} className="img-responsive" alt="vectorImg" /> */}
+									<div ref={preservatives}></div>
 									<p className="text_16">Preservatives free</p>
 								</div>
 								<div className={`${styles.center_item}`}>
-									<img src={vectorImg5.src} className="img-responsive" alt="vectorImg" />
+									{/* <img src={vectorImg5.src} className="img-responsive" alt="vectorImg" /> */}
+									<div ref={additives}></div>
 									<p className="text_16">Harmful additives free</p>
 								</div>
 								<div className={`${styles.bottom_item}`}>
-									<img src={vectorImg6.src} className="img-responsive" alt="vectorImg" />
+									{/* <img src={vectorImg6.src} className="img-responsive" alt="vectorImg" /> */}
+									<div ref={guilt}></div>
 									<p className="text_16">Guilt free</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
+			<div className={`${styles.wave}`}>
+				<div ref={Wave2}></div>
 			</div>
 		</section>
 	);

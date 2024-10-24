@@ -1,11 +1,12 @@
 // MODULES //
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 // COMPONENTS //
 
 // SECTIONS //
 
 // PLUGINS //
+import Lottie from "lottie-web";
 
 // UTILS //
 
@@ -43,6 +44,33 @@ export default function FieldsSec({ gsap, ScrollTrigger }) {
 	// 		// pinSpacing: false,
 	// 	});
 	// }, []);
+	const Quality = useRef();
+	const Supply = useRef();
+	const Hygiene = useRef();
+	useEffect(() => {
+		// Lottie
+		Lottie.loadAnimation({
+			container: Quality.current,
+			renderer: "svg",
+			loop: true,
+			autoplay: true,
+			animationData: require("../../public/img/home/json/Quality.json"),
+		});
+		Lottie.loadAnimation({
+			container: Supply.current,
+			renderer: "svg",
+			loop: true,
+			autoplay: true,
+			animationData: require("../../public/img/home/json/Supply2.json"),
+		});
+		Lottie.loadAnimation({
+			container: Hygiene.current,
+			renderer: "svg",
+			loop: true,
+			autoplay: true,
+			animationData: require("../../public/img/home/json/Hygiene.json"),
+		});
+	}, []);
 	return (
 		<section className={styles.FieldsSec} id="Products">
 			<div className="container">
@@ -68,7 +96,8 @@ export default function FieldsSec({ gsap, ScrollTrigger }) {
 					<div className={`${styles.ImgBx}`}>
 						<div className={`${styles.FieldItem} card1`} data-scroll>
 							<div className={`${styles.ItemImg}`}>
-								<img src={Quality.src} alt="Social Icons" className="width_100" />
+								<div ref={Quality}></div>
+								{/* <img src={Quality.src} alt="Social Icons" className="width_100" /> */}
 							</div>
 							<div className={`${styles.ItemTxt}`}>
 								<p className="text_20 f_w_s_b">Quality</p>
@@ -79,7 +108,8 @@ export default function FieldsSec({ gsap, ScrollTrigger }) {
 						</div>
 						<div className={`${styles.FieldItem} card2`} data-scroll>
 							<div className={`${styles.ItemImg}`}>
-								<img src={Hygiene.src} alt="Social Icons" className="width_100" />
+								<div ref={Hygiene}></div>
+								{/* <img src={Hygiene.src} alt="Social Icons" className="width_100" /> */}
 							</div>
 							<div className={`${styles.ItemTxt}`}>
 								<p className="text_20 f_w_s_b">Hygiene</p>
@@ -90,7 +120,8 @@ export default function FieldsSec({ gsap, ScrollTrigger }) {
 						</div>
 						<div className={`${styles.FieldItem} card3`} data-scroll>
 							<div className={`${styles.ItemImg}`}>
-								<img src={Supply.src} alt="Social Icons" className="width_100" />
+								<div ref={Supply}></div>
+								{/* <img src={Supply.src} alt="Social Icons" className="width_100" /> */}
 							</div>
 							<div className={`${styles.ItemTxt}`}>
 								<p className="text_20 f_w_s_b">Supply</p>
