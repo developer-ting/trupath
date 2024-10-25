@@ -171,7 +171,7 @@
 						position: absolute;
 						@media screen and (max-width: 767px) {
 							opacity: 1;
-							width:75%;
+							width: 75%;
 							color: var(--color_black) !important;
 						}
 						@media (min-width: 1441px) and (max-width: 5000px) {
@@ -191,12 +191,12 @@
 							line-height: 28px;
 							font-weight: 300;
 							font-style: normal;
-							
+
 							font-family: var(----font_tertiary);
 							@media screen and (max-width: 767px) {
 								font-size: 14px;
 								line-height: 20px;
-								color: #411A0F;
+								color: #411a0f;
 							}
 							@media screen and (min-width: 1280px) and (max-width: 1440px) and (min-height: 585px) and (max-height: 680px) {
 								font-size: 18px;
@@ -221,7 +221,7 @@
 							//     width: 420px;
 							// }
 						}
-						.mobileHandProduct{
+						.mobileHandProduct {
 							bottom: 20px;
 							right: 0;
 							position: absolute;
@@ -322,7 +322,6 @@
 			}
 		}
 
-
 		// &.active-bg{
 		//     background-color: #d94426;
 		// }
@@ -335,7 +334,7 @@
 				flex-wrap: wrap;
 				padding: 60px 0 40px 0;
 			}
-			.mobileProduct{
+			.mobileProduct {
 				margin: auto;
 			}
 			.info {
@@ -370,7 +369,7 @@
 						top: 0;
 						position: relative;
 					}
-					.icon_lottie{
+					.icon_lottie {
 						width: 73px;
 						margin: auto;
 					}
@@ -408,7 +407,7 @@
 					img {
 						margin: auto;
 					}
-					.icon_lottie{
+					.icon_lottie {
 						width: 73px;
 						margin: auto;
 					}
@@ -440,13 +439,13 @@
 					}
 				}
 			}
-			.mobile_product{
+			.mobile_product {
 				display: flex;
 				flex-wrap: wrap;
 				grid-column-gap: 10px;
-    			grid-row-gap: 30px;
+				grid-row-gap: 30px;
 				margin-top: 40px;
-				.icon_item{
+				.icon_item {
 					width: 31%;
 					img {
 						margin: auto;
@@ -455,11 +454,14 @@
 						padding-top: 10px;
 						text-align: center;
 						color: var(--color_tertiary);
-							font-size: 12px;
-							line-height: 16px;
+						font-size: 12px;
+						line-height: 16px;
 					}
 				}
 			}
 		}
+	}
+	.wave_bgg {
+		background-color: var(--color_tertiary);
 	}
 }
