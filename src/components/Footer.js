@@ -55,7 +55,7 @@ export default function Footer() {
 						<div className={`${styles.ContactDetails}`}>
 							<h2 className="text_50">
 								Connect with
-								<br /> us anytime
+								<br className="hidden_xs" /> us anytime
 							</h2>
 							<div className={`${styles.DetailsBx}`}>
 								<img src={LocIcon.src} alt="Location Icon" />

@@ -16,27 +16,69 @@
 		border-bottom-left-radius: 10px;
 		border-bottom-right-radius: 10px;
 		background-color: var(--color_primary);
+		@include mdl-down {
+			padding: 10px 20px 10px 30px;
+		}
+		@include md-down {
+			padding: 1px 20px 0 30px;
+			transition: all 0.5s ease-in-out;
+		}
+		&::before {
+			@include md-down {
+				content: "";
+				width: calc(100% - 30px);
+				background-color: var(--color_primary);
+				position: absolute;
+				left: 15px;
+				top: 0px;
+				height: 60px;
+				border-bottom-left-radius: 10px;
+				border-bottom-right-radius: 10px;
+				z-index: 5;
+			}
+		}
 		.image_wrap {
 			padding: 10px 0;
 			max-width: 120px;
 			@extend %f_r_a_center;
+			@include md-down {
+				position: relative;
+				z-index: 6;
+			}
 		}
 		.links_wrap {
 			@extend %d_flex;
 			align-self: stretch;
 			padding-inline-start: 0;
 			// The menu is transformed as per sidebar on click of hamburger icon
-			@include sm-down {
-				padding-top: 5%;
-				background-color: var(--color_white);
-				transition: ease all 300ms;
-				transform: translateX(-100%);
+			@include md-down {
+				padding: 15px 0 25px;
+				margin: 0 15px 0;
+				background-color: var(--color_primary);
+				transform: translateY(-120%);
 				flex-direction: column;
-				width: 100%;
+				width: calc(100% - 30px);
+				// width: calc(100% - 30px);
 				position: absolute;
-				top: 100%;
+				top: 74px;
 				left: 0;
-				height: 100vh;
+				border-bottom-left-radius: 10px;
+				border-bottom-right-radius: 10px;
+				// opacity: 0;
+				transition: all 0.5s ease-in-out;
+				// height: 100vh;
+			}
+			&::before {
+				@include md-down {
+					content: "";
+					height: 1px;
+					width: calc(100% - 30px);
+					background-color: var(--color_tertiary);
+					opacity: 0.1;
+					position: absolute;
+					left: 15px;
+					top: 0px;
+				}
 			}
 			.links {
 				@extend %relative_box;
@@ -44,15 +86,23 @@
 				list-style-type: none;
 				cursor: pointer;
 				padding: 0 15px;
-				@include sm-down {
-					padding: 15px;
+				@include mdl-down {
+					padding: 0px 10px;
+				}
+				@include md-down {
+					padding: 15px 20px;
 					flex-direction: column;
-					align-items: stretch;
+					align-items: flex-start;
+					// align-items: stretch;
 				}
 				&:last-child {
 					margin-right: 0;
 				}
-
+				.Btn1 {
+					@include md-down {
+						width: auto;
+					}
+				}
 				.link_title {
 					letter-spacing: 0.5;
 					@extend %f_r_a_center;
@@ -74,7 +124,7 @@
 					top: 100%;
 					transform: translateY(-10px);
 					visibility: hidden;
-					@include sm-down {
+					@include md-down {
 						padding-top: 15px;
 						position: relative;
 						display: none;
@@ -112,7 +162,7 @@
 						transform: translateY(2px);
 						opacity: 1;
 						visibility: visible;
-						@include sm-down {
+						@include md-down {
 							display: block;
 						}
 					}
@@ -137,14 +187,23 @@
 				background-color: var(--color_tertiary);
 				transition: ease all 300ms;
 			}
-			@include sm-down {
+			@include md-down {
 				display: flex;
+				position: relative;
+				z-index: 6;
 			}
 		}
 	}
 
 	// This class is added when hamburger is clicked to open in mobile
 	&.sidebar_opened {
+		.header_inside {
+			@include md-down {
+				padding-bottom: 15px;
+				border-radius: 0;
+			}
+			// transition: ease all 300ms;
+		}
 		.hamburger_icon {
 			.hamburger_line {
 				&:first-child {
@@ -160,6 +219,7 @@
 		}
 		.links_wrap {
 			transform: translateX(0) !important;
+			opacity: 1;
 		}
 	}
 }

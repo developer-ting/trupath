@@ -162,7 +162,7 @@ export default function Header({ showHeader, setShowHeader }) {
 						</div>
 						<div className={styles.links}>
 							<Link href="">
-								<Button color="secondary" variant="filled">
+								<Button color="secondary" variant="filled" className={styles.Btn1}>
 									Contact
 								</Button>
 							</Link>
