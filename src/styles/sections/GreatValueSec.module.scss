@@ -1,20 +1,23 @@
 @import "../helpers/helpers.scss";
-			
-.GreatValueSec{
-    position: relative;
-    padding-top: 50px;
-    h2{
-        text-align: center;
-        color: var(--color_primary);
-        padding-bottom: 20px;
-    }
-    h5{
-        text-align: center;
-        padding-bottom: 30px;
-    }
-    .Waves{
-        position: absolute;
-        z-index: 1;
-        bottom: -5px;
-    }
+
+.GreatValueSec {
+	position: relative;
+	padding-top: 50px;
+	h2 {
+		text-align: center;
+		color: var(--color_primary);
+		padding-bottom: 20px;
+	}
+	h5 {
+		text-align: center;
+		padding-bottom: 30px;
+	}
+	.Waves {
+		position: absolute;
+		z-index: 1;
+		bottom: -5px;
+		@media screen and (max-width: 992px) {
+			bottom: -7px;
+		}
+	}
 }

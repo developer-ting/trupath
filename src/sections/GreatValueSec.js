@@ -29,17 +29,17 @@ import Wave from "../../public/img/home/wave.png";
 
 /** GreatValueSec Section */
 export default function GreatValueSec() {
-	const Wave = useRef();
-	useEffect(() => {
-		// Lottie
-		Lottie.loadAnimation({
-			container: Wave.current,
-			renderer: "svg",
-			loop: true,
-			autoplay: true,
-			animationData: require("../../public/img/home/json/Waves-2.json"),
-		});
-	}, []);
+	// const Wave = useRef();
+	// useEffect(() => {
+	// 	// Lottie
+	// 	Lottie.loadAnimation({
+	// 		container: Wave.current,
+	// 		renderer: "svg",
+	// 		loop: true,
+	// 		autoplay: true,
+	// 		animationData: require("../../public/img/home/json/Waves-2.json"),
+	// 	});
+	// }, []);
 	return (
 		<section className={styles.GreatValueSec}>
 			<div className="container">
@@ -89,8 +89,8 @@ export default function GreatValueSec() {
 				</Swiper>
 			</div>
 
-			<div ref={Wave} className={`${styles.Waves} width_100`} alt="Wave"></div>
-			{/* <img src={Wave.src} className={`${styles.Waves} width_100`} alt="Wave" /> */}
+			{/* <div ref={Wave} className={`${styles.Waves} width_100`} alt="Wave"></div> */}
+			<img src={Wave.src} className={`${styles.Waves} width_100`} alt="Wave" />
 		</section>
 	);
 }
