@@ -33,6 +33,7 @@ import vectorImg5 from "../../public/img/home/vector_img_5.png";
 import vectorImg6 from "../../public/img/home/vector_img_6.png";
 import bgLine from "../../public/img/banner/bg_line.png";
 import transBg from "../../public/img/home/trans_bg.png";
+import wave from "../../public/img/home/brown_bg.png";
 
 // DATA //
 
@@ -44,24 +45,24 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 	const preservatives = useRef();
 	const additives = useRef();
 	const guilt = useRef();
-	const Wave = useRef();
-	const Wave2 = useRef();
+	// const Wave = useRef();
+	// const Wave2 = useRef();
 	useEffect(() => {
 		// Lottie
-		Lottie.loadAnimation({
-			container: Wave.current,
-			renderer: "svg",
-			loop: true,
-			autoplay: true,
-			animationData: require("../../public/img/home/json/Waves-3.json"),
-		});
-		Lottie.loadAnimation({
-			container: Wave2.current,
-			renderer: "svg",
-			loop: true,
-			autoplay: true,
-			animationData: require("../../public/img/home/json/Waves.json"),
-		});
+		// Lottie.loadAnimation({
+		// 	container: Wave.current,
+		// 	renderer: "svg",
+		// 	loop: true,
+		// 	autoplay: true,
+		// 	animationData: require("../../public/img/home/json/Waves-3.json"),
+		// });
+		// Lottie.loadAnimation({
+		// 	container: Wave2.current,
+		// 	renderer: "svg",
+		// 	loop: true,
+		// 	autoplay: true,
+		// 	animationData: require("../../public/img/home/json/Waves.json"),
+		// });
 		Lottie.loadAnimation({
 			container: finest.current,
 			renderer: "svg",
@@ -351,8 +352,8 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 		<section className={`${styles.section_wrapper}`}>
 			<div className={styles.two_section_wrapper}>
 				<div className={`${styles.leaves}`}>
-					<div ref={Wave}></div>
-					{/* <img src={bgLine.src} className="img-responsive" alt="Sugarcane line" /> */}
+					{/* <div ref={Wave}></div> */}
+					<img src={bgLine.src} className="img-responsive" alt="Sugarcane line" />
 				</div>
 				<div className={`${styles.sugarcoating}`} id="About">
 					<div className={`${styles.sugarcoating_bg}`}>
@@ -477,8 +478,9 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					</div>
 				</div>
 			</div>
-			<div className={`${styles.wave}`}>
-				<div ref={Wave2}></div>
+			<div className={`${styles.wave_bgg}`}>
+				<img src={wave.src} className={`${styles.Waves} width_100`} alt="Wave" />
+				{/* <div ref={Wave2}></div> */}
 			</div>
 		</section>
 	);
