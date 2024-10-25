@@ -32,7 +32,13 @@ import Bowl2 from "../../public/img/intro/Bowl2.png";
 /** IntroSec Component */
 export default function IntroSec({ gsap, setShowHeader }) {
 	useEffect(() => {
-		const introTimeline = gsap.timeline({});
+		const introTimeline = gsap.timeline({
+			onStart: () => {
+				document.body.style.overflow = "hidden";
+				document.body.style.height = "100vh";
+				document.documentElement.style.overflow = "hidden";
+			},
+		});
 
 		introTimeline
 			.to(
@@ -40,7 +46,6 @@ export default function IntroSec({ gsap, setShowHeader }) {
 				1.5,
 				{
 					opacity: "0",
-					// duration: "2",
 				},
 				"1st"
 			)
@@ -51,35 +56,24 @@ export default function IntroSec({ gsap, setShowHeader }) {
 				{
 					opacity: "1",
 					top: "40%",
-					// duration: "2",
 				},
 				"2nd"
 			)
 			.to(
 				`.${styles.Cloud1}`,
 				1,
-				// {
-				// 	x: "-120%",
-				// 	opacity: 1,
-				// },
 				{
 					x: 0,
 					opacity: 1,
-					// duration: "2",
 				},
 				"2nd"
 			)
 			.to(
 				`.${styles.Cloud2}`,
 				1,
-				// {
-				// 	x: "120%",
-				// 	opacity: 1,
-				// },
 				{
 					x: 0,
 					opacity: 1,
-					// duration: "2",
 				},
 				"2nd"
 			)
@@ -88,7 +82,6 @@ export default function IntroSec({ gsap, setShowHeader }) {
 				1,
 				{
 					opacity: 1,
-					// duration: "2",
 				},
 				"2nd"
 			)
@@ -97,7 +90,6 @@ export default function IntroSec({ gsap, setShowHeader }) {
 				1,
 				{
 					opacity: 1,
-					// duration: "2",
 				},
 				"2nd"
 			)
@@ -106,7 +98,6 @@ export default function IntroSec({ gsap, setShowHeader }) {
 				1,
 				{
 					top: "25%",
-					// duration: "2",
 				},
 				"3rd"
 			)
@@ -121,11 +112,6 @@ export default function IntroSec({ gsap, setShowHeader }) {
 			.to(
 				`.${styles.LeftDiv} .${styles.BowlMain}`,
 				1,
-				// {
-				// 	left: "-100%",
-				// 	bottom: "65%",
-				// 	y: "-100px",
-				// },
 				{
 					left: "20%",
 					bottom: "65%",
@@ -137,10 +123,6 @@ export default function IntroSec({ gsap, setShowHeader }) {
 			.to(
 				`.${styles.LeftDiv} .${styles.BowlTitle}`,
 				1,
-				// {
-				// 	y: "20px",
-				// 	opacity: 0,
-				// },
 				{
 					y: "0px",
 					opacity: 1,
@@ -167,11 +149,6 @@ export default function IntroSec({ gsap, setShowHeader }) {
 			.to(
 				`.${styles.RightDiv} .${styles.BowlMain}`,
 				1,
-				// {
-				// 	right: "-100%",
-				// 	bottom: "65%",
-				// 	y: "-100px",
-				// },
 				{
 					right: "20%",
 					bottom: "70%",
@@ -183,10 +160,6 @@ export default function IntroSec({ gsap, setShowHeader }) {
 			.to(
 				`.${styles.RightDiv} .${styles.BowlTitle}`,
 				1,
-				// {
-				// 	y: "20px",
-				// 	opacity: 0,
-				// },
 				{
 					y: "0px",
 					opacity: 1,
@@ -200,17 +173,12 @@ export default function IntroSec({ gsap, setShowHeader }) {
 				{
 					top: "15%",
 					opacity: 0,
-					// duration: "2",
 				},
 				"9th"
 			)
 			.to(
 				`.${styles.LastBox} .${styles.LastTitle}`,
 				1,
-				// {
-				// 	y: "30%",
-				// 	opacity: 0,
-				// },
 				{
 					y: "0%",
 					opacity: 1,
@@ -226,11 +194,16 @@ export default function IntroSec({ gsap, setShowHeader }) {
 				},
 				"10th"
 			);
-	});
-	const handleClick = async () => {
-		console.log("Clicked");
+	}, []);
 
-		const afterintroTimelineClick = gsap.timeline({});
+	const handleClick = async () => {
+		const afterintroTimelineClick = gsap.timeline({
+			onComplete: () => {
+				document.body.style.overflow = "";
+				document.body.style.height = "";
+				document.documentElement.style.overflow = "";
+			},
+		});
 		// Animation for OrangeBg on button click
 		await afterintroTimelineClick
 			.to(
@@ -401,14 +374,14 @@ export default function IntroSec({ gsap, setShowHeader }) {
 					<div className={`${styles.LastTitle}`}>
 						<h2 className="text_50 color_secondary">What will you do?</h2>
 					</div>
-					<div className={`${styles.BtnWrap}`} onClick={handleClick}>
+					<div onClick={handleClick} className={`${styles.BtnWrap}`}>
 						<Button className={`${styles.Btn}`} color="primary" variant="filled">
 							Click to Enter
 						</Button>
 					</div>
 				</div>
 			</div>
-			<div onClick={handleClick}>
+			<div onClick={handleClick} className="skip">
 				<div className={`${styles.skip_btn}`}>
 					<Button className={`${styles.Btn}`} color="primary" variant="filled">
 						skip

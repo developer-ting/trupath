@@ -223,7 +223,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 						top: "-112vh",
 					},
 					{
-						top: "5vh",
+						top: "3vh",
 					},
 					"fourth"
 				)
@@ -299,7 +299,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				.fromTo(
 					`.${styles.product_circle_img}`,
 					{
-						top: "5vh",
+						top: "3vh",
 					},
 					{
 						top: "90vh",
