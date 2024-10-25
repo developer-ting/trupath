@@ -75,7 +75,7 @@ export default function OldRoots() {
 	}, []);
 	/** progress Section */
 	const fillProgress = (currInd) => {
-		console.log(currInd, " currInd");
+		// console.log(currInd, " currInd");
 
 		setProgressWidth((currInd / 4) * 100);
 	};
