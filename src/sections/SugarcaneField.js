@@ -80,7 +80,8 @@ export default function SugarcaneField({ gsap, ScrollTrigger }) {
 							In the heart of Ghansawangi, where sugarcane fields stretch as far as the
 							eye can see, we witnessed firsthand the struggles of local farmers.
 							Despite the region’s abundant sugarcane supply, existing factories failed
-							to procure enough, leaving the farmers vulnerable. <br />
+							to procure enough, leaving the farmers vulnerable.{" "}
+							<br className="hidden_xs" />
 							So, we founded Trupath to address this issue, supporting farmers and
 							helping India return to the Gud ol’ ways.
 						</p>

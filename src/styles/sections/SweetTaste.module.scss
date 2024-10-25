@@ -2,6 +2,9 @@
 
 .SweetTaste {
 	padding: 50px 0;
+	@media screen and (max-width: 992px) {
+		padding-top: 0;
+	}
 	.FlexMain {
 		display: flex;
 		justify-content: space-between;
@@ -29,6 +32,9 @@
 			}
 			h5 {
 				padding: 10px 0 20px;
+				@media screen and (max-width: 992px) {
+					padding: 10px 0 10px;
+				}
 			}
 			p {
 				color: var(--color_primary);

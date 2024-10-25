@@ -39,7 +39,7 @@ export default function ProductSec() {
 	}, []);
 	return (
 		<section className={styles.ProductSec} id="Health Benefits">
-			<img className={`${styles.Hand}`} src={Hand.src} alt="" />
+			<img className={`${styles.Hand} hidden_xs`} src={Hand.src} alt="" />
 			<img
 				className={`${styles.Sugarcane1}`}
 				src={Sugarcane1.src}

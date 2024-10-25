@@ -36,6 +36,7 @@ import bgLine from "../../public/img/banner/bg_line.png";
 import transBg from "../../public/img/home/trans_bg.png";
 import wave from "../../public/img/home/brown_bg.png";
 import mobileProduct from "../../public/img/home/mobile_product.png";
+import mobileMarquee from "../../public/img/home/mobile_marquee.png";
 
 // DATA //
 
@@ -429,8 +430,13 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 								<img src={hand.src} className="img-responsive hidden_xs" alt="hand" />
 							</div>
 						</div>
-						<div className={`${styles.title_div}`}>
+						<div className={`${styles.title_div} hidden_xs`}>
 							<img src={marqueeC.src} className="img-responsive" alt="marqueeC" />
+						</div>
+						<div
+							className={`${styles.title_div} ${styles.title_div_mobile} visible_xs`}
+						>
+							<img src={mobileMarquee.src} className="img-responsive" alt="marqueeC" />
 						</div>
 					</div>
 				</div>

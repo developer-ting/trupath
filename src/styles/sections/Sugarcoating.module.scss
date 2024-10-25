@@ -125,7 +125,7 @@
 				padding-top: 100px;
 				position: relative;
 				@media screen and (max-width: 767px) {
-					height: 70vh;
+					height: 75vh;
 					padding-top: 0;
 				}
 				.circle_div {
@@ -171,7 +171,7 @@
 						top: -40px;
 						left: 50%;
 						transform: translateX(-50%);
-						z-index: 222222222;
+						z-index: 2;
 						text-align: center;
 						padding-top: 120px;
 						position: absolute;
@@ -288,6 +288,9 @@
 					img {
 						width: 100%;
 					}
+				}
+				.title_div_mobile{
+					top: 8vh;
 				}
 				@keyframes rotate1 {
 					0% {

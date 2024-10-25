@@ -45,7 +45,7 @@ export default function GreatValueSec() {
 			<div className="container">
 				<h2 className="text_50 toTop" data-scroll>
 					Great value. Great taste. Great health.
-					<br /> That’s trupath
+					<br className="hidden_xs" /> That’s trupath
 				</h2>
 				<h5 className="text_40 toTop" data-scroll>
 					जिंदगी बनाओ गुड़ से मीठी

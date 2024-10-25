@@ -17,6 +17,13 @@
 	// 	background-size: cover;
 	// 	background-repeat: no-repeat;
 	// }
+	.SugarcaneFieldImg{
+		@media screen and (max-width: 992px) {
+			width: 100%;
+			height: 40vh;
+			object-fit: cover;
+		}
+	}
 	.CloudTop {
 		position: relative;
 		.Birds {
@@ -27,7 +34,8 @@
 			animation: moveside 10s linear infinite;
 			// transform: translateY(-100%) !important;
 			@media screen and (max-width: 992px) {
-				width: 130px;
+				width: 150px;
+				margin-top: -3%;
 			}
 		}
 	}
@@ -36,14 +44,16 @@
 		.Cloud1 {
 			animation: moveside 8s linear infinite;
 			@media screen and (max-width: 992px) {
-				width: 150px;
+				width: 190px;
+				margin-top: 0;
 			}
 		}
 		.Cloud3 {
 			padding-right: 50px;
 			animation: moveside 12s linear infinite;
 			@media screen and (max-width: 992px) {
-				width: 170px;
+				width: 190px;
+				margin-top: 70px;
 			}
 		}
 	}
