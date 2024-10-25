@@ -30,7 +30,7 @@ import Bowl2 from "../../public/img/intro/Bowl2.png";
 // DATA //
 
 /** IntroSec Component */
-export default function IntroSec({ gsap }) {
+export default function IntroSec({ gsap, setShowHeader }) {
 	useEffect(() => {
 		const introTimeline = gsap.timeline({});
 
@@ -227,12 +227,12 @@ export default function IntroSec({ gsap }) {
 				"10th"
 			);
 	});
-	const handleClick = () => {
+	const handleClick = async () => {
 		console.log("Clicked");
 
-		const afterintroTimeline = gsap.timeline({});
+		const afterintroTimelineClick = gsap.timeline({});
 		// Animation for OrangeBg on button click
-		afterintroTimeline
+		await afterintroTimelineClick
 			.to(
 				`.${styles.OrangeBg}`,
 				1,
@@ -240,7 +240,7 @@ export default function IntroSec({ gsap }) {
 					y: "-100%",
 					opacity: 1,
 				},
-				"2st"
+				"1st"
 			)
 			.to(
 				`.${styles.IntroMain}`,
@@ -249,7 +249,7 @@ export default function IntroSec({ gsap }) {
 					y: "-100%",
 					opacity: 1,
 				},
-				"2st"
+				"1st"
 			)
 			.fromTo(
 				".banner_animation",
@@ -263,7 +263,7 @@ export default function IntroSec({ gsap }) {
 					opacity: 1,
 					delay: 0.1,
 				},
-				"2st"
+				"1st"
 			)
 			.fromTo(
 				".info",
@@ -277,7 +277,7 @@ export default function IntroSec({ gsap }) {
 					opacity: 1,
 					delay: 0.1,
 				},
-				"2st"
+				"1st"
 			)
 			.fromTo(
 				".sugarcane",
@@ -291,7 +291,7 @@ export default function IntroSec({ gsap }) {
 					opacity: 1,
 					delay: 0.1,
 				},
-				"2st"
+				"1st"
 			)
 			.fromTo(
 				".product_img",
@@ -305,7 +305,7 @@ export default function IntroSec({ gsap }) {
 					opacity: 1,
 					delay: 0.1,
 				},
-				"2st"
+				"1st"
 			)
 			.fromTo(
 				`.${styles.skip_btn}`,
@@ -319,14 +319,16 @@ export default function IntroSec({ gsap }) {
 				"1st"
 			)
 			.to(
-				".hidden_header_only",
+				".header",
 				1,
 				{
 					y: "0%",
 					opacity: 1,
 				},
-				"3st"
+				"1st"
 			);
+
+		setShowHeader(true);
 	};
 
 	return (
