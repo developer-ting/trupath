@@ -24,7 +24,7 @@ import LeftCloud from "../../public/img/intro/LeftCloud.png";
 import RightCloud from "../../public/img/intro/RightCloud.png";
 import Path1 from "../../public/img/intro/Path1.png";
 import Path1Mob from "../../public/img/intro/LeftPathMob.png";
-import Path2Mob from "../../public/img/intro/RightPathMob.png";
+import Path2Mob from "../../public/img/intro/RightPathMob2.png";
 import Bowl1 from "../../public/img/intro/Bowl1.png";
 import Path2 from "../../public/img/intro/Path2.png";
 import Bowl2 from "../../public/img/intro/Bowl2.png";
@@ -330,11 +330,11 @@ export default function IntroSec({ gsap, setShowHeader }) {
 					<img className={`${styles.Grass2}`} src={Grass2.src} alt="Grass2 Image" />
 					<img className={`${styles.Grass3}`} src={Grass3.src} alt="Grass3 Image" />
 					<img className={`${styles.Grass4}`} src={Grass4.src} alt="Grass4 Image" />
-					<div className={styles.ScrollBtn}>
+					{/* <div className={styles.ScrollBtn}>
 						<Button color="primary" variant="underline">
 							Scroll To Explore
 						</Button>
-					</div>
+					</div> */}
 				</div>
 				<div className={`${styles.BowlPathMain}`}>
 					<div className={`${styles.LeftDiv}`}>

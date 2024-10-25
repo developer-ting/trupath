@@ -135,6 +135,9 @@
 			position: absolute;
 			bottom: 0;
 			width: 59.6%;
+			@media screen and (max-width: 767px) {
+				width: 69%;
+			}
 			.path {
 				width: 100%;
 				clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
