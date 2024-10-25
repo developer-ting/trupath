@@ -21,6 +21,7 @@ import sugarcoatingBg from "../../public/img/home/sugarcoating_bg_img.jpg";
 import chiti from "../../public/img/home/chiti.png";
 import marqueeC from "../../public/img/home/marquee_c.png";
 import productCircle from "../../public/img/home/product_circle.png";
+import mobileHandProduct from "../../public/img/home/mobile_hand_product.png";
 import leftStar from "../../public/img/home/left_star.png";
 import rightStar from "../../public/img/home/right_star.png";
 import hand from "../../public/img/home/hand.png";
@@ -34,6 +35,7 @@ import vectorImg6 from "../../public/img/home/vector_img_6.png";
 import bgLine from "../../public/img/banner/bg_line.png";
 import transBg from "../../public/img/home/trans_bg.png";
 import wave from "../../public/img/home/brown_bg.png";
+import mobileProduct from "../../public/img/home/mobile_product.png";
 
 // DATA //
 
@@ -393,7 +395,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					<div className={`${styles.TrupathCircle}`}>
 						<div className={`${styles.circle_div}`}>
 							<div className={`${styles.text_para}`}>
-								<p className="text_20">
+								<p>
 									To be healthy you don’t need to eat bland. Simply stir, sprinkle or
 									knead the nourishing Gud in your drinks and food to enjoy a better,
 									wellness-focused life without sacrificing flavour!
@@ -402,17 +404,29 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 							<div className={`${styles.product_circle}`}>
 								<img
 									src={productCircle.src}
-									className={`${styles.product_circle_img} img-responsive`}
+									className={`${styles.product_circle_img} img-responsive hidden_xs`}
+								/>
+								<img
+									src={mobileHandProduct.src}
+									className={`${styles.mobileHandProduct} img-responsive visible_xs`}
 								/>
 								<div className={`${styles.left_star}`}>
-									<img src={leftStar.src} className="img-responsive" alt="left_star" />
+									<img
+										src={leftStar.src}
+										className="img-responsive hidden_xs"
+										alt="left_star"
+									/>
 								</div>
 								<div className={`${styles.right_star}`}>
-									<img src={rightStar.src} className="img-responsive" alt="right_star" />
+									<img
+										src={rightStar.src}
+										className="img-responsive hidden_xs"
+										alt="right_star"
+									/>
 								</div>
 							</div>
 							<div className={`${styles.hand}`}>
-								<img src={hand.src} className="img-responsive" alt="hand" />
+								<img src={hand.src} className="img-responsive hidden_xs" alt="hand" />
 							</div>
 						</div>
 						<div className={`${styles.title_div}`}>
@@ -424,6 +438,11 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 			<div className={`${styles.Nature}`}>
 				<div className={`${styles.pad_section} container`}>
 					<div className={`${styles.nature_section} f_r_aj_between`}>
+						<img
+							src={mobileProduct.src}
+							className={`${styles.mobileProduct} img-responsive visible_xs`}
+							alt="hand"
+						/>
 						<div className={`${styles.info} toTop`} data-scroll>
 							<h2 className="text_50">From the lap of nature, not labs</h2>
 							<h3 className="text_40">सर्व गुड़ सम्पन्न</h3>
@@ -432,21 +451,21 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 								chemicals which means every spoonful keeps you happy and healthy!
 							</p>
 						</div>
-						<div className={`${styles.product}`}>
+						<div className={`${styles.product} hidden_xs`}>
 							<div className={`${styles.left_section}`}>
 								<div className={`${styles.top_item}`}>
 									{/* <img src={vectorImg1.src} className="img-responsive" alt="vectorImg" /> */}
-									<div ref={finest}></div>
+									<div className={`${styles.icon_lottie}`} ref={finest}></div>
 									<p className="text_16">Made with the finest sugarcane</p>
 								</div>
 								<div className={`${styles.center_item}`}>
 									{/* <img src={vectorImg2.src} className="img-responsive" alt="vectorImg" /> */}
-									<div ref={premium}></div>
+									<div className={`${styles.icon_lottie}`} ref={premium}></div>
 									<p className="text_16">Unadulterated, premium quality</p>
 								</div>
 								<div className={`${styles.bottom_item}`}>
 									{/* <img src={vectorImg3.src} className="img-responsive" alt="vectorImg" /> */}
-									<div ref={desi}></div>
+									<div className={`${styles.icon_lottie}`} ref={desi}></div>
 									<p className="text_16">Unapologetically desi</p>
 								</div>
 							</div>
@@ -460,19 +479,51 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 							<div className={`${styles.right_section}`}>
 								<div className={`${styles.top_item}`}>
 									{/* <img src={vectorImg4.src} className="img-responsive" alt="vectorImg" /> */}
-									<div ref={preservatives}></div>
+									<div className={`${styles.icon_lottie}`} ref={preservatives}></div>
 									<p className="text_16">Preservatives free</p>
 								</div>
 								<div className={`${styles.center_item}`}>
 									{/* <img src={vectorImg5.src} className="img-responsive" alt="vectorImg" /> */}
-									<div ref={additives}></div>
+									<div className={`${styles.icon_lottie}`} ref={additives}></div>
 									<p className="text_16">Harmful additives free</p>
 								</div>
 								<div className={`${styles.bottom_item}`}>
 									{/* <img src={vectorImg6.src} className="img-responsive" alt="vectorImg" /> */}
-									<div ref={guilt}></div>
+									<div className={`${styles.icon_lottie}`} ref={guilt}></div>
 									<p className="text_16">Guilt free</p>
 								</div>
+							</div>
+						</div>
+						<div className={`${styles.mobile_product} visible_xs`}>
+							<div className={`${styles.icon_item}`}>
+								{/* <div ref={finest}></div> */}
+								<img src={vectorImg1.src} className="img-responsive" alt="vectorImg" />
+								<p className="text_16">Made with the finest sugarcane</p>
+							</div>
+							<div className={`${styles.icon_item}`}>
+								{/* <div ref={premium}></div> */}
+								<img src={vectorImg2.src} className="img-responsive" alt="vectorImg" />
+								<p className="text_16">Unadulterated, premium quality</p>
+							</div>
+							<div className={`${styles.icon_item}`}>
+								{/* <div ref={desi}></div> */}
+								<img src={vectorImg3.src} className="img-responsive" alt="vectorImg" />
+								<p className="text_16">Unapologetically desi</p>
+							</div>
+							<div className={`${styles.icon_item}`}>
+								<img src={vectorImg4.src} className="img-responsive" alt="vectorImg" />
+								{/* <div ref={preservatives}></div> */}
+								<p className="text_16">Preservatives free</p>
+							</div>
+							<div className={`${styles.icon_item}`}>
+								<img src={vectorImg5.src} className="img-responsive" alt="vectorImg" />
+								{/* <div ref={additives}></div> */}
+								<p className="text_16">Harmful additives free</p>
+							</div>
+							<div className={`${styles.icon_item}`}>
+								<img src={vectorImg6.src} className="img-responsive" alt="vectorImg" />
+								{/* <div ref={guilt}></div> */}
+								<p className="text_16">Guilt free</p>
 							</div>
 						</div>
 					</div>
