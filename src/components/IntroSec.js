@@ -376,7 +376,7 @@ export default function IntroSec({ gsap, setShowHeader }) {
 				</div>
 				<div className={`${styles.LastBox}`}>
 					<div className={`${styles.LastTitle}`}>
-						<h2 className="text_50 color_secondary">What will you do?</h2>
+						<h2 className="text_50 color_secondary">Which path will you take?</h2>
 					</div>
 					<div onClick={handleClick} className={`${styles.BtnWrap}`}>
 						<Button className={`${styles.Btn}`} color="primary" variant="filled">
@@ -388,7 +388,7 @@ export default function IntroSec({ gsap, setShowHeader }) {
 			<div onClick={handleClick} className="skip">
 				<div className={`${styles.skip_btn}`}>
 					<Button className={`${styles.Btn}`} color="primary" variant="filled">
-						skip
+						Skip
 					</Button>
 				</div>
 			</div>

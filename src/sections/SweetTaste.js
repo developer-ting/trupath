@@ -54,7 +54,7 @@ export default function SweetTaste({ gsap, ScrollTrigger }) {
 							The sweet taste
 							<br className="hidden_xs" /> of no compromise
 						</h2>
-						<h5 className="text_40">सच्ची की मिठास</h5>
+						<h5 className="text_40">सच्चाई की मिठास</h5>
 						<p className="text_20">
 							Gud is the natural, traditional sweetener that our ancestors loved but
 							today’s world forgot. But it’s never too late to switch back!

@@ -142,7 +142,9 @@
 					background-color: #ff4900;
 					@media screen and (max-width: 767px) {
 						height: 70vh;
-						background-color: #ff4900ab;
+						border-top-left-radius: 0;
+						border-top-right-radius: 0;
+						background-color: transparent;
 					}
 					&::before {
 						content: "";
@@ -155,7 +157,11 @@
 						background-size: cover;
 						background-repeat: no-repeat;
 						@media screen and (max-width: 767px) {
-							display: none;
+							opacity: 1;
+							height: 90%;
+							bottom: 0;
+							position: absolute;
+							background-image: url(../../../public/img/home/circle_img_mobile.png);
 						}
 					}
 					.text_para {
@@ -172,6 +178,7 @@
 						@media screen and (max-width: 767px) {
 							opacity: 1;
 							width: 75%;
+							top: 0;
 							color: var(--color_black) !important;
 						}
 						@media (min-width: 1441px) and (max-width: 5000px) {
