@@ -34,7 +34,7 @@ import vectorImg5 from "../../public/img/home/vector_img_5.png";
 import vectorImg6 from "../../public/img/home/vector_img_6.png";
 import bgLine from "../../public/img/banner/bg_line.png";
 import transBg from "../../public/img/home/trans_bg.png";
-// import wave from "../../public/img/home/brown_bg_new.png";
+import brownWave from "../../public/img/home/brown_wave.png";
 import mobileProduct from "../../public/img/home/mobile_product.png";
 import mobileMarquee from "../../public/img/home/mobile_marquee.png";
 
@@ -536,7 +536,11 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				</div>
 			</div>
 			<div className={`${styles.wave_bgg}`}>
-				{/* <img src={wave.src} className={`${styles.Waves} width_100`} alt="Wave" /> */}
+				<img
+					src={brownWave.src}
+					className={`${styles.Waves} width_100`}
+					alt="Wave"
+				/>
 				{/* <div ref={Wave2}></div> */}
 			</div>
 		</section>
