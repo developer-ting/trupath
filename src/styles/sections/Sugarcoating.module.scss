@@ -115,12 +115,18 @@
 			position: absolute;
 			left: 0;
 			top: 120%;
-
+			@media screen and (max-width: 767px) {
+				top: 112%;
+			}
 			.TrupathCircle {
 				height: 100vh;
 				width: 100vw;
 				padding-top: 100px;
 				position: relative;
+				@media screen and (max-width: 767px) {
+					height: 80vh;
+					padding-top: 0;
+				}
 				.circle_div {
 					bottom: 0;
 					z-index: 10;
@@ -133,6 +139,9 @@
 					border-top-left-radius: 100vh;
 					border-top-right-radius: 100vh;
 					background-color: #ff4900;
+					@media screen and (max-width: 767px) {
+						height: 80vh;
+					}
 					&::before {
 						content: "";
 						width: 100vw;
@@ -143,6 +152,9 @@
 						height: 100vh;
 						background-size: cover;
 						background-repeat: no-repeat;
+						@media screen and (max-width: 767px) {
+							display: none;
+						}
 					}
 					.text_para {
 						width: 43%;
@@ -155,6 +167,11 @@
 						text-align: center;
 						padding-top: 120px;
 						position: absolute;
+						@media screen and (max-width: 767px) {
+							opacity: 1;
+							width:75%;
+							color: #fff !important;
+						}
 						@media (min-width: 1441px) and (max-width: 5000px) {
 							padding-top: 130px;
 						}
@@ -238,6 +255,10 @@
 					transform: rotate(0deg);
 					opacity: 1;
 					// animation: rotate1 10s linear infinite;
+					@media screen and (max-width: 767px) {
+						left: 0;
+						top: -20px;
+					}
 					img {
 						width: 100%;
 					}
