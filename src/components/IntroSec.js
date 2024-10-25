@@ -340,7 +340,7 @@ export default function IntroSec({ gsap, setShowHeader }) {
 					<div className={`${styles.LeftDiv}`}>
 						<div className={`${styles.path}`}>
 							<picture>
-								<source srcSet={Path1Mob.src} media="(max-width:767px)" />
+								<source srcSet={Path1Mob.src} media="(max-width:992px)" />
 								<img
 									className={`${styles.Path1} width_100`}
 									src={Path1.src}
@@ -350,7 +350,10 @@ export default function IntroSec({ gsap, setShowHeader }) {
 						</div>
 						<div className={`${styles.BowlMain}`}>
 							<div className={`${styles.BowlTitle}`}>
-								<p>One leads to perils of sugar</p>
+								<p>
+									One leads to
+									<br className="visible_xs" /> perils of sugar
+								</p>
 							</div>
 							<img className={`${styles.Bowl1}`} src={Bowl1.src} alt="Bowl1 Image" />
 						</div>
@@ -358,7 +361,7 @@ export default function IntroSec({ gsap, setShowHeader }) {
 					<div className={`${styles.RightDiv}`}>
 						<div className={`${styles.path}`}>
 							<picture>
-								<source srcSet={Path2Mob.src} media="(max-width:767px)" />
+								<source srcSet={Path2Mob.src} media="(max-width:992px)" />
 								<img
 									className={`${styles.Path2} width_100`}
 									src={Path2.src}
@@ -368,7 +371,10 @@ export default function IntroSec({ gsap, setShowHeader }) {
 						</div>
 						<div className={`${styles.BowlMain}`}>
 							<div className={`${styles.BowlTitle}`}>
-								<p>The other, to the gud ol’ ways</p>
+								<p>
+									The other, to the
+									<br className="visible_xs" /> gud ol’ ways
+								</p>
 							</div>
 							<img className={`${styles.Bowl2}`} src={Bowl2.src} alt="Bowl2 Image" />
 						</div>

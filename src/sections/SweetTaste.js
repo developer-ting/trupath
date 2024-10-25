@@ -22,34 +22,43 @@ import Tick from "../../public/img/home/Tick.png";
 export default function SweetTaste({ gsap, ScrollTrigger }) {
 	useEffect(() => {
 		const winH = window.innerHeight;
-		const BowlAnimTimeline = gsap.timeline({});
+		const winW = window.innerWidth;
+		if (winW > 767) {
+			const BowlAnimTimeline = gsap.timeline({});
 
-		BowlAnimTimeline.to(
-			`.${styles.TextBoxes}`,
-			{
-				y: "0",
-				x: "0",
-				opacity: "1",
-			},
-			"first"
-		);
+			BowlAnimTimeline.to(
+				`.${styles.TextBoxes}`,
+				{
+					y: "0",
+					x: "0",
+					opacity: "1",
+				},
+				"first"
+			);
 
-		ScrollTrigger.create({
-			trigger: `.${styles.SweetTaste}`,
-			animation: BowlAnimTimeline,
-			start: "top 90%",
-			end: "+=" + winH * 0.8,
-			pin: false,
-			scrub: true,
-			markers: false,
-			// pinSpacing: false,
-		});
+			ScrollTrigger.create({
+				trigger: `.${styles.SweetTaste}`,
+				animation: BowlAnimTimeline,
+				start: "top 90%",
+				end: "+=" + winH * 0.8,
+				pin: false,
+				scrub: true,
+				markers: false,
+				// pinSpacing: false,
+			});
+		}
 	}, []);
 	return (
 		<section className={`${styles.SweetTaste}`} id="Our Story">
 			<div className="container">
 				<div className={`${styles.FlexMain}`}>
 					<div className={`${styles.TextBx} toTop`} data-scroll>
+						<img
+							src={BowlImg.src}
+							alt="Bowl Image"
+							className={`${styles.BowlImg} toTop visible_xs`}
+							data-scroll
+						/>
 						<h2 className="text_50">
 							The sweet taste
 							<br className="hidden_xs" /> of no compromise
@@ -64,7 +73,7 @@ export default function SweetTaste({ gsap, ScrollTrigger }) {
 						<img
 							src={BowlImg.src}
 							alt="Bowl Image"
-							className={`${styles.BowlImg} toTop`}
+							className={`${styles.BowlImg} toTop hidden_xs`}
 							data-scroll
 						/>
 						<div className={`${styles.TextBoxes} d_f`}>
