@@ -26,16 +26,25 @@
 		.Cloud2 {
 			animation: moveside 10s linear infinite;
 			// transform: translateY(-100%) !important;
+			@media screen and (max-width: 992px) {
+				width: 130px;
+			}
 		}
 	}
 	.CloudsBox {
 		padding: 0px 0 50px;
 		.Cloud1 {
 			animation: moveside 8s linear infinite;
+			@media screen and (max-width: 992px) {
+				width: 150px;
+			}
 		}
 		.Cloud3 {
 			padding-right: 50px;
 			animation: moveside 12s linear infinite;
+			@media screen and (max-width: 992px) {
+				width: 170px;
+			}
 		}
 	}
 	.TextBx {
