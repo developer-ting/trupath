@@ -105,382 +105,246 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 			animationData: require("../../public/img/home/json/Guilt-free.json"),
 		});
 	}, []);
-	const [trupathCircleWrapperHeight, setTrupathCircleWrapperHeight] =
-		useState(0);
-	const [productHeight, setProductHeight] = useState(0);
-	const [windowHeight, setWindowHeight] = useState(0);
-	const productImgRef = useRef(null); // Create a ref for product_img
-	const productHeightSection = windowHeight;
-	console.log(productHeightSection, "productHeightSection");
+	const productImgRef = useRef(null);
 
 	useEffect(() => {
 		const winH = window.innerHeight;
 		const winW = window.innerWidth;
-		setWindowHeight(winH);
-		const sugarcoatingAnimTimeline = gsap.timeline({});
-		const sugarcoatingAnimTimeline2 = gsap.timeline({});
-		const TrupathCircleWrapper = document.querySelector(".TrupathCircleWrapper");
-		const windowHeight = window.innerHeight;
-		const additionalHeight = 100;
-		const natureHeight = windowHeight + additionalHeight + "px";
+		if (winW > 992) {
+			const sugarcoatingAnimTimeline = gsap.timeline({});
+			const sugarcoatingAnimTimeline2 = gsap.timeline({});
 
-		const root = document.documentElement;
-		const containerLeftSpace = getComputedStyle(root).getPropertyValue(
-			"--container_left_space"
-		);
+			sugarcoatingAnimTimeline
+				.fromTo(
+					`.${styles.chini_img}`,
+					{
+						width: "0",
+						scale: 0,
+					},
+					{
+						width: "98px",
+						scale: 1,
+					},
+					"first"
+				)
+				.fromTo(
+					`.${styles.transBg}`,
+					{
+						scaleX: 10,
+						scaleY: 10,
+						y: "0%",
+					},
+					{
+						scaleX: 1,
+						scaleY: 1,
+						y: "30%",
+					},
+					"second"
+				)
+				.fromTo(
+					`.${styles.sugarcoating_bg_img}`,
+					{
+						y: "0%",
+					},
+					{
+						y: "30%",
+					},
+					"second"
+				)
+				.to(
+					`.${styles.leaves}`,
+					{
+						y: "-100%",
+					},
+					"second"
+				)
+				.fromTo(
+					`.${styles.title_sec}, .${styles.title}`,
+					{
+						// color: "#fff",
+					},
+					{
+						color: "#000",
+						delay: "0.2",
+					},
+					"second"
+				)
+				.fromTo(
+					`.${styles.para_text_ani}`,
+					{
+						// color: "#fff",
+					},
+					{
+						color: "#000",
+						delay: "0.2",
+					},
+					"second"
+				)
+				.fromTo(
+					`.${styles.sugarcoating_info}`,
+					{
+						transform: "translate(-50%, -50%)",
+					},
+					{
+						transform: "translate(-50%, -100%)",
+					},
+					"second"
+				)
+				.fromTo(
+					`.${styles.sugarcoating_info}`,
+					{
+						transform: "translate(-50%, -100%)",
+					},
+					{
+						transform: "translate(-50%, -100vh)",
+					},
+					"third"
+				)
+				.fromTo(
+					`.${styles.transBg}`,
+					{
+						y: "30%",
+					},
+					{
+						y: "10%",
+					},
+					"third"
+				)
+				.to(
+					`.${styles.TrupathCircleWrapper}`,
+					{
+						top: "10vh",
+					},
+					"fourth"
+				)
+				.fromTo(
+					`.${styles.product_circle_img}`,
+					{
+						top: "-112vh",
+					},
+					{
+						top: "5vh",
+					},
+					"fourth"
+				)
+				.to(
+					`.${styles.text_para}`,
+					{
+						opacity: "1",
+						delay: 0.5,
+					},
+					"fourth"
+				)
+				.to(
+					`.${styles.left_star}`,
+					{
+						left: "35%",
+						opacity: "1",
+					},
+					"five"
+				)
+				.to(
+					`.${styles.right_star}`,
+					{
+						right: "30%",
+						opacity: "1",
+					},
+					"five"
+				)
+				.to(
+					`.${styles.circle_div}`,
+					{
+						overflow: "inherit",
+					},
+					"five"
+				)
+				.fromTo(
+					`.${styles.product_circle_img}`,
+					{
+						xPercent: -50,
+						y: 0,
+						rotate: "0deg",
+					},
+					{
+						xPercent: -50,
+						y: 0,
+						rotate: "8deg",
+						ease: "none",
+						delay: 0.1,
+					},
+					"fourth"
+				);
+			ScrollTrigger.create({
+				trigger: `.${styles.two_section_wrapper}`,
+				animation: sugarcoatingAnimTimeline,
+				start: "top top",
+				end: "+=" + winH * 2,
+				pin: true,
+				scrub: true,
+			});
 
-		console.log("Container Left Space:", containerLeftSpace);
+			sugarcoatingAnimTimeline2
+				.fromTo(
+					`.${styles.Nature}`,
+					{
+						backgroundColor: "rgb(255 73 0 / 84%)",
+					},
+					{
+						delay: 3,
+						duration: 10,
+						backgroundColor: "#410F00",
+					},
+					"first"
+				)
+				.fromTo(
+					`.${styles.product_circle_img}`,
+					{
+						top: "5vh",
+					},
+					{
+						top: "90vh",
+						width: "1440px",
+						height: "810px",
+						left: "calc(50% + 240px)",
+						duration: 15,
+					},
+					"first"
+				)
+				.fromTo(
+					`.${styles.left_section}`,
+					{
+						left: "30%",
+						opacity: 0,
+					},
+					{
+						left: "0%",
+						opacity: 1,
+						duration: 5,
+					},
+					"second"
+				)
+				.fromTo(
+					`.${styles.right_section}`,
+					{
+						right: "30%",
+						opacity: 0,
+					},
+					{
+						right: "-20px",
+						opacity: 1,
+						duration: 5,
+					},
+					"second"
+				);
 
-		if (TrupathCircleWrapper) {
-			const height = TrupathCircleWrapper.offsetHeight;
-			setTrupathCircleWrapperHeight(height);
+			ScrollTrigger.create({
+				trigger: `.${styles.Nature}`,
+				animation: sugarcoatingAnimTimeline2,
+				start: "top 90%",
+				end: "+=" + winH * 0.8,
+				scrub: true,
+			});
 		}
-
-		const circle = document.querySelector(`.${styles.product_circle}`);
-		const natureProductImg = document.querySelector(`.${styles.product_img}`);
-
-		if (circle && natureProductImg) {
-			const circleProductImgBottom = circle.getBoundingClientRect().height;
-			const natureProductImgBottom =
-				natureProductImg.getBoundingClientRect().height;
-
-			const distanceBetweenBottoms =
-				circleProductImgBottom - natureProductImgBottom;
-			setProductHeight(distanceBetweenBottoms);
-			console.log("Distance", circleProductImgBottom);
-			console.log("Distance", natureProductImgBottom);
-			console.log("Distance", distanceBetweenBottoms);
-		}
-
-		sugarcoatingAnimTimeline
-			.fromTo(
-				`.${styles.chini_img}`,
-				{
-					width: "0",
-					scale: 0,
-				},
-				{
-					width: "98px",
-					scale: 1,
-				},
-				"first"
-			)
-			.fromTo(
-				`.${styles.transBg}`,
-				{
-					scaleX: 10, // Starting horizontal scale (1 means 100%)
-					scaleY: 10, // Starting vertical scale (1 means 100%)
-					y: "0%", // Starting translateY
-				},
-				{
-					scaleX: 1, // Ending horizontal scale (50% of original width)
-					scaleY: 1, // Ending vertical scale (30% of original height)
-					y: "30%", // Ending translateY
-				},
-				"second"
-			)
-			.fromTo(
-				`.${styles.sugarcoating_bg_img}`,
-				{
-					y: "0%", // Starting translateY
-				},
-				{
-					y: "30%", // Ending translateY
-				},
-				"second"
-			)
-			.to(
-				`.${styles.leaves}`,
-				{
-					y: "-100%", // Starting translateY
-				},
-				"second"
-			)
-			.fromTo(
-				`.${styles.title_sec}, .${styles.title}`,
-				{
-					// color: "#fff",
-				},
-				{
-					color: "#000",
-					delay: "0.2",
-				},
-				"second"
-			)
-			.fromTo(
-				`.${styles.para_text_ani}`,
-				{
-					// color: "#fff",
-				},
-				{
-					color: "#000",
-					delay: "0.2",
-				},
-				"second"
-			)
-			.fromTo(
-				`.${styles.sugarcoating_info}`,
-				{
-					transform: "translate(-50%, -50%)",
-				},
-				{
-					transform: "translate(-50%, -100%)",
-				},
-				"second"
-			)
-			.fromTo(
-				`.${styles.sugarcoating_info}`,
-				{
-					transform: "translate(-50%, -100%)",
-				},
-				{
-					transform: "translate(-50%, -100vh)",
-				},
-				"third"
-			)
-			.fromTo(
-				`.${styles.transBg}`,
-				{
-					y: "30%", // Starting translateY
-				},
-				{
-					y: "10%", // Ending translateY
-				},
-				"third"
-			)
-			// .fromTo(
-			// 	`.${styles.sugarcoating_bg}`,
-			// 	{
-			// 		opacity: "1", // Starting translateY
-			// 	},
-			// 	{
-			// 		opacity: "0",
-			// 		delay: 0.5, // Ending translateY
-			// 	},
-			// 	"fourth"
-			// )
-			// .fromTo(
-			// 	`.${styles.TrupathCircle}`,
-			// 	{
-			// 		y: "0%", // Starting translateY
-			// 	},
-			// 	{
-			// 		y: "-120%", // Adjust the end translateY to reduce the gap
-			// 	},
-			// 	"fourth"
-			// )
-			.to(
-				`.${styles.TrupathCircleWrapper}`,
-				{
-					top: "10vh", // Starting translateY
-				},
-				"fourth"
-			)
-			.fromTo(
-				`.${styles.product_circle_img}`,
-				{
-					top: "-106vh",
-				},
-				{
-					top: "0",
-				},
-				"fourth"
-			)
-			.to(
-				`.${styles.text_para}`,
-				{
-					opacity: "1",
-					delay: 0.5,
-				},
-				"fourth"
-			)
-			.to(
-				`.${styles.left_star}`,
-				{
-					left: "35%",
-					opacity: "1",
-				},
-				"five"
-			)
-			.to(
-				`.${styles.right_star}`,
-				{
-					right: "30%",
-					opacity: "1",
-				},
-				"five"
-			)
-			.to(
-				`.${styles.circle_div}`,
-				{
-					overflow: "inherit",
-				},
-				"five"
-			)
-			// .fromTo(
-			// 	`.${styles.product_circle_img}`,
-			// 	{
-			// 		top: "25%",
-			// 	},
-			// 	{
-			// 		top: `${natureHeight}`,
-			// 		// top: "100%",
-			// 	},
-			// 	"six"
-			// );
-			.fromTo(
-				`.${styles.product_circle_img}`,
-				{
-					xPercent: -50,
-					y: 0,
-					rotate: "0deg",
-				},
-				{
-					xPercent: -50,
-					y: 0,
-					rotate: "8deg",
-					ease: "none",
-					delay: 0.1,
-				},
-				"fourth"
-			);
-
-		ScrollTrigger.create({
-			trigger: `.${styles.two_section_wrapper}`,
-			animation: sugarcoatingAnimTimeline,
-			start: "top top",
-			end: "+=" + winH * 2,
-			pin: true,
-			scrub: true,
-			// markers: true,
-			// pinSpacing: false,
-		});
-
-		const productImgElement = productImgRef.current;
-
-		// if (productImgElement) {
-		// 	const productImgRect = productImgElement.getBoundingClientRect();
-		// 	const productCircle = document.querySelector(
-		// 		`.${styles.product_circle_img}`
-		// 	);
-
-		// 	if (productCircle) {
-		// 		sugarcoatingAnimTimeline2.fromTo(
-		// 			`.${styles.product_circle_img}`,
-		// 			{
-		// 				top: "250px", // Starting position
-		// 				left: `${productCircle.offsetLeft}px`, // Start from the current position
-		// 			},
-		// 			{
-		// 				top: `${productImgRect.top}px`, // Animate to the product_img position
-		// 				left: `${productImgRect.left}px`, // Adjust horizontal position if necessary
-		// 				duration: 1,
-		// 				ease: "power1.inOut",
-		// 			},
-		// 			"fourth"
-		// 		);
-		// 	}
-		// }
-		// const productHeight = window.innerHeight * productHeight;
-		sugarcoatingAnimTimeline2
-			.fromTo(
-				`.${styles.Nature}`,
-				{
-					backgroundColor: "rgb(255 73 0 / 84%)",
-				},
-				{
-					delay: 3,
-					duration: 10,
-					backgroundColor: "#410F00",
-				},
-				"first"
-			)
-			.fromTo(
-				`.${styles.product_circle_img}`,
-				{
-					top: "3vh",
-					// left: "50%",
-				},
-				{
-					top: "90vh",
-					width: "1440px",
-					height: "810px",
-					left: "calc(50% + 240px)",
-					duration: 15,
-				},
-				"first"
-			)
-			.fromTo(
-				`.${styles.left_section}`,
-				{
-					// left: "-70%",
-					left: "30%",
-					opacity: 0,
-				},
-				{
-					left: "0%",
-					opacity: 1,
-					duration: 5,
-				},
-				"second"
-			)
-			.fromTo(
-				`.${styles.right_section}`,
-				{
-					// left: "-70%",
-					right: "30%",
-					opacity: 0,
-				},
-				{
-					right: "-20px",
-					opacity: 1,
-					duration: 5,
-				},
-				"second"
-			);
-
-		ScrollTrigger.create({
-			trigger: `.${styles.Nature}`,
-			animation: sugarcoatingAnimTimeline2,
-			start: "top 90%",
-			end: "+=" + winH * 0.8,
-			// pin: true,
-			scrub: true,
-			// markers: true,
-			// pinSpacing: false,
-		});
-	}, []);
-
-	const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
-	const [scrollPosition, setScrollPosition] = useState(0);
-	const imgRef = useRef(null); // Create a ref for the image element
-
-	// Function to handle image load
-	const handleImageLoad = () => {
-		if (imgRef.current) {
-			const { width, height } = imgRef.current.getBoundingClientRect();
-			setImageSize({ width, height });
-		}
-	};
-
-	// Function to handle scroll
-	const handleScroll = () => {
-		setScrollPosition(window.scrollY);
-
-		if (imgRef.current) {
-			const { width, height } = imgRef.current.getBoundingClientRect();
-			setImageSize({ width, height });
-		}
-	};
-
-	useEffect(() => {
-		// Add scroll event listener
-		window.addEventListener("scroll", handleScroll);
-
-		// Cleanup scroll event listener on component unmount
-		return () => {
-			window.removeEventListener("scroll", handleScroll);
-		};
 	}, []);
 
 	return (
@@ -491,23 +355,16 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					{/* <img src={bgLine.src} className="img-responsive" alt="Sugarcane line" /> */}
 				</div>
 				<div className={`${styles.sugarcoating}`} id="About">
-					{/* <p>Image width: {imageSize.width}px</p>
-					<p>Image height: {imageSize.height}px</p>
-					<p>Scroll position: {scrollPosition}px</p> */}
 					<div className={`${styles.sugarcoating_bg}`}>
 						<img
 							src={sugarcoatingBg.src}
-							ref={imgRef}
 							className={`${styles.sugarcoating_bg_img} img-responsive`}
 							alt="sugarcoatingBg"
-							// onLoad={handleImageLoad}
 						/>
 						<img
 							src={transBg.src}
-							ref={imgRef}
 							className={`${styles.transBg} img-responsive`}
 							alt="sugarcoatingBg"
-							// onLoad={handleImageLoad}
 						/>
 					</div>
 					<div className={`${styles.sugarcoating_info}`}>
@@ -545,12 +402,6 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 								<img
 									src={productCircle.src}
 									className={`${styles.product_circle_img} img-responsive`}
-									// alt="product_circle"
-									// style={{
-									// 	width: `${imageSize.width}px`, // Set width dynamically
-									// 	height: `${imageSize.height}px`, // Set height dynamically
-									// 	objectFit: "contain", // Optional: maintain aspect ratio
-									// }}
 								/>
 								<div className={`${styles.left_star}`}>
 									<img src={leftStar.src} className="img-responsive" alt="left_star" />
