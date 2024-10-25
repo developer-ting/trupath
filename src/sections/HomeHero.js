@@ -63,7 +63,7 @@ export default function HomeHero() {
 					<img src={cloud2.src} className="img-responsive" alt="cloud2" />
 				</div>
 				<div className={`${styles.info} info`}>
-					<h1 className="text_100">Make the Gud choice</h1>
+					<h1 className="text_100 mobile_padd">Make the Gud choice</h1>
 					<p className="text_20">
 						Go against the crystal grain - from the bitter side of sugar to the better
 						side of sweetness. <br className="hidden_xs" /> And return to the Gud ol’
