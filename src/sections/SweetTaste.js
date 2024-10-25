@@ -49,7 +49,7 @@ export default function SweetTaste({ gsap, ScrollTrigger }) {
 		}
 	}, []);
 	return (
-		<section className={`${styles.SweetTaste}`} id="Our Story">
+		<section className={`${styles.SweetTaste}`} id="Benefits">
 			<div className="container">
 				<div className={`${styles.FlexMain}`}>
 					<div className={`${styles.TextBx} toTop`} data-scroll>

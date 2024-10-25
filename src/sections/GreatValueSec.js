@@ -41,7 +41,7 @@ export default function GreatValueSec() {
 	// 	});
 	// }, []);
 	return (
-		<section className={styles.GreatValueSec}>
+		<section className={styles.GreatValueSec} id="Contact">
 			<div className="container">
 				<h2 className="text_50 toTop" data-scroll>
 					Great value. Great taste. Great health.

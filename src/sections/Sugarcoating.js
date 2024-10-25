@@ -358,7 +358,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					{/* <div ref={Wave}></div> */}
 					<img src={bgLine.src} className="img-responsive" alt="Sugarcane line" />
 				</div>
-				<div className={`${styles.sugarcoating}`} id="About">
+				<div className={`${styles.sugarcoating}`} id="Overview">
 					<div className={`${styles.sugarcoating_bg}`}>
 						<img
 							src={sugarcoatingBg.src}
@@ -441,7 +441,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					</div>
 				</div>
 			</div>
-			<div className={`${styles.Nature}`}>
+			<div className={`${styles.Nature}`} id="USPs">
 				<div className={`${styles.pad_section} container`}>
 					<div className={`${styles.nature_section} f_r_aj_between`}>
 						<img
