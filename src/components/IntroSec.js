@@ -23,6 +23,8 @@ import Grass4 from "../../public/img/intro/Grass4.png";
 import LeftCloud from "../../public/img/intro/LeftCloud.png";
 import RightCloud from "../../public/img/intro/RightCloud.png";
 import Path1 from "../../public/img/intro/Path1.png";
+import Path1Mob from "../../public/img/intro/LeftPathMob.png";
+import Path2Mob from "../../public/img/intro/RightPathMob.png";
 import Bowl1 from "../../public/img/intro/Bowl1.png";
 import Path2 from "../../public/img/intro/Path2.png";
 import Bowl2 from "../../public/img/intro/Bowl2.png";
@@ -113,8 +115,7 @@ export default function IntroSec({ gsap, setShowHeader }) {
 				`.${styles.LeftDiv} .${styles.BowlMain}`,
 				1,
 				{
-					left: "20%",
-					bottom: "65%",
+					x: "0px",
 					y: "0px",
 					duration: 1,
 				},
@@ -150,10 +151,8 @@ export default function IntroSec({ gsap, setShowHeader }) {
 				`.${styles.RightDiv} .${styles.BowlMain}`,
 				1,
 				{
-					right: "20%",
-					bottom: "70%",
+					x: "0px",
 					y: "0px",
-					duration: 1,
 				},
 				"7th"
 			)
@@ -163,7 +162,6 @@ export default function IntroSec({ gsap, setShowHeader }) {
 				{
 					y: "0px",
 					opacity: 1,
-					duration: 1,
 				},
 				"8th"
 			)
@@ -341,11 +339,14 @@ export default function IntroSec({ gsap, setShowHeader }) {
 				<div className={`${styles.BowlPathMain}`}>
 					<div className={`${styles.LeftDiv}`}>
 						<div className={`${styles.path}`}>
-							<img
-								className={`${styles.Path1} width_100`}
-								src={Path1.src}
-								alt="Path1 Image"
-							/>
+							<picture>
+								<source srcSet={Path1Mob.src} media="(max-width:767px)" />
+								<img
+									className={`${styles.Path1} width_100`}
+									src={Path1.src}
+									alt="Path1 Image"
+								/>
+							</picture>
 						</div>
 						<div className={`${styles.BowlMain}`}>
 							<div className={`${styles.BowlTitle}`}>
@@ -356,11 +357,14 @@ export default function IntroSec({ gsap, setShowHeader }) {
 					</div>
 					<div className={`${styles.RightDiv}`}>
 						<div className={`${styles.path}`}>
-							<img
-								className={`${styles.Path2} width_100`}
-								src={Path2.src}
-								alt="Path2 Image"
-							/>
+							<picture>
+								<source srcSet={Path2Mob.src} media="(max-width:767px)" />
+								<img
+									className={`${styles.Path2} width_100`}
+									src={Path2.src}
+									alt="Path2 Image"
+								/>
+							</picture>
 						</div>
 						<div className={`${styles.BowlMain}`}>
 							<div className={`${styles.BowlTitle}`}>
