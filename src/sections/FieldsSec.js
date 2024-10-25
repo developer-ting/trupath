@@ -72,7 +72,7 @@ export default function FieldsSec({ gsap, ScrollTrigger }) {
 		});
 	}, []);
 	return (
-		<section className={styles.FieldsSec} id="Products">
+		<section className={styles.FieldsSec} id="Promise">
 			<div className="container">
 				<div className={`${styles.FlexMain}`}>
 					<div className={`${styles.TextBx}`}>

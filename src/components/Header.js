@@ -59,7 +59,7 @@ export default function Header({ showHeader, setShowHeader }) {
 		if (!element) return;
 
 		const targetPosition =
-			element.getBoundingClientRect().top + window.scrollY - 80;
+			element.getBoundingClientRect().top + window.scrollY - 0;
 		const startPosition = window.scrollY;
 		const distance = targetPosition - startPosition;
 		const duration = 600; // Duration in ms
@@ -104,63 +104,79 @@ export default function Header({ showHeader, setShowHeader }) {
 							<div
 								onClick={() => {
 									toggleSidebar();
-									scrollToSection("About");
+									scrollToSection("Overview");
 								}}
 							>
-								<div className={`${styles.link_title} text_16`}>About Us</div>
+								<div className={`${styles.link_title} text_16`}>Overview</div>
 							</div>
 						</div>
 						<div className={styles.links}>
 							<div
 								onClick={() => {
 									toggleSidebar();
-									scrollToSection("Value");
+									scrollToSection("USPs");
 								}}
 							>
-								<div className={`${styles.link_title} text_16`}>Value</div>
+								<div className={`${styles.link_title} text_16`}>USPs</div>
 							</div>
 						</div>
 						<div className={styles.links}>
 							<div
 								onClick={() => {
 									toggleSidebar();
-									scrollToSection("Our Story");
+									scrollToSection("Origins");
 								}}
 							>
-								<div className={`${styles.link_title} text_16`}>Our Story</div>
+								<div className={`${styles.link_title} text_16`}>Origins</div>
 							</div>
 						</div>
 						<div className={styles.links}>
 							<div
 								onClick={() => {
 									toggleSidebar();
-									scrollToSection("Health Benefits");
+									scrollToSection("Benefits");
 								}}
 							>
-								<div className={`${styles.link_title} text_16`}>Health Benefits</div>
+								<div className={`${styles.link_title} text_16`}>Benefits</div>
 							</div>
 						</div>
 						<div className={styles.links}>
 							<div
 								onClick={() => {
 									toggleSidebar();
-									scrollToSection("Products");
+									scrollToSection("Product");
 								}}
 							>
-								<div className={`${styles.link_title} text_16`}>Products</div>
+								<div className={`${styles.link_title} text_16`}>Product</div>
 							</div>
 						</div>
 						<div className={styles.links}>
 							<div
 								onClick={() => {
 									toggleSidebar();
-									scrollToSection("Manufacturing");
+									scrollToSection("Promise");
 								}}
 							>
-								<div className={`${styles.link_title} text_16`}>Manufacturing</div>
+								<div className={`${styles.link_title} text_16`}>Promise</div>
 							</div>
 						</div>
 						<div className={styles.links}>
+							<div
+								onClick={() => {
+									toggleSidebar();
+									scrollToSection("Blogs");
+								}}
+							>
+								<div className={`${styles.link_title} text_16`}>Blogs</div>
+							</div>
+						</div>
+						<div
+							className={styles.links}
+							onClick={() => {
+								toggleSidebar();
+								scrollToSection("Contact");
+							}}
+						>
 							<Link href="">
 								<Button color="secondary" variant="filled" className={styles.Btn1}>
 									Contact

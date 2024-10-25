@@ -59,7 +59,7 @@ export default function SugarcaneField({ gsap, ScrollTrigger }) {
 		});
 	}, []);
 	return (
-		<section className={styles.SugarcaneField} id="Value">
+		<section className={styles.SugarcaneField} id="Origins">
 			<div className={`${styles.CloudTop} f_r_aj_center`}>
 				<img src={Cloud2.src} className={`${styles.Cloud2}`} alt="Clouds Image" />
 				<div ref={Birds} className={`${styles.Birds}`}></div>
