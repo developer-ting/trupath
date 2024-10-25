@@ -34,7 +34,7 @@ import vectorImg5 from "../../public/img/home/vector_img_5.png";
 import vectorImg6 from "../../public/img/home/vector_img_6.png";
 import bgLine from "../../public/img/banner/bg_line.png";
 import transBg from "../../public/img/home/trans_bg.png";
-import wave from "../../public/img/home/brown_bg.png";
+import wave from "../../public/img/home/brown_bg_new.png";
 import mobileProduct from "../../public/img/home/mobile_product.png";
 import mobileMarquee from "../../public/img/home/mobile_marquee.png";
 
