@@ -28,7 +28,7 @@
 			animation: moveside 5s linear infinite;
 			@media screen and (max-width: 767px) {
 				width: 45%;
-				top: 270px;
+				top: 250px;
 				animation: moveside1 5s linear infinite;
 			}
 		}
@@ -42,7 +42,7 @@
 			}
 			@media screen and (max-width: 767px) {
 				width: 50%;
-				top: 380px;
+				top: 330px;
 				animation: moveside1 8s linear infinite;
 			}
 		}
@@ -90,7 +90,7 @@
 			// 	padding-top: 5%;
 			// }
 			@media screen and (max-width: 767px) {
-				padding-top: 16vh;
+				padding-top: 12vh;
 			}
 
 			p {

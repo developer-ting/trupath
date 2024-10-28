@@ -31,10 +31,16 @@
 	.Sugarcane1 {
 		position: absolute;
 		// left: 0;
+		@media screen and (max-width: 767px) {
+			display: none;
+		}
 	}
 	.Sugarcane2 {
 		position: absolute;
 		right: 0;
+		@media screen and (max-width: 767px) {
+			display: none;
+		}
 	}
 	.MainSec {
 		margin-top: -50px;
