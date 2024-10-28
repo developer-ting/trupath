@@ -518,7 +518,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				trigger: `.${styles.two_section_wrapper}`,
 				animation: sugarcoatingAnimTimeline,
 				start: "top top",
-				end: "+=" + winH * 2.5,
+				end: "+=" + winH * 4,
 				pin: true,
 				scrub: true,
 			});
