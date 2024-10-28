@@ -460,10 +460,21 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				.fromTo(
 					`.${styles.product_circle_img}`,
 					{
-						top: "-120vh",
+						top: "-130vh",
 					},
 					{
-						top: "10vh",
+						top: "0",
+						duration: 0.5,
+					},
+					"fourth"
+				)
+				.fromTo(
+					`.${styles.transBg}`,
+					{
+						y: "10%",
+					},
+					{
+						y: "18%",
 					},
 					"fourth"
 				)
@@ -539,10 +550,10 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				.fromTo(
 					`.${styles.product_circle_img}`,
 					{
-						top: "10vh",
+						top: "0",
 					},
 					{
-						top: "60vh",
+						top: "50vh",
 						// width: "1440px",
 						// height: "810px",
 						// left: "0",

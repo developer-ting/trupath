@@ -142,7 +142,7 @@
 					border-top-right-radius: 100vh;
 					background-color: #ff4900;
 					@media screen and (max-width: 767px) {
-						height: 85vh;
+						height: 75vh;
 						border-top-left-radius: 0;
 						border-top-right-radius: 0;
 						background-color: transparent;
@@ -159,7 +159,7 @@
 						background-repeat: no-repeat;
 						@media screen and (max-width: 767px) {
 							opacity: 1;
-							height: 85vh;
+							height: 75vh;
 							bottom: 0;
 							background-position: center;
 							position: absolute;
@@ -180,7 +180,8 @@
 						@media screen and (max-width: 767px) {
 							opacity: 1;
 							width: 75%;
-							top: 10vh;
+							top: 0;
+							padding-top: 60px;
 							color: var(--color_black) !important;
 						}
 						@media (min-width: 1441px) and (max-width: 5000px) {
@@ -297,9 +298,9 @@
 					}
 				}
 				.title_div_mobile{
-					top: 10vh;
+					top: 20vh;
 					img{
-						height: 85vh;
+						height: 75vh;
 						width: 100vw;
 						object-fit: cover;
 					}
