@@ -27,6 +27,7 @@ import rightStar from "../../public/img/home/right_star.png";
 import hand from "../../public/img/home/hand.png";
 import mobileHeand from "../../public/img/home/mobileHeand.png";
 import productRecepi from "../../public/img/home/product_recepi.png";
+import Spoon from "../../public/img/home/Spoon.png";
 import vectorImg1 from "../../public/img/home/vector_img_1.png";
 import vectorImg2 from "../../public/img/home/vector_img_2.png";
 import vectorImg3 from "../../public/img/home/vector_img_3.png";
@@ -330,6 +331,13 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					},
 					"second"
 				)
+				.to(
+					`.${styles.SpoonMain}`,
+					{
+						opacity: 1,
+					},
+					"second"
+				)
 				.fromTo(
 					`.${styles.right_section}`,
 					{
@@ -559,6 +567,13 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 						left: "0%",
 						opacity: 1,
 						duration: 5,
+					},
+					"second"
+				)
+				.to(
+					`.${styles.SpoonMain}`,
+					{
+						opacity: 1,
 					},
 					"second"
 				)
@@ -808,6 +823,13 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					},
 					"second"
 				)
+				.to(
+					`.${styles.SpoonMain}`,
+					{
+						opacity: 1,
+					},
+					"second"
+				)
 				.fromTo(
 					`.${styles.right_section}`,
 					{
@@ -912,6 +934,9 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 									src={productCircle.src}
 									className={`${styles.product_circle_img} img-responsive hidden_xs`}
 								/>
+								<div className={`${styles.SpoonMain}`}>
+									<img src={Spoon.src} className={styles.Spoon} alt="productSpoon" />
+								</div>
 								<img
 									src={mobileHandProduct.src}
 									className={`${styles.product_circle_img} img-responsive visible_xs`}
@@ -977,10 +1002,13 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 									<p className="text_16">Unapologetically desi</p>
 								</div>
 							</div>
+							{/* <div className={`${styles.SpoonMain}`}>
+								<img src={Spoon.src} className={styles.Spoon} alt="productSpoon" />
+							</div> */}
 							<div className={`${styles.product_img}`} ref={productImgRef}>
 								<img
 									src={productRecepi.src}
-									className="img-responsive"
+									className={`${styles.ProductImg} img-responsive`}
 									alt="productRecepi"
 								/>
 							</div>

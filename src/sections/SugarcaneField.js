@@ -25,6 +25,7 @@ import SugarcaneFieldImg from "../../public/img/home/SugarcaneFieldImg.png";
 /** SugarcaneField Section */
 export default function SugarcaneField({ gsap, ScrollTrigger }) {
 	const Birds = useRef();
+	const BirdsMob = useRef();
 	useEffect(() => {
 		// Lottie
 		Lottie.loadAnimation({
@@ -33,6 +34,13 @@ export default function SugarcaneField({ gsap, ScrollTrigger }) {
 			loop: true,
 			autoplay: true,
 			animationData: require("../../public/img/home/json/Birds.json"),
+		});
+		Lottie.loadAnimation({
+			container: BirdsMob.current,
+			renderer: "svg",
+			loop: true,
+			autoplay: true,
+			animationData: require("../../public/img/home/json/Birds_Mobile.json"),
 		});
 	}, []);
 	useEffect(() => {
@@ -63,6 +71,7 @@ export default function SugarcaneField({ gsap, ScrollTrigger }) {
 			<div className={`${styles.CloudTop} f_r_aj_center`}>
 				<img src={Cloud2.src} className={`${styles.Cloud2}`} alt="Clouds Image" />
 				<div ref={Birds} className={`${styles.Birds}`}></div>
+				<div ref={BirdsMob} className={`${styles.BirdsMob}`}></div>
 			</div>
 			<div className={`${styles.CloudsBox} f_r_aj_between`}>
 				<img src={Cloud1.src} className={`${styles.Cloud1}`} alt="Clouds Image" />

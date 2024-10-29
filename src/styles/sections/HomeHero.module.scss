@@ -21,6 +21,18 @@
 				// top: 160px;
 			}
 		}
+		.Desktop {
+			display: block;
+			@media screen and (max-width: 992px) {
+				display: none;
+			}
+		}
+		.Mobile {
+			display: none;
+			@media screen and (max-width: 992px) {
+				display: block;
+			}
+		}
 		.cloud_left {
 			top: 260px;
 			left: 8%;
