@@ -39,6 +39,7 @@ import transBg from "../../public/img/home/trans_bg.png";
 import mobileProduct from "../../public/img/home/mobile_product.png";
 import mobileMarquee from "../../public/img/home/mobile_marquee.png";
 import transBgMobile from "../../public/img/home/transBgMobile.png";
+import transBgIpad from "../../public/img/home/transBgMobile.png";
 
 // DATA //
 
@@ -284,7 +285,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				trigger: `.${styles.two_section_wrapper}`,
 				animation: sugarcoatingAnimTimeline,
 				start: "top top",
-				end: "+=" + winH * 2,
+				end: "+=" + winH * 3,
 				pin: true,
 				scrub: true,
 			});
@@ -537,18 +538,6 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 
 			sugarcoatingAnimTimeline2
 				.fromTo(
-					`.${styles.Nature}`,
-					{
-						backgroundColor: "rgb(255 73 0 / 84%)",
-					},
-					{
-						delay: 3,
-						duration: 10,
-						backgroundColor: "#410F00",
-					},
-					"first"
-				)
-				.fromTo(
 					`.${styles.product_circle_img}`,
 					{
 						top: "0",
@@ -609,6 +598,241 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				scrub: true,
 			});
 		}
+		if (winW > 767 && winW < 992) {
+			const sugarcoatingAnimTimeline = gsap.timeline({});
+			const sugarcoatingAnimTimeline2 = gsap.timeline({});
+
+			sugarcoatingAnimTimeline
+				.fromTo(
+					`.${styles.chini_img}`,
+					{
+						width: "0",
+						scale: 0,
+					},
+					{
+						width: "98px",
+						scale: 1,
+					},
+					"first"
+				)
+				.fromTo(
+					`.${styles.transBg}`,
+					{
+						scaleX: 10,
+						scaleY: 10,
+						y: "0%",
+					},
+					{
+						scaleX: 1,
+						scaleY: 1,
+						y: "30%",
+					},
+					"second"
+				)
+				.fromTo(
+					`.${styles.sugarcoating_bg_img}`,
+					{
+						y: "0%",
+					},
+					{
+						y: "30%",
+					},
+					"second"
+				)
+				.to(
+					`.${styles.leaves}`,
+					{
+						y: "-100%",
+					},
+					"second"
+				)
+				.fromTo(
+					`.${styles.title_sec}, .${styles.title}`,
+					{
+						// color: "#fff",
+					},
+					{
+						color: "#000",
+						delay: "0.2",
+					},
+					"second"
+				)
+				.fromTo(
+					`.${styles.para_text_ani}`,
+					{
+						// color: "#fff",
+					},
+					{
+						color: "#000",
+						delay: "0.2",
+					},
+					"second"
+				)
+				.fromTo(
+					`.${styles.sugarcoating_info}`,
+					{
+						transform: "translate(-50%, -50%)",
+					},
+					{
+						transform: "translate(-50%, -100%)",
+					},
+					"second"
+				)
+				.fromTo(
+					`.${styles.sugarcoating_info}`,
+					{
+						transform: "translate(-50%, -100%)",
+					},
+					{
+						transform: "translate(-50%, -100vh)",
+					},
+					"third"
+				)
+				.fromTo(
+					`.${styles.transBg}`,
+					{
+						y: "30%",
+					},
+					{
+						y: "10%",
+					},
+					"third"
+				)
+				.to(
+					`.${styles.TrupathCircleWrapper}`,
+					{
+						top: "10vh",
+					},
+					"fourth"
+				)
+				.fromTo(
+					`.${styles.product_circle_img}`,
+					{
+						top: "-112vh",
+					},
+					{
+						top: "3vh",
+					},
+					"fourth"
+				)
+				.to(
+					`.${styles.text_para}`,
+					{
+						opacity: "1",
+						delay: 0.5,
+					},
+					"fourth"
+				)
+				.to(
+					`.${styles.left_star}`,
+					{
+						left: "35%",
+						opacity: "1",
+					},
+					"five"
+				)
+				.to(
+					`.${styles.right_star}`,
+					{
+						right: "30%",
+						opacity: "1",
+					},
+					"five"
+				)
+				.to(
+					`.${styles.circle_div}`,
+					{
+						overflow: "inherit",
+					},
+					"five"
+				)
+				.fromTo(
+					`.${styles.product_circle_img}`,
+					{
+						xPercent: -50,
+						y: 0,
+						rotate: "0deg",
+					},
+					{
+						xPercent: -50,
+						y: 0,
+						rotate: "8deg",
+						ease: "none",
+						delay: 0.1,
+					},
+					"fourth"
+				);
+			ScrollTrigger.create({
+				trigger: `.${styles.two_section_wrapper}`,
+				animation: sugarcoatingAnimTimeline,
+				start: "top top",
+				end: "+=" + winH * 2,
+				pin: true,
+				scrub: true,
+			});
+
+			sugarcoatingAnimTimeline2
+				.fromTo(
+					`.${styles.Nature}`,
+					{
+						backgroundColor: "rgb(255 73 0 / 84%)",
+					},
+					{
+						delay: 3,
+						duration: 10,
+						backgroundColor: "#410F00",
+					},
+					"first"
+				)
+				.fromTo(
+					`.${styles.product_circle_img}`,
+					{
+						top: "3vh",
+					},
+					{
+						top: "90vh",
+						width: "1440px",
+						height: "810px",
+						left: "calc(50% + 240px)",
+						duration: 15,
+					},
+					"first"
+				)
+				.fromTo(
+					`.${styles.left_section}`,
+					{
+						left: "30%",
+						opacity: 0,
+					},
+					{
+						left: "0%",
+						opacity: 1,
+						duration: 5,
+					},
+					"second"
+				)
+				.fromTo(
+					`.${styles.right_section}`,
+					{
+						right: "30%",
+						opacity: 0,
+					},
+					{
+						right: "-20px",
+						opacity: 1,
+						duration: 5,
+					},
+					"second"
+				);
+
+			ScrollTrigger.create({
+				trigger: `.${styles.Nature}`,
+				animation: sugarcoatingAnimTimeline2,
+				start: "top 90%",
+				end: "+=" + winH * 0.8,
+				scrub: true,
+			});
+		}
 	}, []);
 
 	return (
@@ -633,6 +857,11 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 						<img
 							src={transBgMobile.src}
 							className={`${styles.transBg} img-responsive visible_xs`}
+							alt="sugarcoatingBg"
+						/>
+						<img
+							src={transBgMobile.src}
+							className={`${styles.transBgIpad} img-responsive visible_xs`}
 							alt="sugarcoatingBg"
 						/>
 					</div>

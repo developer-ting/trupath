@@ -47,7 +47,7 @@ export default function HomePage() {
 		<div>
 			{/* Metatags */}
 			<MetaTags Title={"Trupath"} Desc={"Home Desc"} OgImg={""} Url={"/"} />
-			{/* <IntroSec gsap={gsap} setShowHeader={setShowHeader} /> */}
+			<IntroSec gsap={gsap} setShowHeader={setShowHeader} />
 			{/* Header */}
 			<Header showHeader={showHeader} setShowHeader={setShowHeader} />
 
