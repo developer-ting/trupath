@@ -228,6 +228,19 @@
 						@media (min-width: 1441px) and (max-width: 5000px) {
 							bottom: 100px;
 						}
+
+						.SpoonMain {
+							// position: relative;
+							position: absolute;
+							// bottom: 0;
+							z-index: 5;
+							top: calc(100vh + 450px);
+							transform: translate(-50%, 0%);
+							left: calc(50% + 240px);
+							opacity: 0;
+							.Spoon {
+							}
+						}
 						.product_circle_img {
 							// width: 360px;
 							left: 50%;
@@ -323,10 +336,10 @@
 						width: 100%;
 					}
 				}
-				.title_div_mobile{
+				.title_div_mobile {
 					top: 20vh;
 					padding-top: 5px;
-					img{
+					img {
 						height: 800px;
 						width: 800px;
 						// object-fit: cover;
@@ -494,7 +507,7 @@
 				.product_img {
 					width: 53%;
 					margin: auto;
-					img {
+					.ProductImg {
 						width: 325px;
 						margin-left: 50px;
 						visibility: hidden;
