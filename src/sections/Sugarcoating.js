@@ -25,6 +25,7 @@ import mobileHandProduct from "../../public/img/home/transProMobile.png";
 import leftStar from "../../public/img/home/left_star.png";
 import rightStar from "../../public/img/home/right_star.png";
 import hand from "../../public/img/home/hand.png";
+import mobileHeand from "../../public/img/home/mobileHeand.png";
 import productRecepi from "../../public/img/home/product_recepi.png";
 import vectorImg1 from "../../public/img/home/vector_img_1.png";
 import vectorImg2 from "../../public/img/home/vector_img_2.png";
@@ -362,7 +363,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 						scale: 0,
 					},
 					{
-						width: "98px",
+						width: "70px",
 						scale: 1,
 					},
 					"first"
@@ -489,7 +490,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				.to(
 					`.${styles.left_star}`,
 					{
-						left: "35%",
+						left: "15%",
 						opacity: "1",
 					},
 					"five"
@@ -497,7 +498,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				.to(
 					`.${styles.right_star}`,
 					{
-						right: "30%",
+						right: "0%",
 						opacity: "1",
 					},
 					"five"
@@ -529,7 +530,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				trigger: `.${styles.two_section_wrapper}`,
 				animation: sugarcoatingAnimTimeline,
 				start: "top top",
-				end: "+=" + winH * 4,
+				end: "+=" + winH * 3,
 				pin: true,
 				scrub: true,
 			});
@@ -554,8 +555,6 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					},
 					{
 						top: "50vh",
-						// width: "1440px",
-						// height: "810px",
 						// left: "0",
 						duration: 15,
 					},
@@ -586,6 +585,20 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 						duration: 5,
 					},
 					"second"
+				)
+				.fromTo(
+					`.${styles.mobile_product}`,
+					{
+						y: "10vh",
+						opacity: 0,
+					},
+					{
+						y: "0",
+						delay: 5,
+						opacity: 1,
+						duration: 5,
+					},
+					"third"
 				);
 
 			ScrollTrigger.create({
@@ -664,22 +677,19 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 									className={`${styles.product_circle_img} img-responsive visible_xs`}
 								/>
 								<div className={`${styles.left_star}`}>
-									<img
-										src={leftStar.src}
-										className="img-responsive hidden_xs"
-										alt="left_star"
-									/>
+									<img src={leftStar.src} className="img-responsive" alt="left_star" />
 								</div>
 								<div className={`${styles.right_star}`}>
-									<img
-										src={rightStar.src}
-										className="img-responsive hidden_xs"
-										alt="right_star"
-									/>
+									<img src={rightStar.src} className="img-responsive" alt="right_star" />
 								</div>
 							</div>
 							<div className={`${styles.hand}`}>
 								<img src={hand.src} className="img-responsive hidden_xs" alt="hand" />
+								<img
+									src={mobileHeand.src}
+									className="img-responsive visible_xs"
+									alt="hand"
+								/>
 							</div>
 						</div>
 						<div className={`${styles.title_div} hidden_xs`}>
@@ -696,11 +706,11 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 			<div className={`${styles.Nature}`} id="USPs">
 				<div className={`${styles.pad_section} container`}>
 					<div className={`${styles.nature_section} f_r_aj_between`}>
-						<img
+						{/* <img
 							src={mobileProduct.src}
 							className={`${styles.mobileProduct} img-responsive visible_xs`}
 							alt="hand"
-						/>
+						/> */}
 						<div className={`${styles.info} toTop`} data-scroll>
 							<h2 className="text_50">From the lap of nature, not labs</h2>
 							<h3 className="text_40">सर्व गुड़ सम्पन्न</h3>
