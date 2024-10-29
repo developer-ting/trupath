@@ -28,6 +28,8 @@ import birds2 from "../../public/img/banner/birds_2.png";
 export default function HomeHero() {
 	const Birds = useRef();
 	const Birds2 = useRef();
+	const BirdsMob = useRef();
+	const Birds2Mob = useRef();
 	useEffect(() => {
 		// Lottie
 		Lottie.loadAnimation({
@@ -44,16 +46,32 @@ export default function HomeHero() {
 			autoplay: true,
 			animationData: require("../../public/img/home/json/Birds2.json"),
 		});
+		Lottie.loadAnimation({
+			container: BirdsMob.current,
+			renderer: "svg",
+			loop: true,
+			autoplay: true,
+			animationData: require("../../public/img/home/json/Birds_Mobile.json"),
+		});
+		Lottie.loadAnimation({
+			container: Birds2Mob.current,
+			renderer: "svg",
+			loop: true,
+			autoplay: true,
+			animationData: require("../../public/img/home/json/Birds2_Mobile.json"),
+		});
 	}, []);
 	return (
 		<div className={`${styles.hero_wrap} banner_animation`}>
 			<div className={`${styles.banner_section}`}>
 				<div className={`${styles.birds_left}`}>
-					<div ref={Birds}></div>
+					<div ref={Birds} className={styles.Desktop}></div>
+					<div ref={BirdsMob} className={styles.Mobile}></div>
 					{/* <img src={birds1.src} className="img-responsive" alt="birds1" /> */}
 				</div>
 				<div className={`${styles.birds_right}`}>
-					<div ref={Birds2}></div>
+					<div ref={Birds2} className={styles.Desktop}></div>
+					<div ref={Birds2Mob} className={styles.Mobile}></div>
 					{/* <img src={birds2.src} className="img-responsive" alt="birds2" /> */}
 				</div>
 				<div className={`${styles.cloud_left}`}>
