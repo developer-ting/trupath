@@ -39,7 +39,7 @@ import transBg from "../../public/img/home/trans_bg.png";
 import mobileProduct from "../../public/img/home/mobile_product.png";
 import mobileMarquee from "../../public/img/home/mobile_marquee.png";
 import transBgMobile from "../../public/img/home/transBgMobile.png";
-import transBgIpad from "../../public/img/home/transBgMobile.png";
+import transBgIpad from "../../public/img/home/transBgIpad.png";
 
 // DATA //
 
@@ -610,7 +610,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 						scale: 0,
 					},
 					{
-						width: "98px",
+						width: "70px",
 						scale: 1,
 					},
 					"first"
@@ -618,8 +618,8 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				.fromTo(
 					`.${styles.transBg}`,
 					{
-						scaleX: 10,
-						scaleY: 10,
+						scaleX: 5,
+						scaleY: 5,
 						y: "0%",
 					},
 					{
@@ -635,7 +635,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 						y: "0%",
 					},
 					{
-						y: "30%",
+						y: "32vh",
 					},
 					"second"
 				)
@@ -701,17 +701,28 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				.to(
 					`.${styles.TrupathCircleWrapper}`,
 					{
-						top: "10vh",
+						top: "0",
 					},
 					"fourth"
 				)
 				.fromTo(
 					`.${styles.product_circle_img}`,
 					{
-						top: "-112vh",
+						top: "-130vh",
 					},
 					{
-						top: "3vh",
+						top: "0",
+						duration: 0.5,
+					},
+					"fourth"
+				)
+				.fromTo(
+					`.${styles.transBg}`,
+					{
+						y: "10%",
+					},
+					{
+						y: "18%",
 					},
 					"fourth"
 				)
@@ -726,7 +737,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				.to(
 					`.${styles.left_star}`,
 					{
-						left: "35%",
+						left: "15%",
 						opacity: "1",
 					},
 					"five"
@@ -734,7 +745,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				.to(
 					`.${styles.right_star}`,
 					{
-						right: "30%",
+						right: "0%",
 						opacity: "1",
 					},
 					"five"
@@ -766,34 +777,20 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				trigger: `.${styles.two_section_wrapper}`,
 				animation: sugarcoatingAnimTimeline,
 				start: "top top",
-				end: "+=" + winH * 2,
+				end: "+=" + winH * 3,
 				pin: true,
 				scrub: true,
 			});
 
 			sugarcoatingAnimTimeline2
 				.fromTo(
-					`.${styles.Nature}`,
-					{
-						backgroundColor: "rgb(255 73 0 / 84%)",
-					},
-					{
-						delay: 3,
-						duration: 10,
-						backgroundColor: "#410F00",
-					},
-					"first"
-				)
-				.fromTo(
 					`.${styles.product_circle_img}`,
 					{
-						top: "3vh",
+						top: "0",
 					},
 					{
-						top: "90vh",
-						width: "1440px",
-						height: "810px",
-						left: "calc(50% + 240px)",
+						top: "50vh",
+						// left: "0",
 						duration: 15,
 					},
 					"first"
@@ -823,6 +820,20 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 						duration: 5,
 					},
 					"second"
+				)
+				.fromTo(
+					`.${styles.mobile_product}`,
+					{
+						y: "10vh",
+						opacity: 0,
+					},
+					{
+						y: "0",
+						delay: 5,
+						opacity: 1,
+						duration: 5,
+					},
+					"third"
 				);
 
 			ScrollTrigger.create({
@@ -859,11 +870,11 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 							className={`${styles.transBg} img-responsive visible_xs`}
 							alt="sugarcoatingBg"
 						/>
-						<img
-							src={transBgMobile.src}
+						{/* <img
+							src={transBgIpad.src}
 							className={`${styles.transBgIpad} img-responsive visible_xs`}
 							alt="sugarcoatingBg"
-						/>
+						/> */}
 					</div>
 					<div className={`${styles.sugarcoating_info}`}>
 						<div className={`${styles.title_sec}`}>

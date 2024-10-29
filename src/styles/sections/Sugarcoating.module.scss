@@ -58,25 +58,10 @@
 					left: 0;
 					width: 100%;
 					position: absolute;
-					@media screen and (max-width: 767px) {
+					@media screen and (max-width: 992px) {
 						width: 100vw;
 						height: 100vh;
 						object-fit: cover;
-					}
-				}
-				.transBgIpad {
-					top: 0;
-					left: 0;
-					width: 100%;
-					position: absolute;
-					@media screen and (max-width: 767px) {
-						display: none;
-					}
-					@media (min-width: 768px) and (max-width: 992px) {
-						display: block;
-					}
-					@media (min-width: 993px) and (max-width: 5000px) {
-						display: none;
 					}
 				}
 			}
@@ -112,7 +97,7 @@
 					width: 45%;
 					margin: auto;
 					padding-top: 15px;
-					@media screen and (max-width: 767px) {
+					@media screen and (max-width: 992px) {
 						width: 70%;
 					}
 					p {
@@ -153,8 +138,14 @@
 					border-top-left-radius: 100vh;
 					border-top-right-radius: 100vh;
 					background-color: #ff4900;
-					@media screen and (max-width: 992px) {
+					@media screen and (max-width: 767px) {
 						height: 75vh;
+						border-top-left-radius: 0;
+						border-top-right-radius: 0;
+						background-color: transparent;
+					}
+					@media (min-width: 768px) and (max-width: 992px) {
+						height: 90vh;
 						border-top-left-radius: 0;
 						border-top-right-radius: 0;
 						background-color: transparent;
@@ -169,13 +160,21 @@
 						height: 100vh;
 						background-size: cover;
 						background-repeat: no-repeat;
-						@media screen and (max-width: 992px) {
+						@media screen and (max-width: 767px) {
 							opacity: 1;
 							height: 75vh;
 							bottom: 0;
 							background-position: center;
 							position: absolute;
 							background-image: url(../../../public/img/home/circle_img_mobile.png);
+						}
+						@media (min-width: 768px) and (max-width: 992px) {
+							opacity: 1;
+							height: 90vh;
+							bottom: 0;
+							background-position: center;
+							position: absolute;
+							background-image: url(../../../public/img/home/circle_img_ipad.png);
 						}
 					}
 					.text_para {
@@ -194,6 +193,9 @@
 							top: 0;
 							padding-top: 70px;
 							color: var(--color_black) !important;
+						}
+						@media (min-width: 768px) and (max-width: 992px) {
+							padding-top: 90px;
 						}
 						@media (min-width: 1441px) and (max-width: 5000px) {
 							padding-top: 130px;
@@ -288,6 +290,9 @@
 						@media screen and (max-width: 767px) {
 							z-index: 3;
 						}
+						@media (min-width: 768px) and (max-width: 992px) {
+							z-index: 2;
+						}
 						@media (min-width: 1681px) and (max-width: 5000px) {
 							bottom: 60px;
 						}
@@ -314,11 +319,21 @@
 					@media screen and (max-width: 767px) {
 						left: 50%;
 						top: -20px;
-						// height: 70vh;
 						height: 800px;
 						width: 800px;
 						transform: translateX(-50%);
 					}
+					@media (min-width: 768px) and (max-width: 992px) {
+						left: -55%;
+						top: 20px;
+						width: 1600px;
+						height: 1600px;
+						transform: translateX(-50%);
+						// transform: rotate(0deg);
+						opacity: 1;
+						animation: rotate1 10s linear infinite;
+					}
+					
 					img {
 						width: 100%;
 					}
@@ -361,9 +376,9 @@
 		// background-color: #d94426;
 		// background-image: url();
 		padding-top: 10vh;
-		@media screen and (max-width: 767px) {
+		@media screen and (max-width: 992px) {
 			padding-top: 0;
-			background-color: #522415;
+			background-color: #522415 !important;
 		}
 		&::after {
 			content: "";
@@ -377,7 +392,7 @@
 			height: 100%;
 			background-size: cover;
 			background-repeat: no-repeat;
-			@media screen and (max-width: 767px) {
+			@media screen and (max-width: 992px) {
 				opacity: 1;
 				z-index: -1;
 				background-image: none;
@@ -392,7 +407,7 @@
 		// }
 		.nature_section {
 			padding: 100px 0;
-			@media screen and (max-width: 767px) {
+			@media screen and (max-width: 992px) {
 				flex-wrap: wrap;
 				padding: 430px 0 40px 0;
 			}
@@ -401,13 +416,14 @@
 			}
 			.info {
 				width: 40%;
-				@media screen and (max-width: 767px) {
+				@media screen and (max-width: 992px) {
 					width: 100%;
+					background-color: #522415;
 				}
 				h2 {
 					padding-bottom: 20px;
 					color: var(--color_tertiary);
-					@media screen and (max-width: 767px) {
+					@media screen and (max-width: 992px) {
 						padding-bottom: 10px;
 					}
 				}
@@ -415,7 +431,7 @@
 			.product {
 				width: 60%;
 				position: relative;
-				@media screen and (max-width: 767px) {
+				@media screen and (max-width: 992px) {
 					width: 100%;
 				}
 				.left_section {
@@ -427,7 +443,7 @@
 					flex-wrap: wrap;
 					position: absolute;
 					align-items: center;
-					@media screen and (max-width: 767px) {
+					@media screen and (max-width: 992px) {
 						top: 0;
 						position: relative;
 					}
