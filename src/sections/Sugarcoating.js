@@ -285,7 +285,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				trigger: `.${styles.two_section_wrapper}`,
 				animation: sugarcoatingAnimTimeline,
 				start: "top top",
-				end: "+=" + winH * 2,
+				end: "+=" + winH * 3,
 				pin: true,
 				scrub: true,
 			});
@@ -537,18 +537,6 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 			});
 
 			sugarcoatingAnimTimeline2
-				.fromTo(
-					`.${styles.Nature}`,
-					{
-						backgroundColor: "rgb(255 73 0 / 84%)",
-					},
-					{
-						delay: 3,
-						duration: 10,
-						backgroundColor: "#410F00",
-					},
-					"first"
-				)
 				.fromTo(
 					`.${styles.product_circle_img}`,
 					{
