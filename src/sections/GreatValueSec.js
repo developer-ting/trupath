@@ -23,7 +23,7 @@ import "swiper/css/autoplay";
 import SliderImg1 from "../../public/img/home/image1.jpg";
 import SliderImg2 from "../../public/img/home/image2.jpg";
 import SliderImg3 from "../../public/img/home/image3.jpg";
-// import bottomWave from "../../public/img/home/wave_bottom.png";
+import bottomWave from "../../public/img/home/wave_bottom.png";
 
 // DATA //
 
@@ -90,11 +90,11 @@ export default function GreatValueSec() {
 			</div>
 
 			{/* <div ref={Wave} className={`${styles.Waves} width_100`} alt="Wave"></div> */}
-			{/* <img
+			<img
 				src={bottomWave.src}
 				className={`${styles.Waves} width_100`}
 				alt="Wave"
-			/> */}
+			/>
 		</section>
 	);
 }
