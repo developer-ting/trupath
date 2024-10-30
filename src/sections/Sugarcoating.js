@@ -41,6 +41,8 @@ import mobileProduct from "../../public/img/home/mobile_product.png";
 import mobileMarquee from "../../public/img/home/mobile_marquee.png";
 import transBgMobile from "../../public/img/home/transBgMobile.png";
 import transBgIpad from "../../public/img/home/transBgIpad.png";
+import transBgIpadPro from "../../public/img/home/transBgIpadPro.png";
+import transProIpad from "../../public/img/home/transProIpad.png";
 
 // DATA //
 
@@ -631,7 +633,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					"first"
 				)
 				.fromTo(
-					`.${styles.transBg}`,
+					`.${styles.transBgIpad}`,
 					{
 						scaleX: 5,
 						scaleY: 5,
@@ -704,7 +706,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					"third"
 				)
 				.fromTo(
-					`.${styles.transBg}`,
+					`.${styles.transBgIpad}`,
 					{
 						y: "30%",
 					},
@@ -721,9 +723,9 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					"fourth"
 				)
 				.fromTo(
-					`.${styles.product_circle_img}`,
+					`.${styles.product_circle_img_ipad}`,
 					{
-						top: "-130vh",
+						top: "-100vh",
 					},
 					{
 						top: "0",
@@ -731,16 +733,16 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					},
 					"fourth"
 				)
-				.fromTo(
-					`.${styles.transBg}`,
-					{
-						y: "10%",
-					},
-					{
-						y: "18%",
-					},
-					"fourth"
-				)
+				// .fromTo(
+				// 	`.${styles.transBgIpad}`,
+				// 	{
+				// 		y: "10%",
+				// 	},
+				// 	{
+				// 		y: "18%",
+				// 	},
+				// 	"fourth"
+				// )
 				.to(
 					`.${styles.text_para}`,
 					{
@@ -752,7 +754,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				.to(
 					`.${styles.left_star}`,
 					{
-						left: "15%",
+						left: "25%",
 						opacity: "1",
 					},
 					"five"
@@ -760,7 +762,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				.to(
 					`.${styles.right_star}`,
 					{
-						right: "0%",
+						right: "10%",
 						opacity: "1",
 					},
 					"five"
@@ -773,7 +775,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					"five"
 				)
 				.fromTo(
-					`.${styles.product_circle_img}`,
+					`.${styles.product_circle_img_ipad}`,
 					{
 						xPercent: -50,
 						y: 0,
@@ -799,12 +801,12 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 
 			sugarcoatingAnimTimeline2
 				.fromTo(
-					`.${styles.product_circle_img}`,
+					`.${styles.product_circle_img_ipad}`,
 					{
 						top: "0",
 					},
 					{
-						top: "50vh",
+						top: "68vh",
 						// left: "0",
 						duration: 15,
 					},
@@ -892,11 +894,16 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 							className={`${styles.transBg} img-responsive visible_xs`}
 							alt="sugarcoatingBg"
 						/>
-						{/* <img
+						<img
 							src={transBgIpad.src}
-							className={`${styles.transBgIpad} img-responsive visible_xs`}
+							className={`${styles.transBgIpad} img-responsive`}
 							alt="sugarcoatingBg"
-						/> */}
+						/>
+						<img
+							src={transBgIpadPro.src}
+							className={`${styles.transBgIpadPro} img-responsive`}
+							alt="sugarcoatingBg"
+						/>
 					</div>
 					<div className={`${styles.sugarcoating_info}`}>
 						<div className={`${styles.title_sec}`}>
@@ -940,6 +947,10 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 								<img
 									src={mobileHandProduct.src}
 									className={`${styles.product_circle_img} img-responsive visible_xs`}
+								/>
+								<img
+									src={transProIpad.src}
+									className={`${styles.product_circle_img_ipad} img-responsive`}
 								/>
 								<div className={`${styles.left_star}`}>
 									<img src={leftStar.src} className="img-responsive" alt="left_star" />
@@ -1030,7 +1041,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 								</div>
 							</div>
 						</div>
-						<div className={`${styles.mobile_product} visible_xs`}>
+						<div className={`${styles.mobile_product}`}>
 							<div className={`${styles.icon_item}`}>
 								{/* <div ref={finest}></div> */}
 								<img src={vectorImg1.src} className="img-responsive" alt="vectorImg" />
