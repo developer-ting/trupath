@@ -12,6 +12,12 @@
 			top: 175px;
 			left: 0%;
 			position: absolute;
+			@media screen and (max-width: 767px) {
+				top: 45vh;
+			}
+			@media screen and (max-height: 667px) {
+				top: 30vh;
+			}
 		}
 		.birds_right {
 			top: 285px;
@@ -19,6 +25,12 @@
 			position: absolute;
 			@media (min-width: 1441px) and (max-width: 1920px) {
 				// top: 160px;
+			}
+			@media screen and (max-width: 767px) {
+				top: 38vh;
+			}
+			@media screen and (max-height: 667px) {
+				top: 40vh;
 			}
 		}
 		.Desktop {
@@ -42,8 +54,8 @@
 				top: 350px;
 			}
 			@media screen and (max-width: 767px) {
-				width: 45%;
-				top: 250px;
+				width: 120px;
+				top: 30vh;
 				animation: moveside1 5s linear infinite;
 			}
 		}
@@ -59,8 +71,13 @@
 				top: 400px;
 			}
 			@media screen and (max-width: 767px) {
-				width: 50%;
-				top: 330px;
+				width: 120px;
+				top: 40vh;
+				animation: moveside1 8s linear infinite;
+			}
+			@media screen and (max-height: 667px) {
+				width: 120px;
+				top: 35vh;
 				animation: moveside1 8s linear infinite;
 			}
 		}
@@ -148,6 +165,9 @@
 			@media screen and (max-width: 767px) {
 				width: 65vw;
 				transform: translateX(-50%) !important;
+			}
+			@media screen and (max-height: 667px) {
+				width: 60vw;
 			}
 
 			img {
