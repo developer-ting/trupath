@@ -120,7 +120,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 	useEffect(() => {
 		const winH = window.innerHeight;
 		const winW = window.innerWidth;
-		if (winW > 992) {
+		if (winW > 1200) {
 			const sugarcoatingAnimTimeline = gsap.timeline({});
 			const sugarcoatingAnimTimeline2 = gsap.timeline({});
 
@@ -868,6 +868,320 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 				scrub: true,
 			});
 		}
+		if (winW > 992 && winW < 1200) {
+			const sugarcoatingAnimTimeline = gsap.timeline({});
+			const sugarcoatingAnimTimeline2 = gsap.timeline({});
+
+			sugarcoatingAnimTimeline
+				.fromTo(
+					`.${styles.chini_img}`,
+					{
+						width: "0",
+						scale: 0,
+					},
+					{
+						width: "98px",
+						scale: 1,
+					},
+					"first"
+				)
+				.fromTo(
+					`.${styles.transBg}`,
+					{
+						scaleX: 10,
+						scaleY: 10,
+						y: "0%",
+					},
+					{
+						scaleX: 1,
+						scaleY: 1,
+						y: "30%",
+					},
+					"second"
+				)
+				.fromTo(
+					`.${styles.sugarcoating_bg_img}`,
+					{
+						y: "0%",
+					},
+					{
+						y: "30%",
+					},
+					"second"
+				)
+				.to(
+					`.${styles.leaves}`,
+					{
+						y: "-100%",
+					},
+					"second"
+				)
+				.fromTo(
+					`.${styles.title_sec}, .${styles.title}`,
+					{
+						// color: "#fff",
+					},
+					{
+						color: "#000",
+						delay: "0.2",
+					},
+					"second"
+				)
+				.fromTo(
+					`.${styles.para_text_ani}`,
+					{
+						// color: "#fff",
+					},
+					{
+						color: "#000",
+						delay: "0.2",
+					},
+					"second"
+				)
+				.fromTo(
+					`.${styles.sugarcoating_info}`,
+					{
+						transform: "translate(-50%, -50%)",
+					},
+					{
+						transform: "translate(-50%, -100%)",
+					},
+					"second"
+				)
+				.fromTo(
+					`.${styles.sugarcoating_info}`,
+					{
+						transform: "translate(-50%, -100%)",
+					},
+					{
+						transform: "translate(-50%, -100vh)",
+					},
+					"third"
+				)
+				.fromTo(
+					`.${styles.transBg}`,
+					{
+						y: "30%",
+					},
+					{
+						y: "10%",
+					},
+					"third"
+				)
+
+				.to(
+					`.${styles.TrupathCircleWrapper}`,
+					{
+						top: "10vh",
+					},
+					"fourth"
+				)
+				.fromTo(
+					`.${styles.transBg}`,
+					{
+						y: "10%",
+					},
+					{
+						y: "15%",
+					},
+					"fourth"
+				)
+				.fromTo(
+					`.${styles.product_circle_img}`,
+					{
+						top: "-127vh",
+					},
+					{
+						top: "0",
+					},
+					"fourth"
+				)
+				.to(
+					`.${styles.text_para}`,
+					{
+						opacity: "1",
+						delay: 0.5,
+					},
+					"fourth"
+				)
+				.to(
+					`.${styles.left_star}`,
+					{
+						left: "35%",
+						opacity: "1",
+					},
+					"five"
+				)
+				.to(
+					`.${styles.right_star}`,
+					{
+						right: "30%",
+						opacity: "1",
+					},
+					"five"
+				)
+				.to(
+					`.${styles.circle_div}`,
+					{
+						overflow: "inherit",
+					},
+					"five"
+				)
+				.fromTo(
+					`.${styles.product_circle_img}`,
+					{
+						xPercent: -50,
+						y: 0,
+						rotate: "0deg",
+					},
+					{
+						xPercent: -50,
+						y: 0,
+						rotate: "8deg",
+						ease: "none",
+						delay: 0.1,
+					},
+					"fourth"
+				);
+			ScrollTrigger.create({
+				trigger: `.${styles.two_section_wrapper}`,
+				animation: sugarcoatingAnimTimeline,
+				start: "top top",
+				end: "+=" + winH * 3,
+				pin: true,
+				scrub: true,
+			});
+
+			sugarcoatingAnimTimeline2
+				.fromTo(
+					`.${styles.Nature}`,
+					{
+						backgroundColor: "rgb(255 73 0 / 84%)",
+					},
+					{
+						delay: 3,
+						duration: 10,
+						backgroundColor: "#410F00",
+					},
+					"first"
+				)
+				.fromTo(
+					`.${styles.product_circle_img}`,
+					{
+						top: "0",
+					},
+					{
+						top: "84vh",
+						width: "1440px",
+						height: "810px",
+						left: "calc(50% + 175px)",
+						duration: 15,
+					},
+					"first"
+				)
+				.fromTo(
+					`.${styles.left_section}`,
+					{
+						left: "30%",
+						opacity: 0,
+					},
+					{
+						left: "0%",
+						opacity: 1,
+						duration: 5,
+					},
+					"second"
+				)
+				.to(
+					`.${styles.SpoonMain}`,
+					{
+						opacity: 1,
+					},
+					"second"
+				)
+				.fromTo(
+					`.${styles.right_section}`,
+					{
+						right: "30%",
+						opacity: 0,
+					},
+					{
+						right: "-20px",
+						opacity: 1,
+						duration: 5,
+					},
+					"second"
+				);
+
+			sugarcoatingAnimTimeline2
+				.fromTo(
+					`.${styles.product_circle_img_ipad}`,
+					{
+						top: "0",
+					},
+					{
+						top: "68vh",
+						// left: "0",
+						duration: 15,
+					},
+					"first"
+				)
+				.fromTo(
+					`.${styles.left_section}`,
+					{
+						left: "30%",
+						opacity: 0,
+					},
+					{
+						left: "0%",
+						opacity: 1,
+						duration: 5,
+					},
+					"second"
+				)
+				.to(
+					`.${styles.SpoonMain}`,
+					{
+						opacity: 1,
+					},
+					"second"
+				)
+				.fromTo(
+					`.${styles.right_section}`,
+					{
+						right: "30%",
+						opacity: 0,
+					},
+					{
+						right: "-20px",
+						opacity: 1,
+						duration: 5,
+					},
+					"second"
+				)
+				.fromTo(
+					`.${styles.mobile_product}`,
+					{
+						y: "10vh",
+						opacity: 0,
+					},
+					{
+						y: "0",
+						delay: 5,
+						opacity: 1,
+						duration: 5,
+					},
+					"third"
+				);
+
+			ScrollTrigger.create({
+				trigger: `.${styles.Nature}`,
+				animation: sugarcoatingAnimTimeline2,
+				start: "top 90%",
+				end: "+=" + winH * 0.8,
+				scrub: true,
+			});
+		}
 	}, []);
 
 	return (
@@ -899,11 +1213,11 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 							className={`${styles.transBgIpad} img-responsive`}
 							alt="sugarcoatingBg"
 						/>
-						<img
+						{/* <img
 							src={transBgIpadPro.src}
-							className={`${styles.transBgIpadPro} img-responsive`}
+							className={`${styles.transBg} img-responsive`}
 							alt="sugarcoatingBg"
-						/>
+						/> */}
 					</div>
 					<div className={`${styles.sugarcoating_info}`}>
 						<div className={`${styles.title_sec}`}>
@@ -948,10 +1262,10 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 									src={mobileHandProduct.src}
 									className={`${styles.product_circle_img} img-responsive visible_xs`}
 								/>
-								<img
+								{/* <img
 									src={transProIpad.src}
-									className={`${styles.product_circle_img_ipad} img-responsive`}
-								/>
+									className={`${styles.product_circle_img} img-responsive`}
+								/> */}
 								<div className={`${styles.left_star}`}>
 									<img src={leftStar.src} className="img-responsive" alt="left_star" />
 								</div>

@@ -63,8 +63,13 @@
 						height: 100vh;
 						object-fit: cover;
 					}
-					@media (min-width: 768px) and (max-width: 1200px) {
+					@media (min-width: 768px) and (max-width: 992px) {
 						display: none;
+					}
+					@media (min-width: 993px) and (max-width: 1200px) {
+						width: 100vw;
+						height: 100vh;
+						object-fit: cover;
 					}
 				}
 				.transBgIpad{
@@ -82,21 +87,21 @@
 						display: none;
 					}
 				}
-				.transBgIpadPro{
-					top: 0;
-					left: 0;
-					width: 100%;
-					position: absolute;
-					width: 100vw;
-					height: 100vh;
-					object-fit: cover;
-					@media screen and (max-width: 992px) {
-						display: none;
-					}
-					@media (min-width: 1201px) and (max-width: 5000px) {
-						display: none;
-					}
-				}
+				// .transBgIpadPro{
+				// 	top: 0;
+				// 	left: 0;
+				// 	width: 100%;
+				// 	position: absolute;
+				// 	width: 100vw;
+				// 	height: 100vh;
+				// 	object-fit: cover;
+				// 	@media screen and (max-width: 992px) {
+				// 		display: none;
+				// 	}
+				// 	@media (min-width: 1201px) and (max-width: 5000px) {
+				// 		display: none;
+				// 	}
+				// }
 			}
 			.sugarcoating_info {
 				top: 50%;
@@ -230,6 +235,10 @@
 						@media (min-width: 768px) and (max-width: 992px) {
 							padding-top: 120px;
 						}
+						@media (min-width: 993px) and (max-width: 1200px) {
+							width: 70%;
+							padding-top: 140px;
+						}
 						@media (min-width: 1441px) and (max-width: 5000px) {
 							padding-top: 130px;
 						}
@@ -253,6 +262,10 @@
 								font-size: 18px;
 								line-height: 24px;
 								color: #411a0f;
+							}
+							@media (min-width: 993px) and (max-width: 1200px) {
+								font-size: 25px;
+								line-height: 35px;
 							}
 							@media screen and (min-width: 1280px) and (max-width: 1440px) and (min-height: 585px) and (max-height: 680px) {
 								font-size: 18px;
@@ -297,6 +310,12 @@
 							}
 							@media (min-width: 768px) and (max-width: 992px) {
 								display: none;
+							}
+							@media (min-width: 993px) and (max-width: 1200px) {
+								width: 100vw;
+								height: 100vh;
+								z-index: 2;
+								object-fit: cover;
 							}
 						}
 						.mobileHandProduct {
@@ -355,10 +374,17 @@
 						@media (min-width: 768px) and (max-width: 992px) {
 							bottom: 162px;
 						}
+						@media (min-width: 993px) and (max-width: 1200px) {
+							z-index: 2;
+							bottom: 100px;
+						}
 						img {
 							width: 57vw;
 							@media (min-width: 768px) and (max-width: 992px) {
 								width: 55vw;
+							}
+							@media (min-width: 993px) and (max-width: 1200px) {
+								width: 50vw;
 							}
 						}
 						@media screen and (max-width: 767px) {
@@ -383,8 +409,9 @@
 				.title_div {
 					top: -70px;
 					width: 100%;
-					left: 15px;
-					height: 100vh;
+					left: -80px;
+					height: 1600px;
+					width: 1600px;
 					overflow: hidden;
 					position: absolute;
 					transform: rotate(0deg);
@@ -397,6 +424,7 @@
 						height: 800px;
 						width: 800px;
 						transform: translateX(-50%);
+						clip-path: inset(0% 0% 50% 0%);
 					}
 					@media (min-width: 768px) and (max-width: 992px) {
 						left: 50%;
@@ -406,6 +434,7 @@
 						transform: translateX(-50%);
 						// transform: rotate(0deg);
 						opacity: 1;
+						clip-path: inset(0% 0% 50% 0%);
 					}
 					@media (min-width: 993px) and (max-width: 1200px) {
 						left: 50%;
@@ -416,12 +445,45 @@
 						// transform: rotate(0deg);
 						opacity: 1;
 					}
+					@media (min-width: 1441px) and (max-width: 1680px) {
+						width: 1850px;
+						height: 1850px;
+						left: -90px;
+					}
+					@media (min-width: 1680px) and (max-width: 1920px) {
+						width: 2100px;
+						height: 2100px;
+						left: -90px;
+					}
+					@media screen and (min-width: 1441px) and (max-width: 1536px) and (min-height: 700px) and (max-height: 900px) {
+						width: 1650px;
+						height: 1650px;
+						left: -55px;
+					}
 					
 					img {
 						width: 100%;
 						// @media (min-width: 768px) and (max-width: 992px) {
 							animation: rotate1 10s linear infinite;
 						// }
+						height: 1600px;
+						width: 1600px;
+						@media (min-width: 1201px) and (max-width: 1367px) {
+							width: 1500px;
+							height: 1500px;
+						}
+						@media (min-width: 1441px) and (max-width: 1680px) {
+							width: 1850px;
+							height: 1850px;
+						}
+						@media (min-width: 1680px) and (max-width: 1920px) {
+							width: 2100px;
+							height: 2100px;
+						}
+						@media screen and (min-width: 1441px) and (max-width: 1536px) and (min-height: 700px) and (max-height: 900px) {
+							width: 1650px;
+							height: 1650px;
+						}
 					}
 				}
 				.title_div_mobile {
@@ -512,11 +574,18 @@
 					background-color: #522415;
 					position: relative;
 				}
+				@media (min-width: 993px) and (max-width: 1200px) {
+					width: 30%;
+				}
 				h2 {
 					padding-bottom: 20px;
 					color: var(--color_tertiary);
 					@media screen and (max-width: 992px) {
 						padding-bottom: 10px;
+					}
+					@media (min-width: 993px) and (max-width: 1200px) {
+						font-size: 39px;
+						line-height: 50px;
 					}
 				}
 			}
@@ -528,6 +597,9 @@
 				}
 				@media screen and (max-width: 992px) {
 					display: none;
+				}
+				@media (min-width: 993px) and (max-width: 1200px) {
+					width: 65%;
 				}
 				.left_section {
 					display: flex;
