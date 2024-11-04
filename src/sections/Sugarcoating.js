@@ -337,6 +337,8 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					`.${styles.SpoonMain}`,
 					{
 						opacity: 1,
+						top: "calc(100vh + 450px)",
+						duration: 10,
 					},
 					"second"
 				)
@@ -576,6 +578,8 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					`.${styles.SpoonMain}`,
 					{
 						opacity: 1,
+						duration: 10,
+						top: "calc(100vh + 100px)",
 					},
 					"second"
 				)
@@ -829,6 +833,8 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					`.${styles.SpoonMain}`,
 					{
 						opacity: 1,
+						duration: 10,
+						top: "calc(100vh + 300px)",
 					},
 					"second"
 				)
@@ -1096,6 +1102,8 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					`.${styles.SpoonMain}`,
 					{
 						opacity: 1,
+						duration: 10,
+						top: "calc(100vh + 340px)",
 					},
 					"second"
 				)

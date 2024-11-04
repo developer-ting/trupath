@@ -282,10 +282,24 @@
 							position: absolute;
 							// bottom: 0;
 							z-index: 5;
-							top: calc(100vh + 450px);
+							top: calc(100vh + 510px);
 							transform: translate(-50%, 0%);
 							left: calc(50% + 240px);
 							opacity: 0;
+							@media screen and (max-width: 767px) {
+								width: 50%;
+								top: calc(100vh + 125px);
+								left: calc(50%);
+							}
+							@media (min-width: 768px) and (max-width: 992px) {
+								width: 50%;
+								top: calc(100vh + 340px);
+								left: calc(56%);
+							}
+							@media (min-width: 993px) and (max-width: 1200px) {
+								top: calc(100vh + 380px);
+								left: calc(50% + 170px);
+							}
 							.Spoon {
 							}
 						}
@@ -562,7 +576,7 @@
 			padding: 100px 0;
 			@media screen and (max-width: 767px) {
 				flex-wrap: wrap;
-				padding: 430px 0 40px 0;
+				padding: 47vh 0 40px 0;
 			}
 			@media (min-width: 768px) and (max-width: 992px) {
 				flex-wrap: wrap;
