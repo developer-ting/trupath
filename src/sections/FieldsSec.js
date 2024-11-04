@@ -87,7 +87,7 @@ export default function FieldsSec({ gsap, ScrollTrigger }) {
 							We take pride in manufacturing our products in-house at our
 							state-of-the-art, fully automatic facility. This allows us to maintain
 							stringent control at every stage. Plus, by cutting out intermediaries,
-							we're able to pass the cost savings directly to our customers!
+							were able to pass the cost savings directly to our customers!
 						</p>
 					</div>
 					<div className={`${styles.ImgBx}`}>

@@ -52,7 +52,6 @@ export default function Header({ showHeader, setShowHeader, showIntro }) {
 			window.removeEventListener("scroll", handleScroll);
 		};
 	}, [lastScrollY]);
-	useEffect(() => {}, []);
 
 	/** scrollToSection */
 	const scrollToSection = (id) => {
