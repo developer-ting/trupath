@@ -90,11 +90,11 @@ export default function GreatValueSec() {
 			</div>
 
 			{/* <div ref={Wave} className={`${styles.Waves} width_100`} alt="Wave"></div> */}
-			<img
+			{/* <img
 				src={bottomWave.src}
 				className={`${styles.Waves} width_100`}
 				alt="Wave"
-			/>
+			/> */}
 		</section>
 	);
 }
