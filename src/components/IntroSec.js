@@ -41,7 +41,7 @@ export default function IntroSec({ gsap, setShowHeader }) {
 				document.documentElement.style.overflow = "hidden";
 			},
 			onComplete: () => {
-				localStorage.setItem("introSeen", "true");
+				sessionStorage.setItem("introSeen", "true");
 			},
 		});
 
@@ -203,7 +203,7 @@ export default function IntroSec({ gsap, setShowHeader }) {
 				document.body.style.overflow = "";
 				document.body.style.height = "";
 				document.documentElement.style.overflow = "";
-				localStorage.setItem("introSeen", "true");
+				sessionStorage.setItem("introSeen", "true");
 			},
 		});
 		// Animation for OrangeBg on button click

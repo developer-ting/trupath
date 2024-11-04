@@ -41,7 +41,7 @@ export default function HomePage() {
 	gsap.registerPlugin(ScrollTrigger);
 
 	useEffect(() => {
-		const introSeen = localStorage.getItem("introSeen");
+		const introSeen = sessionStorage.getItem("introSeen");
 
 		// If not seen, show it and set it in localStorage
 		if (!introSeen) {
