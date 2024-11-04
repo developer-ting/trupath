@@ -1262,10 +1262,10 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 									src={mobileHandProduct.src}
 									className={`${styles.product_circle_img} img-responsive visible_xs`}
 								/>
-								{/* <img
+								<img
 									src={transProIpad.src}
-									className={`${styles.product_circle_img} img-responsive`}
-								/> */}
+									className={`${styles.product_circle_img_ipad} img-responsive`}
+								/>
 								<div className={`${styles.left_star}`}>
 									<img src={leftStar.src} className="img-responsive" alt="left_star" />
 								</div>

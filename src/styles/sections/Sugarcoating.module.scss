@@ -175,7 +175,7 @@
 					background-repeat: no-repeat;
 					border-top-left-radius: 100vh;
 					border-top-right-radius: 100vh;
-					background-color: #ff4900;
+					// background-color: #ff4900;
 					@media screen and (max-width: 767px) {
 						height: 75vh;
 						border-top-left-radius: 0;
@@ -191,8 +191,8 @@
 					&::before {
 						content: "";
 						width: 100vw;
-						opacity: 0.3;
-						background-image: url(../../../public/img/home/circle_bg.png);
+						// opacity: 0.3;
+						background-image: url(../../../public/img/home/circle_bg_color.png);
 						position: relative;
 						display: block;
 						height: 100vh;
