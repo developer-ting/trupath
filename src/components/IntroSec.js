@@ -40,6 +40,9 @@ export default function IntroSec({ gsap, setShowHeader }) {
 				document.body.style.height = "100vh";
 				document.documentElement.style.overflow = "hidden";
 			},
+			onComplete: () => {
+				localStorage.setItem("introSeen", "true");
+			},
 		});
 
 		introTimeline
@@ -200,6 +203,7 @@ export default function IntroSec({ gsap, setShowHeader }) {
 				document.body.style.overflow = "";
 				document.body.style.height = "";
 				document.documentElement.style.overflow = "";
+				localStorage.setItem("introSeen", "true");
 			},
 		});
 		// Animation for OrangeBg on button click

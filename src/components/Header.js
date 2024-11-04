@@ -23,7 +23,7 @@ import Arrow from "@/../public/img/icons/arrow.svg";
 // DATA //
 
 /** Header Component */
-export default function Header({ showHeader, setShowHeader }) {
+export default function Header({ showHeader, setShowHeader, showIntro }) {
 	const [openSidebar, setOpenSidebar] = useState(false);
 	const [sidebarActive, setSidebarActive] = useState(false);
 	// const [showHeader, setShowHeader] = useState(false);
@@ -52,6 +52,7 @@ export default function Header({ showHeader, setShowHeader }) {
 			window.removeEventListener("scroll", handleScroll);
 		};
 	}, [lastScrollY]);
+	useEffect(() => {}, []);
 
 	/** scrollToSection */
 	const scrollToSection = (id) => {

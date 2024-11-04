@@ -36,9 +36,22 @@ import styles from "@/styles/pages/Home.module.scss";
 /** Home Page */
 export default function HomePage() {
 	const [showHeader, setShowHeader] = useState(false);
+	const [showIntro, setShowIntro] = useState(false);
 
 	gsap.registerPlugin(ScrollTrigger);
+
 	useEffect(() => {
+		const introSeen = localStorage.getItem("introSeen");
+
+		// If not seen, show it and set it in localStorage
+		if (!introSeen) {
+			setShowIntro(true);
+			// localStorage.setItem("introSeen", "true");
+		} else {
+			console.log("intro handle");
+			const headerClassRemove = document.querySelector(".header");
+			headerClassRemove.classList.remove("hidden_header");
+		}
 		ScrollOut({
 			once: true,
 		});
@@ -47,9 +60,13 @@ export default function HomePage() {
 		<div>
 			{/* Metatags */}
 			<MetaTags Title={"Trupath"} Desc={"Home Desc"} OgImg={""} Url={"/"} />
-			<IntroSec gsap={gsap} setShowHeader={setShowHeader} />
+			{showIntro && <IntroSec gsap={gsap} setShowHeader={setShowHeader} />}
 			{/* Header */}
-			<Header showHeader={showHeader} setShowHeader={setShowHeader} />
+			<Header
+				showHeader={showHeader}
+				setShowHeader={setShowHeader}
+				showIntro={showIntro}
+			/>
 
 			{/* Page Content starts here */}
 			<main className={`${styles.HomePage}`}>
