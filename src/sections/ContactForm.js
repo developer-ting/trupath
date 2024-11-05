@@ -1,5 +1,5 @@
 // MODULES //
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // COMPONENTS //
 import Button from "../components/Buttons/Button";
@@ -21,15 +21,33 @@ import styles from "@/styles/sections/ContactForm.module.scss";
 /** ContactForm Section */
 export default function ContactForm() {
 	const formRef = useRef();
+	const [isSubmit, setisSubmit] = useState(false);
 	const {
 		register,
 		handleSubmit,
+		reset,
 		formState: { errors },
 	} = useForm({ mode: "onChange" });
 
 	/** Function to handle submit */
 	const onSubmit = async (data, e) => {
 		// Write form submission codes here
+		e.preventDefault();
+		const scriptURL =
+			"https://script.google.com/macros/s/AKfycbwME3piEjnLmKNHr_bkJ5QnedyQIE31_UMz8LqxZN0yPYLoLwr2rtEXe6DS6l9ulaYY/exec";
+		fetch(scriptURL, {
+			method: "POST",
+			body: new FormData(formRef.current),
+		})
+			.then((response) => {
+				// console.log(response);
+				reset();
+				setisSubmit(true);
+				setTimeout(() => {
+					setisSubmit(false);
+				}, 5000);
+			})
+			.catch((error) => console.error("Error!", error.message));
 	};
 
 	return (
@@ -189,6 +207,13 @@ export default function ContactForm() {
 				<Button color="secondary" variant="filled">
 					Submit
 				</Button>
+				{isSubmit && (
+					<div className="m_t_10">
+						<p className="text_lg">
+							Thank you for your message. Someone from our team will get back shortly!
+						</p>
+					</div>
+				)}
 			</form>
 		</div>
 	);
