@@ -1241,7 +1241,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 						<div className={`${styles.para}`}>
 							<p className={`${styles.para_text_ani} text_20`}>
 								We all want the same thing - a healthy life without compromise. But the
-								world’s been hooked to unhealthy sugar for far too long. It’s time to
+								world has been hooked to unhealthy sugar for far too long. It’s time to
 								swap the nasty with the no-nonsense.
 							</p>
 						</div>
@@ -1253,7 +1253,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 						<div className={`${styles.circle_div}`}>
 							<div className={`${styles.text_para}`}>
 								<p>
-									To be healthy you don’t need to eat bland. Simply stir, sprinkle or
+									To be healthy, you don’t need to eat bland. Simply stir, sprinkle or
 									knead the nourishing Gud in your drinks and food to enjoy a better,
 									wellness-focused life without sacrificing flavour!
 								</p>
@@ -1314,7 +1314,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 							<h3 className="text_40">सर्व गुड़ सम्पन्न</h3>
 							<p className="text_20">
 								Our products are made with 100% natural ingredients without harmful
-								chemicals which means every spoonful keeps you happy and healthy!
+								chemicals, which means every spoonful keeps you happy and healthy!
 							</p>
 						</div>
 						<div className={`${styles.product} hidden_xs`}>

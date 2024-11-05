@@ -356,7 +356,7 @@ export default function IntroSec({ gsap, setShowHeader }) {
 							<div className={`${styles.BowlTitle}`}>
 								<p>
 									One leads to
-									<br className="visible_xs" /> perils of sugar
+									<br className="visible_xs" /> the dangers of sugar
 								</p>
 							</div>
 							<img className={`${styles.Bowl1}`} src={Bowl1.src} alt="Bowl1 Image" />

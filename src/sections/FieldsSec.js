@@ -86,8 +86,7 @@ export default function FieldsSec({ gsap, ScrollTrigger }) {
 						<p className="text_20 toTop" data-scroll>
 							We take pride in manufacturing our products in-house at our
 							state-of-the-art, fully automatic facility. This allows us to maintain
-							stringent control at every stage. Plus, by cutting out intermediaries,
-							were able to pass the cost savings directly to our customers!
+							stringent control at every stage.
 						</p>
 					</div>
 					<div className={`${styles.ImgBx}`}>

@@ -84,8 +84,8 @@ export default function HomeHero() {
 					<h1 className="text_100 mobile_padd">Make the Gud choice</h1>
 					<p className="text_20">
 						Go against the crystal grain - from the bitter side of sugar to the better
-						side of sweetness. <br className="hidden_xs" /> And return to the Gud ol’
-						ways - onto the trupath.
+						side of sweetness, <br className="hidden_xs" /> returning to the Gud ol’
+						ways and onto the trupath.
 					</p>
 				</div>
 				{/* <div className={`${styles.mountain}`}>

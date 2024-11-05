@@ -53,10 +53,7 @@ export default function ProductSec() {
 				data-scroll
 			/>
 			<div className={`${styles.MainSec}`}>
-				<h2 className="text_50">
-					Pick a pack - one for the pantry,
-					<br /> one on-the-go
-				</h2>
+				<h2 className="text_50">Make the Gud choice today</h2>
 				{/* <a href="" rel="noreferrer" className={`${styles.Download} text_16`}>
 					Download Catalogue
 					<img src={Download.src} alt="Download Icon" />

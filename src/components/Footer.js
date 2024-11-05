@@ -53,10 +53,7 @@ export default function Footer() {
 					</div>
 					<div className={`${styles.MainFlex}`}>
 						<div className={`${styles.ContactDetails}`}>
-							<h2 className="text_50">
-								Connect with
-								<br className="hidden_xs" /> us anytime
-							</h2>
+							<h2 className="text_50">Get in touch</h2>
 							<div className={`${styles.DetailsBx}`}>
 								<img src={LocIcon.src} alt="Location Icon" />
 								<div className={`${styles.content}`}>
@@ -69,13 +66,13 @@ export default function Footer() {
 								<img src={MailIcon.src} alt="Mail Icon" />
 								<div className={`${styles.content}`}>
 									<p className="text_20">
-										<a href="mailto:xyz@bluesapphirefoods.com">
-											xyz@bluesapphirefoods.com
+										<a href="mailto:support@bluesapphirefoods.com">
+											support@bluesapphirefoods.com
 										</a>
 									</p>
 								</div>
 							</div>
-							<div className={`${styles.DetailsBx}`}>
+							{/* <div className={`${styles.DetailsBx}`}>
 								<img src={CallIcon.src} alt="Call Icon" />
 								<div className={`${styles.content}`}>
 									<p className="text_20">
@@ -85,7 +82,7 @@ export default function Footer() {
 										<a href="tel:+91 83695 54202">+91 83695 54202</a>
 									</p>
 								</div>
-							</div>
+							</div> */}
 						</div>
 						<ContactForm />
 					</div>
@@ -118,7 +115,7 @@ export default function Footer() {
 					</div>
 					<div className={`${styles.MadeByTing}`}>
 						<div className={`${styles.IconBx}`}>
-							<a href="https://www.ting.in/" rel="noreferrer">
+							<a href="https://www.ting.in/" target="_blank" rel="noreferrer">
 								<img src={MadeByTing.src} alt="Social Icons" />
 							</a>
 						</div>

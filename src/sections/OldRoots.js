@@ -83,7 +83,7 @@ export default function OldRoots() {
 		<section className={styles.OldRoots} id="Blogs">
 			<div className="container">
 				<div className={`${styles.Head} f_r_aj_between toTop`} data-scroll>
-					<h2 className="text_50 color_primary">Old roots for new relishes</h2>
+					<h2 className="text_50 color_primary">Path to true wellness</h2>
 					<Button color="primary" variant="filled">
 						View All
 					</Button>
