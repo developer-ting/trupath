@@ -25,6 +25,7 @@ export default function Button({ children, shape, color, variant }) {
 				${styles[`btn_${variant}`]}
 				${styles[shape]}
 				`}
+			type="submit"
 		>
 			{children}
 		</button>
