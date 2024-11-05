@@ -85,8 +85,8 @@ export default function FieldsSec({ gsap, ScrollTrigger }) {
 						</h5>
 						<p className="text_20 toTop" data-scroll>
 							We take pride in manufacturing our products in-house at our
-							state-of-the-art, fully automatic facility. This allows us to maintain
-							stringent control at every stage.
+							state-of-the-art, fully automatic facility. <br className="hidden_xs" />
+							This allows us to maintain stringent control at every stage.
 						</p>
 					</div>
 					<div className={`${styles.ImgBx}`}>
