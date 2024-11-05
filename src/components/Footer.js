@@ -92,23 +92,35 @@ export default function Footer() {
 						<p className="text_20">© {new Date().getFullYear()} trupath</p>
 					</div>
 					<div className={`${styles.SocialBx}`}>
-						<div className={`${styles.IconBx}`}>
+						{/* <div className={`${styles.IconBx}`}>
 							<a href="" rel="noreferrer">
 								<img src={linkedIn.src} alt="Social Icons" />
 							</a>
-						</div>
+						</div> */}
 						<div className={`${styles.IconBx}`}>
-							<a href="" rel="noreferrer">
+							<a
+								href="https://x.com/the_trupath?s=21"
+								rel="noreferrer"
+								target="_blank"
+							>
 								<img src={Twitter.src} alt="Social Icons" />
 							</a>
 						</div>
 						<div className={`${styles.IconBx}`}>
-							<a href="" rel="noreferrer">
+							<a
+								href="https://www.facebook.com/profile.php?id=61566508024318&mibextid=LQQJ4d"
+								rel="noreferrer"
+								target="_blank"
+							>
 								<img src={FB.src} alt="Social Icons" />
 							</a>
 						</div>
 						<div className={`${styles.IconBx}`}>
-							<a href="" rel="noreferrer">
+							<a
+								href="https://www.instagram.com/the.trupath"
+								rel="noreferrer"
+								target="_blank"
+							>
 								<img src={Insta.src} alt="Social Icons" />
 							</a>
 						</div>
