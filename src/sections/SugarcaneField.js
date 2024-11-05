@@ -91,7 +91,7 @@ export default function SugarcaneField({ gsap, ScrollTrigger }) {
 							face issues in selling them. Recognising the need for a dependable
 							partner, we founded Trupath to support these farmers, providing a
 							dedicated facility to process their produce and help India return to the
-							Gud ol' ways.
+							Gud ol’ ways.
 						</p>
 					</div>
 				</div>
