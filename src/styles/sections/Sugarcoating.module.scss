@@ -432,6 +432,9 @@
 					transform: rotate(0deg);
 					opacity: 1;
 					clip-path: inset(0% 0% 50% 0%);
+					@media (min-width: 1201px) and (max-width: 1367px) {
+						left: -68px;
+					}
 					@media screen and (max-width: 767px) {
 						left: 50%;
 						top: -20px;
@@ -459,6 +462,7 @@
 						// transform: rotate(0deg);
 						opacity: 1;
 					}
+					
 					@media (min-width: 1441px) and (max-width: 1680px) {
 						width: 1850px;
 						height: 1850px;
