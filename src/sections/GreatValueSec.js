@@ -23,7 +23,7 @@ import "swiper/css/autoplay";
 import SliderImg1 from "../../public/img/home/image1.jpg";
 import SliderImg2 from "../../public/img/home/image2.jpg";
 import SliderImg3 from "../../public/img/home/image3.jpg";
-import bottomWave from "../../public/img/home/wave_bottom_img.png";
+import bottomWave from "../../public/img/home/wave_bottom_img.svg";
 
 // DATA //
 
