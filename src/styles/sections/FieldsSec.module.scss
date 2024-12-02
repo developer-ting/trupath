@@ -44,21 +44,27 @@
 				border-radius: 10px;
 				width: 430px;
 				border: 1px solid var(--color_tertiary);
-				@media screen and (max-width: 767px) {
-					width: 90%;
+				@media screen and (max-width: 992px) {
+					width: 100%;
 					padding: 25px 20px;
+					margin-bottom: 15px;
 				}
 				&:nth-child(1) {
+					@media screen and (max-width: 767px) {
+						transform: rotate(0) translateX(0);
+					}
 				}
 				&:nth-child(2) {
 					z-index: 2;
 					position: relative;
 					@media screen and (max-width: 767px) {
-						transform: rotate(8deg) translateX(35px);
+						transform: rotate(0) translateX(0);
 					}
 				}
 				&:nth-child(3) {
-					
+					@media screen and (max-width: 767px) {
+						transform: rotate(0) translateX(0);
+					}
 				}
 				.ItemImg {
 					width: 70px;
