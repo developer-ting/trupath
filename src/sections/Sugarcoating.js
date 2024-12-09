@@ -1077,7 +1077,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 						top: winW > 1000 ? "60px" : "0",
 					},
 					{
-						top: "84vh",
+						top: "90vh",
 						width: "1280px",
 						height: "720px",
 						left: "calc(50% + 175px)",

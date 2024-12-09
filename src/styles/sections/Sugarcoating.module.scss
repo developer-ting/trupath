@@ -52,6 +52,10 @@
 					@media screen and (max-width: 767px) {
 						height: 100vh;
 					}
+					@media screen and (min-width: 1201px) and (max-width: 1367px) and (min-height: 850px) and (max-height: 1024px) {
+						height: 100vh;
+						object-fit: cover;
+					}
 				}
 				.transBg {
 					top: 0;
@@ -74,6 +78,11 @@
 					@media (min-width: 992px) and (max-width: 1180px) and (min-height: 580px) and (max-height: 850px) {
 						width: 1024px;
 						height: 700px;
+					}
+					@media screen and (min-width: 1201px) and (max-width: 1367px) and (min-height: 850px) and (max-height: 1024px) {
+						height: 100vh;
+						width: 100vw;
+						object-fit: cover;
 					}
 				}
 				.transBgIpad{
@@ -195,6 +204,11 @@
 					@media (min-width: 992px) and (max-width: 1180px) and (min-height: 580px) and (max-height: 850px) {
 						height: 86vh;
 					}
+					@media screen and (min-width: 1201px) and (max-width: 1367px) and (min-height: 850px) and (max-height: 1024px) {
+						height: 96vh;
+						border-top-left-radius: 0;
+						border-top-right-radius: 0;
+					}
 					&::before {
 						content: "";
 						width: 100vw;
@@ -225,6 +239,10 @@
 							background-image: url(../../../public/img/home/circle_img_ipad.png);
 						}
 						@media (min-width: 992px) and (max-width: 1180px) and (min-height: 580px) and (max-height: 850px) {
+							height: 86vh;
+							background-position: top;
+						}
+						@media screen and (min-width: 1201px) and (max-width: 1367px) and (min-height: 850px) and (max-height: 1024px) {
 							height: 86vh;
 							background-position: top;
 						}
@@ -349,6 +367,11 @@
 								width: 1024px;
 								height: 700px;
 							}
+							@media screen and (min-width: 1201px) and (max-width: 1367px) and (min-height: 850px) and (max-height: 1024px) {
+								height: 100vh;
+								width: 100vw;
+								object-fit: cover;
+							}
 						}
 						.mobileHandProduct {
 							bottom: 0;
@@ -411,6 +434,11 @@
 							z-index: 2;
 							bottom: 100px;
 						}
+						@media screen and (min-width: 1201px) and (max-width: 1367px) and (min-height: 850px) and (max-height: 1024px){
+							z-index: 2;
+							right: -15px;
+							bottom: 150px;
+						}
 						img {
 							width: 57vw;
 							@media (min-width: 768px) and (max-width: 992px) {
@@ -452,6 +480,9 @@
 					clip-path: inset(0% 0% 50% 0%);
 					@media (min-width: 1201px) and (max-width: 1367px) {
 						left: -68px;
+					}
+					@media screen and (min-width: 1201px) and (max-width: 1367px) and (min-height: 850px) and (max-height: 1024px) {
+						top: -25px;
 					}
 					@media screen and (max-width: 767px) {
 						left: 50%;

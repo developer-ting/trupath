@@ -44,13 +44,19 @@
 				border-radius: 10px;
 				width: 430px;
 				border: 1px solid var(--color_tertiary);
-				@media screen and (max-width: 992px) {
+				@media screen and (max-width: 767px) {
 					width: 100%;
 					padding: 25px 20px;
 					margin-bottom: 15px;
 				}
+				@media (min-width: 768px) and (max-width: 992px) {
+					width: 80%;
+				}
 				&:nth-child(1) {
 					@media screen and (max-width: 767px) {
+						transform: rotate(0) translateX(0);
+					}
+					@media (min-width: 768px) and (max-width: 992px) {
 						transform: rotate(0) translateX(0);
 					}
 				}
@@ -60,9 +66,16 @@
 					@media screen and (max-width: 767px) {
 						transform: rotate(0) translateX(0);
 					}
+					@media (min-width: 768px) and (max-width: 992px) {
+						transform: rotate(0) translateX(0);
+						margin: 15px 0;
+					}
 				}
 				&:nth-child(3) {
 					@media screen and (max-width: 767px) {
+						transform: rotate(0) translateX(0);
+					}
+					@media (min-width: 768px) and (max-width: 992px) {
 						transform: rotate(0) translateX(0);
 					}
 				}
