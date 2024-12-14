@@ -20,9 +20,14 @@
 		}
 		@media screen and (max-width: 1280px) {
 			width: 28%;
+			top: -15px;
 		}
-		@media screen and (max-width: 1199px) {
-			width: auto;
+		// @media screen and (max-width: 1199px) {
+		// 	width: 30%;
+		// }
+		@media (min-width: 993px) and (max-width: 1193px) {
+			width: 24%;
+			top: -18px;
 		}
 		@media screen and (max-width: 991px) {
 			width: 40%;
