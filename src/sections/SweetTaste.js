@@ -66,7 +66,7 @@ export default function SweetTaste({ gsap, ScrollTrigger }) {
 						<h5 className="text_40">सच्चाई की मिठास</h5>
 						<p className="text_20">
 							Gud is the natural, traditional sweetener our ancestors loved but today’s
-							families forgot. But it’s never too late to switch back!
+							families seem to have forgotten . But it’s never too late to switch back!
 						</p>
 					</div>
 					<div className={`${styles.ImgBx}`}>
