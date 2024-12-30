@@ -21,9 +21,10 @@ import Favicon from "public/img/favicon.png";
 export default function MetaTags({ Title, Desc, OgImg, Url }) {
 	// Metas for all page
 	const defaultMetas = {
-		title: "Title",
-		desc: "Description",
-		url: "http://localhost:3000",
+		title: "Trupath – Natural Sweetness, Healthier Choices",
+		desc:
+			"Embrace a healthier lifestyle with our preservative-free, premium quality products that enhance immunity, aid digestion, and boost energy.",
+		url: "https://thetrupath.com/",
 		ogImg: `${OgImage.src}`,
 	};
 

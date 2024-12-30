@@ -59,7 +59,14 @@ export default function HomePage() {
 	return (
 		<div>
 			{/* Metatags */}
-			<MetaTags Title={"Trupath"} Desc={"Home Desc"} OgImg={""} Url={"/"} />
+			<MetaTags
+				Title={"Trupath – Natural Sweetness, Healthier Choices"}
+				Desc={
+					"Embrace a healthier lifestyle with our preservative-free, premium quality products that enhance immunity, aid digestion, and boost energy."
+				}
+				OgImg={""}
+				Url={"/"}
+			/>
 			{showIntro && <IntroSec gsap={gsap} setShowHeader={setShowHeader} />}
 			{/* Header */}
 			<Header
