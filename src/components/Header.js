@@ -160,7 +160,7 @@ export default function Header({ showHeader, setShowHeader, showIntro }) {
 								<div className={`${styles.link_title} text_16`}>Promise</div>
 							</div>
 						</div>
-						<div className={styles.links}>
+						{/* <div className={styles.links}>
 							<div
 								onClick={() => {
 									toggleSidebar();
@@ -169,7 +169,7 @@ export default function Header({ showHeader, setShowHeader, showIntro }) {
 							>
 								<div className={`${styles.link_title} text_16`}>Blogs</div>
 							</div>
-						</div>
+						</div> */}
 						<div
 							className={styles.links}
 							onClick={() => {
