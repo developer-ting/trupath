@@ -79,7 +79,7 @@ export default function HomePage() {
 					<SweetTaste gsap={gsap} ScrollTrigger={ScrollTrigger} />
 					<ProductSec />
 					<FieldsSec gsap={gsap} ScrollTrigger={ScrollTrigger} />
-					<OldRoots />
+					{/* <OldRoots /> */}
 					<GreatValueSec />
 				</div>
 			</main>

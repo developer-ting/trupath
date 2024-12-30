@@ -145,7 +145,7 @@ export default function ProductSec() {
 							</div>
 						</div> */}
 					</div>
-					<div className={`${styles.ShopMain}`}>
+					{/* <div className={`${styles.ShopMain}`}>
 						<p className="text_18 color_primary">Order now at</p>
 						<div className={`${styles.ShopBox}`}>
 							<div className={`${styles.ShopItem}`}>
@@ -158,13 +158,13 @@ export default function ProductSec() {
 									<img src={Amazon.src} alt="Amazon Logo" />
 								</a>
 							</div>
-							{/* <div className={`${styles.ShopItem}`}>
+							<div className={`${styles.ShopItem}`}>
 								<a href="">
 									<img src={BB.src} alt="BB Logo" />
 								</a>
-							</div> */}
+							</div>
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</section>
