@@ -138,16 +138,18 @@
 			}
 
 			p {
+				width: 55%;
+				margin: auto;
 				color: var(--color_primary);
 				@media screen and (max-width: 1199px) {
-					width: 50%;
+					width: 80%;
 					margin: auto;
 				}
 				@media screen and (max-width: 992px) {
-					width: 60%;
+					width: 80%;
 				}
 				@media screen and (max-width: 767px) {
-					width: 70%;
+					width: 80%;
 					margin: auto;
 					padding-top: 10px;
 				}

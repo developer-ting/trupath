@@ -54,14 +54,14 @@ export default function Footer() {
 					<div className={`${styles.MainFlex}`}>
 						<div className={`${styles.ContactDetails}`}>
 							<h2 className="text_50">Get in touch</h2>
-							<div className={`${styles.DetailsBx}`}>
+							{/* <div className={`${styles.DetailsBx}`}>
 								<img src={LocIcon.src} alt="Location Icon" />
 								<div className={`${styles.content}`}>
 									<p className="text_20">
 										203, Hallmark Business Plaza, Kala Nagar, Bandra East, Mumbai 400 051.
 									</p>
 								</div>
-							</div>
+							</div> */}
 							<div className={`${styles.DetailsBx}`}>
 								<img src={MailIcon.src} alt="Mail Icon" />
 								<div className={`${styles.content}`}>
