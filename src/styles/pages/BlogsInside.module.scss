@@ -1,3 +1,14 @@
 @import "../helpers/helpers.scss";
 			
-.BlogsInsidePage{}
+.BlogsInsidePage{
+    position: relative;
+    padding: 80px 0;
+	.Waves {
+		position: absolute;
+		z-index: 1;
+		bottom: -5px;
+		@media screen and (max-width: 992px) {
+			bottom: -7px;
+		}
+	}
+}

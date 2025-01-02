@@ -6,7 +6,8 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
 import Button from "@/components/Buttons/Button";
-import BlogCard from "../src/components/BlogCard";
+import BlogCard from "@/components/BlogCard";
+import BreadCrumb from "@/components/Breadcrumb";
 
 // SECTIONS //
 
@@ -24,6 +25,12 @@ import bottomWave from "../public/img/home/wave_bottom_img.svg";
 
 /** Blogs Listing Page */
 export default function BlogsListingPage() {
+	const breadcrumbData = [
+		{
+			name: "Blogs",
+			link: "/blogs-listing",
+		},
+	];
 	const BlogList = [
 		{
 			cardtype: "Blog",
@@ -71,6 +78,7 @@ export default function BlogsListingPage() {
 
 			{/* Page Content starts here */}
 			<main className={`${styles.BlogsListingPage} bg_tertiary`}>
+				<BreadCrumb breadcrumbData={breadcrumbData} />
 				<div className="container">
 					<section className={`${styles.BlogsListingMain}`}>
 						<div className={`${styles.Head}`}>
