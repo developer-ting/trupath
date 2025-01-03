@@ -1,8 +1,137 @@
 @import "../helpers/helpers.scss";
-			
-.BlogsInsidePage{
-    position: relative;
-    padding: 80px 0;
+
+.BlogsInsidePage {
+	position: relative;
+	padding: 0 0 80px;
+	.HeadBx {
+		.TitleBx {
+			width: fit-content;
+			margin: auto;
+			.DetailsStrip {
+				display: flex;
+				justify-content: space-between;
+				padding: 10px 0 20px;
+				@media screen and (max-width: 767px) {
+					flex-direction: column;
+					padding: 15px 0 20px;
+					gap: 10px;
+				}
+				.Left {
+					p {
+						span {
+							position: relative;
+							padding: 0 10px;
+							&:first-child {
+								padding-left: 0px;
+							}
+							&:last-child {
+								padding-right: 0px;
+								&::after {
+									display: none;
+								}
+							}
+							&::after {
+								content: "";
+								position: absolute;
+								top: 50%;
+								right: 0;
+								transform: translate(50%, -50%);
+								width: 5px;
+								height: 5px;
+								border-radius: 50%;
+								background-color: #d94426;
+							}
+						}
+					}
+				}
+				.SocialsBx {
+					display: flex;
+					align-items: center;
+					.IconBx {
+						a {
+							display: flex;
+							width: 25px;
+							height: 25px;
+							justify-content: center;
+							align-items: center;
+							img {
+							}
+						}
+					}
+				}
+			}
+		}
+		.ImgBx {
+		}
+	}
+	.RelatedBlogs {
+		padding: 60px 0;
+		.Head {
+			padding-bottom: 30px;
+		}
+		.SliderMainBx {
+			.items {
+				display: flex;
+				// flex-direction: column;
+				align-items: center;
+				margin-top: 30px;
+			}
+
+			:global(.swiper-pagination-progressbar) {
+				top: unset;
+				width: 85%;
+				height: 2px;
+				left: 13px;
+
+				@media (max-width: 991px) {
+					width: 82%;
+				}
+
+				@media (max-width: 767px) {
+					width: 65%;
+					left: 12px;
+				}
+			}
+
+			:global(.swiper-pagination-progressbar-fill) {
+				background-color: #000000;
+			}
+
+			:global(#customNext) {
+				// padding: 10px;
+				// border-radius: 50%;
+				border: none;
+				position: absolute;
+				right: 15px;
+				background-color: transparent;
+				// border: 2px solid #dddddd;
+				// bottom: -35px;
+				cursor: pointer;
+				@media (max-width: 1024px) {
+					right: 20px;
+					// bottom: -34px;
+				}
+			}
+
+			:global(#customPrev) {
+				// padding: 10px;
+				// border-radius: 50%;
+				border: none;
+				position: absolute;
+				right: 60px;
+				background-color: transparent;
+				// border: 2px solid #dddddd;
+				// bottom: -34px;
+				cursor: pointer;
+				@media (max-width: 1024px) {
+					right: 70px;
+				}
+			}
+			:global(.swiper-button-disabled) {
+				opacity: 0.5;
+			}
+		}
+	}
 	.Waves {
 		position: absolute;
 		z-index: 1;
