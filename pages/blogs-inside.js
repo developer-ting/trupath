@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-key */
 // MODULES //
+import { useEffect, useState } from "react";
 
 // COMPONENTS //
 import Footer from "@/components/Footer";
@@ -25,6 +26,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import ScrollOut from "scroll-out";
 
 // UTILS //
 
@@ -46,6 +50,27 @@ import NextArrow from "../public/img/icons/NextArrow.svg";
 
 /** Blogs Inside Page */
 export default function BlogsInsidePage() {
+	const [showHeader, setShowHeader] = useState(false);
+	const [showIntro, setShowIntro] = useState(false);
+
+	gsap.registerPlugin(ScrollTrigger);
+
+	useEffect(() => {
+		const introSeen = sessionStorage.getItem("introSeen");
+
+		// If not seen, show it and set it in localStorage
+		if (!introSeen) {
+			setShowIntro(true);
+			// localStorage.setItem("introSeen", "true");
+		} else {
+			console.log("intro handle");
+			const headerClassRemove = document.querySelector(".header");
+			headerClassRemove.classList.remove("hidden_header");
+		}
+		ScrollOut({
+			once: true,
+		});
+	}, []);
 	const breadcrumbData = [
 		{ name: "Blogs", link: "/blogs-listing" },
 		{
@@ -128,7 +153,11 @@ export default function BlogsInsidePage() {
 			/>
 
 			{/* Header */}
-			<Header />
+			<Header
+				showHeader={showHeader}
+				setShowHeader={setShowHeader}
+				showIntro={showIntro}
+			/>
 
 			{/* Page Content starts here */}
 			<main className={`${styles.BlogsInsidePage} bg_tertiary`}>
