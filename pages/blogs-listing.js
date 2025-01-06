@@ -30,22 +30,12 @@ import bottomWave from "../public/img/home/wave_bottom_img.svg";
 /** Blogs Listing Page */
 export default function BlogsListingPage() {
 	const [showHeader, setShowHeader] = useState(false);
-	const [showIntro, setShowIntro] = useState(false);
 
 	gsap.registerPlugin(ScrollTrigger);
 
 	useEffect(() => {
-		const introSeen = sessionStorage.getItem("introSeen");
-
-		// If not seen, show it and set it in localStorage
-		if (!introSeen) {
-			setShowIntro(true);
-			// localStorage.setItem("introSeen", "true");
-		} else {
-			console.log("intro handle");
-			const headerClassRemove = document.querySelector(".header");
-			headerClassRemove.classList.remove("hidden_header");
-		}
+		const headerClassRemove = document.querySelector(".header");
+		headerClassRemove.classList.remove("hidden_header");
 		ScrollOut({
 			once: true,
 		});
@@ -99,11 +89,7 @@ export default function BlogsListingPage() {
 			/>
 
 			{/* Header */}
-			<Header
-				showHeader={showHeader}
-				setShowHeader={setShowHeader}
-				showIntro={showIntro}
-			/>
+			<Header showHeader={showHeader} setShowHeader={setShowHeader} />
 
 			{/* Page Content starts here */}
 			<main className={`${styles.BlogsListingPage} bg_tertiary`}>

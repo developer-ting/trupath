@@ -51,22 +51,12 @@ import NextArrow from "../public/img/icons/NextArrow.svg";
 /** Blogs Inside Page */
 export default function BlogsInsidePage() {
 	const [showHeader, setShowHeader] = useState(false);
-	const [showIntro, setShowIntro] = useState(false);
 
 	gsap.registerPlugin(ScrollTrigger);
 
 	useEffect(() => {
-		const introSeen = sessionStorage.getItem("introSeen");
-
-		// If not seen, show it and set it in localStorage
-		if (!introSeen) {
-			setShowIntro(true);
-			// localStorage.setItem("introSeen", "true");
-		} else {
-			console.log("intro handle");
-			const headerClassRemove = document.querySelector(".header");
-			headerClassRemove.classList.remove("hidden_header");
-		}
+		const headerClassRemove = document.querySelector(".header");
+		headerClassRemove.classList.remove("hidden_header");
 		ScrollOut({
 			once: true,
 		});
@@ -153,11 +143,7 @@ export default function BlogsInsidePage() {
 			/>
 
 			{/* Header */}
-			<Header
-				showHeader={showHeader}
-				setShowHeader={setShowHeader}
-				showIntro={showIntro}
-			/>
+			<Header showHeader={showHeader} setShowHeader={setShowHeader} />
 
 			{/* Page Content starts here */}
 			<main className={`${styles.BlogsInsidePage} bg_tertiary`}>
