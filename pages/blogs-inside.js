@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-key */
 // MODULES //
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 // COMPONENTS //
 import Footer from "@/components/Footer";
@@ -285,7 +286,7 @@ export default function BlogsInsidePage() {
 						<div className={`${styles.Head} f_r_aj_between`}>
 							<h2 className="text_50 color_primary">Related Blogs</h2>
 							<Button color="primary" variant="filled">
-								View All
+								<Link href="/blogs-listing">View All</Link>
 							</Button>
 						</div>
 						<div className={`${styles.SliderMainBx}`}>

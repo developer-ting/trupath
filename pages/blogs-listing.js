@@ -51,31 +51,31 @@ export default function BlogsListingPage() {
 			cardtype: "Blog",
 			date: "12th Sep, 2024",
 			title: "Discover the Health Benefits of Jaggery!",
-			link: "",
+			link: "/blogs-inside",
 		},
 		{
 			cardtype: "Blog",
 			date: "12th Sep, 2024",
 			title: "Discover the Health Benefits of Jaggery!",
-			link: "",
+			link: "/blogs-inside",
 		},
 		{
 			cardtype: "Blog3",
 			date: "12th Sep, 2024",
 			title: "Discover the Health Bene",
-			link: "",
+			link: "/blogs-inside",
 		},
 		{
 			cardtype: "Blog",
 			date: "12th Sep, 2024",
 			title: "Discover the Health Benefits of Jaggery!",
-			link: "",
+			link: "/blogs-inside",
 		},
 		{
 			cardtype: "Blog3",
 			date: "12th Sep, 2024",
 			title: "Discover the Health Bene",
-			link: "",
+			link: "/blogs-inside",
 		},
 	];
 	return (
