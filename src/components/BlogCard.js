@@ -5,7 +5,15 @@ import Button from "../components/Buttons/Button";
 
 // SECTIONS //
 
-// PLUGINS //
+// PLUGINS //// PLUGINS //
+import LightGallery from "lightgallery/react";
+import lgThumbnail from "lightgallery/plugins/thumbnail";
+import lgZoom from "lightgallery/plugins/zoom";
+import lgVideo from "lightgallery/plugins/video";
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lg-thumbnail.css";
+import "lightgallery/css/lg-video.css";
 
 // UTILS //
 
@@ -32,6 +40,15 @@ export default function BlogCard({ title, Keyno, type, link, date }) {
 					<Button color="primary" variant="underline">
 						Read More
 					</Button>
+				</div>
+				<div className={`${styles.Btn}`}>
+					<LightGallery speed={500} plugins={[lgThumbnail, lgZoom, lgVideo]}>
+						<div data-src="">
+							<Button color="primary" variant="underline">
+								View More
+							</Button>
+						</div>
+					</LightGallery>
 				</div>
 			</a>
 		</div>
