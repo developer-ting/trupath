@@ -43,7 +43,7 @@ export default function BlogCard({ title, Keyno, type, link, date }) {
 				</div>
 				<div className={`${styles.Btn}`}>
 					<LightGallery speed={500} plugins={[lgThumbnail, lgZoom, lgVideo]}>
-						<div data-src="">
+						<div data-src="https://www.youtube.com/watch?v=EngW7tLk6R8">
 							<Button color="primary" variant="underline">
 								View More
 							</Button>

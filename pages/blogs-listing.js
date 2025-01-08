@@ -104,10 +104,8 @@ export default function BlogsListingPage() {
 							</p>
 							<div className={`${styles.Tabs}`}>
 								<div className={`${styles.btn} ${styles.active} text_16 color_primary`}>
-									Filter Articles
+									Blogs
 								</div>
-								<div className={`${styles.btn} text_16 color_primary`}>Blogs</div>
-								<div className={`${styles.btn} text_16 color_primary`}>Articles</div>
 								<div className={`${styles.btn} text_16 color_primary`}>Videos</div>
 								<div className={`${styles.btn} text_16 color_primary`}>Recipes</div>
 							</div>
