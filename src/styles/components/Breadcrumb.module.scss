@@ -1,0 +1,56 @@
+@import "../helpers/helpers.scss";
+
+.breadcrumb {
+	height: auto;
+	z-index: 2;
+	color: var(--color_primary);
+	// margin-top: 86px;
+	padding: 101px 0px 15px;
+	font-size: 12px;
+	@media only screen and (max-width: 1600px) {
+		// margin-top: 69px;
+		padding: 84px 0px 15px;
+	}
+	@media only screen and (max-width: 1199px) {
+		// margin-top: 60px;
+		padding: 75px 0px 15px;
+	}
+	@media only screen and (max-width: 991px) {
+		// margin-top: 54px;
+		padding: 69px 0px 15px;
+	}
+	.breadcrumb_inner {
+		display: flex;
+		// flex-wrap: nowrap;
+		flex-wrap: wrap;
+
+		.pathItem {
+			opacity: 0.5;
+			// white-space: nowrap;
+			white-space: inherit;
+			display: flex;
+			text-transform: uppercase;
+			* {
+				color: var(--color_primary) !important;
+				margin: 0 !important;
+			}
+
+			span {
+				&:nth-child(1) {
+					padding: 0 3px;
+					display: inline-block;
+				}
+			}
+
+			&:nth-last-child(1) {
+				opacity: 1;
+				margin: 0;
+				flex: 1;
+
+				* {
+					@include trimLines(1);
+				}
+			}
+		}
+	}
+}
