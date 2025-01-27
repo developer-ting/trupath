@@ -92,7 +92,7 @@ export default function BlogsListingPage() {
 			<Header showHeader={showHeader} setShowHeader={setShowHeader} />
 
 			{/* Page Content starts here */}
-			<main className={`${styles.BlogsListingPage} bg_tertiary`}>
+			<main className={`${styles.BlogsListingPage} bg_tertiary `}>
 				<BreadCrumb breadcrumbData={breadcrumbData} />
 				<div className="container">
 					<section className={`${styles.BlogsListingMain}`}>
