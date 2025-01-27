@@ -1,76 +1,173 @@
-/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable require-jsdoc */
+/* eslint-disable react/jsx-key */
 // MODULES //
+import { useEffect, useState } from "react";
 
 // COMPONENTS //
-import MetaTags from "@/components/MetaTags";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import DummyComponent from "@/components/DummyComponent";
+import MetaTags from "@/components/MetaTags";
+import Button from "@/components/Buttons/Button";
+import BlogCard from "@/components/BlogCard";
+import BreadCrumb from "@/components/Breadcrumb";
 
 // SECTIONS //
 
 // PLUGINS //
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import ScrollOut from "scroll-out";
 
-// IMAGES //
+// UTILS //
+import StrapiImage from "@/utils/StrapiImage";
 
 // STYLES //
-import styles from "@/styles/pages/Blogs.module.scss";
+import styles from "@/styles/pages/BlogsListing.module.scss";
 
-// SERVICES //
-import { getAllBlogs } from "@/services/BlogService";
+// IMAGES //
+import bottomWave from "../../public/img/home/wave_bottom_img.svg";
+import Slide1 from "../../public/img/home/Slide1.jpg";
 
 // DATA //
-import dummyData from "@/data/tempStrapiData.json";
 
-/** Data Fetching  */
-export async function getServerSideProps() {
-	// API call to get all Blogs
-	const blogs = await getAllBlogs();
+// SERVICES //
+import { getAllBlogs, getAllBlogsCategories } from "@/services/BlogService";
 
-	return {
-		props: { blogsData: blogs.data },
-		// revalidate: 120,
-	};
-}
+export const getStaticProps = async () => {
+	const blogsList = await getAllBlogs();
+	const blogCategoriesList = await getAllBlogsCategories();
+	return { props: { blogsList, blogCategoriesList }, revalidate: 60 };
+};
 
-/** Blogs Page */
-export default function Blogs({ blogsData }) {
-	// When fetching data from strapi use blogsData directly instead of dummyData,
-	// Here dummyData is used just for demonstration purpose
+/** Blogs Listing Page */
+export default function BlogsListingPage({ blogsList, blogCategoriesList }) {
+	const [showHeader, setShowHeader] = useState(false);
+	const [selectCategory, setSelectCategory] = useState(
+		blogCategoriesList.data[0].title
+	);
 
+	console.log(blogCategoriesList);
+
+	gsap.registerPlugin(ScrollTrigger);
+
+	useEffect(() => {
+		const headerClassRemove = document.querySelector(".header");
+		headerClassRemove.classList.remove("hidden_header");
+		ScrollOut({
+			once: true,
+		});
+	}, []);
+	const breadcrumbData = [
+		{
+			name: "Blogs",
+			link: "/blogs",
+		},
+	];
+	// const BlogList = [
+	// 	{
+	// 		cardtype: "Blog",
+	// 		date: "12th Sep, 2024",
+	// 		title: "Discover the Health Benefits of Jaggery!",
+	// 		link: "/blogs-inside",
+	// 	},
+	// 	{
+	// 		cardtype: "Blog",
+	// 		date: "12th Sep, 2024",
+	// 		title: "Discover the Health Benefits of Jaggery!",
+	// 		link: "/blogs-inside",
+	// 	},
+	// 	{
+	// 		cardtype: "Blog3",
+	// 		date: "12th Sep, 2024",
+	// 		title: "Discover the Health Bene",
+	// 		link: "/blogs-inside",
+	// 	},
+	// 	{
+	// 		cardtype: "Blog",
+	// 		date: "12th Sep, 2024",
+	// 		title: "Discover the Health Benefits of Jaggery!",
+	// 		link: "/blogs-inside",
+	// 	},
+	// 	{
+	// 		cardtype: "Blog3",
+	// 		date: "12th Sep, 2024",
+	// 		title: "Discover the Health Bene",
+	// 		link: "/blogs-inside",
+	// 	},
+	// ];
 	return (
 		<div>
 			{/* Metatags */}
 			<MetaTags
-				Title={"Blogs"}
+				Title={"Blogs Listing"}
 				Desc={""}
-				Keywords={""}
 				OgImg={""}
-				Url={"/blogs"}
+				Url={"/blogs-listing"}
 			/>
-			{/* Header */}
-			<Header />
 
-			{/* Page Content Starts */}
-			<main className={`${styles.blogs_page}`}>
-				<div className="section_spacing">
-					<div className="container">
-						<div className={`${styles.blog_wrap}`}>
-							{dummyData.map((item, index) => {
-								return (
-									<DummyComponent
-										key={item.attributes.title + index}
-										title={item.attributes.title}
-										desc={item.attributes.desc}
-										thumbImage={item.attributes.thumbImage}
-									/>
-								);
-							})}
+			{/* Header */}
+			<Header showHeader={showHeader} setShowHeader={setShowHeader} />
+
+			{/* Page Content starts here */}
+			<main className={`${styles.BlogsListingPage} bg_tertiary`}>
+				<BreadCrumb breadcrumbData={breadcrumbData} />
+				<div className="container">
+					<section className={`${styles.BlogsListingMain}`}>
+						<div className={`${styles.Head}`}>
+							<h2 className="text_50 color_primary">Discover what&#39;s Gud</h2>
+							<p className="text_20 color_primary">
+								Browse through our curated collection of blogs with insights,
+								<br className="hidden_xs" /> tips, and stories for a better you.
+							</p>
+							<div className={`${styles.Tabs}`}>
+								{blogCategoriesList.data?.map((item) => {
+									return (
+										<div
+											className={`${styles.btn} ${
+												selectCategory === item.title && styles.active
+											} text_16 color_primary`}
+											key={item.title}
+											onClick={() => setSelectCategory(item.title)}
+										>
+											{item.title}
+										</div>
+									);
+								})}
+							</div>
 						</div>
-					</div>
+						<div className={`${styles.GridBox}`}>
+							{blogsList.data
+								?.filter((filItem) =>
+									filItem.categories.some((item2) => item2.title === selectCategory)
+								)
+								.map((item, ind) => {
+									return (
+										<BlogCard
+											Keyno={ind}
+											title={item?.productTitle}
+											type={item?.categories}
+											link={item?.slug}
+											date={item?.date}
+											thumbnail={StrapiImage(item?.thumbnail)?.url}
+											externalLink={item?.externalLink}
+										/>
+									);
+								})}
+						</div>
+						<div className={`${styles.ViewBtn}`}>
+							<Button color="secondary" variant="filled">
+								View All
+							</Button>
+						</div>
+					</section>
 				</div>
+				<img
+					src={bottomWave.src}
+					className={`${styles.Waves} width_100`}
+					alt="Wave"
+				/>
 			</main>
-			{/* Page Content Ends */}
+			{/* Page Content ends here */}
 
 			{/* Footer */}
 			<Footer />

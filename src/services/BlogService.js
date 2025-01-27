@@ -3,7 +3,7 @@ import { ServerHeaders } from "@/utils/RequestHeaders";
 /** Fetch Blog Data */
 export const getAllBlogs = async () => {
 	const req = await fetch(
-		`${process.env.STRAPI_DO_BASE_URL}/api/blogs?populate=*`,
+		`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}/api/products?populate=*`,
 		ServerHeaders
 	);
 	const res = await req.json();
@@ -13,7 +13,7 @@ export const getAllBlogs = async () => {
 /** Fetch Blogs Inside Data */
 export const getBlogBySlug = async (slug) => {
 	const req = await fetch(
-		`${process.env.STRAPI_DO_BASE_URL}/api/blogs?populate=*&filters[slug][$eq]=${slug}`,
+		`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}/api/products?populate=*&filters[slug][$eq]=${slug}`,
 		ServerHeaders
 	);
 	const res = await req.json();
@@ -23,7 +23,17 @@ export const getBlogBySlug = async (slug) => {
 /** Fetch Related Blogs Data */
 export const getRelatedBlogsBySlug = async (slug) => {
 	const req = await fetch(
-		`${process.env.STRAPI_DO_BASE_URL}/api/blogs?populate=*&filters[slug][$ne]=${slug}`,
+		`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}/api/products?populate=*&filters[slug][$ne]=${slug}`,
+		ServerHeaders
+	);
+	const res = await req.json();
+	return res;
+};
+
+/** Fetch Blog Data */
+export const getAllBlogsCategories = async () => {
+	const req = await fetch(
+		`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}/api/categories?populate=*`,
 		ServerHeaders
 	);
 	const res = await req.json();
