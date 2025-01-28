@@ -1,5 +1,7 @@
+/* eslint-disable require-jsdoc */
 // MODULES //
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 // COMPONENTS //
 import Button from "../components/Buttons/Button";
@@ -7,6 +9,14 @@ import Button from "../components/Buttons/Button";
 // SECTIONS //
 
 // PLUGINS //
+import LightGallery from "lightgallery/react";
+import lgThumbnail from "lightgallery/plugins/thumbnail";
+import lgZoom from "lightgallery/plugins/zoom";
+import lgVideo from "lightgallery/plugins/video";
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lg-thumbnail.css";
+import "lightgallery/css/lg-video.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -23,8 +33,16 @@ import NextArrow from "../../public/img/icons/NextArrow.svg";
 
 // DATA //
 
+// SERVICES //
+import { getAllBlogs } from "@/services/BlogService";
+
+export const getStaticProps = async () => {
+	const blogsList = await getAllBlogs();
+	return { props: { blogsList }, revalidate: 60 };
+};
+
 /** OldRoots Section */
-export default function OldRoots() {
+export default function OldRoots({ blogsList }) {
 	/** slider Section */
 	var settings = {
 		slidesToShow: 3,
@@ -85,83 +103,44 @@ export default function OldRoots() {
 				<div className={`${styles.Head} f_r_aj_between toTop`} data-scroll>
 					<h2 className="text_50 color_primary">Path to true wellness</h2>
 					<Button color="primary" variant="filled">
-						View All
+						<Link href="/blogs">View All</Link>
 					</Button>
 				</div>
 				<div className={`${styles.SliderBox} toTop`} data-scroll>
 					<Slider {...settings}>
-						<div className={`${styles.SliderItem} bg_primary b_r_10`}>
-							<img src={Slide1.src} className="width_100 b_r_10" alt="Slide Image" />
-							<p className={`${styles.Type} text_18 f_w_r color_tertiary`}>Blog</p>
-							<p className={`${styles.Title} text_20 f_w_m color_tertiary`}>
-								Discover the Health Benefits of Jaggery!
-							</p>
-							<div className={`${styles.Btn}`}>
-								<Button color="tertiary" variant="underline">
-									Read More
-								</Button>
-							</div>
-						</div>
-						<div className={`${styles.SliderItem} bg_secondary b_r_10`}>
-							<img src={Slide1.src} className="width_100 b_r_10" alt="Slide Image" />
-							<p className={`${styles.Type} text_18 f_w_r color_tertiary`}>Blog</p>
-							<p className={`${styles.Title} text_20 f_w_m color_tertiary`}>
-								Discover the Health Benefits of Jaggery!
-							</p>
-							<div className={`${styles.Btn}`}>
-								<Button color="tertiary" variant="underline">
-									Read More
-								</Button>
-							</div>
-						</div>
-						<div className={`${styles.SliderItem} bg_fourth b_r_10`}>
-							<img src={Slide1.src} className="width_100 b_r_10" alt="Slide Image" />
-							<p className={`${styles.Type} text_18 f_w_r color_primary`}>Blog</p>
-							<p className={`${styles.Title} text_20 f_w_m color_primary`}>
-								Discover the Health Benefits of Jaggery!
-							</p>
-							<div className={`${styles.Btn}`}>
-								<Button color="primary" variant="underline">
-									Read More
-								</Button>
-							</div>
-						</div>
-						<div className={`${styles.SliderItem} bg_primary b_r_10`}>
-							<img src={Slide1.src} className="width_100 b_r_10" alt="Slide Image" />
-							<p className={`${styles.Type} text_18 f_w_r color_tertiary`}>Blog</p>
-							<p className={`${styles.Title} text_20 f_w_m color_tertiary`}>
-								Discover the Health Benefits of Jaggery!
-							</p>
-							<div className={`${styles.Btn}`}>
-								<Button color="tertiary" variant="underline">
-									Read More
-								</Button>
-							</div>
-						</div>
-						<div className={`${styles.SliderItem} bg_secondary b_r_10`}>
-							<img src={Slide1.src} className="width_100 b_r_10" alt="Slide Image" />
-							<p className={`${styles.Type} text_18 f_w_r color_tertiary`}>Blog</p>
-							<p className={`${styles.Title} text_20 f_w_m color_tertiary`}>
-								Discover the Health Benefits of Jaggery!
-							</p>
-							<div className={`${styles.Btn}`}>
-								<Button color="tertiary" variant="underline">
-									Read More
-								</Button>
-							</div>
-						</div>
-						<div className={`${styles.SliderItem} bg_fourth b_r_10`}>
-							<img src={Slide1.src} className="width_100 b_r_10" alt="Slide Image" />
-							<p className={`${styles.Type} text_18 f_w_r color_primary`}>Blog</p>
-							<p className={`${styles.Title} text_20 f_w_m color_primary`}>
-								Discover the Health Benefits of Jaggery!
-							</p>
-							<div className={`${styles.Btn}`}>
-								<Button color="primary" variant="underline">
-									Read More
-								</Button>
-							</div>
-						</div>
+						{blogsList.data.map((item, ind) => {
+							return (
+								<div className={`${styles.SliderItem} bg_primary b_r_10`} key={ind}>
+									<img src={Slide1.src} className="width_100 b_r_10" alt="Slide Image" />
+									<p className={`${styles.Type} text_18 f_w_r color_tertiary`}>
+										{item?.categories}
+									</p>
+									<p className={`${styles.Title} text_20 f_w_m color_tertiary`}>
+										{item?.productTitle}
+									</p>
+									{!item?.externalLink && (
+										<div className={`${styles.Btn}`}>
+											<a href={item?.slug}>
+												<Button color="tertiary" variant="underline">
+													Read More
+												</Button>
+											</a>
+										</div>
+									)}
+									{item?.externalLink && (
+										<div className={`${styles.Btn}`}>
+											<LightGallery speed={500} plugins={[lgThumbnail, lgZoom, lgVideo]}>
+												<div data-src={item?.externalLink}>
+													<Button color="primary" variant="underline">
+														View More
+													</Button>
+												</div>
+											</LightGallery>
+										</div>
+									)}
+								</div>
+							);
+						})}
 					</Slider>
 					<div className={`${styles.progress_div}`}>
 						<div className={`${styles.progress_bar}`}>
