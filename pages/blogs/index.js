@@ -46,8 +46,6 @@ export default function BlogsListingPage({ blogsList, blogCategoriesList }) {
 		blogCategoriesList.data[0].title
 	);
 
-	console.log(blogCategoriesList);
-
 	gsap.registerPlugin(ScrollTrigger);
 
 	useEffect(() => {
@@ -63,38 +61,6 @@ export default function BlogsListingPage({ blogsList, blogCategoriesList }) {
 			link: "/blogs",
 		},
 	];
-	// const BlogList = [
-	// 	{
-	// 		cardtype: "Blog",
-	// 		date: "12th Sep, 2024",
-	// 		title: "Discover the Health Benefits of Jaggery!",
-	// 		link: "/blogs-inside",
-	// 	},
-	// 	{
-	// 		cardtype: "Blog",
-	// 		date: "12th Sep, 2024",
-	// 		title: "Discover the Health Benefits of Jaggery!",
-	// 		link: "/blogs-inside",
-	// 	},
-	// 	{
-	// 		cardtype: "Blog3",
-	// 		date: "12th Sep, 2024",
-	// 		title: "Discover the Health Bene",
-	// 		link: "/blogs-inside",
-	// 	},
-	// 	{
-	// 		cardtype: "Blog",
-	// 		date: "12th Sep, 2024",
-	// 		title: "Discover the Health Benefits of Jaggery!",
-	// 		link: "/blogs-inside",
-	// 	},
-	// 	{
-	// 		cardtype: "Blog3",
-	// 		date: "12th Sep, 2024",
-	// 		title: "Discover the Health Bene",
-	// 		link: "/blogs-inside",
-	// 	},
-	// ];
 	return (
 		<div>
 			{/* Metatags */}

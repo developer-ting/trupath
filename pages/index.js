@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 // MODULES //
 import { useEffect, useState } from "react";
 
@@ -33,8 +34,16 @@ import styles from "@/styles/pages/Home.module.scss";
 
 // DATA //
 
+// SERVICES //
+import { getAllBlogs } from "@/services/BlogService";
+
+export const getStaticProps = async () => {
+	const blogsList = await getAllBlogs();
+	return { props: { blogsList }, revalidate: 60 };
+};
+
 /** Home Page */
-export default function HomePage() {
+export default function HomePage({ blogsList }) {
 	const [showHeader, setShowHeader] = useState(false);
 	const [showIntro, setShowIntro] = useState(false);
 
@@ -86,7 +95,7 @@ export default function HomePage() {
 					<SweetTaste gsap={gsap} ScrollTrigger={ScrollTrigger} />
 					<ProductSec />
 					<FieldsSec gsap={gsap} ScrollTrigger={ScrollTrigger} />
-					<OldRoots />
+					<OldRoots blogsList={blogsList} />
 					<GreatValueSec />
 				</div>
 			</main>

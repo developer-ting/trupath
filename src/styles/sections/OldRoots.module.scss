@@ -15,7 +15,7 @@
 	}
 	.SliderBox {
 		padding-top: 25px;
-		margin-right: -15px;
+		// margin-right: -15px;
 		.SliderItem {
 			padding: 20px 20px 30px;
 			// margin-right: 15px;
@@ -26,69 +26,95 @@
 				padding: 4px 0 20px;
 			}
 		}
-	}
-	.progress_div {
-		// display: none !important;
-		width: calc(var(--container_width) - 120px);
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 0;
-		padding: 30px 0px 30px 0px;
-		height: 1px;
-		@media only screen and (max-width: 767px) {
-			padding: 20px 0px 20px 0px;
-			width: calc(100% - 100px);
+		.items {
+			display: flex;
+			// flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
 		}
-		.progress_bar {
-			width: 100%;
-			height: 1px;
-			background-color: rgba($color: #411a0f, $alpha: 0.2);
-			overflow: hidden;
-			.color_div {
-				height: 100%;
-				background-color: var(--color_primary);
-				transition: all 0.3s linear;
+		.arrowSection{
+			width: 25%;
+			position: absolute;
+			right: 0;
+		}
+	
+		:global(.swiper-pagination-progressbar) {
+			top: unset;
+			width: 85%;
+			height: 2px;
+			left: 13px;
+	
+			@media (max-width: 991px) {
+				width: 75%;
+			}
+	
+			@media (max-width: 767px) {
+				width: 65%;
+				left: 15px;
 			}
 		}
-	}
-	:global(.slick-arrow) {
-		width: 30px;
-		height: 30px;
-		top: unset;
-		bottom: -60px;
-		transform: translate(0%, -50%);
-		@media only screen and (max-width: 767px) {
-			transform: unset;
-			width: 30px;
-			height: 30px;
-			bottom: -35px;
+	
+		:global(.swiper-pagination-progressbar-fill) {
+			background-color: #000000;
 		}
-		&::before {
-			content: "";
-		}
-	}
-	:global(.slick-next) {
-		right: 15px;
-		@media only screen and (max-width: 767px) {
+	
+		:global(#customNext) {
+			width: 40px;
+			height: 40px;
+			padding: 0;
+			// padding: 10px;
+			// border-radius: 50%;
+			border: none;
+			position: absolute;
 			right: 15px;
+			background-color: transparent;
+			// border: 2px solid #dddddd;
+			// bottom: -35px;
+			cursor: pointer;
+			@media (max-width: 1024px) {
+				right: 20px;
+				// bottom: -34px;
+			}
+			@media (max-width: 767px) {
+				width: 30px;
+				height: 30px;
+				top: -20px;
+			}
+			img{
+				width: 40px;
+				height: 40px;
+			}
 		}
-	}
-	:global(.slick-prev) {
-		left: unset;
-		right: 55px;
-		@media only screen and (max-width: 767px) {
-			left: unset;
-			right: 55px;
+	
+		:global(#customPrev) {
+			width: 40px;
+			height: 40px;
+			padding: 0;
+			// padding: 10px;
+			// border-radius: 50%;
+			border: none;
+			position: absolute;
+			right: 70px;
+			background-color: transparent;
+			// border: 2px solid #dddddd;
+			// bottom: -34px;
+			cursor: pointer;
+			@media (max-width: 1024px) {
+				right: 75px;
+			}
+			@media (max-width: 767px) {
+				right: 65px;
+				width: 30px;
+				height: 30px;
+				top: -20px;
+			}
+			img{
+				width: 40px;
+				height: 40px;
+			}
 		}
-	}
-	:global(.slick-disabled) {
-		opacity: 0.5;
-	}
-	:global(.slick-slide) {
-		padding-right: 15px;
-	}
-	:global(.slick-slider) {
-		padding-bottom: 30px;
+		:global(.swiper-button-disabled) {
+			opacity: 0.5;
+		}
 	}
 }

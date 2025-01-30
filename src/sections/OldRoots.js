@@ -5,23 +5,26 @@ import Link from "next/link";
 
 // COMPONENTS //
 import Button from "../components/Buttons/Button";
+import BlogCard from "@/components/BlogCard";
 
 // SECTIONS //
 
 // PLUGINS //
-import LightGallery from "lightgallery/react";
-import lgThumbnail from "lightgallery/plugins/thumbnail";
-import lgZoom from "lightgallery/plugins/zoom";
-import lgVideo from "lightgallery/plugins/video";
-import "lightgallery/css/lightgallery.css";
-import "lightgallery/css/lg-zoom.css";
-import "lightgallery/css/lg-thumbnail.css";
-import "lightgallery/css/lg-video.css";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import {
+	Navigation,
+	Pagination,
+	Autoplay,
+	Scrollbar,
+	A11y,
+} from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
 
 // UTILS //
+import StrapiImage from "@/utils/StrapiImage";
 
 // STYLES //
 import styles from "@/styles/sections/OldRoots.module.scss";
@@ -33,69 +36,37 @@ import NextArrow from "../../public/img/icons/NextArrow.svg";
 
 // DATA //
 
-// SERVICES //
-import { getAllBlogs } from "@/services/BlogService";
-
-export const getStaticProps = async () => {
-	const blogsList = await getAllBlogs();
-	return { props: { blogsList }, revalidate: 60 };
-};
-
 /** OldRoots Section */
 export default function OldRoots({ blogsList }) {
-	/** slider Section */
-	var settings = {
-		slidesToShow: 3,
-		slidesToScroll: 1,
-		dots: false,
-		arrows: true,
-		infinite: false,
-		autoplay: false,
-		pauseOnHover: false,
+	const Settings = {
+		modules: [Navigation, Pagination, Scrollbar, A11y, Autoplay],
+		slidesPerView: 1,
+		spaceBetween: 10,
+		grabCursor: true,
 		speed: 1000,
-		variableWidth: false,
-		afterChange: (i) => {
-			fillProgress(i + 1);
+		autoplay: true,
+		loop: true,
+		pagination: {
+			clickable: true,
+			type: "progressbar",
+			el: ".swiper-pagination-news",
 		},
-		responsive: [
-			{
-				breakpoint: 991,
-				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1,
-					//variableWidth: false,
-				},
+		observer: true,
+		observeParents: true,
+		navigation: {
+			prevEl: "#customPrev",
+			nextEl: "#customNext",
+		},
+		breakpoints: {
+			767: {
+				slidesPerView: 2,
+				spaceBetween: 20,
 			},
-			{
-				breakpoint: 767,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1,
-					//variableWidth: false,
-				},
+			992: {
+				slidesPerView: 3,
+				spaceBetween: 20,
 			},
-		],
-		prevArrow: (
-			<button className={`${styles.prevarrow} slick-arrow`}>
-				<img src={PrevArrow.src} alt="arrow" />
-			</button>
-		),
-		nextArrow: (
-			<button className={`${styles.nextarrow} slick-arrow`}>
-				<img src={NextArrow.src} alt="arrow" />
-			</button>
-		),
-	};
-	/** progress Section */
-	const [progressWidth, setProgressWidth] = useState(0);
-	useEffect(() => {
-		fillProgress(1);
-	}, []);
-	/** progress Section */
-	const fillProgress = (currInd) => {
-		// console.log(currInd, " currInd");
-
-		setProgressWidth((currInd / 4) * 100);
+		},
 	};
 	return (
 		<section className={styles.OldRoots} id="Blogs">
@@ -107,47 +78,33 @@ export default function OldRoots({ blogsList }) {
 					</Button>
 				</div>
 				<div className={`${styles.SliderBox} toTop`} data-scroll>
-					<Slider {...settings}>
+					<Swiper {...Settings}>
 						{blogsList.data.map((item, ind) => {
 							return (
-								<div className={`${styles.SliderItem} bg_primary b_r_10`} key={ind}>
-									<img src={Slide1.src} className="width_100 b_r_10" alt="Slide Image" />
-									<p className={`${styles.Type} text_18 f_w_r color_tertiary`}>
-										{item?.categories}
-									</p>
-									<p className={`${styles.Title} text_20 f_w_m color_tertiary`}>
-										{item?.productTitle}
-									</p>
-									{!item?.externalLink && (
-										<div className={`${styles.Btn}`}>
-											<a href={item?.slug}>
-												<Button color="tertiary" variant="underline">
-													Read More
-												</Button>
-											</a>
-										</div>
-									)}
-									{item?.externalLink && (
-										<div className={`${styles.Btn}`}>
-											<LightGallery speed={500} plugins={[lgThumbnail, lgZoom, lgVideo]}>
-												<div data-src={item?.externalLink}>
-													<Button color="primary" variant="underline">
-														View More
-													</Button>
-												</div>
-											</LightGallery>
-										</div>
-									)}
-								</div>
+								<SwiperSlide key={ind}>
+									<BlogCard
+										title={item?.productTitle}
+										type={item?.categories}
+										link={item?.slug}
+										date={item?.date}
+										thumbnail={StrapiImage(item?.thumbnail)?.url}
+										externalLink={item?.externalLink}
+									/>
+								</SwiperSlide>
 							);
 						})}
-					</Slider>
-					<div className={`${styles.progress_div}`}>
-						<div className={`${styles.progress_bar}`}>
-							<div
-								style={{ width: `${progressWidth}%` }}
-								className={`${styles.color_div}`}
-							></div>
+					</Swiper>
+					<div className={`${styles.items}`}>
+						<div
+							className={`${styles.progressBar} m_t_30 swiper-pagination-news`}
+						></div>
+						<div className={`${styles.arrowSection} f_w_a_j_center`}>
+							<button className={`${styles.customPrev}`} id="customPrev">
+								<img src={PrevArrow.src} alt="" />
+							</button>
+							<button className={styles.customNext} id="customNext">
+								<img src={NextArrow.src} alt="" />
+							</button>
 						</div>
 					</div>
 				</div>
