@@ -67,7 +67,7 @@ export async function getStaticPaths() {
 
 	const paths = blogsList.data.map((item) => {
 		return {
-			params: { slug: item.slug },
+			params: { slug: item?.slug || "" },
 		};
 	});
 	return {
@@ -86,7 +86,7 @@ export async function getStaticProps({ params }) {
 
 	return {
 		props: {
-			blogsInsideData: blogsInsideData?.data?.[0],
+			blogsInsideData: blogsInsideData?.data?.[0] || {},
 			blogsList,
 			// relatedBlogData: relatedBlogData.data,
 		}, // will be passed to the page component as props
@@ -96,8 +96,6 @@ export async function getStaticProps({ params }) {
 
 /** Blogs Inside Page */
 export default function BlogsInsidePage({ blogsInsideData, blogsList }) {
-	console.log(blogsInsideData, "blogsInsideData");
-
 	const [showHeader, setShowHeader] = useState(false);
 
 	gsap.registerPlugin(ScrollTrigger);
@@ -179,7 +177,9 @@ export default function BlogsInsidePage({ blogsInsideData, blogsList }) {
 			},
 		},
 	};
-
+	if (!blogsInsideData) {
+		return <></>;
+	}
 	return (
 		<div>
 			{/* Metatags */}
