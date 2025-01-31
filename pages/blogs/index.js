@@ -41,6 +41,8 @@ export const getStaticProps = async () => {
 
 /** Blogs Listing Page */
 export default function BlogsListingPage({ blogsList, blogCategoriesList }) {
+	console.log(blogsList, "blogsList");
+
 	const [showHeader, setShowHeader] = useState(false);
 	const [selectCategory, setSelectCategory] = useState(
 		blogCategoriesList.data[0].title
