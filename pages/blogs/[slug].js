@@ -86,7 +86,7 @@ export async function getStaticProps({ params }) {
 
 	return {
 		props: {
-			blogsInsideData: blogsInsideData.data?.[0],
+			blogsInsideData: blogsInsideData?.data?.[0],
 			blogsList,
 			// relatedBlogData: relatedBlogData.data,
 		}, // will be passed to the page component as props
@@ -96,7 +96,7 @@ export async function getStaticProps({ params }) {
 
 /** Blogs Inside Page */
 export default function BlogsInsidePage({ blogsInsideData, blogsList }) {
-	console.log(blogsInsideData);
+	console.log(blogsInsideData, "blogsInsideData");
 
 	const [showHeader, setShowHeader] = useState(false);
 
@@ -112,8 +112,8 @@ export default function BlogsInsidePage({ blogsInsideData, blogsList }) {
 	const breadcrumbData = [
 		{ name: "Blogs", link: "/blogs" },
 		{
-			name: blogsInsideData.productTitle,
-			link: `/blogs/${blogsInsideData.slug}`,
+			name: blogsInsideData?.productTitle,
+			link: `/blogs/${blogsInsideData?.slug}`,
 		},
 	];
 	const BlogList = [
@@ -260,7 +260,7 @@ export default function BlogsInsidePage({ blogsInsideData, blogsList }) {
 							/>
 						</div>
 					</div>
-					<ContentFromCms>{blogsInsideData.content}</ContentFromCms>
+					<ContentFromCms>{blogsInsideData?.content}</ContentFromCms>
 
 					<div className={`${styles.RelatedBlogs}`}>
 						<div className={`${styles.Head} f_r_aj_between`}>
@@ -285,8 +285,8 @@ export default function BlogsInsidePage({ blogsInsideData, blogsList }) {
 									);
 								})} */}
 
-								{blogsList.data
-									.filter((filitem) => filitem.slug != blogsInsideData.slug)
+								{blogsList?.data
+									.filter((filitem) => filitem.slug != blogsInsideData?.slug)
 									.map((item, ind) => {
 										return (
 											<SwiperSlide>
