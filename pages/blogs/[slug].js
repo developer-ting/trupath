@@ -254,7 +254,7 @@ export default function BlogsInsidePage({ blogsInsideData, blogsList }) {
 						</div>
 						<div className={`${styles.ImgBx}`}>
 							<img
-								src={StrapiImage(blogsInsideData?.banner).url}
+								src={StrapiImage(blogsInsideData?.banner)?.url}
 								className="b_r_10"
 								alt=""
 							/>
