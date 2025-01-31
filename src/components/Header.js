@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable require-jsdoc */
 // MODULES //
 import { useEffect, useState } from "react";
@@ -151,6 +152,11 @@ export default function Header({ showHeader, setShowHeader, showIntro }) {
 							</div>
 						</div>
 						<div className={styles.links}>
+							<div className={`${styles.link_title} text_16`}>
+								<a href="/blogs">Blogs</a>
+							</div>
+						</div>
+						<div className={styles.links}>
 							<div
 								onClick={() => {
 									toggleSidebar();
@@ -170,6 +176,7 @@ export default function Header({ showHeader, setShowHeader, showIntro }) {
 								<div className={`${styles.link_title} text_16`}>Blogs</div>
 							</div>
 						</div> */}
+
 						<div
 							className={styles.links}
 							onClick={() => {
