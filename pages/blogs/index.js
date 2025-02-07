@@ -23,33 +23,35 @@ import { getAllBlogs } from "@/services/BlogService";
 import dummyData from "@/data/tempStrapiData.json";
 
 /** Fetch data */
-export async function getStaticProps() {
-	try {
-		// Fetch both APIs concurrently
-		const [allBlogsData] = await Promise.all([fetch("/api/allBlogs")]);
+// export async function getStaticProps() {
+// 	try {
+// 		// Fetch both APIs concurrently
+// 		const [allBlogsData] = await Promise.all([
+// 			fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/api/allBlogs`),
+// 		]);
 
-		// Parse the JSON responses
-		const allBlogs = await allBlogsData.json();
+// 		// Parse the JSON responses
+// 		const allBlogs = await allBlogsData.json();
 
-		// console.log("Fetched headerData:", headerData);
-		// console.log("Fetched projectListings:", projectListings);
+// 		// console.log("Fetched headerData:", headerData);
+// 		// console.log("Fetched projectListings:", projectListings);
 
-		return {
-			props: {
-				allBlogs: allBlogs.allBlogs || null,
-			},
-			revalidate: 30,
-		};
-	} catch (error) {
-		console.error("Error fetching data:", error);
-		return {
-			props: {
-				allBlogs: null,
-			},
-			revalidate: 30,
-		};
-	}
-}
+// 		return {
+// 			props: {
+// 				allBlogs: allBlogs.allBlogs || null,
+// 			},
+// 			revalidate: 30,
+// 		};
+// 	} catch (error) {
+// 		console.error("Error fetching data:", error);
+// 		return {
+// 			props: {
+// 				allBlogs: null,
+// 			},
+// 			revalidate: 30,
+// 		};
+// 	}
+// }
 
 /** Blogs Page */
 export default function Blogs({ allBlogs }) {
