@@ -1,16 +1,16 @@
 /* eslint-disable react/no-unescaped-entities */
 // MODULES //
-
+import { useEffect, useState } from "react";
 // COMPONENTS //
 import MetaTags from "@/components/MetaTags";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import DummyComponent from "@/components/DummyComponent";
+// import DummyComponent from "@/components/DummyComponent";
 
 // SECTIONS //
 
 // PLUGINS //
-
+import { request, gql } from "graphql-request";
 // IMAGES //
 
 // STYLES //
@@ -22,21 +22,42 @@ import { getAllBlogs } from "@/services/BlogService";
 // DATA //
 import dummyData from "@/data/tempStrapiData.json";
 
-/** Data Fetching  */
-export async function getServerSideProps() {
-	// API call to get all Blogs
-	const blogs = await getAllBlogs();
+/** Fetch data */
+export async function getStaticProps() {
+	try {
+		// Fetch both APIs concurrently
+		const [allBlogsData] = await Promise.all([fetch("/api/allBlogs")]);
 
-	return {
-		props: { blogsData: blogs.data },
-		// revalidate: 120,
-	};
+		// Parse the JSON responses
+		const allBlogs = await allBlogsData.json();
+
+		// console.log("Fetched headerData:", headerData);
+		// console.log("Fetched projectListings:", projectListings);
+
+		return {
+			props: {
+				allBlogs: allBlogs.allBlogs || null,
+			},
+			revalidate: 30,
+		};
+	} catch (error) {
+		console.error("Error fetching data:", error);
+		return {
+			props: {
+				allBlogs: null,
+			},
+			revalidate: 30,
+		};
+	}
 }
 
 /** Blogs Page */
-export default function Blogs({ blogsData }) {
+export default function Blogs({ allBlogs }) {
+	const [data, setData] = useState();
 	// When fetching data from strapi use blogsData directly instead of dummyData,
 	// Here dummyData is used just for demonstration purpose
+
+	// console.log(allBlogs, "  data");
 
 	return (
 		<div>
@@ -55,7 +76,7 @@ export default function Blogs({ blogsData }) {
 			<main className={`${styles.blogs_page}`}>
 				<div className="section_spacing">
 					<div className="container">
-						<div className={`${styles.blog_wrap}`}>
+						{/* <div className={`${styles.blog_wrap}`}>
 							{dummyData.map((item, index) => {
 								return (
 									<DummyComponent
@@ -66,7 +87,7 @@ export default function Blogs({ blogsData }) {
 									/>
 								);
 							})}
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</main>

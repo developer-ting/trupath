@@ -2,7 +2,8 @@
 export const ServerHeaders = {
 	headers: {
 		"Content-Type": "application/json",
-		Authorization: `Bearer ${process.env.AUTH_TOKEN}`,
+		Authorization:
+			"Bearer https://ap-south-1.cdn.hygraph.com/content/cm6tjk81801vh07w0pvwiav54/master",
 	},
 };
 
@@ -10,6 +11,7 @@ export const ServerHeaders = {
 export const ClientHeaders = {
 	headers: {
 		"Content-Type": "application/json",
-		Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`,
+		Authorization:
+			"Bearer https://ap-south-1.cdn.hygraph.com/content/cm6tjk81801vh07w0pvwiav54/master",
 	},
 };
