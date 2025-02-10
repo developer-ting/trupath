@@ -231,7 +231,9 @@ export default function BlogsInside({ blogsInsideData, related }) {
 							<img src={blogsInsideData.banner.url} className="b_r_10" alt="" />
 						</div>
 					</div>
-					<ContentFromCms>{blogsInsideData.content.html}</ContentFromCms>
+					{blogsInsideData.content.html && (
+						<ContentFromCms>{blogsInsideData.content.html}</ContentFromCms>
+					)}
 					{related.length > 0 ? (
 						<div className={`${styles.RelatedBlogs}`}>
 							<div className={`${styles.Head} f_r_aj_between`}>
