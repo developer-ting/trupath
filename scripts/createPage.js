@@ -99,8 +99,6 @@ export default function ${pascalCaseName}Page() {
 			
 .${pascalCaseName}Page{}`
 		);
-
-		console.log(`page ${pageName} created successfully!`);
 	} catch (err) {
 		console.error("Error creating page:", err);
 	}

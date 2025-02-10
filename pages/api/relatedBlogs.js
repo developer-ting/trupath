@@ -2,6 +2,8 @@
 import { ServerHeaders } from "@/utils/RequestHeaders";
 
 export default async function handler(req, res) {
+	console.log(req.query, " ddddd");
+
 	try {
 		const response = await fetch(
 			"https://ap-south-1.cdn.hygraph.com/content/cm6tjk81801vh07w0pvwiav54/master",
@@ -13,18 +15,20 @@ export default async function handler(req, res) {
 				},
 				body: JSON.stringify({
 					query: `{
-  categories {
-    title
-    product{
-       date
-    externalLink
-    productTitle
-    readTime
-    slug
-    youtube
+  categories(where: {title: "${req.query.category}"}) {
+    id
+	title
+    product {
+      date
+      externalLink
+      youtube
+      slug
+		category {
+			title
+		}
+      productTitle
     }
-  }
-}`,
+				}}`,
 				}),
 			}
 		);
@@ -69,7 +73,6 @@ export default async function handler(req, res) {
 
 		// Return valid JSON response
 		res.status(200).json({
-			products: allBlogs.products,
 			categories: allBlogs.categories,
 		});
 	} catch (error) {

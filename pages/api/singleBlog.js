@@ -13,15 +13,28 @@ export default async function handler(req, res) {
 				},
 				body: JSON.stringify({
 					query: `{
-  categories {
-    title
-    product{
-       date
+  products(where: {slug: "${req.query.slug}"}) {
+      date
     externalLink
     productTitle
     readTime
     slug
     youtube
+    thumbnail{
+    url
+    height
+    width
+    }
+      banner{
+    url
+    height
+    width
+    }
+     category {
+      title
+    }
+      content {
+      html
     }
   }
 }`,
@@ -62,15 +75,14 @@ export default async function handler(req, res) {
 		const allBlogs = result?.data;
 
 		// Validate expected response structure
-		if (!allBlogs?.categories) {
+		if (allBlogs?.products.length === 0) {
 			console.error("Unexpected response structure:", result);
 			return res.status(404).json({ error: "Data not found", details: result });
 		}
 
 		// Return valid JSON response
 		res.status(200).json({
-			products: allBlogs.products,
-			categories: allBlogs.categories,
+			...allBlogs.products[0],
 		});
 	} catch (error) {
 		console.error("Error fetching data:", error);

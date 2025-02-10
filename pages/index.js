@@ -48,7 +48,6 @@ export default function HomePage() {
 			setShowIntro(true);
 			// localStorage.setItem("introSeen", "true");
 		} else {
-			console.log("intro handle");
 			const headerClassRemove = document.querySelector(".header");
 			headerClassRemove.classList.remove("hidden_header");
 		}

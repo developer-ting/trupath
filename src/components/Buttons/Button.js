@@ -16,18 +16,44 @@ import styles from "@/styles/components/Buttons/Button.module.scss";
 // DATA //
 
 /** Button Component */
-export default function Button({ children, shape, color, variant }) {
+export default function Button({
+	children,
+	shape,
+	color,
+	variant,
+	isAnchor,
+	hrefVal,
+	isBlank,
+}) {
 	return (
-		<button
-			className={`text_16 font_primary
+		<>
+			{isAnchor ? (
+				<a
+					className={`text_16 font_primary
 				${styles.btn_common_styles}
 				${styles[`btn_${color}`]}
 				${styles[`btn_${variant}`]}
 				${styles[shape]}
 				`}
-			type="submit"
-		>
-			{children}
-		</button>
+					href={hrefVal}
+					rel={isBlank ? "noreferrer" : ""}
+					target={isBlank ? "_blank" : ""}
+				>
+					{children}
+				</a>
+			) : (
+				<button
+					className={`text_16 font_primary
+			${styles.btn_common_styles}
+			${styles[`btn_${color}`]}
+			${styles[`btn_${variant}`]}
+			${styles[shape]}
+			`}
+					type="submit"
+				>
+					{children}
+				</button>
+			)}
+		</>
 	);
 }

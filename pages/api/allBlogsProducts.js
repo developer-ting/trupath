@@ -13,9 +13,7 @@ export default async function handler(req, res) {
 				},
 				body: JSON.stringify({
 					query: `{
-  categories {
-    title
-    product{
+    products{
        date
     externalLink
     productTitle
@@ -23,7 +21,6 @@ export default async function handler(req, res) {
     slug
     youtube
     }
-  }
 }`,
 				}),
 			}

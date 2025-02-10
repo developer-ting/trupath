@@ -65,7 +65,7 @@ export default function BlogsInsidePage() {
 	const breadcrumbData = [
 		{ name: "Blogs", link: "/blogs-listing" },
 		{
-			name: "Discover the Health Benefits of Jaggery!",
+			name: "Discover the Healsssth Benefits of Jaggery!",
 			link: "/blogs-inside",
 		},
 	];
