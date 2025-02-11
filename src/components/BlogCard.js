@@ -34,11 +34,12 @@ export default function BlogCard({
 	slug,
 	ytLink,
 	date,
+	thumbImg,
 }) {
 	return (
 		<div className={`${styles.SliderItem} bg_fourth b_r_10`} key={Keyno}>
 			{/* <a href={link ? link : ""}> */}
-			<img src={Slide1.src} className="width_100 b_r_10" alt="Slide Image" />
+			<img src={thumbImg} className="width_100 b_r_10" alt="Slide Image" />
 			<div className={`${styles.ItemHd}`}>
 				<p className={`${styles.Type} text_18 f_w_r color_primary`}>{type}</p>
 				<p className={`${styles.Date} text_18 f_w_r color_primary`}>{date}</p>
@@ -69,7 +70,6 @@ export default function BlogCard({
 					</Button>
 				</div>
 			)}
-
 			<div className={`${styles.Btn}`}>
 				{ytLink && (
 					<LightGallery speed={500} plugins={[lgThumbnail, lgZoom, lgVideo]}>

@@ -22,6 +22,11 @@ export default async function handler(req, res) {
     readTime
     slug
     youtube
+      thumbnail {
+        height
+        width
+        url
+      }
     }
   }
 }`,

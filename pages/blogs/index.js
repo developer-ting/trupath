@@ -161,6 +161,7 @@ export default function Blogs({ allBlogs }) {
 							{productData.map((item, ind) => (
 								<>
 									<BlogCard
+										thumbImg={item.thumbnail.url}
 										key={ind}
 										title={item?.productTitle}
 										type={allBlogs.categories[activeInd].title}
