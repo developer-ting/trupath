@@ -172,11 +172,15 @@ export default function Blogs({ allBlogs }) {
 								</>
 							))}
 						</div>
-						<div className={`${styles.ViewBtn}`}>
-							<Button hrefVal="/blogs" color="secondary" variant="filled">
-								View All
-							</Button>
-						</div>
+						{productData.length > 6 ? (
+							<div className={`${styles.ViewBtn}`}>
+								<Button hrefVal="/blogs" color="secondary" variant="filled">
+									View All
+								</Button>
+							</div>
+						) : (
+							""
+						)}
 					</section>
 				</div>
 				<img

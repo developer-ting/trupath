@@ -261,19 +261,23 @@ export default function BlogsInside({ blogsInsideData, related }) {
 										);
 									})}
 								</Swiper>
-								<div className={`${styles.items}`}>
-									<div
-										className={`${styles.progressBar} m_t_30 swiper-pagination-news`}
-									></div>
-									<div className={`${styles.arrowSection} f_w_a_j_center`}>
-										<button className={`${styles.customPrev}`} id="customPrev">
-											<img src={PrevArrow.src} alt="" />
-										</button>
-										<button className={styles.customNext} id="customNext">
-											<img src={NextArrow.src} alt="" />
-										</button>
+								{related.length > 3 ? (
+									<div className={`${styles.items}`}>
+										<div
+											className={`${styles.progressBar} m_t_30 swiper-pagination-news`}
+										></div>
+										<div className={`${styles.arrowSection} f_w_a_j_center`}>
+											<button className={`${styles.customPrev}`} id="customPrev">
+												<img src={PrevArrow.src} alt="" />
+											</button>
+											<button className={styles.customNext} id="customNext">
+												<img src={NextArrow.src} alt="" />
+											</button>
+										</div>
 									</div>
-								</div>
+								) : (
+									""
+								)}
 							</div>
 						</div>
 					) : (

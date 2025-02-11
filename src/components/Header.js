@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable require-jsdoc */
 // MODULES //
 import { useEffect, useState } from "react";
@@ -24,6 +25,7 @@ import Arrow from "@/../public/img/icons/arrow.svg";
 
 /** Header Component */
 export default function Header({ showHeader, setShowHeader, showIntro }) {
+	const [pathN, setPathN] = useState();
 	const [openSidebar, setOpenSidebar] = useState(false);
 	const [sidebarActive, setSidebarActive] = useState(false);
 	// const [showHeader, setShowHeader] = useState(false);
@@ -34,6 +36,24 @@ export default function Header({ showHeader, setShowHeader, showIntro }) {
 		setOpenSidebar(!openSidebar);
 		setSidebarActive(!sidebarActive);
 	};
+
+	// handleLinkClick
+	const scrollToSec = (offT) => {
+		window.scrollTo({
+			top: offT - 60,
+			behavior: "smooth",
+		});
+	};
+
+	/** Function to toggle dropdown */
+	function getElementTop(element) {
+		let top = 0;
+		while (element) {
+			top += element.offsetTop;
+			element = element.offsetParent;
+		}
+		return top;
+	}
 
 	/** Handle scroll direction */
 	const handleScroll = () => {
@@ -47,6 +67,7 @@ export default function Header({ showHeader, setShowHeader, showIntro }) {
 	};
 
 	useEffect(() => {
+		setPathN(window.location.pathname);
 		window.addEventListener("scroll", handleScroll);
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
@@ -101,87 +122,136 @@ export default function Header({ showHeader, setShowHeader, showIntro }) {
 					{/* Links Wrap */}
 					<div className={styles.links_wrap}>
 						<div className={styles.links}>
-							<div
-								onClick={() => {
-									toggleSidebar();
-									scrollToSection("Overview");
-								}}
-							>
-								<div className={`${styles.link_title} text_16`}>Overview</div>
-							</div>
+							{pathN === "/" ? (
+								<div
+									onClick={() => {
+										toggleSidebar();
+										scrollToSection("Overview");
+									}}
+								>
+									<div className={`${styles.link_title} text_16`}>Overview</div>
+								</div>
+							) : (
+								<a href="/#Overview">
+									<div className={`${styles.link_title} text_16`}>Overview</div>
+								</a>
+							)}
 						</div>
 						<div className={styles.links}>
-							<div
-								onClick={() => {
-									toggleSidebar();
-									scrollToSection("USPs");
-								}}
-							>
-								<div className={`${styles.link_title} text_16`}>USPs</div>
-							</div>
+							{pathN === "/" ? (
+								<div
+									onClick={() => {
+										toggleSidebar();
+										scrollToSection("USPs");
+									}}
+								>
+									<div className={`${styles.link_title} text_16`}>USPs</div>
+								</div>
+							) : (
+								<a href="/#USPs">
+									<div className={`${styles.link_title} text_16`}>USPs</div>
+								</a>
+							)}
 						</div>
 						<div className={styles.links}>
-							<div
-								onClick={() => {
-									toggleSidebar();
-									scrollToSection("Origins");
-								}}
-							>
-								<div className={`${styles.link_title} text_16`}>Origins</div>
-							</div>
+							{pathN === "/" ? (
+								<div
+									onClick={() => {
+										toggleSidebar();
+										scrollToSection("Origins");
+									}}
+								>
+									<div className={`${styles.link_title} text_16`}>Origins</div>
+								</div>
+							) : (
+								<a href="/#Origins">
+									<div className={`${styles.link_title} text_16`}>Origins</div>
+								</a>
+							)}
 						</div>
 						<div className={styles.links}>
-							<div
-								onClick={() => {
-									toggleSidebar();
-									scrollToSection("Benefits");
-								}}
-							>
-								<div className={`${styles.link_title} text_16`}>Benefits</div>
-							</div>
+							{pathN === "/" ? (
+								<div
+									onClick={() => {
+										toggleSidebar();
+										scrollToSection("Benefits");
+									}}
+								>
+									<div className={`${styles.link_title} text_16`}>Benefits</div>
+								</div>
+							) : (
+								<a href="/#Benefits">
+									<div className={`${styles.link_title} text_16`}>Benefits</div>
+								</a>
+							)}
 						</div>
 						<div className={styles.links}>
-							<div
-								onClick={() => {
-									toggleSidebar();
-									scrollToSection("Product");
-								}}
-							>
-								<div className={`${styles.link_title} text_16`}>Product</div>
-							</div>
+							{pathN === "/" ? (
+								<div
+									onClick={() => {
+										toggleSidebar();
+										scrollToSection("Product");
+									}}
+								>
+									<div className={`${styles.link_title} text_16`}>Product</div>
+								</div>
+							) : (
+								<a href="/#Product">
+									<div className={`${styles.link_title} text_16`}>Product</div>
+								</a>
+							)}
 						</div>
 						<div className={styles.links}>
-							<div
-								onClick={() => {
-									toggleSidebar();
-									scrollToSection("Promise");
-								}}
-							>
-								<div className={`${styles.link_title} text_16`}>Promise</div>
-							</div>
+							{pathN === "/" ? (
+								<div
+									onClick={() => {
+										toggleSidebar();
+										scrollToSection("Promise");
+									}}
+								>
+									<div className={`${styles.link_title} text_16`}>Promise</div>
+								</div>
+							) : (
+								<a href="/#Promise">
+									<div className={`${styles.link_title} text_16`}>Promise</div>
+								</a>
+							)}
 						</div>
-						{/* <div className={styles.links}>
+						<div className={styles.links}>
 							<div
 								onClick={() => {
 									toggleSidebar();
 									scrollToSection("Blogs");
 								}}
 							>
-								<div className={`${styles.link_title} text_16`}>Blogs</div>
+								<a href="/blogs">
+									<div className={`${styles.link_title} text_16`}>Blogs</div>
+								</a>
 							</div>
-						</div> */}
-						<div
-							className={styles.links}
-							onClick={() => {
-								toggleSidebar();
-								scrollToSection("Contact");
-							}}
-						>
-							<Link href="">
-								<Button color="secondary" variant="filled" className={styles.Btn1}>
-									Contact
-								</Button>
-							</Link>
+						</div>
+						<div className={styles.links}>
+							{pathN === "/" ? (
+								<div
+									onClick={() => {
+										toggleSidebar();
+										scrollToSection("Contact");
+									}}
+								>
+									<Link href="">
+										<Button color="secondary" variant="filled" className={styles.Btn1}>
+											Contact
+										</Button>
+									</Link>
+								</div>
+							) : (
+								<a href="/#Contact">
+									<Link href="">
+										<Button color="secondary" variant="filled" className={styles.Btn1}>
+											Contact
+										</Button>
+									</Link>
+								</a>
+							)}
 						</div>
 					</div>
 
