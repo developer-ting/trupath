@@ -179,7 +179,7 @@ export default function Blogs({ allBlogs }) {
 											link={item?.externalLink}
 											ytLink={item?.youtube}
 											date={item.date}
-											slug={item.slug}
+											slug={`blogs/${item?.slug}`}
 										/>
 									</>
 								))}

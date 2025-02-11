@@ -49,7 +49,7 @@ export default function BlogCard({
 				<div className={`${styles.Btn}`}>
 					<Button
 						isAnchor={true}
-						hrefVal={`blogs/${slug}`}
+						hrefVal={`/${slug}`}
 						color="primary"
 						variant="underline"
 					>

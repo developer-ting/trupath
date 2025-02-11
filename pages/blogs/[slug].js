@@ -256,7 +256,7 @@ export default function BlogsInside({ blogsInsideData, related }) {
 														link={item?.externalLink}
 														ytLink={item?.youtube}
 														date={item.date}
-														slug={item.slug}
+														slug={`blogs/${item?.slug}`}
 													/>
 												</SwiperSlide>
 											);
@@ -275,7 +275,7 @@ export default function BlogsInside({ blogsInsideData, related }) {
 														link={item?.externalLink}
 														ytLink={item?.youtube}
 														date={item.date}
-														slug={item.slug}
+														slug={`blogs/${item?.slug}`}
 													/>
 												);
 											})}
