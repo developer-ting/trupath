@@ -275,6 +275,12 @@ section {
 	display: none;
 	overflow: hidden;
 }
+
+.grid_bx_3 {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 20px;
+}
 // .sidebar_opened{
 // 	transition: all 1s;
 // 	transform: translateY(0%);

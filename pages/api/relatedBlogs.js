@@ -23,6 +23,11 @@ export default async function handler(req, res) {
       externalLink
       youtube
       slug
+	  thumbnail {
+        height
+        width
+        url
+      }
 		category {
 			title
 		}

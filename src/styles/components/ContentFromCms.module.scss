@@ -1,17 +1,17 @@
 @import "../helpers/helpers.scss";
 
 .contentFromCms {
-	width: 67%;
+	// width: 67%;
 	margin: auto;
-	@media screen and (max-width: 1199px) {
-		width: 70%;
-	}
-	@media screen and (max-width: 991px) {
-		width: 75%;
-	}
-	@media screen and (max-width: 767px) {
-		width: 100%;
-	}
+	// @media screen and (max-width: 1199px) {
+	// 	width: 70%;
+	// }
+	// @media screen and (max-width: 991px) {
+	// 	width: 75%;
+	// }
+	// @media screen and (max-width: 767px) {
+	// 	width: 100%;
+	// }
 	p,
 	ol li {
 		font-size: 18px;
