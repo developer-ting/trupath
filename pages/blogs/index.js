@@ -192,3 +192,10 @@
 // 		</div>
 // 	);
 // }
+import React from "react";
+/** Data Fetching */
+const Blogs = () => {
+	return <div>Blogs</div>;
+};
+
+export default Blogs;

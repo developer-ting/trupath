@@ -293,3 +293,10 @@
 // 		</div>
 // 	);
 // }
+import React from "react";
+/** Data Fetching */
+const Inside = () => {
+	return <div>Inside</div>;
+};
+
+export default Inside;
