@@ -22,6 +22,9 @@ import styles from "@/styles/sections/ContactForm.module.scss";
 export default function ContactForm() {
 	const formRef = useRef();
 	const [isSubmit, setisSubmit] = useState(false);
+	const [isSubmited, setIsSubmited] = useState(false);
+	const [thankyouMessage, setThankyouMessage] = useState("");
+
 	const {
 		register,
 		handleSubmit,
@@ -30,24 +33,67 @@ export default function ContactForm() {
 	} = useForm({ mode: "onChange" });
 
 	/** Function to handle submit */
-	const onSubmit = async (data, e) => {
-		// Write form submission codes here
+	// const onSubmit = async (data, e) => {
+	// 	// Write form submission codes here
+	// 	e.preventDefault();
+	// 	const scriptURL =
+	// 		"https://script.google.com/macros/s/AKfycbwME3piEjnLmKNHr_bkJ5QnedyQIE31_UMz8LqxZN0yPYLoLwr2rtEXe6DS6l9ulaYY/exec";
+	// 	fetch(scriptURL, {
+	// 		method: "POST",
+	// 		body: new FormData(formRef.current),
+	// 	})
+	// 		.then((response) => {
+	// 			// console.log(response);
+	// 			reset();
+	// 			setisSubmit(true);
+	// 			setTimeout(() => {
+	// 				setisSubmit(false);
+	// 			}, 5000);
+	// 		})
+	// 		.catch((error) => console.error("Error!", error.message));
+	// };
+	/** Function to handle submit */
+	const onSubmit = async (formData, e) => {
 		e.preventDefault();
-		const scriptURL =
-			"https://script.google.com/macros/s/AKfycbwME3piEjnLmKNHr_bkJ5QnedyQIE31_UMz8LqxZN0yPYLoLwr2rtEXe6DS6l9ulaYY/exec";
-		fetch(scriptURL, {
+
+		const selectedMessage = "Thank you for your submission!";
+		setThankyouMessage(selectedMessage);
+
+		const myHeaders = new Headers();
+		myHeaders.append("Content-Type", "application/json");
+		myHeaders.append(
+			"Authentication",
+			`Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`
+		);
+
+		const graphql = JSON.stringify({
+			query: `mutation MycreateHomeContact {
+  createHomeContact(
+    data: {email: "${formData.email}", firstName: "${formData.firstName}", lastName: "${formData.lastName}", message: "${formData.message}", phone: "${formData.phone}"}
+  ) {
+    id
+  }
+}`,
+			variables: {},
+		});
+		const requestOptions = {
 			method: "POST",
-			body: new FormData(formRef.current),
-		})
-			.then((response) => {
-				// console.log(response);
-				reset();
-				setisSubmit(true);
-				setTimeout(() => {
-					setisSubmit(false);
-				}, 5000);
-			})
-			.catch((error) => console.error("Error!", error.message));
+			headers: myHeaders,
+			body: graphql,
+			redirect: "follow",
+		};
+		try {
+			const response = await fetch(
+				`${process.env.NEXT_PUBLIC_HYGRAPH_URL}`,
+				requestOptions
+			);
+			const result = await response.json();
+			console.log(result);
+			reset();
+			setIsSubmited(true);
+		} catch (error) {
+			console.error(error);
+		}
 	};
 
 	return (
@@ -118,15 +164,15 @@ export default function ContactForm() {
 						<input
 							className={`${styles.input} text_14`}
 							type="text"
-							id="firstname"
-							name="firstname"
+							id="firstName"
+							name="firstName"
 							placeholder=" "
-							{...register("firstname", { required: true })}
+							{...register("firstName", { required: true })}
 						/>
-						<label className={styles.inputLabels} htmlFor="firstname">
+						<label className={styles.inputLabels} htmlFor="firstName">
 							First Name<span>*</span>
 						</label>
-						{errors.firstname && errors.firstname.type == "required" && (
+						{errors.firstName && errors.firstName.type == "required" && (
 							<label className="error">This field is required</label>
 						)}
 					</div>
@@ -134,15 +180,15 @@ export default function ContactForm() {
 						<input
 							className={`${styles.input} text_14`}
 							type="text"
-							id="lastname"
-							name="lastname"
+							id="lastName"
+							name="lastName"
 							placeholder=" "
-							{...register("lastname", { required: true })}
+							{...register("lastName", { required: true })}
 						/>
-						<label className={styles.inputLabels} htmlFor="lastname">
+						<label className={styles.inputLabels} htmlFor="lastName">
 							Last Name<span>*</span>
 						</label>
-						{errors.lastname && errors.lastname.type == "required" && (
+						{errors.lastName && errors.lastName.type == "required" && (
 							<label className="error">This field is required</label>
 						)}
 					</div>
@@ -174,15 +220,15 @@ export default function ContactForm() {
 						<input
 							className={`${styles.input} text_14`}
 							type="tel"
-							id="phoneno"
-							name="phoneno"
+							id="phone"
+							name="phone"
 							placeholder=" "
-							{...register("phoneno", { required: true })}
+							{...register("phone", { required: true })}
 						/>
-						<label className={styles.inputLabels} htmlFor="phoneno">
+						<label className={styles.inputLabels} htmlFor="phone">
 							Phone Number<span>*</span>
 						</label>
-						{errors.phoneno && errors.phoneno.type == "required" && (
+						{errors.phone && errors.phone.type == "required" && (
 							<label className="error">This field is required</label>
 						)}
 					</div>
