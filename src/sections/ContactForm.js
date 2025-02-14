@@ -62,7 +62,7 @@ export default function ContactForm() {
 		const myHeaders = new Headers();
 		myHeaders.append("Content-Type", "application/json");
 		myHeaders.append(
-			"Authentication",
+			"Authorization",
 			`Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`
 		);
 
@@ -253,11 +253,10 @@ export default function ContactForm() {
 				<Button color="secondary" variant="filled">
 					Submit
 				</Button>
-				{isSubmit && (
+				{isSubmited && (
 					<div className="m_t_10">
-						<p className="text_lg">
-							Thank you for your message. Someone from our team will get back shortly!
-						</p>
+						<p className="text_lg">Thank you for contacting us</p>
+						<p className="text_lg">We will get back to you shortly.</p>
 					</div>
 				)}
 			</form>
