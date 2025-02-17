@@ -113,7 +113,7 @@ export default function OldRoots({ blogdata }) {
 									item.product.map((item2, index) => {
 										return (
 											<div
-												className={`${styles.SliderItem} bg_secondary b_r_10`}
+												className={`${styles.SliderItem} bg_fourth  b_r_10`}
 												key={index}
 											>
 												<img
@@ -121,15 +121,15 @@ export default function OldRoots({ blogdata }) {
 													className="width_100 b_r_10"
 													alt="Slide Image"
 												/>
-												<p className={`${styles.Type} text_18 f_w_r color_tertiary`}>
+												<p className={`${styles.Type} text_18 f_w_r color_primary`}>
 													Blogs
 												</p>
-												<p className={`${styles.Title} text_20 f_w_m color_tertiary`}>
+												<p className={`${styles.Title} text_20 f_w_m color_primary`}>
 													{item2.productTitle}
 												</p>
 												<div className={`${styles.Btn}`}>
 													<Button
-														color="tertiary"
+														color="primary"
 														variant="underline"
 														isAnchor={true}
 														hrefVal={`blogs/${item2.slug}`}
