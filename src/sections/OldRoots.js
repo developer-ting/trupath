@@ -24,13 +24,18 @@ import NextArrow from "../../public/img/icons/NextArrow.svg";
 // DATA //
 
 /** OldRoots Section */
-export default function OldRoots() {
+export default function OldRoots({ blogdata }) {
+	console.log(blogdata, " allBlogs");
+	const [countNo, setCountNo] = useState();
 	/** slider Section */
 	var settings = {
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		dots: false,
-		arrows: true,
+		arrows:
+			blogdata.title == "Blogs" && blogdata.product.length > countNo
+				? true
+				: false,
 		infinite: false,
 		autoplay: false,
 		pauseOnHover: false,
@@ -53,6 +58,7 @@ export default function OldRoots() {
 				settings: {
 					slidesToShow: 1,
 					slidesToScroll: 1,
+					dots: true,
 					//variableWidth: false,
 				},
 			},
@@ -71,7 +77,12 @@ export default function OldRoots() {
 	/** progress Section */
 	const [progressWidth, setProgressWidth] = useState(0);
 	useEffect(() => {
+		setCountNo(3);
 		fillProgress(1);
+		if (window.innerWidth < 767) {
+			setCountNo(2);
+		}
+		console.log(countNo, " countNo");
 	}, []);
 	/** progress Section */
 	const fillProgress = (currInd) => {
@@ -84,12 +95,77 @@ export default function OldRoots() {
 			<div className="container">
 				<div className={`${styles.Head} f_r_aj_between toTop`} data-scroll>
 					<h2 className="text_50 color_primary">Path to true wellness</h2>
-					<Button color="primary" variant="filled">
+					<Button
+						color="primary"
+						variant="filled"
+						isAnchor={true}
+						hrefVal={"/blogs"}
+					>
 						View All
 					</Button>
 				</div>
 				<div className={`${styles.SliderBox} toTop`} data-scroll>
 					<Slider {...settings}>
+						{blogdata &&
+							blogdata.map((item, ind) => {
+								return (
+									item.title === "Blogs" &&
+									item.product.map((item2, index) => {
+										return (
+											<div
+												className={`${styles.SliderItem} bg_secondary b_r_10`}
+												key={index}
+											>
+												<img
+													src={item2.thumbnail.url}
+													className="width_100 b_r_10"
+													alt="Slide Image"
+												/>
+												<p className={`${styles.Type} text_18 f_w_r color_tertiary`}>
+													Blogs
+												</p>
+												<p className={`${styles.Title} text_20 f_w_m color_tertiary`}>
+													{item2.productTitle}
+												</p>
+												<div className={`${styles.Btn}`}>
+													<Button
+														color="tertiary"
+														variant="underline"
+														isAnchor={true}
+														hrefVal={`blogs/${item2.slug}`}
+													>
+														Read More
+													</Button>
+												</div>
+											</div>
+										);
+									})
+								);
+							})}
+						{/* <div className={`${styles.SliderItem} bg_secondary b_r_10`}>
+							<img src={Slide1.src} className="width_100 b_r_10" alt="Slide Image" />
+							<p className={`${styles.Type} text_18 f_w_r color_tertiary`}>Blog</p>
+							<p className={`${styles.Title} text_20 f_w_m color_tertiary`}>
+								Discover the Health Benefits of Jaggery!
+							</p>
+							<div className={`${styles.Btn}`}>
+								<Button color="tertiary" variant="underline">
+									Read More
+								</Button>
+							</div>
+						</div>
+						<div className={`${styles.SliderItem} bg_fourth b_r_10`}>
+							<img src={Slide1.src} className="width_100 b_r_10" alt="Slide Image" />
+							<p className={`${styles.Type} text_18 f_w_r color_primary`}>Blog</p>
+							<p className={`${styles.Title} text_20 f_w_m color_primary`}>
+								Discover the Health Benefits of Jaggery!
+							</p>
+							<div className={`${styles.Btn}`}>
+								<Button color="primary" variant="underline">
+									Read More
+								</Button>
+							</div>
+						</div>
 						<div className={`${styles.SliderItem} bg_primary b_r_10`}>
 							<img src={Slide1.src} className="width_100 b_r_10" alt="Slide Image" />
 							<p className={`${styles.Type} text_18 f_w_r color_tertiary`}>Blog</p>
@@ -125,52 +201,18 @@ export default function OldRoots() {
 									Read More
 								</Button>
 							</div>
-						</div>
-						<div className={`${styles.SliderItem} bg_primary b_r_10`}>
-							<img src={Slide1.src} className="width_100 b_r_10" alt="Slide Image" />
-							<p className={`${styles.Type} text_18 f_w_r color_tertiary`}>Blog</p>
-							<p className={`${styles.Title} text_20 f_w_m color_tertiary`}>
-								Discover the Health Benefits of Jaggery!
-							</p>
-							<div className={`${styles.Btn}`}>
-								<Button color="tertiary" variant="underline">
-									Read More
-								</Button>
-							</div>
-						</div>
-						<div className={`${styles.SliderItem} bg_secondary b_r_10`}>
-							<img src={Slide1.src} className="width_100 b_r_10" alt="Slide Image" />
-							<p className={`${styles.Type} text_18 f_w_r color_tertiary`}>Blog</p>
-							<p className={`${styles.Title} text_20 f_w_m color_tertiary`}>
-								Discover the Health Benefits of Jaggery!
-							</p>
-							<div className={`${styles.Btn}`}>
-								<Button color="tertiary" variant="underline">
-									Read More
-								</Button>
-							</div>
-						</div>
-						<div className={`${styles.SliderItem} bg_fourth b_r_10`}>
-							<img src={Slide1.src} className="width_100 b_r_10" alt="Slide Image" />
-							<p className={`${styles.Type} text_18 f_w_r color_primary`}>Blog</p>
-							<p className={`${styles.Title} text_20 f_w_m color_primary`}>
-								Discover the Health Benefits of Jaggery!
-							</p>
-							<div className={`${styles.Btn}`}>
-								<Button color="primary" variant="underline">
-									Read More
-								</Button>
-							</div>
-						</div>
+						</div> */}
 					</Slider>
-					<div className={`${styles.progress_div}`}>
-						<div className={`${styles.progress_bar}`}>
-							<div
-								style={{ width: `${progressWidth}%` }}
-								className={`${styles.color_div}`}
-							></div>
+					{blogdata.product && blogdata.product.length > countNo && (
+						<div className={`${styles.progress_div}`}>
+							<div className={`${styles.progress_bar}`}>
+								<div
+									style={{ width: `${progressWidth}%` }}
+									className={`${styles.color_div}`}
+								></div>
+							</div>
 						</div>
-					</div>
+					)}
 				</div>
 			</div>
 		</section>

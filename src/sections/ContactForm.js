@@ -8,6 +8,7 @@ import Button from "../components/Buttons/Button";
 
 // PLUGINS //
 import { useForm } from "react-hook-form";
+import ReCAPTCHA from "react-google-recaptcha";
 
 // UTILS //
 
@@ -250,6 +251,7 @@ export default function ContactForm() {
 						<label className="error">This field is required</label>
 					)}
 				</div>
+				{/* <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY} /> */}
 				<Button color="secondary" variant="filled">
 					Submit
 				</Button>

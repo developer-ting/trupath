@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 // MODULES //
 import { useEffect, useRef } from "react";
 
@@ -87,11 +88,10 @@ export default function SugarcaneField({ gsap, ScrollTrigger }) {
 					<div className={`${styles.Desc}`}>
 						<p className={`${styles.para} text_20 f_w_l color_primary`}>
 							In the heart of Ghansawangi, where sugarcane fields stretch as far as the
-							eye can see, we saw farmers put in hard work to cultivate their crops and
-							face issues in selling them. Recognising the need for a dependable
-							partner, we founded Trupath to support these farmers, providing a
-							dedicated facility to process their produce and help India return to the
-							Gud ol’ ways.
+							eye can see, we saw farmers put in hard work to cultivate their crops
+							Recognising the need for a dependable partner, we founded Trupath to
+							support these farmers, providing a dedicated facility to process their
+							produce and help India return to the Gud ol' ways.
 						</p>
 					</div>
 				</div>

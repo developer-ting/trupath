@@ -32,9 +32,39 @@ import styles from "@/styles/pages/Home.module.scss";
 // IMAGES //
 
 // DATA //
+/** OldRoots Section */
+export async function getStaticProps() {
+	try {
+		// Fetch both APIs concurrently
+		const [allBlogsData] = await Promise.all([
+			fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/api/allBlogs`),
+		]);
+
+		// Parse the JSON responses
+		const allBlogs = await allBlogsData.json();
+
+		// console.log("Fetched headerData:", headerData);
+		// console.log("Fetched projectListings:", projectListings);
+
+		return {
+			props: {
+				allBlogs: allBlogs || null,
+			},
+			revalidate: 30,
+		};
+	} catch (error) {
+		console.error("Error fetching data:", error);
+		return {
+			props: {
+				allBlogs: null,
+			},
+			revalidate: 30,
+		};
+	}
+}
 
 /** Home Page */
-export default function HomePage() {
+export default function HomePage({ allBlogs }) {
 	const [showHeader, setShowHeader] = useState(false);
 	const [showIntro, setShowIntro] = useState(false);
 
@@ -85,7 +115,7 @@ export default function HomePage() {
 					<SweetTaste gsap={gsap} ScrollTrigger={ScrollTrigger} />
 					<ProductSec />
 					<FieldsSec gsap={gsap} ScrollTrigger={ScrollTrigger} />
-					{/* <OldRoots /> */}
+					<OldRoots blogdata={allBlogs.categories} />
 					<GreatValueSec />
 				</div>
 			</main>
