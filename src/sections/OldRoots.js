@@ -91,7 +91,7 @@ export default function OldRoots({ blogdata }) {
 		setProgressWidth((currInd / 4) * 100);
 	};
 	return (
-		<section className={styles.OldRoots} id="Blogs">
+		<section className={styles.OldRoots}>
 			<div className="container">
 				<div className={`${styles.Head} f_r_aj_between toTop`} data-scroll>
 					<h2 className="text_50 color_primary">Path to true wellness</h2>
