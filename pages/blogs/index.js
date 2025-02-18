@@ -126,9 +126,9 @@ export default function Blogs({ allBlogs }) {
 			{/* Metatags */}
 			<MetaTags
 				Title={"Blogs Listing"}
-				Desc={""}
-				OgImg={""}
-				Url={"/blogs-listing"}
+				Desc={
+					"Embrace a healthier lifestyle with our preservative-free, premium quality products that enhance immunity, aid digestion, and boost energy."
+				}
 			/>
 
 			{/* Header */}

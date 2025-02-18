@@ -93,8 +93,6 @@ export default function HomePage({ allBlogs }) {
 				Desc={
 					"Embrace a healthier lifestyle with our preservative-free, premium quality products that enhance immunity, aid digestion, and boost energy."
 				}
-				OgImg={""}
-				Url={"/"}
 			/>
 			{showIntro && <IntroSec gsap={gsap} setShowHeader={setShowHeader} />}
 			{/* Header */}

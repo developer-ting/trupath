@@ -163,13 +163,13 @@ export default function BlogsInside({ blogsInsideData, related }) {
 	return (
 		<div>
 			{/* Metatags */}
-			{/* <MetaTags
-				Title={`${blogsInsideData.title}`}
+			<MetaTags
+				Title={`${blogsInsideData.productTitle}`}
 				Desc={""}
 				Keywords={""}
 				OgImg={""}
 				Url={`/blogs/${blogsInsideData.slug}`}
-			/> */}
+			/>
 			{/* Header */}
 			<Header showHeader={showHeader} setShowHeader={setShowHeader} />
 
