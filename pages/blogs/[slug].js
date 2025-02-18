@@ -25,6 +25,12 @@ import {
 	A11y,
 } from "swiper/modules";
 import ScrollOut from "scroll-out";
+import {
+	FacebookShareButton,
+	LinkedinShareButton,
+	TwitterShareButton,
+	WhatsappShareButton,
+} from "react-share";
 // IMAGES //
 
 // STYLES //
@@ -193,27 +199,35 @@ export default function BlogsInside({ blogsInsideData, related }) {
 								</div>
 								<div className={`${styles.SocialsBx}`}>
 									<div className={`${styles.IconBx}`}>
-										<a href="" rel="noreferrer">
+										<LinkedinShareButton
+											url={`${process.env.NEXT_PUBLIC_API_DOMAIN}/blogs/${blogsInsideData.slug}`}
+											className={`${styles.icon} social_icon_item`}
+										>
 											<img src={linkedIn.src} alt="Social Icons" />
-										</a>
+										</LinkedinShareButton>
 									</div>
 									<div className={`${styles.IconBx}`}>
-										<a
+										{/* <a
 											href="https://x.com/the_trupath?s=21"
 											rel="noreferrer"
 											target="_blank"
 										>
 											<img src={Twitter.src} alt="Social Icons" />
-										</a>
+										</a> */}
+										<TwitterShareButton
+											url={`${process.env.NEXT_PUBLIC_API_DOMAIN}/blogs/${blogsInsideData.slug}`}
+											className={`${styles.icon} social_icon_item`}
+										>
+											<img src={Twitter.src} alt="Social Icons" />
+										</TwitterShareButton>
 									</div>
 									<div className={`${styles.IconBx}`}>
-										<a
-											href="https://www.facebook.com/profile.php?id=61566508024318&mibextid=LQQJ4d"
-											rel="noreferrer"
-											target="_blank"
+										<FacebookShareButton
+											url={`${process.env.NEXT_PUBLIC_API_DOMAIN}/blogs/${blogsInsideData.slug}`}
+											className={`${styles.icon} social_icon_item`}
 										>
 											<img src={FB.src} alt="Social Icons" />
-										</a>
+										</FacebookShareButton>
 									</div>
 									<div className={`${styles.IconBx}`}>
 										<a
