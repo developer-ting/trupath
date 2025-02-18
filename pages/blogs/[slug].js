@@ -200,7 +200,7 @@ export default function BlogsInside({ blogsInsideData, related }) {
 								<div className={`${styles.SocialsBx}`}>
 									<div className={`${styles.IconBx}`}>
 										<LinkedinShareButton
-											url={`${process.env.NEXT_PUBLIC_API_DOMAIN}/blogs/${blogsInsideData.slug}`}
+											url={`${process.env.NEXT_PUBLIC_API_DOMAIN}blogs/${blogsInsideData.slug}`}
 											className={`${styles.icon} social_icon_item`}
 										>
 											<img src={linkedIn.src} alt="Social Icons" />
@@ -215,7 +215,7 @@ export default function BlogsInside({ blogsInsideData, related }) {
 											<img src={Twitter.src} alt="Social Icons" />
 										</a> */}
 										<TwitterShareButton
-											url={`${process.env.NEXT_PUBLIC_API_DOMAIN}/blogs/${blogsInsideData.slug}`}
+											url={`${process.env.NEXT_PUBLIC_API_DOMAIN}blogs/${blogsInsideData.slug}`}
 											className={`${styles.icon} social_icon_item`}
 										>
 											<img src={Twitter.src} alt="Social Icons" />
@@ -223,7 +223,7 @@ export default function BlogsInside({ blogsInsideData, related }) {
 									</div>
 									<div className={`${styles.IconBx}`}>
 										<FacebookShareButton
-											url={`${process.env.NEXT_PUBLIC_API_DOMAIN}/blogs/${blogsInsideData.slug}`}
+											url={`${process.env.NEXT_PUBLIC_API_DOMAIN}blogs/${blogsInsideData.slug}`}
 											className={`${styles.icon} social_icon_item`}
 										>
 											<img src={FB.src} alt="Social Icons" />
