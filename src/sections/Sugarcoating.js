@@ -579,7 +579,7 @@ export default function Sugarcoating({ gsap, ScrollTrigger }) {
 					{
 						opacity: 1,
 						duration: 10,
-						top: "calc(100vh + 100px)",
+						top: "calc(100vh + 75px)",
 					},
 					"second"
 				)
