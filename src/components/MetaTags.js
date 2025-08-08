@@ -2,7 +2,7 @@
 
 // COMPONENTS //
 import Head from "next/head";
-
+import Script from "next/script";
 // SECTIONS //
 
 // PLUGINS //
@@ -40,6 +40,10 @@ export default function MetaTags({ Title, Desc, OgImg, Url }) {
 			<title>{title}</title>
 			<meta name="description" content={desc} />
 			<meta name="theme-color" content="#000" />
+			<meta
+				name="google-site-verification"
+				content="JIwPwUF_78dYUkLUAj6E3I3mYaG6Hs6xdNLcwh8KwJ0"
+			/>
 
 			{/* OG Tags  */}
 			<meta property="og:title" content={title} />

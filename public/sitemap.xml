@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://thetrupath.com/</loc>
+  <lastmod>2025-08-08T09:23:14+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://thetrupath.com/blogs</loc>
+  <lastmod>2025-08-08T09:23:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thetrupath.com/blogs/how-to-know-which-gud-is-best</loc>
+  <lastmod>2025-08-08T09:23:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thetrupath.com/blogs/sugar-vs-jaggery-the-healthier-sweetener</loc>
+  <lastmod>2025-08-08T09:23:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thetrupath.com/blogs/got-gud-in-the-kitchen-try-these-recipes</loc>
+  <lastmod>2025-08-08T09:23:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
