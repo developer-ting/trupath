@@ -27,6 +27,7 @@ import Flipkart from "../../public/img/home/Flipkart.svg";
 import Amazon from "../../public/img/home/Amazon.svg";
 import BB from "../../public/img/home/bb_logo.svg";
 import knoMore from "../../public/img/home/Product_Marquee.png";
+import blinkit from "../../public/img/home/blinkit.svg";
 
 // DATA //
 
@@ -145,10 +146,19 @@ export default function ProductSec() {
 							</div>
 						</div> */}
 					</div>
-					{/* <div className={`${styles.ShopMain}`}>
+					<div className={`${styles.ShopMain}`}>
 						<p className="text_18 color_primary">Order now at</p>
 						<div className={`${styles.ShopBox}`}>
 							<div className={`${styles.ShopItem}`}>
+								<a
+									href="https://blinkit.com/prn/x/prid/681375"
+									target="_blank"
+									rel="noreferrer"
+								>
+									<img src={blinkit.src} alt="Flipkart Logo" />
+								</a>
+							</div>
+							{/* <div className={`${styles.ShopItem}`}>
 								<a href="">
 									<img src={Flipkart.src} alt="Flipkart Logo" />
 								</a>
@@ -162,9 +172,9 @@ export default function ProductSec() {
 								<a href="">
 									<img src={BB.src} alt="BB Logo" />
 								</a>
-							</div>
+							</div> */}
 						</div>
-					</div> */}
+					</div>
 				</div>
 			</div>
 		</section>
